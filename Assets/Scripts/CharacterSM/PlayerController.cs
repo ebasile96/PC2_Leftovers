@@ -13,20 +13,15 @@ public class PlayerController : MonoBehaviour
     internal Vector3 position;
     internal float targetForward;
     internal Quaternion rotation;
-    public float speedDash;
+    public float lenghtDash;
     public float distDash;
 
-    public RaycastHit hit;
-    public GameObject testEnemy;
-    public float strength;
-    public float vibrato;
+   
 
     // Start is called before the first frame update
     void Start()
     {
         position = this.transform.position;
-        strength = 1f;
-        vibrato = 0.1f;
     }
 
     public struct InputData
@@ -66,7 +61,8 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            if (Input.GetAxis("Vertical") > 0)
+            DashForward();
+            /*if (Input.GetAxis("Vertical") > 0)
             {
                 DashForward();
             }
@@ -89,7 +85,7 @@ public class PlayerController : MonoBehaviour
             if(Input.GetAxis("Horizontal") == 0 && Input.GetAxis("Vertical") == 0)
             {
                 DashForward();
-            }
+            }*/
         }
 
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
@@ -101,16 +97,23 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    Vector3 moveDirection;
     public void Move()
     {
-         //this.transform.position = this.transform.position + this.transform.forward * speed * Time.deltaTime;
+        //this.transform.position = this.transform.position + this.transform.forward * speed * Time.deltaTime;
         //this.transform.position = this.transform.position + new Vector3(0.0f, 0.0f, speed * Time.deltaTime);
-        this.transform.Translate(speed * Input.GetAxis("Horizontal") * Time.deltaTime, 0f, speed * Input.GetAxis("Vertical") * Time.deltaTime);
+        //this.transform.Translate(speed * Input.GetAxis("Horizontal") * Time.deltaTime, 0f, speed * Input.GetAxis("Vertical") * Time.deltaTime);
+        CharacterController moveController = GetComponent<CharacterController>();
+        moveDirection = new Vector3(0, 0, Input.GetAxis("Vertical"));
+        moveDirection = transform.TransformDirection(moveDirection);
+        moveDirection *= speed;
+        moveController.Move(moveDirection * Time.deltaTime);
     }
 
     public void Rotate(float rotate)
     {
-        this.transform.rotation = Quaternion.Euler(Vector3.up * rotate * speedRotation * Time.deltaTime) * rotation;
+        //this.transform.rotation = Quaternion.Euler(Vector3.up * rotate * speedRotation * Time.deltaTime) * rotation;
+        this.transform.Rotate(0, Input.GetAxis("Horizontal") * speedRotation, 0);
     }
 
     public void UpdatePositionAndRotation()
@@ -120,9 +123,10 @@ public class PlayerController : MonoBehaviour
 
     public void DashForward()
     {
-        this.transform.DOMoveZ(this.transform.position.z + distDash, speedDash);
+        //this.transform.DOMove(transform.forward, speedDash);
+        this.transform.position += this.transform.forward * lenghtDash;
     }
-    public void DashBack()
+    /*public void DashBack()
     {
         this.transform.DOMoveZ(this.transform.position.z - distDash, speedDash);
     }
@@ -133,19 +137,22 @@ public class PlayerController : MonoBehaviour
     public void DashLeft()
     {
         this.transform.DOMoveX(this.transform.position.x - distDash, speedDash);
-    }
+    }*/
+
+    public int rangeAttack;
+    public RaycastHit hit;
 
     public void AttackMelee()
     {
         Ray rayForward = new Ray(transform.position, transform.forward);
-        Debug.Log("prende raycast");
- 
-        if (Physics.Raycast(rayForward, out hit, 2) && hit.collider.tag == "Enemy")
+       
+
+        if (Physics.Raycast(rayForward, out hit, rangeAttack) && hit.collider.tag == "Enemy")
         {
-            Debug.DrawRay(transform.position + new Vector3(0, 0.5f), Vector3.forward * hit.distance, Color.red);
+            Debug.DrawRay(transform.position + new Vector3(0, 10f), transform.forward * hit.distance, Color.red);
             EnemyHealth eHealth = hit.collider.GetComponent<EnemyHealth>();
             eHealth.TakeDamage(1);
-            testEnemy.transform.DOShakePosition(2f, strength);
+            //testEnemy.transform.DOShakePosition(2f, strength);
             Debug.Log("prende raycast");
         }
         

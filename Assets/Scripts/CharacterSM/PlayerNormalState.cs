@@ -10,7 +10,7 @@ public class PlayerNormalState : PlayerBaseState
         // logica
         //player.targetForward = Mathf.Lerp(player.targetForward, data.forward, Time.deltaTime * 4);
         player.Move();
-        //player.Rotate(data.rotate);
+        player.Rotate(data.rotate);
         //player.UpdatePositionAndRotation();
 
         /*if (data.attackMelee)
