@@ -16,12 +16,13 @@ public class PlayerController : MonoBehaviour
     public float lenghtDash;
     public float distDash;
 
-   
+    public int ObDash;
 
     // Start is called before the first frame update
     void Start()
     {
         position = this.transform.position;
+        ObDash = 0;
     }
 
     public struct InputData
@@ -58,8 +59,9 @@ public class PlayerController : MonoBehaviour
         var inputData = GetInput();
 
         currentState.Tick(inputData);
+        DashObstacles();
 
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.LeftShift) && ObDash == 0)
         {
             DashForward();
             /*if (Input.GetAxis("Vertical") > 0)
@@ -156,6 +158,25 @@ public class PlayerController : MonoBehaviour
             Debug.Log("prende raycast");
         }
         
+    }
+
+    public int rangeDash;
+    public void DashObstacles()
+    {
+        Ray rayObstacle = new Ray(transform.position, transform.forward);
+
+        if (Physics.Raycast(rayObstacle, out hit, rangeDash) && hit.collider.tag == "Obstacle")
+        {
+            ObDash = 1;
+            Debug.DrawRay(transform.position + new Vector3(0, 10f), transform.forward * hit.distance, Color.red);
+            //testEnemy.transform.DOShakePosition(2f, strength);
+            Debug.Log("prende raycast");
+        }
+        else
+        {
+            ObDash = 0;
+        }
+
     }
 
 }
