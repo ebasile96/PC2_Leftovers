@@ -2,21 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PetFollowState : PetStateBase
+public class PetStay : PetStateBase
 {
-    public PetController controller;
-
-    
+    PetController pet;
+    PlayerController player;
     public override void Enter()
     {
-        
+        pet = GetComponent<PetController>();
+        player = FindObjectOfType<PlayerController>();
     }
 
     public override void Tick()
     {
-        
-        controller.Follow();
-        
+        pet.Stay(player.gameObject);
     }
 
     public override void Exit()

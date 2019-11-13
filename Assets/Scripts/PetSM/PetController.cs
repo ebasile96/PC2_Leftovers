@@ -1,17 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class PetController : MonoBehaviour
 {
     public PetStateBase currentState;
     public FieldOfView fow;
-    Vector3 currentTransform;
-    Vector3 targetTransform;
-    public float moveSpeed = 2f;
-    string playerLayer = "player";
-    
-    
+    NavMeshAgent pet;
+    int playerLayer = 10;
 
     public void ChangeState(PetStateBase newState)
     {
@@ -22,43 +19,40 @@ public class PetController : MonoBehaviour
 
     public void Start()
     {
-        
+        pet = GetComponent<NavMeshAgent>();
         fow = GetComponent<FieldOfView>();
-        currentTransform = targetTransform + new Vector3(-2.5f, 0, 0);
-  
+        
+ 
     }
 
     public void Update()
     {
         currentState.Tick();
-        currentTransform = transform.position;
+      
     }
 
     
     public void Follow()
     {
         
-
         foreach (Transform target in fow.visibleTargets)
         {
-
-            if (!playerLayer.Equals(LayerMask.GetMask(target.name)))
-            {
-                targetTransform = target.position;
-                Debug.Log(target.name);
+            if(target.gameObject.layer == playerLayer)
+            { 
+                pet.destination = target.position;
             }
+            
         }
-
-        float approach = moveSpeed * Time.deltaTime;
-        transform.LookAt(targetTransform);
-        transform.position = Vector3.MoveTowards(currentTransform,( targetTransform + new Vector3(-2.5f, 0, 0)), approach) * moveSpeed;
-       
-
-
-
     }
 
-    public void Stay() { }
+    public void Stay(GameObject player)
+    {
+        ///animazione idle
+        ///lookat verso il player
+        
+        transform.LookAt(player.transform.position);
+        
+    }
 
     public void GoThere() { }
 

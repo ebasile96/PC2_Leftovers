@@ -10,7 +10,7 @@ public class DashState : PlayerBaseState
 
     }
 
-    public override void Tick(PlayerController.InputData data)
+    public override void Tick()
     {
         //player.Dash();
     }

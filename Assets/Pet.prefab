@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 7682338394716515677}
   - component: {fileID: 7682338394716515678}
   - component: {fileID: 7682338394716515679}
+  - component: {fileID: 3409983839601244255}
   m_Layer: 0
   m_Name: Pet
   m_TagString: Untagged
@@ -146,6 +147,23 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   visibleTargets: []
+--- !u!114 &3409983839601244255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7682338394716515648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d06cd932e268908439802c83b4fd3543, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentState: {fileID: 995964950135482607}
+  fow: {fileID: 7682338394716515679}
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 1024
 --- !u!1 &8627189251799107539
 GameObject:
   m_ObjectHideFlags: 0
@@ -155,6 +173,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1989815546750737293}
+  - component: {fileID: 995964950135482607}
   m_Layer: 0
   m_Name: Follow
   m_TagString: Untagged
@@ -176,3 +195,16 @@ Transform:
   m_Father: {fileID: 7682338394716515675}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &995964950135482607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8627189251799107539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4d5b5dd0e09b1643b33a76165be9720, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 3409983839601244255}

@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
 {
 
     public PlayerBaseState currentState;
-
+    public Agent player;
     public float speed;
     public float speedRotation;
     internal Vector3 position;
@@ -18,6 +18,10 @@ public class PlayerController : MonoBehaviour
 
     public int ObDash;
 
+    private void Awake()
+    {
+        player = GetComponent<Player>();
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -25,26 +29,8 @@ public class PlayerController : MonoBehaviour
         ObDash = 0;
     }
 
-    public struct InputData
-    {
-        public float rotate;
-        public float forward;
-        public bool dash;
-        public bool attackMelee;
-    }
-
-     InputData GetInput()
-    {
-        InputData data;
-
-        // input
-        data.forward = Input.GetAxis("Vertical");
-        data.rotate = Input.GetAxis("Horizontal");
-        data.dash = Input.GetKeyDown(KeyCode.LeftShift);
-        data.attackMelee = Input.GetKeyDown(KeyCode.Space);
-
-        return data;
-    }
+  
+    
 
     public void ChangeState(PlayerBaseState newState)
     {
@@ -56,57 +42,16 @@ public class PlayerController : MonoBehaviour
     void Update()
 
     {
-        var inputData = GetInput();
-
-        currentState.Tick(inputData);
-        DashObstacles();
-
-        if (Input.GetKeyDown(KeyCode.LeftShift) && ObDash == 0)
-        {
-            DashForward();
-            /*if (Input.GetAxis("Vertical") > 0)
-            {
-                DashForward();
-            }
-
-            if (Input.GetAxis("Vertical") < 0)
-            {
-                DashBack();
-            }
-
-            if (Input.GetAxis("Horizontal") > 0)
-            {
-                DashRight();
-            }
-
-            if (Input.GetAxis("Horizontal") < 0)
-            {
-                DashLeft();
-            }
-
-            if(Input.GetAxis("Horizontal") == 0 && Input.GetAxis("Vertical") == 0)
-            {
-                DashForward();
-            }*/
-        }
-
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
-        {
-            Debug.Log("prende input");
-            AttackMelee();
-        }
-
+        currentState.Tick();
 
     }
 
     Vector3 moveDirection;
     public void Move()
     {
-        //this.transform.position = this.transform.position + this.transform.forward * speed * Time.deltaTime;
-        //this.transform.position = this.transform.position + new Vector3(0.0f, 0.0f, speed * Time.deltaTime);
-        //this.transform.Translate(speed * Input.GetAxis("Horizontal") * Time.deltaTime, 0f, speed * Input.GetAxis("Vertical") * Time.deltaTime);
+       
         CharacterController moveController = GetComponent<CharacterController>();
-        moveDirection = new Vector3(0, 0, Input.GetAxis("Vertical"));
+        moveDirection = new Vector3(0, 0, player.forward);
         moveDirection = transform.TransformDirection(moveDirection);
         moveDirection *= speed;
         moveController.Move(moveDirection * Time.deltaTime);
@@ -115,7 +60,7 @@ public class PlayerController : MonoBehaviour
     public void Rotate(float rotate)
     {
         //this.transform.rotation = Quaternion.Euler(Vector3.up * rotate * speedRotation * Time.deltaTime) * rotation;
-        this.transform.Rotate(0, Input.GetAxis("Horizontal") * speedRotation, 0);
+        this.transform.Rotate(0, player.rotate * speedRotation, 0);
     }
 
     public void UpdatePositionAndRotation()
@@ -128,18 +73,7 @@ public class PlayerController : MonoBehaviour
         //this.transform.DOMove(transform.forward, speedDash);
         this.transform.position += this.transform.forward * lenghtDash;
     }
-    /*public void DashBack()
-    {
-        this.transform.DOMoveZ(this.transform.position.z - distDash, speedDash);
-    }
-    public void DashRight()
-    {
-        this.transform.DOMoveX(this.transform.position.x + distDash, speedDash);
-    }
-    public void DashLeft()
-    {
-        this.transform.DOMoveX(this.transform.position.x - distDash, speedDash);
-    }*/
+   
 
     public int rangeAttack;
     public RaycastHit hit;

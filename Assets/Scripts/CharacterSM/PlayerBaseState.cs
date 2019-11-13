@@ -17,7 +17,7 @@ public class PlayerBaseState : MonoBehaviour
 
     }
 
-    public virtual void Tick(PlayerController.InputData data)
+    public virtual void Tick()
     {
 
     }
