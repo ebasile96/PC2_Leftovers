@@ -27,7 +27,7 @@ public class InputManager : MonoBehaviour
 
     void Update()
     {
-        CheckInput(GameManager.instance.currentAgent);
+        CheckInput(GameManager.instance.currentAgent); 
     }
     public void CheckInput(Agent agent)
     {

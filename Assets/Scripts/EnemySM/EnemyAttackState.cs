@@ -14,9 +14,9 @@ public class EnemyAttackState : EnemyStateBase
 
     public override void Tick()
     {
-        enemy.AttackMelee();
+        //enemy.AttackMelee();
 
-        if(enemy.hit.collider.tag != "Player")
+        //if(enemy.hit.collider.tag != "Player")
         {
             enemy.ChangeState(idleState);
         }

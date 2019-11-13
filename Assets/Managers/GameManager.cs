@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public Agent currentAgent;
     public Player player;
     public Pet pet;
+
     void Awake()
     {
         

@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
 {
 
     public PlayerBaseState currentState;
-    public Agent player;
+    public Player player;
     public float speed;
     public float speedRotation;
     internal Vector3 position;
@@ -22,15 +22,12 @@ public class PlayerController : MonoBehaviour
     {
         player = GetComponent<Player>();
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        position = this.transform.position;
-        ObDash = 0;
-    }
 
+    void Update()
+    {
+        currentState.Tick();
+    }
   
-    
 
     public void ChangeState(PlayerBaseState newState)
     {
@@ -38,14 +35,7 @@ public class PlayerController : MonoBehaviour
         newState.Enter();
         currentState = newState;
     }
-    // Update is called once per frame
-    void Update()
-
-    {
-        currentState.Tick();
-
-    }
-
+   
     Vector3 moveDirection;
     public void Move()
     {
@@ -55,23 +45,24 @@ public class PlayerController : MonoBehaviour
         moveDirection = transform.TransformDirection(moveDirection);
         moveDirection *= speed;
         moveController.Move(moveDirection * Time.deltaTime);
+        
     }
 
-    public void Rotate(float rotate)
+    public void Rotate()
     {
-        //this.transform.rotation = Quaternion.Euler(Vector3.up * rotate * speedRotation * Time.deltaTime) * rotation;
-        this.transform.Rotate(0, player.rotate * speedRotation, 0);
+        
+        transform.Rotate(0, player.rotate * speedRotation, 0);
     }
 
     public void UpdatePositionAndRotation()
     {
-        this.transform.SetPositionAndRotation(this.transform.position , this.transform.rotation);
+        transform.SetPositionAndRotation(transform.position , transform.rotation);
     }
 
     public void DashForward()
     {
-        //this.transform.DOMove(transform.forward, speedDash);
-        this.transform.position += this.transform.forward * lenghtDash;
+        
+        transform.position += transform.forward * lenghtDash;
     }
    
 
