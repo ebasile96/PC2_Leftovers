@@ -4,22 +4,25 @@ using UnityEngine;
 
 public class EnemyAttackState : EnemyStateBase
 {
-    EnemyController enemy;
-    public EnemyStateBase idleState;
+    public EnemyStateBase movementState;
+
 
     public override void Enter()
     {
         enemy = GetComponent<EnemyController>();
+        
     }
 
     public override void Tick()
     {
-        //enemy.AttackMelee();
-
-        //if(enemy.hit.collider.tag != "Player")
+        /*enemy.AttackMelee();
+        if (enemy.isPlayer == false)
         {
-            enemy.ChangeState(idleState);
+            Debug.Log("entra nello stao nuovo");
+            enemy.ChangeState(movementState);
         }
+        enemy.TakeDamagePlayer();*/
+        
     }
 
     public override void Exit()

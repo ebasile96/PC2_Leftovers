@@ -5,13 +5,18 @@ using UnityEngine;
 public class PlayerLifeController : MonoBehaviour
 {
     public float healthPlayer;
+    public float damage;
 
     public void TakeDamage(float _damage)
     {
         healthPlayer -= _damage;
-        if(healthPlayer <= 0)
+    }
+
+    private void Update()
+    {
+        if (healthPlayer <= 0)
         {
-            //respawn player
+            Destroy(gameObject);
         }
     }
 }

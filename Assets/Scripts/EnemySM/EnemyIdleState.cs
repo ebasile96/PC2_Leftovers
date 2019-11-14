@@ -14,10 +14,7 @@ public class EnemyIdleState : EnemyStateBase
 
     public override void Tick()
     {
-       // if(enemy.hit.collider.tag == "Player")
-        {
-            enemy.ChangeState(attackState);
-        }
+        
     }
 
     public override void Exit()

@@ -21,11 +21,23 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         player = GetComponent<Player>();
+        ObDash = 0;
     }
 
     void Update()
     {
         currentState.Tick();
+        DashObstacles();
+
+        if (player.dash)
+        {
+            DashForward();
+        }
+
+        if (player.attackMelee)
+        {
+            AttackMelee();
+        }
     }
   
 
