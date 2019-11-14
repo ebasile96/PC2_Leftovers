@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
 {
 
     public PlayerBaseState currentState;
-
+    public Player player;
     public float speed;
     public float speedRotation;
     internal Vector3 position;
@@ -18,33 +18,28 @@ public class PlayerController : MonoBehaviour
 
     public int ObDash;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        position = this.transform.position;
+        player = GetComponent<Player>();
         ObDash = 0;
     }
 
-    public struct InputData
+    void Update()
     {
-        public float rotate;
-        public float forward;
-        public bool dash;
-        public bool attackMelee;
+        currentState.Tick();
+        DashObstacles();
+
+        if (player.dash)
+        {
+            DashForward();
+        }
+
+        if (player.attackMelee)
+        {
+            AttackMelee();
+        }
     }
-
-     InputData GetInput()
-    {
-        InputData data;
-
-        // input
-        data.forward = Input.GetAxis("Vertical");
-        data.rotate = Input.GetAxis("Horizontal");
-        data.dash = Input.GetKeyDown(KeyCode.LeftShift);
-        data.attackMelee = Input.GetKeyDown(KeyCode.Space);
-
-        return data;
-    }
+  
 
     public void ChangeState(PlayerBaseState newState)
     {
@@ -52,94 +47,36 @@ public class PlayerController : MonoBehaviour
         newState.Enter();
         currentState = newState;
     }
-    // Update is called once per frame
-    void Update()
-
-    {
-        var inputData = GetInput();
-
-        currentState.Tick(inputData);
-        DashObstacles();
-
-        if (Input.GetKeyDown(KeyCode.LeftShift) && ObDash == 0)
-        {
-            DashForward();
-            /*if (Input.GetAxis("Vertical") > 0)
-            {
-                DashForward();
-            }
-
-            if (Input.GetAxis("Vertical") < 0)
-            {
-                DashBack();
-            }
-
-            if (Input.GetAxis("Horizontal") > 0)
-            {
-                DashRight();
-            }
-
-            if (Input.GetAxis("Horizontal") < 0)
-            {
-                DashLeft();
-            }
-
-            if(Input.GetAxis("Horizontal") == 0 && Input.GetAxis("Vertical") == 0)
-            {
-                DashForward();
-            }*/
-        }
-
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
-        {
-            Debug.Log("prende input");
-            AttackMelee();
-        }
-
-
-    }
-
+   
     Vector3 moveDirection;
     public void Move()
     {
-        //this.transform.position = this.transform.position + this.transform.forward * speed * Time.deltaTime;
-        //this.transform.position = this.transform.position + new Vector3(0.0f, 0.0f, speed * Time.deltaTime);
-        //this.transform.Translate(speed * Input.GetAxis("Horizontal") * Time.deltaTime, 0f, speed * Input.GetAxis("Vertical") * Time.deltaTime);
+       
         CharacterController moveController = GetComponent<CharacterController>();
-        moveDirection = new Vector3(0, 0, Input.GetAxis("Vertical"));
+        moveDirection = new Vector3(0, 0, player.forward);
         moveDirection = transform.TransformDirection(moveDirection);
         moveDirection *= speed;
         moveController.Move(moveDirection * Time.deltaTime);
+        
     }
 
-    public void Rotate(float rotate)
+    public void Rotate()
     {
-        //this.transform.rotation = Quaternion.Euler(Vector3.up * rotate * speedRotation * Time.deltaTime) * rotation;
-        this.transform.Rotate(0, Input.GetAxis("Horizontal") * speedRotation, 0);
+        
+        transform.Rotate(0, player.rotate * speedRotation, 0);
     }
 
     public void UpdatePositionAndRotation()
     {
-        this.transform.SetPositionAndRotation(this.transform.position , this.transform.rotation);
+        transform.SetPositionAndRotation(transform.position , transform.rotation);
     }
 
     public void DashForward()
     {
-        //this.transform.DOMove(transform.forward, speedDash);
-        this.transform.position += this.transform.forward * lenghtDash;
+        
+        transform.position += transform.forward * lenghtDash;
     }
-    /*public void DashBack()
-    {
-        this.transform.DOMoveZ(this.transform.position.z - distDash, speedDash);
-    }
-    public void DashRight()
-    {
-        this.transform.DOMoveX(this.transform.position.x + distDash, speedDash);
-    }
-    public void DashLeft()
-    {
-        this.transform.DOMoveX(this.transform.position.x - distDash, speedDash);
-    }*/
+   
 
     public int rangeAttack;
     public RaycastHit hit;

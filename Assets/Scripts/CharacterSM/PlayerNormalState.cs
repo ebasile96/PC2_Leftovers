@@ -5,18 +5,11 @@ using UnityEngine;
 public class PlayerNormalState : PlayerBaseState
 {
     public PlayerBaseState dashState;
-    public override void Tick(PlayerController.InputData data)
+
+    public override void Tick()
     {
-        // logica
-        //player.targetForward = Mathf.Lerp(player.targetForward, data.forward, Time.deltaTime * 4);
         player.Move();
-        player.Rotate(data.rotate);
-        //player.UpdatePositionAndRotation();
-
-        /*if (data.attackMelee)
-        {
-
-        }*/
+        player.Rotate();
         
         
     }

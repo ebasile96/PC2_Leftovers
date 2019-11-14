@@ -2,23 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyIdleState : EnemyStateBase
+public class PetFollowState : PetStateBase
 {
-    EnemyController enemy;
-    public EnemyStateBase attackState;
+    public PetController controller;
 
+    
     public override void Enter()
     {
-        enemy = GetComponent<EnemyController>();
+        
     }
 
     public override void Tick()
     {
         
+        controller.Follow();
+        
     }
 
     public override void Exit()
     {
-
+        
     }
 }

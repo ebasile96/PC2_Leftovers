@@ -2,14 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerBaseState : MonoBehaviour
+public class PetStateBase : MonoBehaviour
 {
-
-    protected PlayerController player;
+    protected PetController pet;
 
     private void Awake()
     {
-        player = GetComponentInParent<PlayerController>();
+        pet = GetComponentInParent<PetController>();
     }
 
     public virtual void Enter()
@@ -26,5 +25,4 @@ public class PlayerBaseState : MonoBehaviour
     {
 
     }
-
 }
