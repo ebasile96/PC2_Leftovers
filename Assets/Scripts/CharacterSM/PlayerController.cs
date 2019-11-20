@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
 
     public PlayerBaseState currentState;
     public Player player;
+    public PetController pet;
     public float speed;
     public float speedRotation;
     internal Vector3 position;
@@ -21,6 +22,7 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         player = GetComponent<Player>();
+        pet = FindObjectOfType<PetController>();
         ObDash = 0;
     }
 
@@ -37,6 +39,19 @@ public class PlayerController : MonoBehaviour
         if (player.attackMelee)
         {
             AttackMelee();
+        }
+
+        if (player.stayHere)
+        {
+            PetStay stay = FindObjectOfType<PetStay>();
+            pet.currentState = stay;
+            
+        }
+
+        if (player.follow)
+        {
+            PetFollowState follow = FindObjectOfType<PetFollowState>();
+            pet.currentState = follow;
         }
     }
   

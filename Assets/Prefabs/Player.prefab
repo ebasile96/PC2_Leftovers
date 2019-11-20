@@ -86,7 +86,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da4ce3ff71015094f8e675abe79e9ca5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dashState: {fileID: 0}
+  dashState: {fileID: 8952260195734934664}
 --- !u!1 &8952260195907960679
 GameObject:
   m_ObjectHideFlags: 0
@@ -103,6 +103,8 @@ GameObject:
   - component: {fileID: 8952260195907960701}
   - component: {fileID: 8952260195907960703}
   - component: {fileID: 8952260195907960700}
+  - component: {fileID: 349089248098578700}
+  - component: {fileID: 631055910}
   m_Layer: 10
   m_Name: Player
   m_TagString: Untagged
@@ -200,6 +202,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: {fileID: 8952260195841425886}
+  player: {fileID: 0}
   speed: 5
   speedRotation: 3
   lenghtDash: 3
@@ -262,6 +265,44 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   visibleTargets: []
+--- !u!195 &349089248098578700
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8952260195907960679}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 1
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &631055910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8952260195907960679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d597f3d95a702146b0801ab61d62064, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dash: 0
+  attackMelee: 0
+  rotate: 0
+  forward: 0
 --- !u!1 &8952260196802532187
 GameObject:
   m_ObjectHideFlags: 0
@@ -273,6 +314,7 @@ GameObject:
   - component: {fileID: 8952260196802532186}
   - component: {fileID: 8952260196802532183}
   - component: {fileID: 8952260196802532180}
+  - component: {fileID: 4993288461843319490}
   m_Layer: 10
   m_Name: Cube
   m_TagString: Untagged
@@ -340,3 +382,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &4993288461843319490
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8952260196802532187}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.99999994, y: 0.99999994, z: 1.0000001}
+  m_Center: {x: 0, y: 0, z: 0}

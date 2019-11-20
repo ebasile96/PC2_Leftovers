@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     {
         
         Singleton();
+        Inputmgr = FindObjectOfType<InputManager>();
         Inputmgr.Setup();
         player = FindObjectOfType<Player>();
         pet = FindObjectOfType<Pet>();

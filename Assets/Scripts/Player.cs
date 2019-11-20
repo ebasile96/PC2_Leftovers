@@ -10,6 +10,8 @@ public class Player : Agent
         rotate = Input.GetAxis("Horizontal");
         dash = Input.GetKeyDown(KeyCode.LeftShift);
         attackMelee = Input.GetKeyDown(KeyCode.Space);
+        stayHere = Input.GetKey(KeyCode.Q);
+        follow = Input.GetKey(KeyCode.E);
     }
 
     

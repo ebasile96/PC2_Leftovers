@@ -7,6 +7,7 @@ public class PetController : MonoBehaviour
 {
     public PetStateBase currentState;
     public FieldOfView fow;
+    public PlayerController playerCtrl;
     NavMeshAgent pet;
     int playerLayer = 10;
 
@@ -21,7 +22,7 @@ public class PetController : MonoBehaviour
     {
         pet = GetComponent<NavMeshAgent>();
         fow = GetComponent<FieldOfView>();
-        
+        playerCtrl = FindObjectOfType<PlayerController>();
  
     }
 
@@ -49,7 +50,7 @@ public class PetController : MonoBehaviour
     {
         ///animazione idle
         ///lookat verso il player
-        
+        player = playerCtrl.gameObject;
         transform.LookAt(player.transform.position);
         
     }

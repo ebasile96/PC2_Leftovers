@@ -12,6 +12,10 @@ public class Agent : MonoBehaviour
     public float rotate;
     [HideInInspector]
     public float forward;
+    [HideInInspector]
+    public bool stayHere;
+    [HideInInspector]
+    public bool follow;
     
     
 
