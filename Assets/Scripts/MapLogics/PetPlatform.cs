@@ -10,6 +10,7 @@ public class PetPlatform : Platform
         if(other.gameObject.layer == petLayer)
         {
             PetisFilled = true;
+            mesh.material.color = Color.green;
         }
     }
 

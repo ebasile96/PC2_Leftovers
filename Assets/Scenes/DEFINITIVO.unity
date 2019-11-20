@@ -141,6 +141,7 @@ MonoBehaviour:
   door: {fileID: 2007644699}
   PetisFilled: 0
   PlayerisFilled: 0
+  mesh: {fileID: 0}
 --- !u!65 &1556058
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -188,6 +189,7 @@ MonoBehaviour:
   door: {fileID: 0}
   PetisFilled: 0
   PlayerisFilled: 0
+  mesh: {fileID: 0}
 --- !u!1 &124880491 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7520193460250704786, guid: 3d430e6f8a9e525448b79ad89c894780,
@@ -387,6 +389,7 @@ MonoBehaviour:
   door: {fileID: 2007644699}
   PetisFilled: 0
   PlayerisFilled: 0
+  mesh: {fileID: 0}
 --- !u!65 &310249776
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -418,6 +421,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_demo_mapp_complete
       objectReference: {fileID: 0}
+    - target: {fileID: -8542829339363572477, guid: 3d430e6f8a9e525448b79ad89c894780,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a48fceddd0e904b47a4791fcb24a2169, type: 2}
     - target: {fileID: -7395436564910143668, guid: 3d430e6f8a9e525448b79ad89c894780,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -513,6 +521,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -1455
       objectReference: {fileID: 0}
+    - target: {fileID: 7300217835491830006, guid: 3d430e6f8a9e525448b79ad89c894780,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a48fceddd0e904b47a4791fcb24a2169, type: 2}
     - target: {fileID: 7520193460250704786, guid: 3d430e6f8a9e525448b79ad89c894780,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -560,6 +573,7 @@ MonoBehaviour:
   door: {fileID: 0}
   PetisFilled: 0
   PlayerisFilled: 0
+  mesh: {fileID: 0}
 --- !u!1 &843263412
 GameObject:
   m_ObjectHideFlags: 0
