@@ -115,7 +115,7 @@ public class PlayerController : MonoBehaviour
             Debug.DrawRay(transform.position + new Vector3(0, 10f), transform.forward * hit.distance, Color.red);
             EnemyHealth eHealth = hit.collider.GetComponent<EnemyHealth>();
             eHealth.TakeDamage(1);
-            //testEnemy.transform.DOShakePosition(2f, strength);
+            //hit.transform.DOShakePosition(2f, strength);
             Debug.Log("prende raycast");
         }
         
