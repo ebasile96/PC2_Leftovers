@@ -10,6 +10,7 @@ public class PetController : MonoBehaviour
     public PlayerController playerCtrl;
     NavMeshAgent pet;
     int playerLayer = 10;
+    int enemyLayer = 8;
     public Player player;
     public GameObject projectile;
     Transform petPosition;
@@ -45,7 +46,7 @@ public class PetController : MonoBehaviour
     
     public void Follow()
     {
-        transform.LookAt(transform.forward);
+        transform.LookAt(player.transform);
         foreach (Transform target in fow.visibleTargets)
         {
             if(target.gameObject.layer == playerLayer)
@@ -67,8 +68,20 @@ public class PetController : MonoBehaviour
 
     public void GoThere() { }
 
+    Transform enemyTarget;
     public void Shoot()
     {
+        
+
+        foreach (Transform target in fow.visibleTargets)
+        {
+            if(target.gameObject.layer == enemyLayer)
+            {
+                enemyTarget = target.transform;
+            }
+        }
+
+        transform.LookAt(enemyTarget.transform);
         GameObject temp;
         temp = Instantiate(projectile, transform.forward + new Vector3(petPosition.position.x, 0.5f, petPosition.position.z), Quaternion.identity);
         temp.GetComponent<Rigidbody>().AddForce(transform.forward * speedProjectile);
