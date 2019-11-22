@@ -104,7 +104,7 @@ public class PlayerController : MonoBehaviour
 
     public int rangeAttack;
     public RaycastHit hit;
-
+    public float strength;
     public void AttackMelee()
     {
         Ray rayForward = new Ray(transform.position, transform.forward);
@@ -115,7 +115,7 @@ public class PlayerController : MonoBehaviour
             Debug.DrawRay(transform.position + new Vector3(0, 10f), transform.forward * hit.distance, Color.red);
             EnemyHealth eHealth = hit.collider.GetComponent<EnemyHealth>();
             eHealth.TakeDamage(1);
-            //hit.transform.DOShakePosition(2f, strength);
+            hit.transform.DOShakePosition(1f, strength);
             Debug.Log("prende raycast");
         }
         
@@ -148,7 +148,7 @@ public class PlayerController : MonoBehaviour
         {
             ObDash = 1;
             Debug.DrawRay(transform.position + new Vector3(0, 10f), transform.forward * hit.distance, Color.red);
-            //testEnemy.transform.DOShakePosition(2f, strength);
+            
             Debug.Log("prende raycast");
         }
         else

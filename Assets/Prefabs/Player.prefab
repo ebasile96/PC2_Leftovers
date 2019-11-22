@@ -99,6 +99,7 @@ GameObject:
   - component: {fileID: 8952260195907960675}
   - component: {fileID: 8952260195907960672}
   - component: {fileID: 8952260195907960673}
+  - component: {fileID: 5236139495489085497}
   - component: {fileID: 8952260195907960678}
   - component: {fileID: 8952260195907960701}
   - component: {fileID: 8952260195907960703}
@@ -189,6 +190,20 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5236139495489085497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8952260195907960679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16be805342ffa574d83754aa84a84345, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthPlayer: 0
+  damage: 0
 --- !u!114 &8952260195907960678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,10 +218,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: {fileID: 8952260195841425886}
   player: {fileID: 0}
+  pet: {fileID: 0}
   speed: 5
   speedRotation: 3
   lenghtDash: 3
   distDash: 2
+  isShieldEnemy: 0
+  isCrystal: 0
+  isSecondCrystal: 0
   ObDash: 0
   rangeAttack: 3
   rangeDash: 4
@@ -303,6 +322,9 @@ MonoBehaviour:
   attackMelee: 0
   rotate: 0
   forward: 0
+  stayHere: 0
+  follow: 0
+  shootPet: 0
 --- !u!1 &8952260196802532187
 GameObject:
   m_ObjectHideFlags: 0

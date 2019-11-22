@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using DG.Tweening;
 
 public class EnemyController : MonoBehaviour
 {
@@ -48,6 +49,7 @@ public class EnemyController : MonoBehaviour
     public RaycastHit hit;
     public bool isPlayer;
     public float rateoDamage;
+    public float strength;
     public IEnumerator AttackMelee()
     {
         Ray rayForward = new Ray(transform.position, transform.forward);
@@ -61,19 +63,19 @@ public class EnemyController : MonoBehaviour
             if (pHealth.healthPlayer == 3)
             {
                 pHealth.TakeDamage(1);
-                
+                hit.transform.DOShakePosition(1f, strength);
             }
             yield return new WaitForSeconds(rateoDamage);
             if (pHealth.healthPlayer == 2)
             {
                 pHealth.TakeDamage(1);
-
+                hit.transform.DOShakePosition(1f, strength);
             }
             yield return new WaitForSeconds(rateoDamage);
             if (pHealth.healthPlayer == 1)
             {
                 pHealth.TakeDamage(1);
-
+                hit.transform.DOShakePosition(1f, strength);
             }
             yield return new WaitForSeconds(rateoDamage);
             isPlayer = true;
