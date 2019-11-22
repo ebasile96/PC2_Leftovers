@@ -16,7 +16,17 @@ public class EnemyHealth : MonoBehaviour
     public void TakeDamage(float _damage)
     {
         health -= _damage;
-        if(health <= 0f)
+        /*if(health <= 0f)
+        {
+            this.gameObject.SetActive(false);
+            playerCtrl.isShieldEnemy = true;
+            doorEnemy.SetActive(false);
+        }*/
+    }
+
+    private void Update()
+    {
+        if (health <= 0f)
         {
             this.gameObject.SetActive(false);
             playerCtrl.isShieldEnemy = true;
