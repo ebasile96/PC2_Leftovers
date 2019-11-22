@@ -18,7 +18,7 @@ public class EnemyHealth : MonoBehaviour
         health -= _damage;
         if(health <= 0f)
         {
-            Destroy(this.gameObject);
+            this.gameObject.SetActive(false);
             playerCtrl.isShieldEnemy = true;
             doorEnemy.SetActive(false);
         }
