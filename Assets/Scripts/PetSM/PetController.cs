@@ -10,6 +10,10 @@ public class PetController : MonoBehaviour
     public PlayerController playerCtrl;
     NavMeshAgent pet;
     int playerLayer = 10;
+    public Player player;
+    public GameObject projectile;
+    Transform petPosition;
+    public float speedProjectile;
 
     public void ChangeState(PetStateBase newState)
     {
@@ -20,6 +24,8 @@ public class PetController : MonoBehaviour
 
     public void Start()
     {
+        petPosition = GetComponent<Transform>();
+        player = FindObjectOfType<Player>();
         pet = GetComponent<NavMeshAgent>();
         fow = GetComponent<FieldOfView>();
         playerCtrl = FindObjectOfType<PlayerController>();
@@ -29,13 +35,17 @@ public class PetController : MonoBehaviour
     public void Update()
     {
         currentState.Tick();
-      
+
+        if (player.shootPet)
+        {
+            Shoot();
+        }
     }
 
     
     public void Follow()
     {
-        
+        transform.LookAt(transform.forward);
         foreach (Transform target in fow.visibleTargets)
         {
             if(target.gameObject.layer == playerLayer)
@@ -57,5 +67,10 @@ public class PetController : MonoBehaviour
 
     public void GoThere() { }
 
-
+    public void Shoot()
+    {
+        GameObject temp;
+        temp = Instantiate(projectile, transform.forward + new Vector3(petPosition.position.x, 0.5f, petPosition.position.z), Quaternion.identity);
+        temp.GetComponent<Rigidbody>().AddForce(transform.forward * speedProjectile);
+    }
 }

@@ -16,7 +16,9 @@ public class PlayerController : MonoBehaviour
     internal Quaternion rotation;
     public float lenghtDash;
     public float distDash;
-
+    public bool isShieldEnemy;
+    public bool isCrystal;
+    public bool isSecondCrystal;
     public int ObDash;
 
     private void Awake()
@@ -24,6 +26,7 @@ public class PlayerController : MonoBehaviour
         player = GetComponent<Player>();
         pet = FindObjectOfType<PetController>();
         ObDash = 0;
+        isShieldEnemy = true;
     }
 
     void Update()
@@ -31,12 +34,18 @@ public class PlayerController : MonoBehaviour
         currentState.Tick();
         DashObstacles();
 
+        if(player.attackMelee)
+        {
+            Action();
+            isCrystal = true;
+        }
+
         if (player.dash)
         {
             DashForward();
         }
 
-        if (player.attackMelee)
+        if (player.attackMelee && isShieldEnemy == false)
         {
             AttackMelee();
         }
@@ -110,6 +119,24 @@ public class PlayerController : MonoBehaviour
             Debug.Log("prende raycast");
         }
         
+    }
+
+    public void Action()
+    {
+        Ray rayFor = new Ray(transform.position, transform.forward);
+
+
+        if (Physics.Raycast(rayFor, out hit, rangeAttack) && hit.collider.tag == "Crystal")
+        {
+
+            Debug.Log("prende raycast cristallo");
+        }
+        else if (Physics.Raycast(rayFor, out hit, rangeAttack) && hit.collider.tag == "SecondCrystal")
+        {
+            Debug.Log("prende raycast secondo cristallo");
+            isSecondCrystal = true;
+        }
+
     }
 
     public int rangeDash;

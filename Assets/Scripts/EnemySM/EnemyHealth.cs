@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-
+    public PlayerController playerCtrl;
     public float health;
+    public GameObject doorEnemy;
 
-   public void TakeDamage(float _damage)
+    public void Start()
+    {
+        playerCtrl = FindObjectOfType<PlayerController>();
+    }
+
+    public void TakeDamage(float _damage)
     {
         health -= _damage;
         if(health <= 0f)
         {
             Destroy(this.gameObject);
+            playerCtrl.isShieldEnemy = true;
+            doorEnemy.SetActive(false);
         }
     }
 }

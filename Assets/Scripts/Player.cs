@@ -12,6 +12,7 @@ public class Player : Agent
         attackMelee = Input.GetKeyDown(KeyCode.Space);
         stayHere = Input.GetKey(KeyCode.Q);
         follow = Input.GetKey(KeyCode.E);
+        shootPet = Input.GetKeyDown(KeyCode.R);
     }
 
     

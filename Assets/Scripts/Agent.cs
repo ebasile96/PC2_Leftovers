@@ -16,8 +16,10 @@ public class Agent : MonoBehaviour
     public bool stayHere;
     [HideInInspector]
     public bool follow;
-    
-    
+    [HideInInspector]
+    public bool shootPet;
+
+
 
     public virtual void CheckInput() { }
  
