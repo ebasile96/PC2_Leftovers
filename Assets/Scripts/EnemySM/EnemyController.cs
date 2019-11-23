@@ -59,7 +59,6 @@ public class EnemyController : MonoBehaviour
         {
             Debug.DrawRay(transform.position + new Vector3(0, 10f), transform.forward * hit.distance, Color.red);
             PlayerLifeController pHealth = hit.collider.GetComponent<PlayerLifeController>();
-            yield return new WaitForSeconds(rateoDamage);
             if (pHealth.healthPlayer == 3)
             {
                 pHealth.TakeDamage(1);
