@@ -12,7 +12,7 @@ public class PlayerLifeController : MonoBehaviour
 
     public void Start()
     {
-        hpBarPlayer = FindObjectOfType<Slider>();
+        //hpBarPlayer = FindObjectOfType<Slider>();
         positionPlayer = GetComponent<Transform>();
     }
 
@@ -21,7 +21,7 @@ public class PlayerLifeController : MonoBehaviour
         healthPlayer -= _damage;
     }
 
-    private void Update()
+    public  void Update()
     {
         hpBarPlayer.value = healthPlayer;
 

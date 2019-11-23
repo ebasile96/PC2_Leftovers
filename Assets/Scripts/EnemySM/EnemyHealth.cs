@@ -14,7 +14,7 @@ public class EnemyHealth : MonoBehaviour
     public void Start()
     {
         playerCtrl = FindObjectOfType<PlayerController>();
-        hpBarEnemy = FindObjectOfType<Slider>();
+        //hpBarEnemy = FindObjectOfType<Slider>();
         cameraPosition = GetComponent<Transform>();
     }
 
@@ -32,7 +32,7 @@ public class EnemyHealth : MonoBehaviour
             this.gameObject.SetActive(false);
             playerCtrl.isShieldEnemy = true;
             doorEnemy.SetActive(false);
-          
+            playerCtrl.shieldEnemy2.SetActive(true);
         }
     }
 }

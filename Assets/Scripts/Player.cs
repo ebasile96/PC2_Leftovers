@@ -8,11 +8,11 @@ public class Player : Agent
     {
         forward = Input.GetAxis("Vertical");
         rotate = Input.GetAxis("Horizontal");
-        dash = Input.GetKeyDown(KeyCode.LeftShift);
-        attackMelee = Input.GetKeyDown(KeyCode.Space);
-        stayHere = Input.GetKey(KeyCode.Q);
-        follow = Input.GetKey(KeyCode.E);
-        shootPet = Input.GetKeyDown(KeyCode.R);
+        dash = Input.GetKeyDown(KeyCode.Space);
+        attackMelee = Input.GetKeyDown(KeyCode.J);
+        stayHere = Input.GetKey(KeyCode.L);
+        follow = Input.GetKey(KeyCode.I);
+        shootPet = Input.GetKeyDown(KeyCode.K);
     }
 
     

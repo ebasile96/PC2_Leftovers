@@ -5,11 +5,13 @@ using UnityEngine;
 public class ProjectilePet : MonoBehaviour
 {
     public PlayerController playerCtrl;
+    
 
     // Start is called before the first frame update
     void Start()
     {
         playerCtrl = FindObjectOfType<PlayerController>();
+       
     }
 
     public void OnCollisionEnter(Collision collision)
@@ -19,6 +21,7 @@ public class ProjectilePet : MonoBehaviour
             Destroy(this.gameObject);
             //disattivo scudo
             playerCtrl.isShieldEnemy = false;
+           
 
         }
         else if (collision.gameObject.tag != "Enemy")

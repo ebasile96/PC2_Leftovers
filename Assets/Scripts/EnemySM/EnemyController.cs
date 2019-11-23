@@ -63,19 +63,19 @@ public class EnemyController : MonoBehaviour
             if (pHealth.healthPlayer == 3)
             {
                 pHealth.TakeDamage(1);
-                hit.transform.DOShakePosition(1f, strength);
+                hit.transform.DOShakePosition(0.5f, strength);
             }
             yield return new WaitForSeconds(rateoDamage);
             if (pHealth.healthPlayer == 2)
             {
                 pHealth.TakeDamage(1);
-                hit.transform.DOShakePosition(1f, strength);
+                hit.transform.DOShakePosition(0.5f, strength);
             }
             yield return new WaitForSeconds(rateoDamage);
             if (pHealth.healthPlayer == 1)
             {
                 pHealth.TakeDamage(1);
-                hit.transform.DOShakePosition(1f, strength);
+                hit.transform.DOShakePosition(0.5f, strength);
             }
             yield return new WaitForSeconds(rateoDamage);
             isPlayer = true;

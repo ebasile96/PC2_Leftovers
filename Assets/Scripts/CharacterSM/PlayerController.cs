@@ -27,12 +27,23 @@ public class PlayerController : MonoBehaviour
         pet = FindObjectOfType<PetController>();
         ObDash = 0;
         isShieldEnemy = true;
+        shieldEnemy1.SetActive(true);
+        shieldEnemy2.SetActive(true);
     }
 
+    public GameObject shieldEnemy1;
+    public GameObject shieldEnemy2;
     void Update()
     {
         currentState.Tick();
         DashObstacles();
+
+        //provvisoria per demo 23
+        if(isShieldEnemy == false)
+        {
+            shieldEnemy1.SetActive(false);
+            shieldEnemy2.SetActive(false);
+        }
 
         if(player.attackMelee)
         {
@@ -115,7 +126,7 @@ public class PlayerController : MonoBehaviour
             Debug.DrawRay(transform.position + new Vector3(0, 10f), transform.forward * hit.distance, Color.red);
             EnemyHealth eHealth = hit.collider.GetComponent<EnemyHealth>();
             eHealth.TakeDamage(1);
-            hit.transform.DOShakePosition(1f, strength);
+            hit.transform.DOShakePosition(0.5f, strength);
             Debug.Log("prende raycast");
         }
         
