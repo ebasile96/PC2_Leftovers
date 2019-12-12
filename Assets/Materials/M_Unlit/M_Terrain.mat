@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: M_Terrain
+  m_Shader: {fileID: -6465566751694194690, guid: 76cd735bd4991ed47a8ac554785ce347,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_560B9D71:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_C22697C7:
+        m_Texture: {fileID: 2800000, guid: 8b3b499197bb88242bcab31b32d09d72, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_A7BA2B6C: 0
+    - Vector1_D4F0763E: 0.1
+    m_Colors:
+    - Color_2884002: {r: 0.1640324, g: 1.287958, b: 0.464109, a: 1}
+    - Color_96308F0D: {r: 0.6415094, g: 0.5178488, b: 0.3721965, a: 1}
+    - _ToonLightDirection: {r: 0.5, g: 0.5, b: 0, a: 0}
