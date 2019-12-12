@@ -7,7 +7,7 @@ public class FieldOfView : MonoBehaviour
     public float viewRadius;
     [Range(0, 360)]
     public float viewAngle;
-
+    LineRenderer lineR;
     public LayerMask targetMask;
     public LayerMask obstacleMask;
 
@@ -16,6 +16,7 @@ public class FieldOfView : MonoBehaviour
 
     void Start()
     {
+        lineR = GetComponent<LineRenderer>();
         StartCoroutine("FindTargetsWithDelay", .2f);
     }
 
@@ -46,6 +47,9 @@ public class FieldOfView : MonoBehaviour
                 {
                     visibleTargets.Add(target);
                 }
+
+                lineR.SetPosition(0, transform.position);
+                lineR.SetPosition(1, target.position);
             }
         }
     }

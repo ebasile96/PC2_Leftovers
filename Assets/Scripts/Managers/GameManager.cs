@@ -6,21 +6,20 @@ public class GameManager : MonoBehaviour
 {
     //instances and setups
     public static GameManager instance = null;
-    public InputManager Inputmgr;
-    //variables
-    public Agent currentAgent;
-    public Player player;
-    public Pet pet;
 
+    public InputManager Inputmgr;
     void Awake()
     {
         
         Singleton();
-        Inputmgr = FindObjectOfType<InputManager>();
-        Inputmgr.Setup();
-        player = FindObjectOfType<Player>();
-        pet = FindObjectOfType<Pet>();
+        InitManagers();
     }
+
+    public void InitManagers()
+    {
+        GetInputMgr();
+    }
+
 
     public void Singleton()
     {
@@ -30,10 +29,20 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    void Start()
+    #region Getter
+
+    public InputManager GetInputMgr()
     {
-        currentAgent = player;
+        if (!Inputmgr)
+        {
+            return Inputmgr;
+        }
+
+        return Inputmgr;
     }
+
+    #endregion
+
 
 
 
