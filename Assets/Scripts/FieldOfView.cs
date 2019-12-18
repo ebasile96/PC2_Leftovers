@@ -47,6 +47,10 @@ public class FieldOfView : MonoBehaviour
                 {
                     visibleTargets.Add(target);
                 }
+                else
+                {
+                    Debug.Log("danno");
+                }
 
                 lineR.SetPosition(0, transform.position);
                 lineR.SetPosition(1, target.position);
