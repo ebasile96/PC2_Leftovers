@@ -30,10 +30,19 @@ public class FieldOfView : MonoBehaviour
         }
     }
 
+    #region test
+    Transform enemy;
+    #endregion
     void FindVisibleTargets()
     {
         visibleTargets.Clear();
         Collider[] targetsInViewRadius = Physics.OverlapSphere(transform.position, viewRadius, targetMask);
+        Collider[] enemiesInViewRadius = Physics.OverlapSphere(transform.position, viewRadius, obstacleMask);
+
+        for (int i = 0; i < enemiesInViewRadius.Length; i++)
+        {
+            enemy = enemiesInViewRadius[i].transform;
+        }
 
         for (int i = 0; i < targetsInViewRadius.Length; i++)
         {
@@ -49,7 +58,14 @@ public class FieldOfView : MonoBehaviour
                 }
                 else
                 {
+
                     Debug.Log("danno");
+                    visibleTargets.Add(enemy);
+                    foreach (Transform obstacle in visibleTargets)
+                    {
+                        enemy = obstacle;
+                        enemy.gameObject.SetActive(false);
+                    }
                 }
 
                 lineR.SetPosition(0, transform.position);
@@ -57,6 +73,7 @@ public class FieldOfView : MonoBehaviour
             }
         }
     }
+
 
 
     public Vector3 DirFromAngle(float angleInDegrees, bool angleIsGlobal)

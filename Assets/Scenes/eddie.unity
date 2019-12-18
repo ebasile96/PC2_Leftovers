@@ -646,7 +646,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 7a6cc17e96c36694989c524cb62275d9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.7368248
+      value: 0.76
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 7a6cc17e96c36694989c524cb62275d9,
         type: 3}
@@ -656,7 +656,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 7a6cc17e96c36694989c524cb62275d9,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -39.48407
+      value: -42.99
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 7a6cc17e96c36694989c524cb62275d9,
         type: 3}
@@ -720,6 +720,18 @@ CapsuleCollider:
   m_Height: 2.1235154
   m_Direction: 1
   m_Center: {x: 0, y: 1.0617577, z: 0.03408417}
+--- !u!114 &41932009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 41932007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: debb184017e7b6d49b60855486917e64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &43484934
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5139,6 +5151,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   visibleTargets: []
+  visibleEnemy: []
 --- !u!54 &627523701
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7670,7 +7683,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: d20c0d9ce7f4f05419a2ce1a70eaddd6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.474459
+      value: -1.94
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: d20c0d9ce7f4f05419a2ce1a70eaddd6,
         type: 3}
@@ -7880,7 +7893,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 534dd8c92ef3b154bbe2e06d656fd51b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.1760077
+      value: 2.56
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 534dd8c92ef3b154bbe2e06d656fd51b,
         type: 3}
@@ -7890,7 +7903,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 534dd8c92ef3b154bbe2e06d656fd51b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -42.871418
+      value: -37.66
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 534dd8c92ef3b154bbe2e06d656fd51b,
         type: 3}
@@ -9074,6 +9087,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   visibleTargets: []
+  visibleEnemy: []
 --- !u!1001 &1107787517
 PrefabInstance:
   m_ObjectHideFlags: 0
