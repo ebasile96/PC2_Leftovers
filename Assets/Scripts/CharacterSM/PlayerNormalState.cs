@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class PlayerNormalState : PlayerBaseState
 {
-    public PlayerBaseState dashState;
+    //public PlayerBaseState dashState;
 
     public override void Tick()
     {
         player.Move();
-        player.Rotate();
-        
-        
+       
     }
 
 }

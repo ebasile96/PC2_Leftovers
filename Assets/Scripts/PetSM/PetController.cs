@@ -37,53 +37,26 @@ public class PetController : MonoBehaviour
     {
         currentState.Tick();
 
-        if (player.shootPet)
-        {
-            Shoot();
-        }
+     
     }
 
-    
-    public void Follow()
+    public float speed;
+    Vector3 moveDirection;
+    public void MovePet()
     {
-        transform.LookAt(player.transform);
-        foreach (Transform target in fow.visibleTargets)
-        {
-            if(target.gameObject.layer == playerLayer)
-            { 
-                pet.destination = target.position;
-            }
-            
-        }
-    }
-
-    public void Stay(GameObject player)
-    {
-        ///animazione idle
-        ///lookat verso il player
-        player = playerCtrl.gameObject;
-        transform.LookAt(player.transform.position);
+            CharacterController moveController = GetComponent<CharacterController>();
+            moveDirection = new Vector3(GameManager.instance.Inputmgr.horizontalPet, 0, GameManager.instance.Inputmgr.verticalPet);
+            moveDirection = transform.TransformDirection(moveDirection);
+            moveDirection *= speed;
+            moveController.Move(moveDirection * Time.deltaTime);
+            moveDirection = Vector3.up;
         
     }
 
+   
     public void GoThere() { }
 
     Transform enemyTarget;
-    public void Shoot()
-    {
-        
-
-        foreach (Transform target in fow.visibleTargets)
-        {
-            if(target.gameObject.layer == enemyLayer)
-            {
-                enemyTarget = target.transform;
-            }
-        }
-
-        transform.LookAt(enemyTarget.transform);
-        GameObject temp;
-        temp = Instantiate(projectile, transform.forward + new Vector3(petPosition.position.x, 0.5f, petPosition.position.z), Quaternion.identity);
-        temp.GetComponent<Rigidbody>().AddForce(transform.forward * speedProjectile);
-    }
+  
+    
 }

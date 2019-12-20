@@ -15,7 +15,7 @@ public class PetFollowState : PetStateBase
     public override void Tick()
     {
         
-        controller.Follow();
+       
         
     }
 

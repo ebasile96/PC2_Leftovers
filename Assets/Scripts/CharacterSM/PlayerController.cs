@@ -7,7 +7,6 @@ public class PlayerController : MonoBehaviour
 {
 
     public PlayerBaseState currentState;
-    public Player player;
     public PetController pet;
     public float speed;
     public float speedRotation;
@@ -23,7 +22,7 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
-        player = GetComponent<Player>();
+       
         pet = FindObjectOfType<PetController>();
         ObDash = 0;
         isShieldEnemy = true;
@@ -37,42 +36,11 @@ public class PlayerController : MonoBehaviour
     {
         currentState.Tick();
         DashObstacles();
-
-        //provvisoria per demo 23
-        if(isShieldEnemy == false)
-        {
-            shieldEnemy1.SetActive(false);
-            shieldEnemy2.SetActive(false);
-        }
-
-        if(player.attackMelee)
-        {
-            Action();
-            isCrystal = true;
-        }
-
-        if (player.dash)
+        if (GameManager.instance.Inputmgr.dash)
         {
             DashForward();
         }
 
-        if (player.attackMelee && isShieldEnemy == false)
-        {
-            AttackMelee();
-        }
-
-        if (player.stayHere)
-        {
-            PetStay stay = FindObjectOfType<PetStay>();
-            pet.currentState = stay;
-            
-        }
-
-        if (player.follow)
-        {
-            PetFollowState follow = FindObjectOfType<PetFollowState>();
-            pet.currentState = follow;
-        }
     }
   
 
@@ -88,22 +56,11 @@ public class PlayerController : MonoBehaviour
     {
        
         CharacterController moveController = GetComponent<CharacterController>();
-        moveDirection = new Vector3(0, 0, player.forward);
+        moveDirection = new Vector3(GameManager.instance.Inputmgr.horizontal, 0, GameManager.instance.Inputmgr.vertical);
         moveDirection = transform.TransformDirection(moveDirection);
         moveDirection *= speed;
         moveController.Move(moveDirection * Time.deltaTime);
-        
-    }
-
-    public void Rotate()
-    {
-        
-        transform.Rotate(0, player.rotate * speedRotation, 0);
-    }
-
-    public void UpdatePositionAndRotation()
-    {
-        transform.SetPositionAndRotation(transform.position , transform.rotation);
+        moveDirection = Vector3.up;      
     }
 
     public void DashForward()
@@ -116,39 +73,6 @@ public class PlayerController : MonoBehaviour
     public int rangeAttack;
     public RaycastHit hit;
     public float strength;
-    public void AttackMelee()
-    {
-        Ray rayForward = new Ray(transform.position, transform.forward);
-       
-
-        if (Physics.Raycast(rayForward, out hit, rangeAttack) && hit.collider.tag == "Enemy")
-        {
-            Debug.DrawRay(transform.position + new Vector3(0, 10f), transform.forward * hit.distance, Color.red);
-            EnemyHealth eHealth = hit.collider.GetComponent<EnemyHealth>();
-            eHealth.TakeDamage(1);
-            hit.transform.DOShakePosition(0.5f, strength);
-            Debug.Log("prende raycast");
-        }
-        
-    }
-
-    public void Action()
-    {
-        Ray rayFor = new Ray(transform.position, transform.forward);
-
-
-        if (Physics.Raycast(rayFor, out hit, rangeAttack) && hit.collider.tag == "Crystal")
-        {
-
-            Debug.Log("prende raycast cristallo");
-        }
-        else if (Physics.Raycast(rayFor, out hit, rangeAttack) && hit.collider.tag == "SecondCrystal")
-        {
-            Debug.Log("prende raycast secondo cristallo");
-            isSecondCrystal = true;
-        }
-
-    }
 
     public int rangeDash;
     public void DashObstacles()

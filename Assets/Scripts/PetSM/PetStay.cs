@@ -14,7 +14,7 @@ public class PetStay : PetStateBase
 
     public override void Tick()
     {
-        pet.Stay(player.gameObject);
+    
     }
 
     public override void Exit()
