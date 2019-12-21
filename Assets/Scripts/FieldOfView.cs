@@ -10,6 +10,7 @@ public class FieldOfView : MonoBehaviour
     LineRenderer lineR;
     public LayerMask targetMask;
     public LayerMask obstacleMask;
+    public Transform targetLine;
 
     //[HideInInspector]
     public List<Transform> visibleTargets = new List<Transform>();
@@ -17,17 +18,22 @@ public class FieldOfView : MonoBehaviour
     void Start()
     {
         lineR = GetComponent<LineRenderer>();
-        StartCoroutine("FindTargetsWithDelay", .2f);
+        //StartCoroutine("FindTargetsWithDelay", .2f);
     }
 
 
-    IEnumerator FindTargetsWithDelay(float delay)
+   /* IEnumerator FindTargetsWithDelay(float delay)
     {
         while (true)
         {
             yield return new WaitForSeconds(delay);
             FindVisibleTargets();
         }
+    }*/
+
+    private void Update()
+    {
+        FindVisibleTargets();
     }
 
     #region test
@@ -46,15 +52,15 @@ public class FieldOfView : MonoBehaviour
 
         for (int i = 0; i < targetsInViewRadius.Length; i++)
         {
-            Transform target = targetsInViewRadius[i].transform;
-            Vector3 dirToTarget = (target.position - transform.position).normalized;
+             targetLine = targetsInViewRadius[i].transform;
+            Vector3 dirToTarget = (targetLine.position - transform.position).normalized;
             if (Vector3.Angle(transform.forward, dirToTarget) < viewAngle / 2)
             {
-                float dstToTarget = Vector3.Distance(transform.position, target.position);
+                float dstToTarget = Vector3.Distance(transform.position, targetLine.position);
 
                 if (!Physics.Raycast(transform.position, dirToTarget, dstToTarget, obstacleMask))
                 {
-                    visibleTargets.Add(target);
+                    visibleTargets.Add(targetLine);
                 }
                 else
                 {
@@ -69,7 +75,7 @@ public class FieldOfView : MonoBehaviour
                 }
 
                 lineR.SetPosition(0, transform.position);
-                lineR.SetPosition(1, target.position);
+                lineR.SetPosition(1, targetLine.position);
             }
         }
     }
@@ -84,4 +90,4 @@ public class FieldOfView : MonoBehaviour
         }
         return new Vector3(Mathf.Sin(angleInDegrees * Mathf.Deg2Rad), 0, Mathf.Cos(angleInDegrees * Mathf.Deg2Rad));
     }
-}
+} 

@@ -643,11 +643,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: 215083720305030257, guid: 7a6cc17e96c36694989c524cb62275d9,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 7a6cc17e96c36694989c524cb62275d9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -702,6 +697,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 215083720305030257, guid: 7a6cc17e96c36694989c524cb62275d9,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a6cc17e96c36694989c524cb62275d9, type: 3}
@@ -799,6 +799,7 @@ MonoBehaviour:
   obstacleMask:
     serializedVersion: 2
     m_Bits: 0
+  targetLine: {fileID: 0}
   visibleTargets: []
 --- !u!1001 &43484934
 PrefabInstance:
@@ -4600,11 +4601,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: 215083720305030257, guid: 7a6cc17e96c36694989c524cb62275d9,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 7a6cc17e96c36694989c524cb62275d9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4659,6 +4655,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 215083720305030257, guid: 7a6cc17e96c36694989c524cb62275d9,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a6cc17e96c36694989c524cb62275d9, type: 3}
@@ -5431,6 +5432,7 @@ MonoBehaviour:
   obstacleMask:
     serializedVersion: 2
     m_Bits: 0
+  targetLine: {fileID: 0}
   visibleTargets: []
 --- !u!54 &627523701
 Rigidbody:
@@ -5470,7 +5472,7 @@ LineRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 627523698}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 0
@@ -8221,6 +8223,7 @@ MonoBehaviour:
   obstacleMask:
     serializedVersion: 2
     m_Bits: 0
+  targetLine: {fileID: 0}
   visibleTargets: []
 --- !u!195 &957495228
 NavMeshAgent:
@@ -8497,6 +8500,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 534dd8c92ef3b154bbe2e06d656fd51b,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 534dd8c92ef3b154bbe2e06d656fd51b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1fa5327411fd9374a9c970658c4959dd, type: 2}
+    - target: {fileID: -1504981713932161579, guid: 534dd8c92ef3b154bbe2e06d656fd51b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: e6740963624d1bb4b8eca743430d1336, type: 2}
     - target: {fileID: -1000958392418868757, guid: 534dd8c92ef3b154bbe2e06d656fd51b,
         type: 3}
       propertyPath: m_Layer
@@ -8537,21 +8555,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -1504981713932161579, guid: 534dd8c92ef3b154bbe2e06d656fd51b,
-        type: 3}
-      propertyPath: m_Materials.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: -1504981713932161579, guid: 534dd8c92ef3b154bbe2e06d656fd51b,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 1fa5327411fd9374a9c970658c4959dd, type: 2}
-    - target: {fileID: -1504981713932161579, guid: 534dd8c92ef3b154bbe2e06d656fd51b,
-        type: 3}
-      propertyPath: m_Materials.Array.data[1]
-      value: 
-      objectReference: {fileID: 2100000, guid: e6740963624d1bb4b8eca743430d1336, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 534dd8c92ef3b154bbe2e06d656fd51b, type: 3}
 --- !u!1 &972869699 stripped
@@ -9690,7 +9693,7 @@ LineRenderer:
     numCornerVertices: 0
     numCapVertices: 0
     alignment: 0
-    textureMode: 0
+    textureMode: 3
     shadowBias: 0.5
     generateLightingData: 0
   m_UseWorldSpace: 1
@@ -9729,6 +9732,7 @@ MonoBehaviour:
   obstacleMask:
     serializedVersion: 2
     m_Bits: 256
+  targetLine: {fileID: 956408353}
   visibleTargets: []
 --- !u!1001 &1107787517
 PrefabInstance:
@@ -12808,6 +12812,7 @@ MonoBehaviour:
   obstacleMask:
     serializedVersion: 2
     m_Bits: 0
+  targetLine: {fileID: 0}
   visibleTargets: []
 --- !u!195 &1434429169
 NavMeshAgent:
@@ -14580,11 +14585,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: 215083720305030257, guid: 7a6cc17e96c36694989c524cb62275d9,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 7a6cc17e96c36694989c524cb62275d9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14639,6 +14639,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 215083720305030257, guid: 7a6cc17e96c36694989c524cb62275d9,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a6cc17e96c36694989c524cb62275d9, type: 3}
@@ -17417,16 +17422,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 77144645953064477, guid: e466f41afd4bdb44cb0de8ad7540b5b9,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 6119ee8f100ece44f93280b0f4a692be, type: 2}
     - target: {fileID: 2471973040772702545, guid: e466f41afd4bdb44cb0de8ad7540b5b9,
         type: 3}
       propertyPath: Inputmgr
       value: 
       objectReference: {fileID: 1249488947}
+    - target: {fileID: 77144645953064477, guid: e466f41afd4bdb44cb0de8ad7540b5b9,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 6119ee8f100ece44f93280b0f4a692be, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e466f41afd4bdb44cb0de8ad7540b5b9, type: 3}
 --- !u!1001 &4792709010263162027
