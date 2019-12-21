@@ -5,6 +5,7 @@ using System;
 
 public class GameManager : MonoBehaviour
 {
+    public PlayerController player;
     //instances and setups
     public static GameManager instance = null;
     public Context newContext;
@@ -14,7 +15,6 @@ public class GameManager : MonoBehaviour
     public UIManager UImgr;
     void Awake()
     {
-        
         Singleton();
         SetUpSM();
         InitManagers();

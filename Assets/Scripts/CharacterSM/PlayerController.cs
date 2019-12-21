@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using TellInput;
 
 public class PlayerController : MonoBehaviour
 {
-
     public PlayerBaseState currentState;
     public PetController pet;
     public float speed;
@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     public bool isCrystal;
     public bool isSecondCrystal;
     public int ObDash;
-
+   
     private void Awake()
     {
        
@@ -40,6 +40,7 @@ public class PlayerController : MonoBehaviour
         {
             DashForward();
         }
+
 
     }
   

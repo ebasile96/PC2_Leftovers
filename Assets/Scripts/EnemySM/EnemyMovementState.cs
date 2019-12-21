@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyMovementState : EnemyStateBase
 {
-    public EnemyStateBase attackState;
+    //public EnemyStateBase attackState;
 
     public override void Enter()
     {
