@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class EnemyStateBase : MonoBehaviour
 {
-    protected EnemyController enemy;
+    protected Enemy enemy;
 
     private void Awake()
     {
-      enemy = GetComponentInParent<EnemyController>();
+      enemy = GetComponentInParent<Enemy>();
     }
 
     public virtual void Enter()

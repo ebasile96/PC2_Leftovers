@@ -9,7 +9,7 @@ public class EnemyAttackState : EnemyStateBase
 
     public override void Enter()
     {
-        enemy = GetComponent<EnemyController>();
+        enemy = GetComponent<Enemy>();
         
     }
 
