@@ -9,8 +9,7 @@ public class EnemyController : MonoBehaviour
     public EnemyStateBase currentState;
     public FieldOfView fow;
     NavMeshAgent enemy;
-    int playerLayer = 10;
-    int petLayer = 11;
+   
 
     public void ChangeState(EnemyStateBase newState)
     {
@@ -33,18 +32,7 @@ public class EnemyController : MonoBehaviour
         //StartCoroutine(AttackMelee());
     }
 
-    public void FollowPlayer()
-    {
-
-        foreach (Transform target in fow.visibleTargets)
-        {
-            if (target.gameObject.layer == playerLayer || target.gameObject.layer == petLayer)
-            {
-                enemy.destination = target.position;
-            }
-
-        }
-    }
+   
 
     /*public int rangeAttack;
     public RaycastHit hit;

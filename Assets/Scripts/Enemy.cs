@@ -1,18 +1,55 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
-public class Enemy : MonoBehaviour , IEnemy
+
+public class Enemy : MonoBehaviour, IEnemy
 {
-    // Start is called before the first frame update
+    public EnemyData Data;
+    //public Animation Anim;
+    public FieldOfView Fow;
+    public EnemyController EnemyCtrl;
+    public NavMeshAgent NavAgent;
+    public HealthController HealthCtrl;
+    int playerLayer = 10;
+    int petLayer = 11;
+
     void Start()
     {
-        
+        Setup();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Setup()
     {
-        
+        //Anim = GetComponent<Animation>();
+        Fow = GetComponent<FieldOfView>();
+        EnemyCtrl = GetComponent<EnemyController>();
+        NavAgent = GetComponent<NavMeshAgent>();
+        HealthCtrl = FindObjectOfType<HealthController>();
+        NavAgent.stoppingDistance = Data.StoppingDistance;
+        NavAgent.speed = Data.Speed;
     }
+ 
+    public void Attack(GameObject _target)
+    {
+        HealthCtrl.Life -= Data.Damage;
+        Debug.Log("EnemyAttack");
+        //attack method
+    }
+
+    public void FollowPlayer()
+    {
+
+        foreach (Transform target in Fow.visibleTargets)
+        {
+            if (target.gameObject.layer == playerLayer || target.gameObject.layer == petLayer)
+            {
+                NavAgent.destination = target.position;
+            }
+
+        }
+    }
+
+
 }
