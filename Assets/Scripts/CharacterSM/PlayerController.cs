@@ -53,16 +53,25 @@ public class PlayerController : MonoBehaviour
     }
    
     Vector3 moveDirection;
+    Vector3 _velocity;
     public void Move()
     {
-       
+       //per muovere
         CharacterController moveController = GetComponent<CharacterController>();
         moveDirection = new Vector3(GameManager.instance.Inputmgr.horizontal, 0, GameManager.instance.Inputmgr.vertical);
         moveDirection = transform.TransformDirection(moveDirection);
         moveDirection *= speed;
         moveController.Move(moveDirection * Time.deltaTime);
-        moveDirection = Vector3.up;      
+
+        //per gravità
+        _velocity.y += Physics.gravity.y * Time.deltaTime;
+        moveController.Move(_velocity * Time.deltaTime);
     }
+
+    /*public void RotationPlayer()
+    {
+        this.transform.LookAt(moveDirection);
+    }*/
 
     public void DashForward()
     {

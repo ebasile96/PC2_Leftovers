@@ -9,7 +9,6 @@ public class PlayerNormalState : PlayerBaseState
     public override void Tick()
     {
         player.Move();
-       
     }
 
 }

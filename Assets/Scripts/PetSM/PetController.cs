@@ -41,6 +41,7 @@ public class PetController : MonoBehaviour
     }
 
     public float speed;
+    Vector3 _velocity;
     Vector3 moveDirection;
     public void MovePet()
     {
@@ -50,7 +51,10 @@ public class PetController : MonoBehaviour
             moveDirection *= speed;
             moveController.Move(moveDirection * Time.deltaTime);
             moveDirection = Vector3.up;
-        
+
+        //per gravità
+        _velocity.y += Physics.gravity.y * Time.deltaTime;
+        moveController.Move(_velocity * Time.deltaTime);
     }
 
    
