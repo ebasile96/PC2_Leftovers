@@ -17,4 +17,11 @@ public class PlayButton : MonoBehaviour
     {
         SceneManager.LoadScene("UIGDTest");
     }
+
+    //momentaneo solo per far testare 3D
+    public void PressEnvTest()
+    {
+        SceneManager.LoadScene("Enviroment");
+    }
+
 }
