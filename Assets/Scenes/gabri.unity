@@ -12831,7 +12831,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 755907086}
-  m_LocalRotation: {x: 0.5028961, y: 0.04811679, z: -0.025892267, w: 0.8626181}
+  m_LocalRotation: {x: 0.502896, y: 0.048116945, z: -0.025892537, w: 0.8626181}
   m_LocalPosition: {x: 1.3599999, y: 25.27, z: -46.575}
   m_LocalScale: {x: 1, y: 1, z: 1.2193}
   m_Children:
@@ -13448,6 +13448,7 @@ MonoBehaviour:
   ObDash: 0
   shieldEnemy1: {fileID: 0}
   shieldEnemy2: {fileID: 0}
+  _rotationSpeed: 200
   rangeAttack: 0
   strength: 0
   rangeDash: 0
@@ -13862,6 +13863,7 @@ MonoBehaviour:
   projectile: {fileID: 0}
   speedProjectile: 0
   speed: 10
+  _rotationSpeed: 200
 --- !u!54 &972869706
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -38185,17 +38187,17 @@ PrefabInstance:
     - target: {fileID: 4792709009875095648, guid: f838afab358d88b47bffa582ffd236a4,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.5028961
+      value: 0.502896
       objectReference: {fileID: 0}
     - target: {fileID: 4792709009875095648, guid: f838afab358d88b47bffa582ffd236a4,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.04811679
+      value: 0.048116945
       objectReference: {fileID: 0}
     - target: {fileID: 4792709009875095648, guid: f838afab358d88b47bffa582ffd236a4,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.025892267
+      value: -0.025892537
       objectReference: {fileID: 0}
     - target: {fileID: 4792709009875095648, guid: f838afab358d88b47bffa582ffd236a4,
         type: 3}
