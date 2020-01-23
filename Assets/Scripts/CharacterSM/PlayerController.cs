@@ -69,11 +69,11 @@ public class PlayerController : MonoBehaviour
     }
 
     public float _rotationSpeed;
-    public void RotationPlayer()
-    {
-        Vector3 rotation = new Vector3(0, GameManager.instance.Inputmgr.horizontal * _rotationSpeed * Time.deltaTime, 0);
-        this.transform.Rotate(rotation);
-    }
+    //public void RotationPlayer()
+    //{
+    //    Vector3 rotation = new Vector3(0, GameManager.instance.Inputmgr.horizontal * _rotationSpeed * Time.deltaTime, 0);
+    //    this.transform.Rotate(rotation);
+    //}
 
     public void DashForward()
     {

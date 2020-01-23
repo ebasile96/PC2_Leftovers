@@ -34,8 +34,21 @@ public class FieldOfView : MonoBehaviour
     private void Update()
     {
         FindVisibleTargets();
+        CheckChain();
     }
 
+    public void CheckChain()
+    {
+        if(visibleTargets.Count == 0)
+        {
+            lineR.enabled = false;
+        }
+        else
+        {
+            lineR.enabled = true;
+        }
+    }
+    
     #region test
     Transform enemy;
     #endregion
@@ -78,6 +91,7 @@ public class FieldOfView : MonoBehaviour
                 lineR.SetPosition(1, targetLine.position);
             }
         }
+       
     }
 
 
