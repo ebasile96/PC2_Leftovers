@@ -52,12 +52,20 @@ public class PetController : MonoBehaviour
             moveController.Move(moveDirection * Time.deltaTime);
             moveDirection = Vector3.up;
 
+        
+
         //per gravità
         _velocity.y += Physics.gravity.y * Time.deltaTime;
         moveController.Move(_velocity * Time.deltaTime);
     }
 
-   
+    public float _rotationSpeed;
+    public void RotationPet()
+    {
+        Vector3 rotation = new Vector3(0, GameManager.instance.Inputmgr.horizontalPet * _rotationSpeed * Time.deltaTime, 0);
+        this.transform.Rotate(rotation);
+    }
+
     public void GoThere() { }
 
     Transform enemyTarget;

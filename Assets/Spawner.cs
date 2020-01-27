@@ -16,4 +16,12 @@ public class Spawner : MonoBehaviour
             Enemy.SetActive(true);
         }
     }
+
+    void Update()
+    {
+        if (Input.GetKey(KeyCode.Space))
+        {
+            InstantiateEnemy();
+        }
+    }
 }

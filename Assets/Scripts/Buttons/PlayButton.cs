@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+//momentaneo
+using UnityEngine.SceneManagement;
 
 public class PlayButton : MonoBehaviour
 {
@@ -9,4 +11,17 @@ public class PlayButton : MonoBehaviour
     {
         GameManager.GoToGameplay();
     }
+
+    //momentaneo solo per far testare designer
+    public void PressUITest()
+    {
+        SceneManager.LoadScene("UIGDTest");
+    }
+
+    //momentaneo solo per far testare 3D
+    public void PressEnvTest()
+    {
+        SceneManager.LoadScene("Enviroment");
+    }
+
 }
