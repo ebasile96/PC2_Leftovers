@@ -19,10 +19,11 @@ public class PlayerController : MonoBehaviour
     public bool isCrystal;
     public bool isSecondCrystal;
     public int ObDash;
+    public Animator animator;
    
     private void Awake()
     {
-       
+        animator = GetComponent<Animator>();
         pet = FindObjectOfType<PetController>();
         ObDash = 0;
         isShieldEnemy = true;
@@ -52,7 +53,7 @@ public class PlayerController : MonoBehaviour
         currentState = newState;
     }
    
-    Vector3 moveDirection;
+    public Vector3 moveDirection;
     Vector3 _velocity;
     public void Move()
     {

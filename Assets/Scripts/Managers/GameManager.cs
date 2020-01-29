@@ -57,6 +57,7 @@ public class GameManager : MonoBehaviour
         return Inputmgr;
     }
 
+
     public UIManager GetUImgr()
     {
         if (!UImgr)
