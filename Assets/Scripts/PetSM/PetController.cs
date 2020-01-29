@@ -15,6 +15,7 @@ public class PetController : MonoBehaviour
     public GameObject projectile;
     Transform petPosition;
     public float speedProjectile;
+    public Animator animator;
 
     public void ChangeState(PetStateBase newState)
     {
@@ -30,7 +31,7 @@ public class PetController : MonoBehaviour
         pet = GetComponent<NavMeshAgent>();
         fow = GetComponent<FieldOfView>();
         playerCtrl = FindObjectOfType<PlayerController>();
- 
+        animator = GetComponent<Animator>();
     }
 
     public void Update()
@@ -42,7 +43,7 @@ public class PetController : MonoBehaviour
 
     public float speed;
     Vector3 _velocity;
-    Vector3 moveDirection;
+    public Vector3 moveDirection;
     public void MovePet()
     {
             CharacterController moveController = GetComponent<CharacterController>();

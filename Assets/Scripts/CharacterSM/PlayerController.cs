@@ -19,10 +19,11 @@ public class PlayerController : MonoBehaviour
     public bool isCrystal;
     public bool isSecondCrystal;
     public int ObDash;
+    public Animator animator;
    
     private void Awake()
     {
-       
+        animator = GetComponent<Animator>();
         pet = FindObjectOfType<PetController>();
         ObDash = 0;
         isShieldEnemy = true;
@@ -52,8 +53,9 @@ public class PlayerController : MonoBehaviour
         currentState = newState;
     }
    
-    Vector3 moveDirection;
+    public Vector3 moveDirection;
     Vector3 _velocity;
+    Transform rotateDirection;
     public void Move()
     {
        //per muovere
@@ -66,14 +68,19 @@ public class PlayerController : MonoBehaviour
         //per gravità
         _velocity.y += Physics.gravity.y * Time.deltaTime;
         moveController.Move(_velocity * Time.deltaTime);
+
+        //per rotazione
+       
+        //transform.LookAt(rotateDirection);
+        
+
     }
 
     public float _rotationSpeed;
-    //public void RotationPlayer()
-    //{
-    //    Vector3 rotation = new Vector3(0, GameManager.instance.Inputmgr.horizontal * _rotationSpeed * Time.deltaTime, 0);
-    //    this.transform.Rotate(rotation);
-    //}
+    public void RotationPlayer()
+     {
+      
+    }
 
     public void DashForward()
     {

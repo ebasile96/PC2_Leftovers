@@ -14,6 +14,7 @@ public class FieldOfView : MonoBehaviour
 
     //[HideInInspector]
     public List<Transform> visibleTargets = new List<Transform>();
+    
 
     void Start()
     {
@@ -65,7 +66,7 @@ public class FieldOfView : MonoBehaviour
 
         for (int i = 0; i < targetsInViewRadius.Length; i++)
         {
-             targetLine = targetsInViewRadius[i].transform;
+            targetLine = targetsInViewRadius[i].transform;
             Vector3 dirToTarget = (targetLine.position - transform.position).normalized;
             if (Vector3.Angle(transform.forward, dirToTarget) < viewAngle / 2)
             {
@@ -74,18 +75,27 @@ public class FieldOfView : MonoBehaviour
                 if (!Physics.Raycast(transform.position, dirToTarget, dstToTarget, obstacleMask))
                 {
                     visibleTargets.Add(targetLine);
+                    
                 }
                 else
                 {
-
-                    Debug.Log("danno");
-                    visibleTargets.Add(enemy);
-                    foreach (Transform obstacle in visibleTargets)
-                    {
-                        enemy = obstacle;
-                        enemy.gameObject.SetActive(false);
-                    }
+                    obstacleMask.Equals(enemy);
+                    enemy.gameObject.SetActive(false);
                 }
+                //else
+                //{
+
+                //    Debug.Log("danno");
+                //    visibleTargets.Add(enemy);
+                //    foreach (Transform obstacle in visibleTargets)
+                //    {
+                //        enemy = obstacle;
+                //        enemy.gameObject.SetActive(false);
+                //    }
+
+
+                //}
+                
 
                 lineR.SetPosition(0, transform.position);
                 lineR.SetPosition(1, targetLine.position);
