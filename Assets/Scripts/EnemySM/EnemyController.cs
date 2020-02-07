@@ -29,12 +29,12 @@ public class EnemyController : MonoBehaviour
     public void Update()
     {
         currentState.Tick();
-        //StartCoroutine(AttackMelee());
+        StartCoroutine(AttackMelee());
     }
 
    
 
-    /*public int rangeAttack;
+    public int rangeAttack;
     public RaycastHit hit;
     public bool isPlayer;
     public float rateoDamage;
@@ -48,21 +48,34 @@ public class EnemyController : MonoBehaviour
         {
             Debug.DrawRay(transform.position + new Vector3(0, 10f), transform.forward * hit.distance, Color.red);
             PlayerLifeController pHealth = hit.collider.GetComponent<PlayerLifeController>();
-            if (pHealth.healthPlayer == 3)
+            if (pHealth.healthPlayer == 100 && hit.collider.tag == "Player")
             {
-                pHealth.TakeDamage(1);
+                pHealth.TakeDamage(20);
+                hit.transform.DOShakePosition(0.5f, strength);
+                Debug.Log("danno fatto diocan");
+            }
+            yield return new WaitForSeconds(rateoDamage);
+            if (pHealth.healthPlayer == 80 && hit.collider.tag == "Player")
+            {
+                pHealth.TakeDamage(20);
                 hit.transform.DOShakePosition(0.5f, strength);
             }
             yield return new WaitForSeconds(rateoDamage);
-            if (pHealth.healthPlayer == 2)
+            if (pHealth.healthPlayer == 60 && hit.collider.tag == "Player")
             {
-                pHealth.TakeDamage(1);
+                pHealth.TakeDamage(20);
                 hit.transform.DOShakePosition(0.5f, strength);
             }
             yield return new WaitForSeconds(rateoDamage);
-            if (pHealth.healthPlayer == 1)
+            if (pHealth.healthPlayer == 40 && hit.collider.tag == "Player")
             {
-                pHealth.TakeDamage(1);
+                pHealth.TakeDamage(20);
+                hit.transform.DOShakePosition(0.5f, strength);
+            }
+            yield return new WaitForSeconds(rateoDamage);
+            if (pHealth.healthPlayer == 20 && hit.collider.tag == "Player")
+            {
+                pHealth.TakeDamage(20);
                 hit.transform.DOShakePosition(0.5f, strength);
             }
             yield return new WaitForSeconds(rateoDamage);
@@ -75,9 +88,9 @@ public class EnemyController : MonoBehaviour
 
     }
 
-    /*public void TakeDamagePlayer()
+    public void TakeDamagePlayer()
     {
         PlayerLifeController pHealth = hit.collider.GetComponent<PlayerLifeController>();
         pHealth.TakeDamage(1);
-    }*/
+    }
 }

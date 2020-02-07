@@ -9,18 +9,10 @@ public class PlayerLifeController : MonoBehaviour
     public float healthPlayer;
     public float damage;
     public Slider hpBarPlayer;
-    public Transform positionPlayer;
-    public Transform respawnPlayer;
-    public Transform respawnPet;
-    public Transform petPosition;
 
     public void Start()
     {
         //hpBarPlayer = FindObjectOfType<Slider>();
-        positionPlayer = GetComponent<Transform>();
-        respawnPlayer = GetComponent<Transform>();
-        petPosition = GetComponent<Transform>();
-        respawnPet = GetComponent<Transform>();
     }
 
     public void TakeDamage(float _damage)
@@ -34,8 +26,7 @@ public class PlayerLifeController : MonoBehaviour
 
         if (healthPlayer <= 0)
         {
-            positionPlayer.position += respawnPlayer.position;
-            petPosition.position = respawnPet.position;
+            //carico scena gameover
             healthPlayer = 3;
         }
     }

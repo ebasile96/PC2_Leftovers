@@ -51,9 +51,6 @@ public class PetController : MonoBehaviour
             moveDirection = transform.TransformDirection(moveDirection);
             moveDirection *= speed;
             moveController.Move(moveDirection * Time.deltaTime);
-            moveDirection = Vector3.up;
-
-        
 
         //per gravità
         _velocity.y += Physics.gravity.y * Time.deltaTime;

@@ -9,7 +9,7 @@ public class PetNormalState : PetStateBase
     public override void Tick()
     {
         pet.MovePet();
-        //pet.animator.SetTrigger("GoToRunning");
+        pet.animator.SetTrigger("GoToRunning");
         if (pet.moveDirection * pet.speed == new Vector3(0, 0, 0))
         {
             pet.ChangeState(idleState);
