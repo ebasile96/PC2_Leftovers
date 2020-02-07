@@ -39,6 +39,7 @@ public class EnemyController : MonoBehaviour
     public bool isPlayer;
     public float rateoDamage;
     public float strength;
+    public GameObject targetShake;
     public IEnumerator AttackMelee()
     {
         Ray rayForward = new Ray(transform.position, transform.forward);
@@ -51,32 +52,31 @@ public class EnemyController : MonoBehaviour
             if (pHealth.healthPlayer == 100 && hit.collider.tag == "Player")
             {
                 pHealth.TakeDamage(20);
-                hit.transform.DOShakePosition(0.5f, strength);
-                Debug.Log("danno fatto diocan");
+                hit.transform.DOShakeScale(0.5f, strength);
             }
             yield return new WaitForSeconds(rateoDamage);
             if (pHealth.healthPlayer == 80 && hit.collider.tag == "Player")
             {
                 pHealth.TakeDamage(20);
-                hit.transform.DOShakePosition(0.5f, strength);
+                hit.transform.DOShakeScale(0.5f, strength);
             }
             yield return new WaitForSeconds(rateoDamage);
             if (pHealth.healthPlayer == 60 && hit.collider.tag == "Player")
             {
                 pHealth.TakeDamage(20);
-                hit.transform.DOShakePosition(0.5f, strength);
+                hit.transform.DOShakeScale(0.5f, strength);
             }
             yield return new WaitForSeconds(rateoDamage);
             if (pHealth.healthPlayer == 40 && hit.collider.tag == "Player")
             {
                 pHealth.TakeDamage(20);
-                hit.transform.DOShakePosition(0.5f, strength);
+                hit.transform.DOShakeScale(0.5f, strength);
             }
             yield return new WaitForSeconds(rateoDamage);
             if (pHealth.healthPlayer == 20 && hit.collider.tag == "Player")
             {
                 pHealth.TakeDamage(20);
-                hit.transform.DOShakePosition(0.5f, strength);
+                hit.transform.DOShakeScale(0.5f, strength);
             }
             yield return new WaitForSeconds(rateoDamage);
             isPlayer = true;

@@ -4116,7 +4116,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 755907086}
-  m_LocalRotation: {x: 0.5056592, y: 0.019138299, z: -0.009061119, w: 0.8624734}
+  m_LocalRotation: {x: 0.5056592, y: 0.019138338, z: -0.009061143, w: 0.8624734}
   m_LocalPosition: {x: 1.3599999, y: 21.24, z: -46.575}
   m_LocalScale: {x: 1, y: 1, z: 1.2193}
   m_Children:
@@ -4870,8 +4870,9 @@ MonoBehaviour:
   fow: {fileID: 1100197603}
   rangeAttack: 3
   isPlayer: 0
-  rateoDamage: 2
+  rateoDamage: 1
   strength: 1
+  targetShake: {fileID: 1599454576}
 --- !u!114 &957495230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6616,8 +6617,9 @@ MonoBehaviour:
   fow: {fileID: 1100197603}
   rangeAttack: 3
   isPlayer: 0
-  rateoDamage: 2
+  rateoDamage: 1
   strength: 1
+  targetShake: {fileID: 1599454576}
 --- !u!195 &1175927702
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -8124,8 +8126,9 @@ MonoBehaviour:
   fow: {fileID: 1100197603}
   rangeAttack: 3
   isPlayer: 0
-  rateoDamage: 2
+  rateoDamage: 1
   strength: 1
+  targetShake: {fileID: 1599454576}
 --- !u!114 &1391364360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8389,8 +8392,9 @@ MonoBehaviour:
   fow: {fileID: 1100197603}
   rangeAttack: 3
   isPlayer: 0
-  rateoDamage: 2
+  rateoDamage: 1
   strength: 1
+  targetShake: {fileID: 1599454576}
 --- !u!114 &1434429171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9075,8 +9079,9 @@ MonoBehaviour:
   fow: {fileID: 1100197603}
   rangeAttack: 3
   isPlayer: 0
-  rateoDamage: 2
+  rateoDamage: 1
   strength: 1
+  targetShake: {fileID: 1599454576}
 --- !u!195 &1548740428
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -12737,12 +12742,12 @@ PrefabInstance:
     - target: {fileID: 4792709009875095648, guid: f838afab358d88b47bffa582ffd236a4,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.019138299
+      value: 0.019138338
       objectReference: {fileID: 0}
     - target: {fileID: 4792709009875095648, guid: f838afab358d88b47bffa582ffd236a4,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.009061119
+      value: -0.009061143
       objectReference: {fileID: 0}
     - target: {fileID: 4792709009875095648, guid: f838afab358d88b47bffa582ffd236a4,
         type: 3}
