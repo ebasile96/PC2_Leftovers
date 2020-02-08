@@ -7,6 +7,7 @@ using DG.Tweening;
 public class PlayerLifeController : MonoBehaviour
 {
     public float healthPlayer;
+    public float healthPet;
     public float damage;
     public Slider hpBarPlayer;
 
@@ -20,6 +21,11 @@ public class PlayerLifeController : MonoBehaviour
         healthPlayer -= _damage;
     }
 
+    public void TakeDamagePet(float _damage)
+    {
+        healthPet -= _damage;
+    }
+
     public  void Update()
     {
         hpBarPlayer.value = healthPlayer;
@@ -27,7 +33,8 @@ public class PlayerLifeController : MonoBehaviour
         if (healthPlayer <= 0)
         {
             //carico scena gameover
-            healthPlayer = 3;
+            healthPlayer = 100;
+            healthPet = 100;
         }
     }
 }

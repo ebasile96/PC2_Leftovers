@@ -4790,6 +4790,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthPlayer: 100
+  healthPet: 100
   damage: 0
   hpBarPlayer: {fileID: 0}
 --- !u!4 &948879749 stripped
@@ -4873,6 +4874,8 @@ MonoBehaviour:
   rateoDamage: 1
   strength: 1
   targetShake: {fileID: 1599454576}
+  petLife: {fileID: 944811412}
+  pHealth: {fileID: 1599454577}
 --- !u!114 &957495230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6689,6 +6692,8 @@ MonoBehaviour:
   rateoDamage: 1
   strength: 1
   targetShake: {fileID: 1599454576}
+  petLife: {fileID: 944811412}
+  pHealth: {fileID: 1599454577}
 --- !u!195 &1175927702
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -8198,6 +8203,8 @@ MonoBehaviour:
   rateoDamage: 1
   strength: 1
   targetShake: {fileID: 1599454576}
+  petLife: {fileID: 944811412}
+  pHealth: {fileID: 1599454577}
 --- !u!114 &1391364360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8378,6 +8385,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerLife: {fileID: 1599454577}
+  petLife: {fileID: 944811412}
   healthLenght: 100
   weakSpell: 0.1
   healthbar: {fileID: 2043458558}
@@ -8464,6 +8472,8 @@ MonoBehaviour:
   rateoDamage: 1
   strength: 1
   targetShake: {fileID: 1599454576}
+  petLife: {fileID: 944811412}
+  pHealth: {fileID: 1599454577}
 --- !u!114 &1434429171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9151,6 +9161,8 @@ MonoBehaviour:
   rateoDamage: 1
   strength: 1
   targetShake: {fileID: 1599454576}
+  petLife: {fileID: 944811412}
+  pHealth: {fileID: 1599454577}
 --- !u!195 &1548740428
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -9602,6 +9614,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthPlayer: 100
+  healthPet: 100
   damage: 0
   hpBarPlayer: {fileID: 0}
 --- !u!1 &1602288472 stripped
@@ -12592,6 +12605,10 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: -0.10586387
       objectReference: {fileID: 0}
+    - target: {fileID: 1100197600, guid: 91ef5e518a417a94fb000ba252557297, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.54
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91ef5e518a417a94fb000ba252557297, type: 3}
 --- !u!1001 &1201742076029420384
@@ -12689,6 +12706,14 @@ PrefabInstance:
     - target: {fileID: 627523702, guid: 0657c20d55da9de4183a4311267dcd4d, type: 3}
       propertyPath: m_Center.y
       value: -0.22831446
+      objectReference: {fileID: 0}
+    - target: {fileID: 627523699, guid: 0657c20d55da9de4183a4311267dcd4d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 627523699, guid: 0657c20d55da9de4183a4311267dcd4d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0657c20d55da9de4183a4311267dcd4d, type: 3}

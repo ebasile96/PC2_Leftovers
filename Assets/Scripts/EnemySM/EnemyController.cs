@@ -40,6 +40,8 @@ public class EnemyController : MonoBehaviour
     public float rateoDamage;
     public float strength;
     public GameObject targetShake;
+    public PlayerLifeController petLife;
+    public PlayerLifeController pHealth;
     public IEnumerator AttackMelee()
     {
         Ray rayForward = new Ray(transform.position, transform.forward);
@@ -48,10 +50,11 @@ public class EnemyController : MonoBehaviour
         if (Physics.Raycast(rayForward, out hit, rangeAttack) && hit.collider.tag == "Player")
         {
             Debug.DrawRay(transform.position + new Vector3(0, 10f), transform.forward * hit.distance, Color.red);
-            PlayerLifeController pHealth = hit.collider.GetComponent<PlayerLifeController>();
+            //PlayerLifeController pHealth = hit.collider.GetComponent<PlayerLifeController>();
             if (pHealth.healthPlayer == 100 && hit.collider.tag == "Player")
             {
                 pHealth.TakeDamage(20);
+                petLife.TakeDamage(20);
                 hit.transform.DOShakeScale(0.5f, strength);
                 SoundManager.PlaySound(SoundManager.Sound.femaleTakeDamage);
             }
@@ -59,6 +62,7 @@ public class EnemyController : MonoBehaviour
             if (pHealth.healthPlayer == 80 && hit.collider.tag == "Player")
             {
                 pHealth.TakeDamage(20);
+                petLife.TakeDamage(20);
                 hit.transform.DOShakeScale(0.5f, strength);
                 SoundManager.PlaySound(SoundManager.Sound.femaleTakeDamage);
             }
@@ -66,6 +70,7 @@ public class EnemyController : MonoBehaviour
             if (pHealth.healthPlayer == 60 && hit.collider.tag == "Player")
             {
                 pHealth.TakeDamage(20);
+                petLife.TakeDamage(20);
                 hit.transform.DOShakeScale(0.5f, strength);
                 SoundManager.PlaySound(SoundManager.Sound.femaleTakeDamage);
             }
@@ -73,6 +78,7 @@ public class EnemyController : MonoBehaviour
             if (pHealth.healthPlayer == 40 && hit.collider.tag == "Player")
             {
                 pHealth.TakeDamage(20);
+                petLife.TakeDamage(20);
                 hit.transform.DOShakeScale(0.5f, strength);
                 SoundManager.PlaySound(SoundManager.Sound.femaleTakeDamage);
             }
@@ -80,6 +86,7 @@ public class EnemyController : MonoBehaviour
             if (pHealth.healthPlayer == 20 && hit.collider.tag == "Player")
             {
                 pHealth.TakeDamage(20);
+                petLife.TakeDamage(20);
                 hit.transform.DOShakeScale(0.5f, strength);
                 SoundManager.PlaySound(SoundManager.Sound.femaleTakeDamage);
             }
