@@ -53,30 +53,35 @@ public class EnemyController : MonoBehaviour
             {
                 pHealth.TakeDamage(20);
                 hit.transform.DOShakeScale(0.5f, strength);
+                SoundManager.PlaySound(SoundManager.Sound.femaleTakeDamage);
             }
             yield return new WaitForSeconds(rateoDamage);
             if (pHealth.healthPlayer == 80 && hit.collider.tag == "Player")
             {
                 pHealth.TakeDamage(20);
                 hit.transform.DOShakeScale(0.5f, strength);
+                SoundManager.PlaySound(SoundManager.Sound.femaleTakeDamage);
             }
             yield return new WaitForSeconds(rateoDamage);
             if (pHealth.healthPlayer == 60 && hit.collider.tag == "Player")
             {
                 pHealth.TakeDamage(20);
                 hit.transform.DOShakeScale(0.5f, strength);
+                SoundManager.PlaySound(SoundManager.Sound.femaleTakeDamage);
             }
             yield return new WaitForSeconds(rateoDamage);
             if (pHealth.healthPlayer == 40 && hit.collider.tag == "Player")
             {
                 pHealth.TakeDamage(20);
                 hit.transform.DOShakeScale(0.5f, strength);
+                SoundManager.PlaySound(SoundManager.Sound.femaleTakeDamage);
             }
             yield return new WaitForSeconds(rateoDamage);
             if (pHealth.healthPlayer == 20 && hit.collider.tag == "Player")
             {
                 pHealth.TakeDamage(20);
                 hit.transform.DOShakeScale(0.5f, strength);
+                SoundManager.PlaySound(SoundManager.Sound.femaleTakeDamage);
             }
             yield return new WaitForSeconds(rateoDamage);
             isPlayer = true;
