@@ -7,7 +7,7 @@ public class GameplayState : StateBehaviourBase
 {
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        SceneManager.LoadScene("gabri");
+        SceneManager.LoadScene("BuildScene");
         GameManager.instance.InitManagers();
     }
 
