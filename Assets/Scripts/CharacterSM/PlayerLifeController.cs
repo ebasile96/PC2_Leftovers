@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using DG.Tweening;
 
 public class PlayerLifeController : MonoBehaviour
@@ -30,11 +31,10 @@ public class PlayerLifeController : MonoBehaviour
     {
         hpBarPlayer.value = healthPlayer;
 
-        if (healthPlayer <= 0)
+       /* if (healthPlayer <= 0)
         {
-            //carico scena gameover
-            healthPlayer = 100;
-            healthPet = 100;
-        }
+            SceneManager.LoadScene("GameOver");
+            Debug.Log("caricoScene");
+        }*/
     }
 }

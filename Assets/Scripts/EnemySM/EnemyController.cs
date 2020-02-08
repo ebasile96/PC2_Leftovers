@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
 
 public class EnemyController : MonoBehaviour
 {
@@ -30,6 +31,11 @@ public class EnemyController : MonoBehaviour
     {
         currentState.Tick();
         StartCoroutine(AttackMelee());
+        if (pHealth.healthPlayer == 0)
+        {
+            SceneManager.LoadScene("GameOver");
+            Debug.Log("caricoScene");
+        }
     }
 
    
