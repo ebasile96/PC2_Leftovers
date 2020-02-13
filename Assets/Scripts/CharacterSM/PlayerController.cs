@@ -13,36 +13,17 @@ public class PlayerController : MonoBehaviour
     internal Vector3 position;
     internal float targetForward;
     internal Quaternion rotation;
-    public float lenghtDash;
-    public float distDash;
-    public bool isShieldEnemy;
-    public bool isCrystal;
-    public bool isSecondCrystal;
-    public int ObDash;
     public Animator animator;
    
     private void Awake()
     {
         animator = GetComponent<Animator>();
         pet = FindObjectOfType<PetController>();
-        ObDash = 0;
-        isShieldEnemy = true;
-        shieldEnemy1.SetActive(true);
-        shieldEnemy2.SetActive(true);
     }
 
-    public GameObject shieldEnemy1;
-    public GameObject shieldEnemy2;
     void Update()
     {
         currentState.Tick();
-        DashObstacles();
-        if (GameManager.instance.Inputmgr.dash)
-        {
-            DashForward();
-        }
-
-
     }
   
 
@@ -69,9 +50,7 @@ public class PlayerController : MonoBehaviour
         _velocity.y += Physics.gravity.y * Time.deltaTime;
         moveController.Move(_velocity * Time.deltaTime);
 
-        //per rotazione
-       
-        //transform.LookAt(rotateDirection);
+        
         
 
     }
@@ -82,34 +61,5 @@ public class PlayerController : MonoBehaviour
       
     }
 
-    public void DashForward()
-    {
-        
-        transform.position += transform.forward * lenghtDash;
-    }
    
-
-    public int rangeAttack;
-    public RaycastHit hit;
-    public float strength;
-
-    public int rangeDash;
-    public void DashObstacles()
-    {
-        Ray rayObstacle = new Ray(transform.position, transform.forward);
-
-        if (Physics.Raycast(rayObstacle, out hit, rangeDash) && hit.collider.tag == "Obstacle")
-        {
-            ObDash = 1;
-            Debug.DrawRay(transform.position + new Vector3(0, 10f), transform.forward * hit.distance, Color.red);
-            
-            Debug.Log("prende raycast");
-        }
-        else
-        {
-            ObDash = 0;
-        }
-
-    }
-
 }

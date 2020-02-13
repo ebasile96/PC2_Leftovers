@@ -5,12 +5,20 @@ using UnityEngine.AI;
 using DG.Tweening;
 using UnityEngine.SceneManagement;
 
-public class EnemyController : MonoBehaviour
+public class EnemyController : MonoBehaviour, IEnemy
 {
     public EnemyStateBase currentState;
-    public FieldOfView fow;
     NavMeshAgent enemy;
-   
+    public EnemyData Data;
+    //public Animation Anim;
+    public FieldOfView fow;
+    public EnemyController EnemyCtrl;
+    public NavMeshAgent NavAgent;
+    public HealthController HealthCtrl;
+    int playerLayer = 10;
+    int petLayer = 11;
+    public Animator anim;
+
 
     public void ChangeState(EnemyStateBase newState)
     {
@@ -23,14 +31,19 @@ public class EnemyController : MonoBehaviour
     {
         enemy = GetComponent<NavMeshAgent>();
         fow = GetComponent<FieldOfView>();
-
+        EnemyCtrl = GetComponent<EnemyController>();
+        NavAgent = GetComponent<NavMeshAgent>();
+        HealthCtrl = FindObjectOfType<HealthController>();
+        NavAgent.stoppingDistance = Data.StoppingDistance;
+        NavAgent.speed = Data.Speed;
 
     }
 
     public void Update()
     {
         currentState.Tick();
-        StartCoroutine(AttackMelee());
+        //StartCoroutine(AttackMelee());
+        //provvisorio
         if (pHealth.healthPlayer == 0)
         {
             SceneManager.LoadScene("GameOver");
@@ -104,6 +117,33 @@ public class EnemyController : MonoBehaviour
             isPlayer = false;
         }
 
+    }
+
+    public void FollowPlayer()
+    {
+
+        foreach (Transform target in fow.visibleTargets)
+        {
+            if (target.gameObject.layer == playerLayer || target.gameObject.layer == petLayer)
+            {
+                NavAgent.destination = target.position;
+                anim.SetTrigger("GoToRunning");
+                Debug.Log("animazion funge");
+            }
+            else
+            {
+                anim.SetTrigger("GoToidle");
+                Debug.Log("animazion funge");
+            }
+
+        }
+    }
+
+    public void Attack(GameObject _target)
+    {
+        HealthCtrl.Life -= Data.Damage;
+        Debug.Log("EnemyAttack");
+        //attack method
     }
 
     public void TakeDamagePlayer()

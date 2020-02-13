@@ -5,18 +5,17 @@ using UnityEngine;
 public class EnemyAttackState : EnemyStateBase
 {
     public EnemyStateBase movementState;
-
+    public EnemyController enemyController;
 
     public override void Enter()
     {
         enemy = GetComponent<Enemy>();
-        
     }
 
     public override void Tick()
     {
-        /*enemy.AttackMelee();
-        if (enemy.isPlayer == false)
+        enemyController.StartCoroutine(enemyController.AttackMelee());
+        /*if (enemy.isPlayer == false)
         {
             Debug.Log("entra nello stao nuovo");
             enemy.ChangeState(movementState);
