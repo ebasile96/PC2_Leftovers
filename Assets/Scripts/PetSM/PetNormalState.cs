@@ -10,7 +10,7 @@ public class PetNormalState : PetStateBase
     {
         pet.MovePet();
         pet.animator.SetTrigger("GoToRunning");
-        if (pet.moveDirection * pet.speed == new Vector3(0, 0, 0))
+        if (pet.movement * pet.moveSpeed == new Vector3(0, 0, 0))
         {
             pet.ChangeState(idleState);
         }

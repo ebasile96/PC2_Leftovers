@@ -16,7 +16,7 @@ public class PlayerNormalState : PlayerBaseState
         player.animator.SetTrigger("GoToRunning");
         player.Move();
         //player.RotationPlayer();
-        if (player.moveDirection * player.speed == new Vector3(0, 0, 0))
+        if (player.movement * player.moveSpeed == new Vector3(0, 0, 0))
         {
             player.ChangeState(idleState);
         }

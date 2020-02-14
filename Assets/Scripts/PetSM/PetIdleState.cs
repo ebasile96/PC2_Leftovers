@@ -10,7 +10,7 @@ public class PetIdleState : PetStateBase
     {
         pet.animator.SetTrigger("GoToIdle");
         pet.MovePet();
-        if (pet.moveDirection * pet.speed != new Vector3(0, 0, 0))
+        if (pet.movement * pet.moveSpeed != new Vector3(0, 0, 0))
         {
             pet.ChangeState(normalState);
         }

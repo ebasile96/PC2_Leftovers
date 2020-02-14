@@ -17,10 +17,10 @@ public class InputManager : MonoBehaviour
 
     public void CheckInput()
     {
-        vertical = Input.GetAxis("Vertical");
-        horizontal = Input.GetAxis("Horizontal");
-        verticalPet = Input.GetAxis("VerticalPet");
-        horizontalPet = Input.GetAxis("HorizontalPet");
+        vertical = Input.GetAxisRaw("Vertical");
+        horizontal = Input.GetAxisRaw("Horizontal");
+        verticalPet = Input.GetAxisRaw("VerticalPet");
+        horizontalPet = Input.GetAxisRaw("HorizontalPet");
         dash = Input.GetKeyDown(KeyCode.Space);
     }
 

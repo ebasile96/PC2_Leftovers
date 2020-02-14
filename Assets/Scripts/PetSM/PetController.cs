@@ -6,16 +6,15 @@ using UnityEngine.AI;
 public class PetController : MonoBehaviour
 {
     public PetStateBase currentState;
-    public FieldOfView fow;
-    public PlayerController playerCtrl;
-    NavMeshAgent pet;
-    int playerLayer = 10;
-    int enemyLayer = 8;
-    public Player player;
-    public GameObject projectile;
-    Transform petPosition;
-    public float speedProjectile;
     public Animator animator;
+    public float moveSpeed;
+    CharacterController characterControllerPet;
+    private Vector3 lookDir;
+    private Vector3 oldLookDir;
+    public float turnSpeed;
+    public Vector3 _velocity;
+    [HideInInspector]
+    public Vector3 movement;
 
     public void ChangeState(PetStateBase newState)
     {
@@ -26,11 +25,7 @@ public class PetController : MonoBehaviour
 
     public void Start()
     {
-        petPosition = GetComponent<Transform>();
-        player = FindObjectOfType<Player>();
-        pet = GetComponent<NavMeshAgent>();
-        fow = GetComponent<FieldOfView>();
-        playerCtrl = FindObjectOfType<PlayerController>();
+        characterControllerPet = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
     }
 
@@ -41,32 +36,32 @@ public class PetController : MonoBehaviour
      
     }
 
-    public float speed;
-    Vector3 _velocity;
-    public Vector3 moveDirection;
     public void MovePet()
     {
-            CharacterController moveController = GetComponent<CharacterController>();
-            moveDirection = new Vector3(GameManager.instance.Inputmgr.horizontalPet, 0, GameManager.instance.Inputmgr.verticalPet);
-            moveDirection = transform.TransformDirection(moveDirection);
-            moveDirection *= speed;
-            moveController.Move(moveDirection * Time.deltaTime);
+        movement = new Vector3(GameManager.instance.Inputmgr.horizontalPet, 0, GameManager.instance.Inputmgr.verticalPet) * moveSpeed * Time.deltaTime;
+        lookDir = new Vector3(movement.x, 0f, movement.z);
+
+        if (GameManager.instance.Inputmgr.horizontalPet != 0 || GameManager.instance.Inputmgr.verticalPet != 0)
+        {
+
+            Vector3 smoothDir = Vector3.Slerp(transform.forward, lookDir, turnSpeed * Time.deltaTime);
+
+            transform.rotation = Quaternion.LookRotation(smoothDir);
+
+            oldLookDir = smoothDir;
+        }
+        else
+        {
+            transform.rotation = Quaternion.LookRotation(oldLookDir);
+        }
+
+        characterControllerPet.Move(movement);
 
         //per gravità
         _velocity.y += Physics.gravity.y * Time.deltaTime;
-        moveController.Move(_velocity * Time.deltaTime);
+        characterControllerPet.Move(_velocity * Time.deltaTime);
+        if (_velocity.y != 0f)
+            _velocity.y = 0;
     }
 
-    public float _rotationSpeed;
-    public void RotationPet()
-    {
-        Vector3 rotation = new Vector3(0, GameManager.instance.Inputmgr.horizontalPet * _rotationSpeed * Time.deltaTime, 0);
-        this.transform.Rotate(rotation);
-    }
-
-    public void GoThere() { }
-
-    Transform enemyTarget;
-  
-    
 }
