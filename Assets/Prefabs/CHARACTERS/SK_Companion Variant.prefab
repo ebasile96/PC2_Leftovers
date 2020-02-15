@@ -115,7 +115,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1100197599}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.564, z: 0}
+  m_LocalPosition: {x: -0.54, y: 0.564, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5127093191868014436}
@@ -153,10 +153,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.1415329
-  m_Height: 1
+  m_Radius: 0.013040423
+  m_Height: 0.06001854
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0.011581421}
+  m_Center: {x: -0.29868758, y: -0.10586387, z: -0.00872612}
 --- !u!120 &1100197601
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -5032,7 +5032,7 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8177483380712746359}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: d46971939eb1cae4f91f3a4072f03854, type: 3}
+  m_Avatar: {fileID: 9000000, guid: 954cc259062a70948a907a606b224b19, type: 3}
   m_Controller: {fileID: 9100000, guid: 3e1256ef35a5118408b5a236c4503644, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
@@ -5042,6 +5042,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &944811412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8177483380712746359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16be805342ffa574d83754aa84a84345, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthPlayer: 100
+  healthPet: 100
+  damage: 0
+  hpBarPlayer: {fileID: 0}
 --- !u!114 &972869705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5055,15 +5071,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: {fileID: 376529073}
-  fow: {fileID: 0}
-  playerCtrl: {fileID: 0}
-  player: {fileID: 0}
-  projectile: {fileID: 0}
-  speedProjectile: 0
   animator: {fileID: 0}
-  speed: 7
-  moveDirection: {x: 0, y: 0, z: 0}
-  _rotationSpeed: 200
+  moveSpeed: 7
+  turnSpeed: 20
+  _velocity: {x: 0, y: 0, z: 0}
+  movement: {x: 0, y: 0, z: 0}
 --- !u!1001 &170482410763613310
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5075,6 +5087,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SK_Companion
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 534dd8c92ef3b154bbe2e06d656fd51b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: -4431429744085825124, guid: 534dd8c92ef3b154bbe2e06d656fd51b,
         type: 3}
