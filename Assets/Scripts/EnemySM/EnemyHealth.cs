@@ -30,9 +30,7 @@ public class EnemyHealth : MonoBehaviour
         if (health <= 0f)
         {
             this.gameObject.SetActive(false);
-            playerCtrl.isShieldEnemy = true;
-            doorEnemy.SetActive(false);
-            playerCtrl.shieldEnemy2.SetActive(true);
+
         }
     }
 }

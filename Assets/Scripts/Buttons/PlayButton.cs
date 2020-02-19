@@ -13,15 +13,15 @@ public class PlayButton : MonoBehaviour
     }
 
     //momentaneo solo per far testare designer
-    public void PressUITest()
+    public void PressGDTest()
     {
-        SceneManager.LoadScene("UIGDTest");
+        SceneManager.LoadScene("GD Test");
     }
 
     //momentaneo solo per far testare 3D
     public void PressEnvTest()
     {
-        SceneManager.LoadScene("Enviroment");
+        SceneManager.LoadScene("giuliaENV");
     }
 
 }

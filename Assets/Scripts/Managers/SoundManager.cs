@@ -3,26 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class SoundManager 
+public static class SoundManager 
 {
-
-    public void Start()
-    {
-        
-    }
 
     public enum Sound
     {
-       
+       femaleTakeDamage,
+       petTakedamage,
+       enemyTakeDamage
     }
-    public  void PlaySound(Sound sound)
+    public static void PlaySound(Sound sound)
     {
         GameObject soundGameObject = new GameObject("Sound");
         AudioSource audioSource = soundGameObject.AddComponent<AudioSource>();
         audioSource.PlayOneShot(GetAudioClip(sound));
     }
 
-    private  AudioClip GetAudioClip(Sound sound)
+    private static AudioClip GetAudioClip(Sound sound)
     {
         foreach (GameAssets.SoundAudioClip soundAudioClip in GameAssets.i.soundAudioClipArray)
         {

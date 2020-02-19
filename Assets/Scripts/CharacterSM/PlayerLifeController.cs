@@ -2,25 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using DG.Tweening;
 
 public class PlayerLifeController : MonoBehaviour
 {
     public float healthPlayer;
+    public float healthPet;
     public float damage;
     public Slider hpBarPlayer;
-    public Transform positionPlayer;
-    public Transform respawnPlayer;
-    public Transform respawnPet;
-    public Transform petPosition;
 
     public void Start()
     {
         //hpBarPlayer = FindObjectOfType<Slider>();
-        positionPlayer = GetComponent<Transform>();
-        respawnPlayer = GetComponent<Transform>();
-        petPosition = GetComponent<Transform>();
-        respawnPet = GetComponent<Transform>();
     }
 
     public void TakeDamage(float _damage)
@@ -28,15 +22,19 @@ public class PlayerLifeController : MonoBehaviour
         healthPlayer -= _damage;
     }
 
+    public void TakeDamagePet(float _damage)
+    {
+        healthPet -= _damage;
+    }
+
     public  void Update()
     {
         hpBarPlayer.value = healthPlayer;
 
-        if (healthPlayer <= 0)
+       /* if (healthPlayer <= 0)
         {
-            positionPlayer.position += respawnPlayer.position;
-            petPosition.position = respawnPet.position;
-            healthPlayer = 3;
-        }
+            SceneManager.LoadScene("GameOver");
+            Debug.Log("caricoScene");
+        }*/
     }
 }

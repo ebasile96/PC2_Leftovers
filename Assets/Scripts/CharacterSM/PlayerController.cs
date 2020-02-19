@@ -8,41 +8,26 @@ public class PlayerController : MonoBehaviour
 {
     public PlayerBaseState currentState;
     public PetController pet;
-    public float speed;
-    public float speedRotation;
-    internal Vector3 position;
-    internal float targetForward;
-    internal Quaternion rotation;
-    public float lenghtDash;
-    public float distDash;
-    public bool isShieldEnemy;
-    public bool isCrystal;
-    public bool isSecondCrystal;
-    public int ObDash;
+    public float moveSpeed;
     public Animator animator;
-   
+    CharacterController characterController;
+    private Vector3 lookDir;
+    private Vector3 oldLookDir;
+    public float turnSpeed;
+    private Vector3 _velocity;
+    [HideInInspector]
+    public Vector3 movement;
+
     private void Awake()
     {
+        characterController = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
         pet = FindObjectOfType<PetController>();
-        ObDash = 0;
-        isShieldEnemy = true;
-        shieldEnemy1.SetActive(true);
-        shieldEnemy2.SetActive(true);
     }
 
-    public GameObject shieldEnemy1;
-    public GameObject shieldEnemy2;
     void Update()
     {
         currentState.Tick();
-        DashObstacles();
-        if (GameManager.instance.Inputmgr.dash)
-        {
-            DashForward();
-        }
-
-
     }
   
 
@@ -53,63 +38,36 @@ public class PlayerController : MonoBehaviour
         currentState = newState;
     }
    
-    public Vector3 moveDirection;
-    Vector3 _velocity;
-    Transform rotateDirection;
     public void Move()
     {
-       //per muovere
-        CharacterController moveController = GetComponent<CharacterController>();
-        moveDirection = new Vector3(GameManager.instance.Inputmgr.horizontal, 0, GameManager.instance.Inputmgr.vertical);
-        moveDirection = transform.TransformDirection(moveDirection);
-        moveDirection *= speed;
-        moveController.Move(moveDirection * Time.deltaTime);
+        movement = new Vector3(GameManager.instance.Inputmgr.horizontal, 0, GameManager.instance.Inputmgr.vertical) * moveSpeed * Time.deltaTime;
+        lookDir = new Vector3(movement.x, 0f, movement.z);
 
-        //per gravità
-        _velocity.y += Physics.gravity.y * Time.deltaTime;
-        moveController.Move(_velocity * Time.deltaTime);
-
-        //per rotazione
-       
-        //transform.LookAt(rotateDirection);
-        
-
-    }
-
-    public float _rotationSpeed;
-    public void RotationPlayer()
-     {
-      
-    }
-
-    public void DashForward()
-    {
-        
-        transform.position += transform.forward * lenghtDash;
-    }
-   
-
-    public int rangeAttack;
-    public RaycastHit hit;
-    public float strength;
-
-    public int rangeDash;
-    public void DashObstacles()
-    {
-        Ray rayObstacle = new Ray(transform.position, transform.forward);
-
-        if (Physics.Raycast(rayObstacle, out hit, rangeDash) && hit.collider.tag == "Obstacle")
+        // determine method of rotation
+        if (GameManager.instance.Inputmgr.horizontal != 0 || GameManager.instance.Inputmgr.vertical != 0)
         {
-            ObDash = 1;
-            Debug.DrawRay(transform.position + new Vector3(0, 10f), transform.forward * hit.distance, Color.red);
-            
-            Debug.Log("prende raycast");
+
+            // create a smooth direction to look at using Slerp()
+            Vector3 smoothDir = Vector3.Slerp(transform.forward, lookDir, turnSpeed * Time.deltaTime);
+
+            transform.rotation = Quaternion.LookRotation(smoothDir);
+
+            // store the current smooth direction to use when the player is not providing input, providing consistency
+            oldLookDir = smoothDir;
         }
         else
         {
-            ObDash = 0;
+            transform.rotation = Quaternion.LookRotation(oldLookDir);
         }
 
+        // move the player using its CharacterController.Move method
+        characterController.Move(movement);
+
+        //per gravità
+        _velocity.y += Physics.gravity.y * Time.deltaTime;
+        characterController.Move(_velocity * Time.deltaTime);
+        if (_velocity.y != 0f)
+            _velocity.y = 0;
     }
 
 }

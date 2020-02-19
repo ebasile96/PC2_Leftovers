@@ -14,6 +14,7 @@ public class Enemy : MonoBehaviour, IEnemy
     public HealthController HealthCtrl;
     int playerLayer = 10;
     int petLayer = 11;
+    public Animator anim;
 
     void Start()
     {
@@ -46,6 +47,13 @@ public class Enemy : MonoBehaviour, IEnemy
             if (target.gameObject.layer == playerLayer || target.gameObject.layer == petLayer)
             {
                 NavAgent.destination = target.position;
+                anim.SetTrigger("GoToRunning");
+                Debug.Log("animazion funge");
+            }
+            else
+            {
+                anim.SetTrigger("GoToidle");
+                Debug.Log("animazion funge");
             }
 
         }

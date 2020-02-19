@@ -15,7 +15,7 @@ public class IdleState : PlayerBaseState
     {
         player.animator.SetTrigger("GoToIdle");
         player.Move();
-        if (player.moveDirection * player.speed != new Vector3(0,0,0))
+        if (player.movement * player.moveSpeed != new Vector3(0,0,0))
         {
             player.ChangeState(normalState);
         }

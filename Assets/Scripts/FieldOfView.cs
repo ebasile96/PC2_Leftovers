@@ -81,6 +81,7 @@ public class FieldOfView : MonoBehaviour
                 {
                     obstacleMask.Equals(enemy);
                     enemy.gameObject.SetActive(false);
+                    SoundManager.PlaySound(SoundManager.Sound.enemyTakeDamage);
                 }
                 //else
                 //{
