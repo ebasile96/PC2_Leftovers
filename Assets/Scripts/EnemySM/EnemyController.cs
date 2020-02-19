@@ -34,15 +34,15 @@ public class EnemyController : MonoBehaviour, IEnemy
         EnemyCtrl = GetComponent<EnemyController>();
         NavAgent = GetComponent<NavMeshAgent>();
         HealthCtrl = FindObjectOfType<HealthController>();
-        NavAgent.stoppingDistance = Data.StoppingDistance;
-        NavAgent.speed = Data.Speed;
+        //NavAgent.stoppingDistance = Data.StoppingDistance;
+        //NavAgent.speed = Data.Speed;
 
     }
 
     public void Update()
     {
         currentState.Tick();
-        //StartCoroutine(AttackMelee());
+        StartCoroutine(AttackMelee());
         //provvisorio
         if (pHealth.healthPlayer == 0)
         {

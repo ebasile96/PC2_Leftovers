@@ -29,7 +29,7 @@ public class PlayerLifeController : MonoBehaviour
 
     public  void Update()
     {
-        hpBarPlayer.value = healthPlayer;
+       // hpBarPlayer.value = healthPlayer;
 
        /* if (healthPlayer <= 0)
         {
