@@ -7,10 +7,11 @@ public class FieldOfView : MonoBehaviour
     public float viewRadius;
     [Range(0, 360)]
     public float viewAngle;
-    LineRenderer lineR;
+    public LineRenderer lineR;
     public LayerMask targetMask;
     public LayerMask obstacleMask;
     public Transform targetLine;
+    public float dstToTarget;
 
     //[HideInInspector]
     public List<Transform> visibleTargets = new List<Transform>();
@@ -23,19 +24,23 @@ public class FieldOfView : MonoBehaviour
     }
 
 
-   /* IEnumerator FindTargetsWithDelay(float delay)
-    {
-        while (true)
-        {
-            yield return new WaitForSeconds(delay);
-            FindVisibleTargets();
-        }
-    }*/
+    /* IEnumerator FindTargetsWithDelay(float delay)
+     {
+         while (true)
+         {
+             yield return new WaitForSeconds(delay);
+             FindVisibleTargets();
+         }
+     }*/
 
     private void Update()
     {
         FindVisibleTargets();
         CheckChain();
+        /*if(chain.stressValue > 50)
+        {
+            lineR.material = lightMaterial;
+        }*/
     }
 
     public void CheckChain()
@@ -70,7 +75,7 @@ public class FieldOfView : MonoBehaviour
             Vector3 dirToTarget = (targetLine.position - transform.position).normalized;
             if (Vector3.Angle(transform.forward, dirToTarget) < viewAngle / 2)
             {
-                float dstToTarget = Vector3.Distance(transform.position, targetLine.position);
+                dstToTarget = Vector3.Distance(transform.position, targetLine.position);
 
                 if (!Physics.Raycast(transform.position, dirToTarget, dstToTarget, obstacleMask))
                 {
