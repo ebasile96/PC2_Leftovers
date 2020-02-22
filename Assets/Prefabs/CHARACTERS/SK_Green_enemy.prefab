@@ -411,6 +411,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   viewRadius: 5
   viewAngle: 360
+  lineR: {fileID: 0}
   targetMask:
     serializedVersion: 2
     m_Bits: 3072
@@ -418,6 +419,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   targetLine: {fileID: 0}
+  dstToTarget: 0
   visibleTargets: []
 --- !u!195 &5326029141279653313
 NavMeshAgent:
@@ -454,7 +456,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: {fileID: 5326029140973876887}
+  Data: {fileID: 0}
   fow: {fileID: 0}
+  EnemyCtrl: {fileID: 0}
+  NavAgent: {fileID: 0}
+  HealthCtrl: {fileID: 0}
+  anim: {fileID: 0}
   rangeAttack: 3
   isPlayer: 0
   rateoDamage: 1
@@ -689,7 +696,7 @@ SkinnedMeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5410506264735779252}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 2
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
