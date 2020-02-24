@@ -19,9 +19,9 @@ public class ChainLightState : ChainBaseState
 
     public override void Tick()
     {
-        Debug.Log("valore" + chainController.stressValue);
+        Debug.Log("valore" + chainController.currentStressValue);
         fow.lineR.material = chainController.lightMaterial;
-        if (chainController.stressValue >= 75)
+        if (chainController.currentStressValue >= 75)
         {
             chainController.ChangeState(mediumState);
         }

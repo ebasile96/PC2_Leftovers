@@ -5,7 +5,12 @@ using UnityEngine;
 public class ChainController : MonoBehaviour
 {
     public ChainBaseState currentState;
-    public float stressValue;
+    public float currentStressValue;
+    public float maxStressValue;
+    public float reforgeStressValue;
+    public FieldOfView fov;
+    float reforgeTimer;
+    public float maxReforgeTimer;
     public Material lightMaterial;
     public Material mediumMaterial;
     public Material heavyMaterial;
@@ -21,14 +26,55 @@ public class ChainController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        reforgeTimer = maxReforgeTimer;
     }
 
     // Update is called once per frame
     void Update()
     {
         currentState.Tick();
+        LenghtStressChain();
+        ChainBreaker();
+        ChainReformer();
     }
 
+    public void LenghtStressChain()
+    {
+        if(fov.dstToTarget >= 5 && currentStressValue <= 100)
+        {
+            currentStressValue += (((currentStressValue / 100) * fov.dstToTarget) / 60);
+        }
+        else if (currentStressValue > 1)
+        {
+            currentStressValue -= (((currentStressValue / 100) * fov.dstToTarget) / 60);
+        }
+    }
+
+    public void ChainBreaker()
+    {
+        if(currentStressValue >= 100)
+        {
+            fov.lineR.enabled = false;
+        }     
+    }
+
+    public void ChainReformer()
+    {
+        if(currentStressValue >= 100 && fov.dstToTarget <= 7)
+        {
+            reforgeTimer -= (1 / 60);
+        }
+        else if(currentStressValue >= 100 && fov.dstToTarget > 7)
+        {
+            reforgeTimer = maxReforgeTimer;
+        }
+
+        if(reforgeTimer <= 0)
+        {
+            fov.lineR.enabled = true;
+            reforgeTimer = maxReforgeTimer;
+            currentStressValue = reforgeStressValue;
+        }
+    }
 
 }

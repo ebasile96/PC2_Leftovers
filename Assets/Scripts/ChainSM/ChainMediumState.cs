@@ -21,7 +21,7 @@ public class ChainMediumState : ChainBaseState
     public override void Tick()
     {
         fow.lineR.material = chainController.mediumMaterial;
-        if (chainController.stressValue >= 90)
+        if (chainController.currentStressValue >= 90)
         {
             chainController.ChangeState(heavyState);
         }

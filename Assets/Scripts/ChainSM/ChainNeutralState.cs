@@ -21,7 +21,7 @@ public class ChainNeutralState : ChainBaseState
     public override void Tick()
     {
         fow.lineR.material = chainController.neutralMaterial;
-        if (chainController.stressValue > 50)
+        if (chainController.currentStressValue > 50)
         {
             chainController.ChangeState(lightState);
         }
