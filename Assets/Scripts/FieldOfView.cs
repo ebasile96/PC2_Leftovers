@@ -12,6 +12,13 @@ public class FieldOfView : MonoBehaviour
     public LayerMask obstacleMask;
     public Transform targetLine;
     public float dstToTarget;
+    public float timerCombo;
+    public float maxTimerCombo;
+    public float comboExtender;
+    public int enemyCounter;
+    public float enemyStressValue;
+    public float comboStressMultiplier;
+    public ChainController chainController;
 
     //[HideInInspector]
     public List<Transform> visibleTargets = new List<Transform>();
@@ -36,14 +43,15 @@ public class FieldOfView : MonoBehaviour
     private void Update()
     {
         FindVisibleTargets();
-        CheckChain();
+        DecreaseComboTimer();
+        //CheckChain();
         /*if(chain.stressValue > 50)
         {
             lineR.material = lightMaterial;
         }*/
     }
 
-    public void CheckChain()
+    /*public void CheckChain()
     {
         if(visibleTargets.Count == 0)
         {
@@ -53,7 +61,7 @@ public class FieldOfView : MonoBehaviour
         {
             lineR.enabled = true;
         }
-    }
+    }*/
     
     #region test
     Transform enemy;
@@ -82,10 +90,26 @@ public class FieldOfView : MonoBehaviour
                     visibleTargets.Add(targetLine);
                     
                 }
-                else
+                else if(timerCombo == 0)
+                {
+                    Debug.Log("diocane combo funziona");
+                    obstacleMask.Equals(enemy);
+                    enemy.gameObject.SetActive(false);
+                    chainController.currentStressValue += enemyStressValue;
+                    enemyCounter = 1;
+                    timerCombo = maxTimerCombo;
+                    SoundManager.PlaySound(SoundManager.Sound.enemyTakeDamage);
+                }
+                else if (timerCombo != 0)
                 {
                     obstacleMask.Equals(enemy);
                     enemy.gameObject.SetActive(false);
+                    enemyCounter += 1;
+                    if (timerCombo < maxTimerCombo)
+                    {
+                        timerCombo += comboExtender;
+                    }
+                    chainController.currentStressValue += (enemyStressValue * (1 - (comboStressMultiplier * enemyCounter)));
                     SoundManager.PlaySound(SoundManager.Sound.enemyTakeDamage);
                 }
                 //else
@@ -110,7 +134,14 @@ public class FieldOfView : MonoBehaviour
        
     }
 
-
+    public void DecreaseComboTimer()
+    {
+        if (timerCombo > 0)
+        {
+            Debug.Log("dioporco fow di merda");
+            timerCombo -= 1;
+        }
+    }
 
     public Vector3 DirFromAngle(float angleInDegrees, bool angleIsGlobal)
     {

@@ -9,7 +9,7 @@ public class ChainController : MonoBehaviour
     public float maxStressValue;
     public float reforgeStressValue;
     public FieldOfView fov;
-    float reforgeTimer;
+    public float reforgeTimer;
     public float maxReforgeTimer;
     public Material lightMaterial;
     public Material mediumMaterial;
@@ -26,7 +26,7 @@ public class ChainController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        reforgeTimer = maxReforgeTimer;
+
     }
 
     // Update is called once per frame
@@ -36,6 +36,8 @@ public class ChainController : MonoBehaviour
         LenghtStressChain();
         ChainBreaker();
         ChainReformer();
+        
+        Debug.Log("timer funziona " + reforgeTimer);
     }
 
     public void LenghtStressChain()
@@ -63,10 +65,12 @@ public class ChainController : MonoBehaviour
         if(currentStressValue >= 100 && fov.dstToTarget <= 7)
         {
             reforgeTimer -= (1 / 60);
+            Debug.Log("timer funziona " + reforgeTimer);
         }
         else if(currentStressValue >= 100 && fov.dstToTarget > 7)
         {
             reforgeTimer = maxReforgeTimer;
+             Debug.Log("timer reset funziona ");
         }
 
         if(reforgeTimer <= 0)
