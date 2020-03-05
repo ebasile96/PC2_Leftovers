@@ -25,6 +25,11 @@ public class ChainLightState : ChainBaseState
         {
             chainController.ChangeState(mediumState);
         }
+        else if(chainController.currentStressValue < 50)
+        {
+            chainController.ChangeState(neutralState);
 
-}
+        }
+
+    }
 }

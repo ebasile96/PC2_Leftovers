@@ -40,6 +40,18 @@ public class ChainController : MonoBehaviour
         Debug.Log("timer funziona " + reforgeTimer);
     }
 
+    public void CheckChain()
+    {
+        if (fov.visibleTargets.Count == 0)
+        {
+            fov.lineR.enabled = false;
+        }
+        else if(fov.visibleTargets.Count == 0 && currentStressValue < 100)
+        {
+            fov.lineR.enabled = true;
+        }
+    }
+
     public void LenghtStressChain()
     {
         if(fov.dstToTarget >= 5 && currentStressValue <= 100)
@@ -64,7 +76,7 @@ public class ChainController : MonoBehaviour
     {
         if(currentStressValue >= 100 && fov.dstToTarget <= 7)
         {
-            reforgeTimer -= (1 / 60);
+            reforgeTimer -= 1;
             Debug.Log("timer funziona " + reforgeTimer);
         }
         else if(currentStressValue >= 100 && fov.dstToTarget > 7)
