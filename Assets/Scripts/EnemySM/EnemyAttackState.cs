@@ -14,7 +14,7 @@ public class EnemyAttackState : EnemyStateBase
 
     public override void Tick()
     {
-        enemyController.StartCoroutine(enemyController.AttackMelee());
+        //enemyController.StartCoroutine(enemyController.AttackMelee());
         /*if (enemy.isPlayer == false)
         {
             Debug.Log("entra nello stao nuovo");

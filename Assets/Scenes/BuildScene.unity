@@ -4885,6 +4885,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 972869706, guid: 91ef5e518a417a94fb000ba252557297, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 972869702, guid: 91ef5e518a417a94fb000ba252557297, type: 3}
+      propertyPath: m_Radius
+      value: 0.32756603
+      objectReference: {fileID: 0}
+    - target: {fileID: 972869702, guid: 91ef5e518a417a94fb000ba252557297, type: 3}
+      propertyPath: m_Center.z
+      value: 0.021814466
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1100197601, guid: 91ef5e518a417a94fb000ba252557297, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 91ef5e518a417a94fb000ba252557297, type: 3}
@@ -4905,10 +4917,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SK_Character
-      objectReference: {fileID: 0}
-    - target: {fileID: 627523699, guid: 0657c20d55da9de4183a4311267dcd4d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.27
       objectReference: {fileID: 0}
     - target: {fileID: 627523703, guid: 0657c20d55da9de4183a4311267dcd4d, type: 3}
       propertyPath: m_Materials.Array.size
@@ -4990,6 +4998,10 @@ PrefabInstance:
     - target: {fileID: 425977529, guid: 0657c20d55da9de4183a4311267dcd4d, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 627523699, guid: 0657c20d55da9de4183a4311267dcd4d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.27
       objectReference: {fileID: 0}
     - target: {fileID: 6185631156886030950, guid: 0657c20d55da9de4183a4311267dcd4d,
         type: 3}

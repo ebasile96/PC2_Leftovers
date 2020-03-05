@@ -36,6 +36,7 @@ public class ChainController : MonoBehaviour
         LenghtStressChain();
         ChainBreaker();
         ChainReformer();
+        CheckChain();
         
         Debug.Log("timer funziona " + reforgeTimer);
     }

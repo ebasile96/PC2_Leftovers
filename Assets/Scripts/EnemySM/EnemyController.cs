@@ -146,6 +146,28 @@ public class EnemyController : MonoBehaviour, IEnemy
         //attack method
     }
 
+   /* public IEnumerator DelayDetectedCollision()
+    {
+        yield return new WaitForSeconds(rateoDamage);
+    }
+
+    public IEnumerator AttackDelayCollision(Collision collision)
+    {
+        yield return new WaitForSeconds(rateoDamage);
+        pHealth.TakeDamage(20);
+        petLife.TakeDamage(20);
+        collision.transform.DOShakeScale(0.5f, strength);
+        SoundManager.PlaySound(SoundManager.Sound.femaleTakeDamage);
+    }
+    public void OnCollisionEnter(Collision collision)
+    {
+        StartCoroutine(DelayDetectedCollision());
+        if(collision.gameObject.tag == "Player")
+        {
+            StartCoroutine(AttackDelayCollision(collision));  
+        }
+    }*/
+
     public void TakeDamagePlayer()
     {
         PlayerLifeController pHealth = hit.collider.GetComponent<PlayerLifeController>();
