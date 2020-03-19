@@ -29,7 +29,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
-  m_Children: []
+  m_Children:
+  - {fileID: 3356452894578084847}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -88,7 +89,51 @@ BoxCollider:
   m_GameObject: {fileID: 483574490282242544}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 774.7361, y: 316.47214, z: 623.52563}
-  m_Center: {x: 209.41992, y: 158.23607, z: -286.98706}
+  m_Size: {x: 338.1675, y: 316.47214, z: 300.01697}
+  m_Center: {x: 427.7035, y: 158.23607, z: -451.80722}
+--- !u!1 &7379819863058387180
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3356452894578084847}
+  - component: {fileID: 4481250074746304036}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3356452894578084847
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7379819863058387180}
+  m_LocalRotation: {x: -0, y: 0.3604092, z: -0, w: 0.93279433}
+  m_LocalPosition: {x: 189, y: 89.38417, z: -415}
+  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_Children: []
+  m_Father: {fileID: 7659356475525685562}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 42.251003, z: 0}
+--- !u!65 &4481250074746304036
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7379819863058387180}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.763286, y: 3.2895365, z: 3.4665666}
+  m_Center: {x: -1.4705956, y: 0.550117, z: 0.82431287}

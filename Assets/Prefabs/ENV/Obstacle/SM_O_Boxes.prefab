@@ -11,12 +11,13 @@ GameObject:
   - component: {fileID: 3087849129728074542}
   - component: {fileID: 6305383434193721624}
   - component: {fileID: 341624551579592161}
+  - component: {fileID: 9071143957330709981}
   m_Layer: 0
   m_Name: SM_O_Boxes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &3087849129728074542
 Transform:
@@ -78,3 +79,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &9071143957330709981
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2054036930246873405}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.4132342, y: 1.824618, z: 1.7462894}
+  m_Center: {x: 0.808614, y: 0.90535885, z: -0.81704754}
