@@ -43,6 +43,9 @@ public class EnemyController : MonoBehaviour, IEnemy
     {
         currentState.Tick();
         StartCoroutine(AttackMelee());
+        //mega provvisorio
+        //pHealth = FindObjectOfType<PlayerLifeController>();
+
         //provvisorio
         if (pHealth.healthPlayer == 0)
         {
@@ -69,7 +72,8 @@ public class EnemyController : MonoBehaviour, IEnemy
         if (Physics.Raycast(rayForward, out hit, rangeAttack) && hit.collider.tag == "Player")
         {
             Debug.DrawRay(transform.position + new Vector3(0, 10f), transform.forward * hit.distance, Color.red);
-            //PlayerLifeController pHealth = hit.collider.GetComponent<PlayerLifeController>();
+            pHealth = hit.collider.GetComponent<PlayerLifeController>();
+            petLife = hit.collider.GetComponent<PlayerLifeController>();
             if (pHealth.healthPlayer == 100 && hit.collider.tag == "Player")
             {
                 pHealth.TakeDamage(20);

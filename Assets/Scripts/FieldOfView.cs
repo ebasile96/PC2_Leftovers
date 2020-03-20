@@ -90,7 +90,7 @@ public class FieldOfView : MonoBehaviour
                 if(Physics.Raycast(transform.position, dirToTarget, dstToTarget, propsMask))
                 {
                     lineR.enabled = false;
-                    //chainController.currentStressValue = 100;
+                    chainController.currentStressValue = 100;
                 }
 
                 if (!Physics.Raycast(transform.position, dirToTarget, dstToTarget, obstacleMask))
