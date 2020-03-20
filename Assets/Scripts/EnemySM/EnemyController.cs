@@ -5,7 +5,7 @@ using UnityEngine.AI;
 using DG.Tweening;
 using UnityEngine.SceneManagement;
 
-public class EnemyController : MonoBehaviour, IEnemy
+public class EnemyController : MonoBehaviour
 {
     public EnemyStateBase currentState;
     NavMeshAgent enemy;
@@ -36,16 +36,16 @@ public class EnemyController : MonoBehaviour, IEnemy
         HealthCtrl = FindObjectOfType<HealthController>();
         //NavAgent.stoppingDistance = Data.StoppingDistance;
         //NavAgent.speed = Data.Speed;
-
+        anim = GetComponent<Animator>();
     }
 
     public void Update()
     {
+        anim = GetComponent<Animator>();
         currentState.Tick();
         StartCoroutine(AttackMelee());
-        //mega provvisorio
-        //pHealth = FindObjectOfType<PlayerLifeController>();
-
+        // provvisorio
+        anim.SetTrigger("GoToRunning");
         //provvisorio
         if (pHealth.healthPlayer == 0)
         {
@@ -123,7 +123,7 @@ public class EnemyController : MonoBehaviour, IEnemy
 
     }
 
-    public void FollowPlayer()
+    /*public void FollowPlayer()
     {
 
         foreach (Transform target in fow.visibleTargets)
@@ -131,17 +131,16 @@ public class EnemyController : MonoBehaviour, IEnemy
             if (target.gameObject.layer == playerLayer || target.gameObject.layer == petLayer)
             {
                 NavAgent.destination = target.position;
-                anim.SetTrigger("GoToRunning");
+
                 Debug.Log("animazion funge");
             }
             else
             {
-                anim.SetTrigger("GoToidle");
                 Debug.Log("animazion funge");
             }
 
         }
-    }
+    }*/
 
     public void Attack(GameObject _target)
     {

@@ -13,7 +13,7 @@ public class EnemyMovementState : EnemyStateBase
 
     public override void Tick()
     {
-        enemy.FollowPlayer();
+        //enemy.FollowPlayer();
 
         //enemy.AttackMelee();
         /*if (enemy.hit.collider.tag == "Player")

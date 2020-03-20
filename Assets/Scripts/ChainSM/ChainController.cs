@@ -37,7 +37,10 @@ public class ChainController : MonoBehaviour
         ChainBreaker();
         ChainReformer();
         CheckChain();
-        
+        if (currentStressValue > 100)
+        {
+            currentStressValue = 100;
+        }
         Debug.Log("timer funziona " + reforgeTimer);
     }
 

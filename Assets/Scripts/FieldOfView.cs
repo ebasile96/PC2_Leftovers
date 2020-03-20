@@ -100,7 +100,6 @@ public class FieldOfView : MonoBehaviour
                 }
                 else if(timerCombo == 0)
                 {
-                    Debug.Log("diocane combo funziona");
                     obstacleMask.Equals(enemy);
                     enemy.gameObject.SetActive(false);
                     chainController.currentStressValue += enemyStressValue;
