@@ -47,7 +47,7 @@ public class ChainController : MonoBehaviour
         {
             fov.lineR.enabled = false;
         }
-        else if(fov.visibleTargets.Count == 0 && currentStressValue < 100)
+        else if(fov.visibleTargets.Count != 0 && currentStressValue < 100)
         {
             fov.lineR.enabled = true;
         }

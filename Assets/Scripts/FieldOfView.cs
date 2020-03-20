@@ -10,6 +10,7 @@ public class FieldOfView : MonoBehaviour
     public LineRenderer lineR;
     public LayerMask targetMask;
     public LayerMask obstacleMask;
+    public LayerMask propsMask;
     public Transform targetLine;
     public float dstToTarget;
     public float timerCombo;
@@ -71,6 +72,7 @@ public class FieldOfView : MonoBehaviour
         visibleTargets.Clear();
         Collider[] targetsInViewRadius = Physics.OverlapSphere(transform.position, viewRadius, targetMask);
         Collider[] enemiesInViewRadius = Physics.OverlapSphere(transform.position, viewRadius, obstacleMask);
+        Collider[] obstacleInViewRadius = Physics.OverlapSphere(transform.position, viewRadius, propsMask);
 
         for (int i = 0; i < enemiesInViewRadius.Length; i++)
         {
@@ -84,6 +86,12 @@ public class FieldOfView : MonoBehaviour
             if (Vector3.Angle(transform.forward, dirToTarget) < viewAngle / 2)
             {
                 dstToTarget = Vector3.Distance(transform.position, targetLine.position);
+
+                if(Physics.Raycast(transform.position, dirToTarget, dstToTarget, propsMask))
+                {
+                    lineR.enabled = false;
+                    //chainController.currentStressValue = 100;
+                }
 
                 if (!Physics.Raycast(transform.position, dirToTarget, dstToTarget, obstacleMask))
                 {
@@ -138,7 +146,6 @@ public class FieldOfView : MonoBehaviour
     {
         if (timerCombo > 0)
         {
-            Debug.Log("dioporco fow di merda");
             timerCombo -= 1;
         }
     }
