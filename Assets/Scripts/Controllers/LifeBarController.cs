@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LifeBarController : MonoBehaviour
 {
@@ -21,5 +22,9 @@ public class LifeBarController : MonoBehaviour
     {
         healthLenght = playerLife.healthPlayer;
         healthbar.GetComponent<RectTransform>().sizeDelta = new Vector2(healthLenght, 100);
+        if(healthLenght <= 0)
+        {
+            SceneManager.LoadScene("GameOver");
+        }
     }
 }
