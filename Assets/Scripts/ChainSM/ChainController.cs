@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ChainController : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class ChainController : MonoBehaviour
     public Material mediumMaterial;
     public Material heavyMaterial;
     public Material neutralMaterial;
+    //provvissorio per test
+    public Text testReforgeTimer;
 
     public void ChangeState(ChainBaseState newState)
     {
@@ -41,7 +44,9 @@ public class ChainController : MonoBehaviour
         {
             currentStressValue = 100;
         }
-        Debug.Log("timer funziona " + reforgeTimer);
+
+        //provvisorio per test
+        testReforgeTimer.text = reforgeTimer.ToString();
     }
 
     public void CheckChain()

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FieldOfView : MonoBehaviour
 {
@@ -23,7 +24,9 @@ public class FieldOfView : MonoBehaviour
 
     //[HideInInspector]
     public List<Transform> visibleTargets = new List<Transform>();
-    
+
+    //provvisorio per test 
+    public Text testTimerCombo;
 
     void Start()
     {
@@ -50,6 +53,9 @@ public class FieldOfView : MonoBehaviour
         {
             lineR.material = lightMaterial;
         }*/
+
+        //provvisorio per test
+        testTimerCombo.text = timerCombo.ToString();
     }
 
     /*public void CheckChain()
