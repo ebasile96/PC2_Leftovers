@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using SemihOrhan.WaveOne;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class GameManager : MonoBehaviour
     //managers
     public InputManager Inputmgr;
     public UIManager UImgr;
+    public WaveManager Wavemgr;
     void Awake()
     {
         Singleton();
@@ -34,6 +36,7 @@ public class GameManager : MonoBehaviour
     {
         GetInputMgr();
         GetUImgr();
+        GetWavemgr();
     }
 
 
@@ -66,6 +69,15 @@ public class GameManager : MonoBehaviour
         }
 
         return UImgr;
+    }
+
+    public WaveManager GetWavemgr()
+    {
+        if (!Wavemgr)
+        {
+            Wavemgr = FindObjectOfType<WaveManager>();
+        }
+        return Wavemgr;
     }
     #endregion
 

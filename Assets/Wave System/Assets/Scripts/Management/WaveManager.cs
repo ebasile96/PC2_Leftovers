@@ -18,7 +18,7 @@ namespace SemihOrhan.WaveOne
         public int AmountSpawnersFinished { get; private set; }
         public bool SpawnersFinished { get; private set; }
 
-        private void Start()
+        private void Awake()
         {
             if (autoFindConfigs)
             {
@@ -61,5 +61,7 @@ namespace SemihOrhan.WaveOne
                     SpawnersFinished = true;
             }
         }
+
+       
     }
 }

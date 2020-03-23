@@ -15,11 +15,17 @@ public class PlayerNormalState : PlayerBaseState
     {
         player.animator.SetTrigger("GoToRunning");
         player.Move();
+        player.isMoving = true;
         //player.RotationPlayer();
         if (player.movement * player.moveSpeed == new Vector3(0, 0, 0))
         {
             player.ChangeState(idleState);
         }
+    }
+
+    public override void Exit()
+    {
+        player.isMoving = false;
     }
 
 }

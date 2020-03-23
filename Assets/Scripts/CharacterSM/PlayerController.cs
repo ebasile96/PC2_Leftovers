@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 _velocity;
     [HideInInspector]
     public Vector3 movement;
+    public bool isMoving;
 
     private void Awake()
     {

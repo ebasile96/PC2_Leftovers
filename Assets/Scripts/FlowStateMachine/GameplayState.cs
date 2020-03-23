@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using SemihOrhan.WaveOne;
+using SemihOrhan.WaveOne.Spawners;
+using SemihOrhan.WaveOne.Demo;
 
 public class GameplayState : StateBehaviourBase
 {
@@ -9,11 +12,13 @@ public class GameplayState : StateBehaviourBase
     {
         SceneManager.LoadScene("BuildScene");
         GameManager.instance.InitManagers();
+        //TODO: SpawnerScript va a null
+        //GameManager.instance.Wavemgr.StartAllConfigWaves();
     }
 
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        
+
     }
 
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
