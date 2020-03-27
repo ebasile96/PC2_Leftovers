@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -467,6 +467,21 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2468530149645349743, guid: e7a1d6ccdabd6114b8fcd7b677d24a62,
+        type: 3}
+      propertyPath: waveConfigurators.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2468530149645349743, guid: e7a1d6ccdabd6114b8fcd7b677d24a62,
+        type: 3}
+      propertyPath: autoFindConfigs
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2468530149645349743, guid: e7a1d6ccdabd6114b8fcd7b677d24a62,
+        type: 3}
+      propertyPath: waveConfigurators.Array.data[0]
+      value: 
+      objectReference: {fileID: 1187351430}
     - target: {fileID: 2468530149645349730, guid: e7a1d6ccdabd6114b8fcd7b677d24a62,
         type: 3}
       propertyPath: unityEventResponse.m_PersistentCalls.m_Calls.Array.size
@@ -502,21 +517,6 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2468530149645349743, guid: e7a1d6ccdabd6114b8fcd7b677d24a62,
-        type: 3}
-      propertyPath: waveConfigurators.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2468530149645349743, guid: e7a1d6ccdabd6114b8fcd7b677d24a62,
-        type: 3}
-      propertyPath: autoFindConfigs
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2468530149645349743, guid: e7a1d6ccdabd6114b8fcd7b677d24a62,
-        type: 3}
-      propertyPath: waveConfigurators.Array.data[0]
-      value: 
-      objectReference: {fileID: 1187351430}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7a1d6ccdabd6114b8fcd7b677d24a62, type: 3}
 --- !u!1 &246409451 stripped
@@ -1390,6 +1390,8 @@ MonoBehaviour:
     m_OnCameraLive:
       m_PersistentCalls:
         m_Calls: []
+      m_TypeName: Cinemachine.CinemachineBrain+VcamActivatedEvent, Cinemachine, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 1582844753}
 --- !u!4 &755907088
@@ -1399,7 +1401,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 755907086}
-  m_LocalRotation: {x: 0.50567776, y: 0.019184828, z: -0.009089245, w: 0.86246127}
+  m_LocalRotation: {x: 0.50567776, y: 0.019184828, z: -0.009089247, w: 0.86246127}
   m_LocalPosition: {x: 6.025, y: 21.24, z: -10.85}
   m_LocalScale: {x: 1, y: 1, z: 1.2193}
   m_Children:
@@ -4265,6 +4267,12 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 7633108560689980493, guid: 9bfe5685e1d9aee4d88457261a0688ab,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -5170323138729520846, guid: c020fd0f63d298248be29032bfe65514,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9bfe5685e1d9aee4d88457261a0688ab, type: 3}
 --- !u!1 &919078747 stripped
@@ -5263,6 +5271,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Texture: {fileID: 2800000, guid: c431cbd6a107d81438e568db6090766c, type: 3}
   m_UVRect:
     serializedVersion: 2
@@ -7433,6 +7443,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Texture: {fileID: 2800000, guid: e7986f95ebcdd444198ae016b2dc41a3, type: 3}
   m_UVRect:
     serializedVersion: 2
@@ -7509,9 +7521,13 @@ MonoBehaviour:
   m_CameraCutEvent:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: Cinemachine.CinemachineBrain+BrainEvent, Cinemachine, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: Cinemachine.CinemachineBrain+VcamActivatedEvent, Cinemachine, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &2055803464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7663,6 +7679,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 087a7703a96801645a1574b0cb794267, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -8180,16 +8198,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
-    - target: {fileID: 4450107665607889447, guid: e466f41afd4bdb44cb0de8ad7540b5b9,
-        type: 3}
-      propertyPath: button
-      value: 
-      objectReference: {fileID: 2109441002}
-    - target: {fileID: 4450107665607889447, guid: e466f41afd4bdb44cb0de8ad7540b5b9,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2699818503190055484, guid: e466f41afd4bdb44cb0de8ad7540b5b9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8243,6 +8251,16 @@ PrefabInstance:
     - target: {fileID: 2699818503190055484, guid: e466f41afd4bdb44cb0de8ad7540b5b9,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4450107665607889447, guid: e466f41afd4bdb44cb0de8ad7540b5b9,
+        type: 3}
+      propertyPath: button
+      value: 
+      objectReference: {fileID: 2109441002}
+    - target: {fileID: 4450107665607889447, guid: e466f41afd4bdb44cb0de8ad7540b5b9,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4450107665607889446, guid: e466f41afd4bdb44cb0de8ad7540b5b9,
@@ -8352,7 +8370,7 @@ PrefabInstance:
     - target: {fileID: 4792709009875095648, guid: f838afab358d88b47bffa582ffd236a4,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.009089245
+      value: -0.009089247
       objectReference: {fileID: 0}
     - target: {fileID: 4792709009875095648, guid: f838afab358d88b47bffa582ffd236a4,
         type: 3}

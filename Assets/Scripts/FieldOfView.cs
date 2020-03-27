@@ -101,10 +101,9 @@ public class FieldOfView : MonoBehaviour
 
                 if (!Physics.Raycast(transform.position, dirToTarget, dstToTarget, obstacleMask))
                 {
-                    visibleTargets.Add(targetLine);
-                    
+                    visibleTargets.Add(targetLine); 
                 }
-                else if(timerCombo == 0)
+                else if(timerCombo == 0 && chainController.currentStressValue != 100)
                 {
                     obstacleMask.Equals(enemy);
                     enemy.gameObject.SetActive(false);
@@ -113,7 +112,7 @@ public class FieldOfView : MonoBehaviour
                     timerCombo = maxTimerCombo;
                     SoundManager.PlaySound(SoundManager.Sound.enemyTakeDamage);
                 }
-                else if (timerCombo != 0)
+                else if (timerCombo != 0 && chainController.currentStressValue != 100)
                 {
                     obstacleMask.Equals(enemy);
                     enemy.gameObject.SetActive(false);

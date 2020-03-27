@@ -24,5 +24,9 @@ public class ChainHeavyState : ChainBaseState
         {
             chainController.ChangeState(mediumState);
         }
+        else if(chainController.currentStressValue == 100)
+        {
+            //stato rottura completa
+        }
     }
 }
