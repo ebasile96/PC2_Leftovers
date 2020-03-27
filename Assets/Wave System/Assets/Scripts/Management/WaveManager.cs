@@ -10,11 +10,11 @@ namespace SemihOrhan.WaveOne
 #pragma warning disable 0414
         [SerializeField] private bool showListControls = true;
 #pragma warning restore 0414
-        [SerializeField] private List<WaveConfigurator> waveConfigurators = new List<WaveConfigurator>();
+        [SerializeField] public List<WaveConfigurator> waveConfigurators = new List<WaveConfigurator>();
 
         public List<WaveConfigurator> WaveConfigurators { get => waveConfigurators; set => waveConfigurators = value; }
 
-        public bool SpawnersStarted { get; private set; }
+        public bool SpawnersStarted { get;  set; }
         public int AmountSpawnersFinished { get; private set; }
         public bool SpawnersFinished { get; private set; }
 
@@ -62,6 +62,5 @@ namespace SemihOrhan.WaveOne
             }
         }
 
-       
     }
 }

@@ -86,12 +86,12 @@ public class ChainController : MonoBehaviour
         if(currentStressValue >= 100 && fov.dstToTarget <= 7)
         {
             reforgeTimer -= 1;
-            Debug.Log("timer funziona " + reforgeTimer);
+            //Debug.Log("timer funziona " + reforgeTimer);
         }
         else if(currentStressValue >= 100 && fov.dstToTarget > 7)
         {
             reforgeTimer = maxReforgeTimer;
-             Debug.Log("timer reset funziona ");
+             //Debug.Log("timer reset funziona ");
         }
 
         if(reforgeTimer <= 0)
