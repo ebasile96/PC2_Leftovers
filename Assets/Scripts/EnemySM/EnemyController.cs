@@ -43,15 +43,10 @@ public class EnemyController : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         currentState.Tick();
-        StartCoroutine(AttackMelee());
+        //StartCoroutine(AttackMelee());
         // provvisorio
         anim.SetTrigger("GoToRunning");
-        //provvisorio
-        if (pHealth.healthPlayer == 0)
-        {
-            SceneManager.LoadScene("GameOver");
-            Debug.Log("caricoScene");
-        }
+        pHealth = FindObjectOfType<PlayerLifeController>();
     }
 
    
@@ -64,7 +59,7 @@ public class EnemyController : MonoBehaviour
     public GameObject targetShake;
     public PlayerLifeController petLife;
     public PlayerLifeController pHealth;
-    public IEnumerator AttackMelee()
+    /*public IEnumerator AttackMelee()
     {
         Ray rayForward = new Ray(transform.position, transform.forward);
 
@@ -121,7 +116,7 @@ public class EnemyController : MonoBehaviour
             isPlayer = false;
         }
 
-    }
+    }*/
 
     /*public void FollowPlayer()
     {
@@ -142,6 +137,33 @@ public class EnemyController : MonoBehaviour
         }
     }*/
 
+
+    private bool canTakeDamage = true;
+
+    public void OnCollisionEnter(Collision hit)
+    {
+
+        //pHealth = hit.collider.GetComponent<PlayerLifeController>();
+        //petLife = hit.collider.GetComponent<PlayerLifeController>();
+
+        if (hit.gameObject.tag == "Player" && canTakeDamage == true)
+        {
+            Debug.Log("attacco nuovo funziona");
+            //pHealth.TakeDamage(20);
+            //petLife.TakeDamage(20);
+            pHealth.TakeDamage(20);
+            hit.transform.DOShakeScale(0.5f, strength);
+            SoundManager.PlaySound(SoundManager.Sound.femaleTakeDamage);
+
+            StartCoroutine(damageTimer());
+        }
+    }
+    private IEnumerator damageTimer()
+    {
+        canTakeDamage = false;
+        yield return new WaitForSeconds(rateoDamage);
+        canTakeDamage = true;
+    }
     public void Attack(GameObject _target)
     {
         HealthCtrl.Life -= Data.Damage;

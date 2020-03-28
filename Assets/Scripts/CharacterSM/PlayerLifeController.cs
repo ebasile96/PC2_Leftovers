@@ -22,10 +22,10 @@ public class PlayerLifeController : MonoBehaviour
         healthPlayer -= _damage;
     }
 
-    public void TakeDamagePet(float _damage)
+    /*public void TakeDamagePet(float _damage)
     {
         healthPet -= _damage;
-    }
+    }*/
 
     public  void Update()
     {

@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class LifeBarController : MonoBehaviour
 {
     public PlayerLifeController playerLife;
-    public PlayerLifeController petLife;
     public float healthLenght;
     public float weakSpell = 0.1f;
     public GameObject healthbar;
