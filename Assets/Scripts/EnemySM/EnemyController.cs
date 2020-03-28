@@ -151,7 +151,7 @@ public class EnemyController : MonoBehaviour
             Debug.Log("attacco nuovo funziona");
             //pHealth.TakeDamage(20);
             //petLife.TakeDamage(20);
-            pHealth.TakeDamage(20);
+            pHealth.TakeDamage(10);
             hit.transform.DOShakeScale(0.5f, strength);
             SoundManager.PlaySound(SoundManager.Sound.femaleTakeDamage);
 
