@@ -100,6 +100,9 @@ MonoBehaviour:
   obstacleMask:
     serializedVersion: 2
     m_Bits: 512
+  propsMask:
+    serializedVersion: 2
+    m_Bits: 0
   targetLine: {fileID: 0}
   dstToTarget: 0
   timerCombo: 0
@@ -110,6 +113,7 @@ MonoBehaviour:
   comboStressMultiplier: 0
   chainController: {fileID: 0}
   visibleTargets: []
+  testTimerCombo: {fileID: 0}
 --- !u!136 &627523702
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -259,6 +263,7 @@ MonoBehaviour:
   mediumMaterial: {fileID: 2100000, guid: c5e7e8fa342c41049b5e44326dcbab8c, type: 2}
   heavyMaterial: {fileID: 2100000, guid: e30a00dc7e9c31f43bb418b24edc7d10, type: 2}
   neutralMaterial: {fileID: 2100000, guid: 917327dc81be8d24baaa1bfaec77ad8e, type: 2}
+  testReforgeTimer: {fileID: 0}
 --- !u!1 &1065108431
 GameObject:
   m_ObjectHideFlags: 0
@@ -5110,6 +5115,7 @@ MonoBehaviour:
   animator: {fileID: 0}
   turnSpeed: 20
   movement: {x: 0, y: 0, z: 0}
+  isMoving: 0
 --- !u!114 &956408355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5257,7 +5263,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: eb21a53d893b9f646a3c40262c846a47, type: 2}
+      objectReference: {fileID: 2100000, guid: 34bacbd18835be746a2bb570f91aa2bc, type: 2}
     - target: {fileID: -3624229077803582926, guid: d20c0d9ce7f4f05419a2ce1a70eaddd6,
         type: 3}
       propertyPath: m_Materials.Array.data[1]
