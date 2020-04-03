@@ -31,13 +31,14 @@ public class LevelManager : MonoBehaviour
         //Debug.Log("spawnerFinished: " + Wavemgr.SpawnersFinished);
         if(Wavemgr.SpawnersFinished)
         {
-            startingTimer += Time.deltaTime;
-            
-            if (startingTimer > 3)
-            {
-                Wavemgr.StartAllConfigWaves();
-            }
-            startingTimer = 0f;
+            //startingTimer += Time.deltaTime;
+
+            //if (startingTimer > 3)
+            //{
+            //    Wavemgr.StartAllConfigWaves();
+            //}
+            //startingTimer = 0f;
+            Wavemgr.StartAllConfigWaves();
         }
     }
 }
