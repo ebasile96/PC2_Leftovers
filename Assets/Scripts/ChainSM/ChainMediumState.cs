@@ -5,7 +5,7 @@ using UnityEngine;
 public class ChainMediumState : ChainBaseState
 {
     public ChainController chainController;
-    public ChainGraphic chainGr;
+    public FieldOfView fow;
     public ChainBaseState neutralState;
     public ChainBaseState lightState;
     public ChainBaseState heavyState;
@@ -20,7 +20,7 @@ public class ChainMediumState : ChainBaseState
 
     public override void Tick()
     {
-        chainGr.lineR.material = chainGr.mediumMaterial;
+        fow.lineR.material = chainController.mediumMaterial;
         if (chainController.currentStressValue >= 90)
         {
             chainController.ChangeState(heavyState);

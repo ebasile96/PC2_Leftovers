@@ -919,7 +919,7 @@ GameObject:
   - component: {fileID: -6416331029858799920}
   m_Layer: 8
   m_Name: SK_Blue_enemy
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1024,10 +1024,6 @@ MonoBehaviour:
   chainController: {fileID: 0}
   visibleTargets: []
   testTimerCombo: {fileID: 0}
-  enemy: {fileID: 0}
-  targetsInViewRadius: []
-  enemiesInViewRadius: []
-  obstacleInViewRadius: []
 --- !u!195 &1678035709151691426
 NavMeshAgent:
   m_ObjectHideFlags: 0

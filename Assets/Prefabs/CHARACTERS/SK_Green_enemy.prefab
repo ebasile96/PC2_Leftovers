@@ -328,7 +328,7 @@ GameObject:
   - component: {fileID: 3276549894870782527}
   m_Layer: 8
   m_Name: SK_Green_enemy
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -433,10 +433,6 @@ MonoBehaviour:
   chainController: {fileID: 0}
   visibleTargets: []
   testTimerCombo: {fileID: 0}
-  enemy: {fileID: 0}
-  targetsInViewRadius: []
-  enemiesInViewRadius: []
-  obstacleInViewRadius: []
 --- !u!195 &5326029141279653313
 NavMeshAgent:
   m_ObjectHideFlags: 0
