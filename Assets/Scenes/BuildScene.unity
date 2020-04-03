@@ -1069,6 +1069,8 @@ MonoBehaviour:
     m_OnCameraLive:
       m_PersistentCalls:
         m_Calls: []
+      m_TypeName: Cinemachine.CinemachineBrain+VcamActivatedEvent, Cinemachine, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 1582844753}
 --- !u!4 &755907088
@@ -1078,7 +1080,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 755907086}
-  m_LocalRotation: {x: 0.50565857, y: 0.019181907, z: -0.009086612, w: 0.86247265}
+  m_LocalRotation: {x: 0.5056585, y: 0.019181877, z: -0.009086594, w: 0.86247265}
   m_LocalPosition: {x: 6.025, y: 21.295, z: -10.7805}
   m_LocalScale: {x: 1, y: 1, z: 1.2193}
   m_Children:
@@ -1401,6 +1403,10 @@ MonoBehaviour:
   chainController: {fileID: 0}
   visibleTargets: []
   testTimerCombo: {fileID: 0}
+  enemy: {fileID: 0}
+  targetsInViewRadius: []
+  enemiesInViewRadius: []
+  obstacleInViewRadius: []
 --- !u!195 &957495228
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1580,7 +1586,14 @@ MonoBehaviour:
   mediumMaterial: {fileID: 2100000, guid: c5e7e8fa342c41049b5e44326dcbab8c, type: 2}
   heavyMaterial: {fileID: 2100000, guid: e30a00dc7e9c31f43bb418b24edc7d10, type: 2}
   neutralMaterial: {fileID: 2100000, guid: 917327dc81be8d24baaa1bfaec77ad8e, type: 2}
+  timerCombo: 0
+  maxTimerCombo: 300
+  comboExtender: 30
+  enemyCounter: 0
+  enemyStressValue: 5
+  comboStressMultiplier: 0.025
   testReforgeTimer: {fileID: 0}
+  testTimerCombo: {fileID: 0}
 --- !u!120 &977926338
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -2128,6 +2141,10 @@ MonoBehaviour:
   chainController: {fileID: 0}
   visibleTargets: []
   testTimerCombo: {fileID: 0}
+  enemy: {fileID: 0}
+  targetsInViewRadius: []
+  enemiesInViewRadius: []
+  obstacleInViewRadius: []
 --- !u!136 &1175927704
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2240,6 +2257,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Texture: {fileID: 2800000, guid: c431cbd6a107d81438e568db6090766c, type: 3}
   m_UVRect:
     serializedVersion: 2
@@ -2435,6 +2454,10 @@ MonoBehaviour:
   chainController: {fileID: 0}
   visibleTargets: []
   testTimerCombo: {fileID: 0}
+  enemy: {fileID: 0}
+  targetsInViewRadius: []
+  enemiesInViewRadius: []
+  obstacleInViewRadius: []
 --- !u!195 &1391364358
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2622,6 +2645,10 @@ MonoBehaviour:
   chainController: {fileID: 0}
   visibleTargets: []
   testTimerCombo: {fileID: 0}
+  enemy: {fileID: 0}
+  targetsInViewRadius: []
+  enemiesInViewRadius: []
+  obstacleInViewRadius: []
 --- !u!195 &1434429169
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2924,6 +2951,10 @@ MonoBehaviour:
   chainController: {fileID: 0}
   visibleTargets: []
   testTimerCombo: {fileID: 0}
+  enemy: {fileID: 0}
+  targetsInViewRadius: []
+  enemiesInViewRadius: []
+  obstacleInViewRadius: []
 --- !u!136 &1548740430
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3941,6 +3972,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Texture: {fileID: 2800000, guid: e7986f95ebcdd444198ae016b2dc41a3, type: 3}
   m_UVRect:
     serializedVersion: 2
@@ -4017,9 +4050,13 @@ MonoBehaviour:
   m_CameraCutEvent:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: Cinemachine.CinemachineBrain+BrainEvent, Cinemachine, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: Cinemachine.CinemachineBrain+VcamActivatedEvent, Cinemachine, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &2055803464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4152,6 +4189,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 087a7703a96801645a1574b0cb794267, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -4904,17 +4943,17 @@ PrefabInstance:
     - target: {fileID: 4792709009875095648, guid: f838afab358d88b47bffa582ffd236a4,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.50565857
+      value: 0.5056585
       objectReference: {fileID: 0}
     - target: {fileID: 4792709009875095648, guid: f838afab358d88b47bffa582ffd236a4,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.019181907
+      value: 0.019181877
       objectReference: {fileID: 0}
     - target: {fileID: 4792709009875095648, guid: f838afab358d88b47bffa582ffd236a4,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.009086612
+      value: -0.009086594
       objectReference: {fileID: 0}
     - target: {fileID: 4792709009875095648, guid: f838afab358d88b47bffa582ffd236a4,
         type: 3}

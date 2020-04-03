@@ -47,7 +47,7 @@ public class FieldOfView : MonoBehaviour
     private void Update()
     {
         FindVisibleTargets();
-        DecreaseComboTimer();
+        //DecreaseComboTimer();
         //CheckChain();
         /*if(chain.stressValue > 50)
         {
@@ -55,7 +55,7 @@ public class FieldOfView : MonoBehaviour
         }*/
 
         //provvisorio per test
-        testTimerCombo.text = timerCombo.ToString();
+        //testTimerCombo.text = timerCombo.ToString();
     }
 
     /*public void CheckChain()
@@ -71,14 +71,18 @@ public class FieldOfView : MonoBehaviour
     }*/
     
     #region test
-    Transform enemy;
+    public Transform enemy;
     #endregion
+    public Collider[] targetsInViewRadius;
+    public Collider[] enemiesInViewRadius;
+    public Collider[] obstacleInViewRadius;
+
     void FindVisibleTargets()
     {
         visibleTargets.Clear();
-        Collider[] targetsInViewRadius = Physics.OverlapSphere(transform.position, viewRadius, targetMask);
-        Collider[] enemiesInViewRadius = Physics.OverlapSphere(transform.position, viewRadius, obstacleMask);
-        Collider[] obstacleInViewRadius = Physics.OverlapSphere(transform.position, viewRadius, propsMask);
+        targetsInViewRadius = Physics.OverlapSphere(transform.position, viewRadius, targetMask);
+        enemiesInViewRadius = Physics.OverlapSphere(transform.position, viewRadius, obstacleMask);
+        obstacleInViewRadius = Physics.OverlapSphere(transform.position, viewRadius, propsMask);
 
         for (int i = 0; i < enemiesInViewRadius.Length; i++)
         {
@@ -103,7 +107,7 @@ public class FieldOfView : MonoBehaviour
                 {
                     visibleTargets.Add(targetLine); 
                 }
-                else if(timerCombo == 0 && chainController.currentStressValue != 100)
+                /*else if(timerCombo == 0 && chainController.currentStressValue != 100)
                 {
                     obstacleMask.Equals(enemy);
                     enemy.gameObject.SetActive(false);
@@ -123,7 +127,7 @@ public class FieldOfView : MonoBehaviour
                     }
                     chainController.currentStressValue += (enemyStressValue * (1 - (comboStressMultiplier * enemyCounter)));
                     SoundManager.PlaySound(SoundManager.Sound.enemyTakeDamage);
-                }
+                }*/
                 //else
                 //{
 
