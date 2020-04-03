@@ -11,6 +11,12 @@ public class ChainGraphic : MonoBehaviour
     public Vector3 dirToTarget;
     public ChainController chainController;
 
+    //grafica catena 
+    public Material lightMaterial;
+    public Material mediumMaterial;
+    public Material heavyMaterial;
+    public Material neutralMaterial;
+
     // Start is called before the first frame update
     void Start()
     {
