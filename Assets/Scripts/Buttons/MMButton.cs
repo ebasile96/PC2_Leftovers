@@ -7,6 +7,6 @@ public class MMButton : MonoBehaviour
 {
     public void BackToMainMenu()
     {
-        GameManager.GoToMainMenu();
+        FlowStateMachine.GoToMainMenu();
     }
 }

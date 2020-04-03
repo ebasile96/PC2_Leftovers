@@ -21,18 +21,20 @@ public class LevelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        //OVVIAMENTE DA RIFARE PD
+        //if (Wavemgr.AmountSpawnersFinished == 2)
+        //    Wavemgr.StartAllConfigWaves();
+        //Debug.Log("spawner finished " + Wavemgr.SpawnersFinished);
+        //Debug.Log("spawner started " + Wavemgr.SpawnersStarted);
+        //Debug.Log("amount finished " + Wavemgr.AmountSpawnersFinished);
+    }
+
+    public void Test()
+    {
         if (!Wavemgr.SpawnersStarted)
         {
             Wavemgr.StartAllConfigWaves();
         }
-        //OVVIAMENTE DA RIFARE PD
-        if (Wavemgr.AmountSpawnersFinished == 2)
-            Wavemgr.StartAllConfigWaves();
-        Debug.Log("spawner finished " + Wavemgr.SpawnersFinished);
-        Debug.Log("spawner started " + Wavemgr.SpawnersStarted);
-        Debug.Log("amount finished " + Wavemgr.AmountSpawnersFinished);
-
-
-        
     }
 }

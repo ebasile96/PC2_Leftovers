@@ -5,9 +5,9 @@ using UnityEngine.Animations;
 
 public class StateBehaviourBase : StateMachineBehaviour
 {
-    protected GameManager.Context ctx = new GameManager.Context();
+    protected FlowStateMachine.Context ctx = new FlowStateMachine.Context();
 
-    public void Setup(GameManager.Context _ctx)
+    public void Setup(FlowStateMachine.Context _ctx)
     {
 
         ctx = _ctx;

@@ -9,7 +9,7 @@ public class PlayButton : MonoBehaviour
 {
    public void PressPlay()
     {
-        GameManager.GoToGameplay();
+        FlowStateMachine.GoToGameplay();
     }
 
     //momentaneo solo per far testare designer

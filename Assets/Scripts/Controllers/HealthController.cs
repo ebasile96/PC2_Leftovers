@@ -41,7 +41,7 @@ public class HealthController : MonoBehaviour
     {
         if(Life <= 0)
         {
-            GameManager.GoToMainMenu();
+            FlowStateMachine.GoToMainMenu();
         }
     }
 

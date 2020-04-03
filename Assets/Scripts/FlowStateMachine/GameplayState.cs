@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using SemihOrhan.WaveOne;
@@ -11,7 +12,6 @@ public class GameplayState : StateBehaviourBase
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         SceneManager.LoadScene("BuildScene");
-        GameManager.instance.InitManagers();
     }
 
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
