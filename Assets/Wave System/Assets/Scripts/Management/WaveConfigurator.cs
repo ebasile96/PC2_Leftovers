@@ -46,7 +46,7 @@ namespace SemihOrhan.WaveOne
 
         [SerializeField, HideInInspector] private bool needSpawnerPicker;
 
-        private void Start()
+        private void Awake()
         {
             UpdateScriptReferences();
         }

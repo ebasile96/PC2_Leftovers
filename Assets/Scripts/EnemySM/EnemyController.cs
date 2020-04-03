@@ -148,7 +148,6 @@ public class EnemyController : MonoBehaviour
 
         if (hit.gameObject.tag == "Player" && canTakeDamage == true)
         {
-            Debug.Log("attacco nuovo funziona");
             //pHealth.TakeDamage(20);
             //petLife.TakeDamage(20);
             pHealth.TakeDamage(15);

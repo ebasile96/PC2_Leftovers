@@ -1,11 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using SemihOrhan.WaveOne;
 
 public class LevelManager : MonoBehaviour
 {
-    public WaveManager Wavemgr;
+    private WaveManager Wavemgr;
+    public Text Timertext;
+    float startingTimer = 0f;
+    [Tooltip("Ricordate che il timer parte da quando è spawnato l'ultimo enemy dell'ondata")]
+    public float Timer;
     // Start is called before the first frame update
     void Awake()
     {
@@ -14,27 +19,25 @@ public class LevelManager : MonoBehaviour
 
     private void Start()
     {
-        
-
+        if (!Wavemgr.SpawnersFinished)
+            Wavemgr.StartAllConfigWaves();
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        //OVVIAMENTE DA RIFARE PD
-        //if (Wavemgr.AmountSpawnersFinished == 2)
-        //    Wavemgr.StartAllConfigWaves();
-        //Debug.Log("spawner finished " + Wavemgr.SpawnersFinished);
-        //Debug.Log("spawner started " + Wavemgr.SpawnersStarted);
-        //Debug.Log("amount finished " + Wavemgr.AmountSpawnersFinished);
-    }
-
-    public void Test()
-    {
-        if (!Wavemgr.SpawnersStarted)
+        Timertext.text = ("Timer: " + Mathf.Round(startingTimer));
+        //Debug.Log("spawnerStarted: " + Wavemgr.SpawnersStarted);
+        //Debug.Log("spawnerFinished: " + Wavemgr.SpawnersFinished);
+        if(Wavemgr.SpawnersFinished)
         {
-            Wavemgr.StartAllConfigWaves();
+            startingTimer += Time.deltaTime;
+            
+            if (startingTimer > 3)
+            {
+                Wavemgr.StartAllConfigWaves();
+            }
+            startingTimer = 0f;
         }
     }
 }
