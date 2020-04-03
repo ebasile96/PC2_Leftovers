@@ -5,19 +5,25 @@ using UnityEngine.UI;
 
 public class ChainController : MonoBehaviour
 {
+    public ChainGraphic graphic;
     public ChainBaseState currentState;
     public float currentStressValue;
     public float maxStressValue;
     public float reforgeStressValue;
-    public FieldOfView fov;
     public float reforgeTimer;
     public float maxReforgeTimer;
-    public Material lightMaterial;
-    public Material mediumMaterial;
-    public Material heavyMaterial;
-    public Material neutralMaterial;
-    //provvissorio per test
-    public Text testReforgeTimer;
+    [SerializeField]
+    public Ray rayChain;
+    [SerializeField]
+    RaycastHit hit;
+
+    //variabili per attacco catena
+    public float timerCombo;
+    public float maxTimerCombo;
+    public float comboExtender;
+    public int enemyCounter;
+    public float enemyStressValue;
+    public float comboStressMultiplier;
 
     public void ChangeState(ChainBaseState newState)
     {
@@ -39,17 +45,15 @@ public class ChainController : MonoBehaviour
         LenghtStressChain();
         ChainBreaker();
         ChainReformer();
-        CheckChain();
-        if (currentStressValue > 100)
-        {
-            currentStressValue = 100;
-        }
-
-        //provvisorio per test
-        testReforgeTimer.text = reforgeTimer.ToString();
+        //CheckChain();
+        DrawRaycastChain();
+        attackChain();
+        DecreaseComboTimer();
+        NormalizedStressValue();
+        ChainObstacle();
     }
 
-    public void CheckChain()
+    /*public void CheckChain()
     {
         if (fov.visibleTargets.Count == 0)
         {
@@ -59,17 +63,14 @@ public class ChainController : MonoBehaviour
         {
             fov.lineR.enabled = true;
         }
-    }
+    }*/
+
 
     public void LenghtStressChain()
     {
-        if(fov.dstToTarget >= 5 && currentStressValue <= 100)
+        if (currentStressValue > 1)
         {
-            currentStressValue += (((currentStressValue / 100) * fov.dstToTarget) / 60);
-        }
-        else if (currentStressValue > 1)
-        {
-            currentStressValue -= (((currentStressValue / 100) * fov.dstToTarget) / 60);
+            currentStressValue -= (((currentStressValue / 100) * graphic.dstToTarget) / 20);
         }
     }
 
@@ -77,18 +78,18 @@ public class ChainController : MonoBehaviour
     {
         if(currentStressValue >= 100)
         {
-            fov.lineR.enabled = false;
+            graphic.lineR.enabled = false;
         }     
     }
 
     public void ChainReformer()
     {
-        if(currentStressValue >= 100 && fov.dstToTarget <= 7)
+        if(currentStressValue >= 100 && graphic.dstToTarget <= 7)
         {
             reforgeTimer -= 1;
             //Debug.Log("timer funziona " + reforgeTimer);
         }
-        else if(currentStressValue >= 100 && fov.dstToTarget > 7)
+        else if(currentStressValue >= 100 && graphic.dstToTarget > 7)
         {
             reforgeTimer = maxReforgeTimer;
              //Debug.Log("timer reset funziona ");
@@ -96,9 +97,68 @@ public class ChainController : MonoBehaviour
 
         if(reforgeTimer <= 0)
         {
-            fov.lineR.enabled = true;
+            graphic.lineR.enabled = true;
             reforgeTimer = maxReforgeTimer;
             currentStressValue = reforgeStressValue;
+        }
+    }
+
+    private void DrawRaycastChain()
+    {
+        rayChain = new Ray(transform.position, graphic.dirToTarget);
+    }
+
+    private void attackChain()
+    {
+        if (Physics.Raycast(rayChain, out hit, graphic.dstToTarget) && hit.collider.tag == "Enemy")
+        {
+            if (timerCombo == 0 && currentStressValue != 100)
+            {
+                Debug.Log("hittato primo if");
+                hit.collider.gameObject.SetActive(false);
+                currentStressValue += enemyStressValue;
+                enemyCounter = 1;
+                timerCombo = maxTimerCombo;
+                SoundManager.PlaySound(SoundManager.Sound.enemyTakeDamage);
+            }
+            else if (timerCombo != 0 && currentStressValue != 100)
+            {
+                Debug.Log("hittato secondo if");
+                hit.collider.gameObject.SetActive(false);
+                enemyCounter += 1;
+                if (timerCombo < maxTimerCombo)
+                {
+                    timerCombo += comboExtender;
+                }
+                currentStressValue += (enemyStressValue * (1 - (comboStressMultiplier * enemyCounter)));
+                SoundManager.PlaySound(SoundManager.Sound.enemyTakeDamage);
+            }
+        }
+    }
+
+    private void ChainObstacle()
+    {
+        if (Physics.Raycast(rayChain, out hit, graphic.dstToTarget) && hit.collider.tag == "Obstacle")
+        {
+            Debug.Log("hittato ostacolo");
+            currentStressValue = 100;
+            graphic.lineR.enabled = false;
+        }
+    }
+
+    private void DecreaseComboTimer()
+    {
+        if (timerCombo > 0)
+        {
+            timerCombo -= 1;
+        }
+    }
+
+    private void NormalizedStressValue()
+    {
+        if (currentStressValue > 100)
+        {
+            currentStressValue = 100;
         }
     }
 
