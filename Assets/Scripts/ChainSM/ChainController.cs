@@ -7,6 +7,7 @@ public class ChainController : MonoBehaviour
 {
     public ChainGraphic graphic;
     public ChainBaseState currentState;
+    LevelManager lvlmgr;
     public float currentStressValue;
     public float maxStressValue;
     public float reforgeStressValue;
@@ -35,7 +36,7 @@ public class ChainController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        lvlmgr = FindObjectOfType<LevelManager>();
     }
 
     // Update is called once per frame
@@ -115,7 +116,8 @@ public class ChainController : MonoBehaviour
             if (timerCombo == 0 && currentStressValue != 100)
             {
                 Debug.Log("hittato primo if");
-                hit.collider.gameObject.SetActive(false);
+                Destroy(hit.collider.gameObject);
+                lvlmgr.EnemiesAlive.Remove(hit.collider.gameObject);
                 currentStressValue += enemyStressValue;
                 enemyCounter = 1;
                 timerCombo = maxTimerCombo;
@@ -124,7 +126,8 @@ public class ChainController : MonoBehaviour
             else if (timerCombo != 0 && currentStressValue != 100)
             {
                 Debug.Log("hittato secondo if");
-                hit.collider.gameObject.SetActive(false);
+                Destroy(hit.collider.gameObject);
+                lvlmgr.EnemiesAlive.Remove(hit.collider.gameObject);
                 enemyCounter += 1;
                 if (timerCombo < maxTimerCombo)
                 {

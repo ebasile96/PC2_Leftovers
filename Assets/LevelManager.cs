@@ -6,6 +6,7 @@ using SemihOrhan.WaveOne;
 
 public class LevelManager : MonoBehaviour
 {
+    public List<GameObject> EnemiesAlive = new List<GameObject>();
     private WaveManager Wavemgr;
     public Text Timertext;
     float startingTimer = 0f;
@@ -26,10 +27,12 @@ public class LevelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("enemiesAlive: " + EnemiesAlive.Count);
+        FindEnemies();
         Timertext.text = ("Timer: " + Mathf.Round(startingTimer));
         //Debug.Log("spawnerStarted: " + Wavemgr.SpawnersStarted);
         //Debug.Log("spawnerFinished: " + Wavemgr.SpawnersFinished);
-        if(Wavemgr.SpawnersFinished)
+        if(Wavemgr.SpawnersFinished && EnemiesAlive.Count == 0)
         {
             //startingTimer += Time.deltaTime;
 
@@ -39,6 +42,16 @@ public class LevelManager : MonoBehaviour
             //}
             //startingTimer = 0f;
             Wavemgr.StartAllConfigWaves();
+        }
+    }
+
+    public void FindEnemies()
+    {
+        foreach (GameObject _enemy in GameObject.FindGameObjectsWithTag("Enemy"))
+        {
+            if(!EnemiesAlive.Contains(_enemy))
+                EnemiesAlive.Add(_enemy);
+
         }
     }
 }
