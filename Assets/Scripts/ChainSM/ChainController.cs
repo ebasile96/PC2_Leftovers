@@ -71,7 +71,7 @@ public class ChainController : MonoBehaviour
     {
         if (currentStressValue > 1)
         {
-            currentStressValue -= (((currentStressValue / 100) * graphic.dstToTarget) / 20);
+            currentStressValue -= (((currentStressValue / 100) * (graphic.maxLenghtChain - graphic.dstToTarget) / 20));
         }
     }
 
@@ -115,7 +115,6 @@ public class ChainController : MonoBehaviour
         {
             if (timerCombo == 0 && currentStressValue != 100)
             {
-                Debug.Log("hittato primo if");
                 Destroy(hit.collider.gameObject);
                 lvlmgr.EnemiesAlive.Remove(hit.collider.gameObject);
                 currentStressValue += enemyStressValue;
@@ -125,7 +124,6 @@ public class ChainController : MonoBehaviour
             }
             else if (timerCombo != 0 && currentStressValue != 100)
             {
-                Debug.Log("hittato secondo if");
                 Destroy(hit.collider.gameObject);
                 lvlmgr.EnemiesAlive.Remove(hit.collider.gameObject);
                 enemyCounter += 1;
@@ -143,7 +141,6 @@ public class ChainController : MonoBehaviour
     {
         if (Physics.Raycast(rayChain, out hit, graphic.dstToTarget) && hit.collider.tag == "Obstacle")
         {
-            Debug.Log("hittato ostacolo");
             currentStressValue = 100;
             graphic.lineR.enabled = false;
         }

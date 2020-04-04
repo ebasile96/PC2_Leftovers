@@ -127,9 +127,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.816059
-  m_Height: 2.1235154
+  m_Height: 5.3667607
   m_Direction: 1
-  m_Center: {x: 0, y: 1.0617577, z: 0.03408417}
+  m_Center: {x: 0, y: 2.6833804, z: 0.0340842}
 --- !u!95 &6991147843939515491
 Animator:
   serializedVersion: 3
@@ -219,7 +219,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: {fileID: 6991147842715459383}
-  Data: {fileID: 0}
+  Data: {fileID: 11400000, guid: 3c1887afc3afa9b41871e8901615301f, type: 2}
   fow: {fileID: 0}
   EnemyCtrl: {fileID: 0}
   NavAgent: {fileID: 0}
@@ -1219,6 +1219,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3623897510136537494}
     m_Modifications:
+    - target: {fileID: -927199367670048503, guid: 3e1c0bfc8d541c74bb206e1c573c9a33,
+        type: 3}
+      propertyPath: m_Name
+      value: Spada_enemy
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 3e1c0bfc8d541c74bb206e1c573c9a33,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1273,11 +1278,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 3e1c0bfc8d541c74bb206e1c573c9a33,
-        type: 3}
-      propertyPath: m_Name
-      value: Spada_enemy
       objectReference: {fileID: 0}
     - target: {fileID: -1504981713932161579, guid: 3e1c0bfc8d541c74bb206e1c573c9a33,
         type: 3}

@@ -10,7 +10,7 @@ public class EnemyData : ScriptableObject
     [SerializeField]
     public int Damage;
     [SerializeField]
-    public int StoppingDistance;
+    public int rateoDamage;
     [SerializeField]
     public int Speed;
 

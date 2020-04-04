@@ -29,10 +29,9 @@ public class EnemyController : MonoBehaviour
 
     public void Start()
     {
-        enemy = GetComponent<NavMeshAgent>();
-        fow = GetComponent<FieldOfView>();
+        //enemy = GetComponent<NavMeshAgent>();
         EnemyCtrl = GetComponent<EnemyController>();
-        NavAgent = GetComponent<NavMeshAgent>();
+       // NavAgent = GetComponent<NavMeshAgent>();
         HealthCtrl = FindObjectOfType<HealthController>();
         //NavAgent.stoppingDistance = Data.StoppingDistance;
         //NavAgent.speed = Data.Speed;
@@ -150,7 +149,7 @@ public class EnemyController : MonoBehaviour
         {
             //pHealth.TakeDamage(20);
             //petLife.TakeDamage(20);
-            pHealth.TakeDamage(15);
+            pHealth.TakeDamage(Data.Damage);
             hit.transform.DOShakeScale(0.5f, strength);
             SoundManager.PlaySound(SoundManager.Sound.femaleTakeDamage);
 
@@ -160,10 +159,10 @@ public class EnemyController : MonoBehaviour
     private IEnumerator damageTimer()
     {
         canTakeDamage = false;
-        yield return new WaitForSeconds(rateoDamage);
+        yield return new WaitForSeconds(Data.rateoDamage);
         canTakeDamage = true;
     }
-    public void Attack(GameObject _target)
+    /*public void Attack(GameObject _target)
     {
         HealthCtrl.Life -= Data.Damage;
         Debug.Log("EnemyAttack");
@@ -176,5 +175,5 @@ public class EnemyController : MonoBehaviour
     {
         PlayerLifeController pHealth = hit.collider.GetComponent<PlayerLifeController>();
         pHealth.TakeDamage(1);
-    }
+    }*/
 }

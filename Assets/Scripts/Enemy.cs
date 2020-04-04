@@ -28,7 +28,7 @@ public class Enemy : MonoBehaviour, IEnemy
         EnemyCtrl = GetComponent<EnemyController>();
         NavAgent = GetComponent<NavMeshAgent>();
         HealthCtrl = FindObjectOfType<HealthController>();
-        NavAgent.stoppingDistance = Data.StoppingDistance;
+       // NavAgent.stoppingDistance = Data.StoppingDistance;
         NavAgent.speed = Data.Speed;
     }
  
