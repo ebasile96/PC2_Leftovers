@@ -912,10 +912,8 @@ GameObject:
   - component: {fileID: 2874370474203981110}
   - component: {fileID: 1678035709151691425}
   - component: {fileID: 1678035709151691484}
-  - component: {fileID: 1678035709151691429}
   - component: {fileID: 1678035709151691426}
   - component: {fileID: 1678035709151691427}
-  - component: {fileID: 1678035709151691424}
   - component: {fileID: -6416331029858799920}
   m_Layer: 8
   m_Name: SK_Blue_enemy
@@ -989,41 +987,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1678035709151691429
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7235166392293632702}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c03f635ac00dc54d8d1a4b05f105a5b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  viewRadius: 5
-  viewAngle: 360
-  lineR: {fileID: 0}
-  targetMask:
-    serializedVersion: 2
-    m_Bits: 3072
-  obstacleMask:
-    serializedVersion: 2
-    m_Bits: 0
-  propsMask:
-    serializedVersion: 2
-    m_Bits: 0
-  targetLine: {fileID: 0}
-  dstToTarget: 0
-  timerCombo: 0
-  maxTimerCombo: 0
-  comboExtender: 0
-  enemyCounter: 0
-  enemyStressValue: 0
-  comboStressMultiplier: 0
-  chainController: {fileID: 0}
-  visibleTargets: []
-  testTimerCombo: {fileID: 0}
 --- !u!195 &1678035709151691426
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1072,24 +1035,6 @@ MonoBehaviour:
   targetShake: {fileID: 0}
   petLife: {fileID: 0}
   pHealth: {fileID: 0}
---- !u!114 &1678035709151691424
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7235166392293632702}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: debb184017e7b6d49b60855486917e64, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Data: {fileID: 11400000, guid: 3c1887afc3afa9b41871e8901615301f, type: 2}
-  Fow: {fileID: 0}
-  EnemyCtrl: {fileID: 0}
-  NavAgent: {fileID: 0}
-  HealthCtrl: {fileID: 0}
-  anim: {fileID: 1678035709151691484}
 --- !u!54 &-6416331029858799920
 Rigidbody:
   m_ObjectHideFlags: 0
