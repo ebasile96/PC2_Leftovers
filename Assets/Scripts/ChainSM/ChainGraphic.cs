@@ -42,6 +42,7 @@ public class ChainGraphic : MonoBehaviour
         else
         {
             lineR.enabled = false;
+            chainController.currentStressValue = 100;
         }
     }
 }

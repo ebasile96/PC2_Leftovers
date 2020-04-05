@@ -69,7 +69,7 @@ public class ChainController : MonoBehaviour
 
     public void LenghtStressChain()
     {
-        if (currentStressValue > 1)
+        if (currentStressValue > 1 && currentStressValue != 100)
         {
             currentStressValue -= (((currentStressValue / 100) * (graphic.maxLenghtChain - graphic.dstToTarget) / 20));
         }
