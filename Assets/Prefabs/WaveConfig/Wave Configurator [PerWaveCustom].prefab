@@ -397,7 +397,7 @@ MonoBehaviour:
   startPointPickerType: 0
   spawnerType: 0
   spawnerPickerType: 0
-  endPointsType: 1
+  endPointsType: 0
   formationType: 0
   prevStartPointType: 0
   prevStartPointPickerType: 0
@@ -466,32 +466,17 @@ MonoBehaviour:
         type: 3}
       amount: 10
       groupSize: 1
-    - name: Enemy 2
-      gameObject: {fileID: 7235166392293632702, guid: 0c2e9274d0bf80e40a55eac822bdd4dc,
-        type: 3}
-      amount: 10
-      groupSize: 1
     deployments: 2
   - name: Wave 2
     enemies:
     - name: Enemy 1
       gameObject: {fileID: 4235695233260938444, guid: 578f320f819359143937de9ce3913847,
         type: 3}
-      amount: 3
+      amount: 10
       groupSize: 1
-    - name: Enemy 2
-      gameObject: {fileID: 4235695233260938444, guid: 578f320f819359143937de9ce3913847,
-        type: 3}
-      amount: 6
-      groupSize: 1
-    - name: Enemy 3
-      gameObject: {fileID: 4235695233260938444, guid: 578f320f819359143937de9ce3913847,
-        type: 3}
-      amount: 9
-      groupSize: 1
-    deployments: 3
-  minTimeForNextDeployment: 2
-  maxTimeForNextDeployment: 6
+    deployments: 2
+  minTimeForNextDeployment: 3
+  maxTimeForNextDeployment: 3
   spawnRate: 3
   autoDeploy: 1
   enemyParentObject: 
