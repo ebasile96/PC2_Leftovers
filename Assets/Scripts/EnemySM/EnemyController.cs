@@ -8,7 +8,6 @@ using UnityEngine.SceneManagement;
 public class EnemyController : MonoBehaviour
 {
     public EnemyStateBase currentState;
-    NavMeshAgent enemy;
     public EnemyData Data;
     //public Animation Anim;
     public FieldOfView fow;
@@ -18,7 +17,8 @@ public class EnemyController : MonoBehaviour
     int playerLayer = 10;
     int petLayer = 11;
     public Animator anim;
-
+    public PlayerController targetObjectCharacter;
+    public PetController targetObjectCompanion;
 
     public void ChangeState(EnemyStateBase newState)
     {
@@ -31,7 +31,7 @@ public class EnemyController : MonoBehaviour
     {
         //enemy = GetComponent<NavMeshAgent>();
         EnemyCtrl = GetComponent<EnemyController>();
-       // NavAgent = GetComponent<NavMeshAgent>();
+        NavAgent = GetComponent<NavMeshAgent>();
         HealthCtrl = FindObjectOfType<HealthController>();
         //NavAgent.stoppingDistance = Data.StoppingDistance;
         //NavAgent.speed = Data.Speed;
@@ -46,6 +46,9 @@ public class EnemyController : MonoBehaviour
         // provvisorio
         anim.SetTrigger("GoToRunning");
         pHealth = FindObjectOfType<PlayerLifeController>();
+        targetObjectCharacter = FindObjectOfType<PlayerController>();
+        targetObjectCompanion = FindObjectOfType<PetController>();
+        FollowPlayer();
     }
 
    
@@ -117,24 +120,22 @@ public class EnemyController : MonoBehaviour
 
     }*/
 
-    /*public void FollowPlayer()
+    public void FollowPlayer()
     {
+        float targetCharacter = Vector3.Distance(transform.position, targetObjectCharacter.transform.position);
+        float targetCompanion = Vector3.Distance(transform.position, targetObjectCompanion.transform.position);
 
-        foreach (Transform target in fow.visibleTargets)
+        if(targetCharacter > targetCompanion) 
         {
-            if (target.gameObject.layer == playerLayer || target.gameObject.layer == petLayer)
-            {
-                NavAgent.destination = target.position;
-
-                Debug.Log("animazion funge");
-            }
-            else
-            {
-                Debug.Log("animazion funge");
-            }
-
+            NavAgent.destination = targetObjectCharacter.transform.position;
+            NavAgent.speed = Data.Speed;
         }
-    }*/
+        else if (targetCharacter < targetCompanion)
+        {
+            NavAgent.destination = targetObjectCompanion.transform.position;
+            NavAgent.speed = Data.Speed;
+        }
+    }
 
 
     private bool canTakeDamage = true;

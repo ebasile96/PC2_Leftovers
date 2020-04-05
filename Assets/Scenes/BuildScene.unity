@@ -1330,12 +1330,17 @@ PrefabInstance:
         type: 3}
       propertyPath: endPoints.Array.data[0].endPoint
       value: 
-      objectReference: {fileID: 1201742076029420385}
+      objectReference: {fileID: 0}
     - target: {fileID: 322326698890451146, guid: cf20dcbc9e1041c46bc4638bed4d50d5,
         type: 3}
       propertyPath: endPoints.Array.data[1].endPoint
       value: 
-      objectReference: {fileID: 170482410393740350}
+      objectReference: {fileID: 0}
+    - target: {fileID: 322326698890451159, guid: cf20dcbc9e1041c46bc4638bed4d50d5,
+        type: 3}
+      propertyPath: endPointsType
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf20dcbc9e1041c46bc4638bed4d50d5, type: 3}
 --- !u!114 &673814756 stripped
@@ -1411,7 +1416,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 755907086}
-  m_LocalRotation: {x: 0.50565857, y: 0.019181801, z: -0.009086464, w: 0.86247265}
+  m_LocalRotation: {x: 0.50565857, y: 0.019181617, z: -0.00908611, w: 0.8624726}
   m_LocalPosition: {x: 6.025, y: 21.295, z: -10.7805}
   m_LocalScale: {x: 1, y: 1, z: 1.2193}
   m_Children:
@@ -2560,6 +2565,8 @@ MonoBehaviour:
   NavAgent: {fileID: 0}
   HealthCtrl: {fileID: 0}
   anim: {fileID: 0}
+  targetObjectCharacter: {fileID: 0}
+  targetObjectCompanion: {fileID: 0}
   rangeAttack: 3
   isPlayer: 0
   rateoDamage: 1
@@ -3252,6 +3259,8 @@ MonoBehaviour:
   NavAgent: {fileID: 0}
   HealthCtrl: {fileID: 0}
   anim: {fileID: 0}
+  targetObjectCharacter: {fileID: 0}
+  targetObjectCompanion: {fileID: 0}
   rangeAttack: 3
   isPlayer: 0
   rateoDamage: 1
@@ -3711,6 +3720,8 @@ MonoBehaviour:
   NavAgent: {fileID: 0}
   HealthCtrl: {fileID: 0}
   anim: {fileID: 0}
+  targetObjectCharacter: {fileID: 0}
+  targetObjectCompanion: {fileID: 0}
   rangeAttack: 3
   isPlayer: 0
   rateoDamage: 1
@@ -3898,6 +3909,8 @@ MonoBehaviour:
   NavAgent: {fileID: 0}
   HealthCtrl: {fileID: 0}
   anim: {fileID: 0}
+  targetObjectCharacter: {fileID: 0}
+  targetObjectCompanion: {fileID: 0}
   rangeAttack: 3
   isPlayer: 0
   rateoDamage: 1
@@ -4143,6 +4156,8 @@ MonoBehaviour:
   NavAgent: {fileID: 0}
   HealthCtrl: {fileID: 0}
   anim: {fileID: 0}
+  targetObjectCharacter: {fileID: 0}
+  targetObjectCompanion: {fileID: 0}
   rangeAttack: 3
   isPlayer: 0
   rateoDamage: 1
@@ -6432,17 +6447,17 @@ PrefabInstance:
     - target: {fileID: 4792709009875095648, guid: f838afab358d88b47bffa582ffd236a4,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.019181801
+      value: 0.019181617
       objectReference: {fileID: 0}
     - target: {fileID: 4792709009875095648, guid: f838afab358d88b47bffa582ffd236a4,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.009086464
+      value: -0.00908611
       objectReference: {fileID: 0}
     - target: {fileID: 4792709009875095648, guid: f838afab358d88b47bffa582ffd236a4,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.86247265
+      value: 0.8624726
       objectReference: {fileID: 0}
     - target: {fileID: 4792709009875095648, guid: f838afab358d88b47bffa582ffd236a4,
         type: 3}
