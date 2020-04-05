@@ -19,6 +19,7 @@ public class EnemyController : MonoBehaviour
     public Animator anim;
     public PlayerController targetObjectCharacter;
     public PetController targetObjectCompanion;
+    private VFXManager vfx;
 
     public void ChangeState(EnemyStateBase newState)
     {
@@ -45,9 +46,12 @@ public class EnemyController : MonoBehaviour
         //StartCoroutine(AttackMelee());
         // provvisorio
         anim.SetTrigger("GoToRunning");
+
+        //provvisorio da cambiare
         pHealth = FindObjectOfType<PlayerLifeController>();
         targetObjectCharacter = FindObjectOfType<PlayerController>();
         targetObjectCompanion = FindObjectOfType<PetController>();
+        vfx = FindObjectOfType<VFXManager>();
         FollowPlayer();
     }
 
@@ -151,7 +155,7 @@ public class EnemyController : MonoBehaviour
             //pHealth.TakeDamage(20);
             //petLife.TakeDamage(20);
             pHealth.TakeDamage(Data.Damage);
-            hit.transform.DOShakeScale(0.5f, strength);
+            Instantiate(vfx.vfxHitTest, hit.transform);
             SoundManager.PlaySound(SoundManager.Sound.femaleTakeDamage);
 
             StartCoroutine(damageTimer());
