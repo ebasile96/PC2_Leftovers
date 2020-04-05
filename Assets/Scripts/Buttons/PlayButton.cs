@@ -17,4 +17,19 @@ public class PlayButton : MonoBehaviour
     {
         SceneManager.LoadScene("BuildScene(TestChainGabri)");
     }
+
+    public void PressBlu()
+    {
+        FlowStateMachine.GoToTestBlu();
+    }
+
+    public void PressGreen()
+    {
+        FlowStateMachine.GoToTestGreen();
+    }
+
+    public void PressRed()
+    {
+        FlowStateMachine.GotoTestRed();
+    }
 }

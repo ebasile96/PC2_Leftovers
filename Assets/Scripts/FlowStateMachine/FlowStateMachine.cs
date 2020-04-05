@@ -24,6 +24,9 @@ public class FlowStateMachine : MonoBehaviour
         GoToMainMenu += HandleOnMainMenu;
         GoToPause += HandleOnPause;
         GoToGameplay += HandleOnGameplay;
+        GoToTestBlu += HandleOnTestBlu;
+        GoToTestGreen += HandleOnTestGreen;
+        GotoTestRed += HandleOnTestRed;
     }
     #region Setup
 
@@ -50,6 +53,9 @@ public class FlowStateMachine : MonoBehaviour
     public static Action GoToMainMenu;
     public static Action GoToPause;
     public static Action GoToGameplay;
+    public static Action GoToTestBlu;
+    public static Action GotoTestRed;
+    public static Action GoToTestGreen;
 
     #endregion
 
@@ -68,11 +74,29 @@ public class FlowStateMachine : MonoBehaviour
     {
         animController.SetTrigger("GoToPause");
     }
+
+    private void HandleOnTestBlu()
+    {
+        animController.SetTrigger("GoToTestBlu");
+    }
+
+    private void HandleOnTestRed()
+    {
+        animController.SetTrigger("GoToTestRed");
+    }
+
+    private void HandleOnTestGreen()
+    {
+        animController.SetTrigger("GoToTestGreen");
+    }
     #endregion
     private void OnDisable()
     {
         GoToMainMenu -= HandleOnMainMenu;
         GoToPause -= HandleOnPause;
         GoToGameplay -= HandleOnGameplay;
+        GoToTestBlu -= HandleOnTestBlu;
+        GoToTestGreen -= HandleOnTestGreen;
+        GotoTestRed -= HandleOnTestRed;
     }
 }

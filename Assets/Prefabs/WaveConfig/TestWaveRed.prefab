@@ -359,7 +359,7 @@ GameObject:
   - component: {fileID: 322326698890451146}
   - component: {fileID: 322326698890451157}
   m_Layer: 0
-  m_Name: Wave Configurator [PerWaveCustom]
+  m_Name: TestWaveRed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -462,37 +462,9 @@ MonoBehaviour:
   - name: Wave 1
     enemies:
     - name: Enemy 1
-      gameObject: {fileID: 7235166392293632702, guid: 0c2e9274d0bf80e40a55eac822bdd4dc,
-        type: 3}
-      amount: 3
-      groupSize: 1
-    - name: Enemy 2
-      gameObject: {fileID: 4235695233260938444, guid: 578f320f819359143937de9ce3913847,
-        type: 3}
-      amount: 2
-      groupSize: 1
-    - name: Enemy 3
       gameObject: {fileID: 1307283017811907814, guid: 1310440b6b8c3444aa3a50866c9dbebf,
         type: 3}
-      amount: 2
-      groupSize: 1
-    deployments: 2
-  - name: Wave 2
-    enemies:
-    - name: Enemy 1
-      gameObject: {fileID: 7235166392293632702, guid: 0c2e9274d0bf80e40a55eac822bdd4dc,
-        type: 3}
-      amount: 4
-      groupSize: 1
-    - name: Enemy 2
-      gameObject: {fileID: 4235695233260938444, guid: 578f320f819359143937de9ce3913847,
-        type: 3}
-      amount: 3
-      groupSize: 1
-    - name: Enemy 3
-      gameObject: {fileID: 1307283017811907814, guid: 1310440b6b8c3444aa3a50866c9dbebf,
-        type: 3}
-      amount: 3
+      amount: 10
       groupSize: 1
     deployments: 2
   minTimeForNextDeployment: 3
