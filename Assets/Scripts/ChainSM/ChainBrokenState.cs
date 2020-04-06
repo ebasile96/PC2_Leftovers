@@ -2,30 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChainHeavyState : ChainBaseState
+public class ChainBrokenState : ChainBaseState
 {
     public ChainController chainController;
     public ChainGraphic chainGr;
     public ChainBaseState lightState;
     public ChainBaseState mediumState;
+    public ChainBaseState heavyState;
     public ChainBaseState neutralState;
-    public ChainBaseState brokenState;
 
     public override void Enter()
     {
-
+        chainGr.ChainGraphicBreaker();
     }
 
     public override void Tick()
     {
-        chainGr.lineR.material = chainGr.heavyMaterial;
-        if(chainController.currentStressValue < 90)
+        if (chainController.currentStressValue != 100)
         {
-            chainController.ChangeState(mediumState);
-        }
-        else if (chainController.currentStressValue >= 100)
-        {
-            chainController.ChangeState(brokenState);
+            chainController.ChangeState(neutralState);
         }
     }
 }

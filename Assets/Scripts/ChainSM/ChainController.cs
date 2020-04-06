@@ -44,7 +44,7 @@ public class ChainController : MonoBehaviour
     {
         currentState.Tick();
         LenghtStressChain();
-        ChainBreaker();
+        //ChainBreaker();
         ChainReformer();
         //CheckChain();
         DrawRaycastChain();
@@ -54,19 +54,6 @@ public class ChainController : MonoBehaviour
         ChainObstacle();
     }
 
-    /*public void CheckChain()
-    {
-        if (fov.visibleTargets.Count == 0)
-        {
-            fov.lineR.enabled = false;
-        }
-        else if(fov.visibleTargets.Count != 0 && currentStressValue < 100)
-        {
-            fov.lineR.enabled = true;
-        }
-    }*/
-
-
     public void LenghtStressChain()
     {
         if (currentStressValue > 1 && currentStressValue != 100)
@@ -75,13 +62,12 @@ public class ChainController : MonoBehaviour
         }
     }
 
-    public void ChainBreaker()
+    /*public void ChainBreaker()
     {
-        if(currentStressValue >= 100)
-        {
-            graphic.lineR.enabled = false;
-        }     
-    }
+      
+       graphic.lineR.enabled = false;
+
+    }*/
 
     public void ChainReformer()
     {
@@ -98,7 +84,7 @@ public class ChainController : MonoBehaviour
 
         if(reforgeTimer <= 0)
         {
-            graphic.lineR.enabled = true;
+            //graphic.lineR.enabled = true;
             reforgeTimer = maxReforgeTimer;
             currentStressValue = reforgeStressValue;
         }
@@ -142,7 +128,7 @@ public class ChainController : MonoBehaviour
         if (Physics.Raycast(rayChain, out hit, graphic.dstToTarget) && hit.collider.tag == "Obstacle")
         {
             currentStressValue = 100;
-            graphic.lineR.enabled = false;
+            //graphic.lineR.enabled = false;
         }
     }
 

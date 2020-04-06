@@ -9,21 +9,23 @@ public class ChainNeutralState : ChainBaseState
     public ChainBaseState lightState;
     public ChainBaseState mediumState;
     public ChainBaseState heavyState;
+    public ChainBaseState brokenState;
 
     public override void Enter()
     {
-        
-        //chainController = GetComponent<ChainController>();
-        //fow = GetComponent<FieldOfView>();
-        //fow.lineR.material = chainController.neutralMaterial;
+        chainGr.ChainGraphicReforme();
     }
 
     public override void Tick()
     {
         chainGr.lineR.material = chainGr.neutralMaterial;
-        if (chainController.currentStressValue > 50)
+        if (chainController.currentStressValue > 50 && chainController.currentStressValue < 100)
         {
             chainController.ChangeState(lightState);
+        }
+        else if(chainController.currentStressValue >= 100)
+        {
+        chainController.ChangeState(brokenState);
         }
     }
 }

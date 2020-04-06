@@ -35,14 +35,24 @@ public class ChainGraphic : MonoBehaviour
         dstToTarget = Vector3.Distance(transform.position, targetLine.position);
         if (dstToTarget < maxLenghtChain && chainController.currentStressValue < 100)
         {
-            lineR.enabled = true;
+            //lineR.enabled = true;
             lineR.SetPosition(0, transform.position);
             lineR.SetPosition(1, targetLine.position);
         }
         else
         {
-            lineR.enabled = false;
+            //lineR.enabled = false;
             chainController.currentStressValue = 100;
         }
+    }
+
+    public void ChainGraphicBreaker()
+    {
+        lineR.enabled = false;
+    }
+
+    public void ChainGraphicReforme()
+    {
+        lineR.enabled = true;
     }
 }
