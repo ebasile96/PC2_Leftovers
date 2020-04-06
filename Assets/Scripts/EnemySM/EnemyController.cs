@@ -9,16 +9,11 @@ public class EnemyController : MonoBehaviour
 {
     public EnemyStateBase currentState;
     public EnemyData Data;
-    //public Animation Anim;
-    public FieldOfView fow;
-    public EnemyController EnemyCtrl;
-    public NavMeshAgent NavAgent;
-    public HealthController HealthCtrl;
-    int playerLayer = 10;
-    int petLayer = 11;
-    public Animator anim;
-    public PlayerController targetObjectCharacter;
-    public PetController targetObjectCompanion;
+    private NavMeshAgent NavAgent;
+    private Animator anim;
+    private PlayerLifeController pHealth;
+    private PlayerController targetObjectCharacter;
+    private PetController targetObjectCompanion;
     private VFXManager vfx;
 
     public void ChangeState(EnemyStateBase newState)
@@ -30,99 +25,23 @@ public class EnemyController : MonoBehaviour
 
     public void Start()
     {
-        //enemy = GetComponent<NavMeshAgent>();
-        EnemyCtrl = GetComponent<EnemyController>();
         NavAgent = GetComponent<NavMeshAgent>();
-        HealthCtrl = FindObjectOfType<HealthController>();
-        //NavAgent.stoppingDistance = Data.StoppingDistance;
-        //NavAgent.speed = Data.Speed;
         anim = GetComponent<Animator>();
+        //provvisorio
+        pHealth = FindObjectOfType<PlayerLifeController>();
+        targetObjectCharacter = FindObjectOfType<PlayerController>();
+        targetObjectCompanion = FindObjectOfType<PetController>();
+        vfx = FindObjectOfType<VFXManager>();
     }
 
     public void Update()
     {
         anim = GetComponent<Animator>();
         currentState.Tick();
-        //StartCoroutine(AttackMelee());
         // provvisorio
         anim.SetTrigger("GoToRunning");
-
-        //provvisorio da cambiare
-        pHealth = FindObjectOfType<PlayerLifeController>();
-        targetObjectCharacter = FindObjectOfType<PlayerController>();
-        targetObjectCompanion = FindObjectOfType<PetController>();
-        vfx = FindObjectOfType<VFXManager>();
         FollowPlayer();
     }
-
-   
-
-    public int rangeAttack;
-    public RaycastHit hit;
-    public bool isPlayer;
-    public float rateoDamage;
-    public float strength;
-    public GameObject targetShake;
-    public PlayerLifeController petLife;
-    public PlayerLifeController pHealth;
-    /*public IEnumerator AttackMelee()
-    {
-        Ray rayForward = new Ray(transform.position, transform.forward);
-
-
-        if (Physics.Raycast(rayForward, out hit, rangeAttack) && hit.collider.tag == "Player")
-        {
-            Debug.DrawRay(transform.position + new Vector3(0, 10f), transform.forward * hit.distance, Color.red);
-            pHealth = hit.collider.GetComponent<PlayerLifeController>();
-            petLife = hit.collider.GetComponent<PlayerLifeController>();
-            if (pHealth.healthPlayer == 100 && hit.collider.tag == "Player")
-            {
-                pHealth.TakeDamage(20);
-                petLife.TakeDamage(20);
-                hit.transform.DOShakeScale(0.5f, strength);
-                SoundManager.PlaySound(SoundManager.Sound.femaleTakeDamage);
-            }
-            yield return new WaitForSeconds(rateoDamage);
-            if (pHealth.healthPlayer == 80 && hit.collider.tag == "Player")
-            {
-                pHealth.TakeDamage(20);
-                petLife.TakeDamage(20);
-                hit.transform.DOShakeScale(0.5f, strength);
-                SoundManager.PlaySound(SoundManager.Sound.femaleTakeDamage);
-            }
-            yield return new WaitForSeconds(rateoDamage);
-            if (pHealth.healthPlayer == 60 && hit.collider.tag == "Player")
-            {
-                pHealth.TakeDamage(20);
-                petLife.TakeDamage(20);
-                hit.transform.DOShakeScale(0.5f, strength);
-                SoundManager.PlaySound(SoundManager.Sound.femaleTakeDamage);
-            }
-            yield return new WaitForSeconds(rateoDamage);
-            if (pHealth.healthPlayer == 40 && hit.collider.tag == "Player")
-            {
-                pHealth.TakeDamage(20);
-                petLife.TakeDamage(20);
-                hit.transform.DOShakeScale(0.5f, strength);
-                SoundManager.PlaySound(SoundManager.Sound.femaleTakeDamage);
-            }
-            yield return new WaitForSeconds(rateoDamage);
-            if (pHealth.healthPlayer == 20 && hit.collider.tag == "Player")
-            {
-                pHealth.TakeDamage(20);
-                petLife.TakeDamage(20);
-                hit.transform.DOShakeScale(0.5f, strength);
-                SoundManager.PlaySound(SoundManager.Sound.femaleTakeDamage);
-            }
-            yield return new WaitForSeconds(rateoDamage);
-            isPlayer = true;
-        }
-        else
-        {
-            isPlayer = false;
-        }
-
-    }*/
 
     public void FollowPlayer()
     {
@@ -147,13 +66,8 @@ public class EnemyController : MonoBehaviour
     public void OnCollisionEnter(Collision hit)
     {
 
-        //pHealth = hit.collider.GetComponent<PlayerLifeController>();
-        //petLife = hit.collider.GetComponent<PlayerLifeController>();
-
         if (hit.gameObject.tag == "Player" && canTakeDamage == true)
         {
-            //pHealth.TakeDamage(20);
-            //petLife.TakeDamage(20);
             pHealth.TakeDamage(Data.Damage);
             Instantiate(vfx.vfxHitTest, hit.transform);
             SoundManager.PlaySound(SoundManager.Sound.femaleTakeDamage);
