@@ -148,4 +148,12 @@ public class ChainController : MonoBehaviour
         }
     }
 
+    public void ReformeChainCollision()
+    {
+        if (currentStressValue >= 100)
+        {
+            currentStressValue = reforgeStressValue;
+            reforgeTimer = maxReforgeTimer;
+        }
+    }
 }

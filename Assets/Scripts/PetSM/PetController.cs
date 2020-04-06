@@ -15,6 +15,7 @@ public class PetController : MonoBehaviour
     public Vector3 _velocity;
     [HideInInspector]
     public Vector3 movement;
+    public ChainController chainController;
 
     public void ChangeState(PetStateBase newState)
     {
@@ -32,8 +33,6 @@ public class PetController : MonoBehaviour
     public void Update()
     {
         currentState.Tick();
-
-     
     }
 
     public void MovePet()
@@ -64,4 +63,11 @@ public class PetController : MonoBehaviour
             _velocity.y = 0;
     }
 
+    public void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if (hit.gameObject.tag == "Player")
+        {
+            chainController.ReformeChainCollision();
+        }
+    }
 }

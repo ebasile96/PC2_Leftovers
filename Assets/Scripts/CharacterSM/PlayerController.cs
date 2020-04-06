@@ -44,16 +44,13 @@ public class PlayerController : MonoBehaviour
         movement = new Vector3(GameManager.instance.Inputmgr.horizontal, 0, GameManager.instance.Inputmgr.vertical) * moveSpeed * Time.deltaTime;
         lookDir = new Vector3(movement.x, 0f, movement.z);
 
-        // determine method of rotation
         if (GameManager.instance.Inputmgr.horizontal != 0 || GameManager.instance.Inputmgr.vertical != 0)
         {
 
-            // create a smooth direction to look at using Slerp()
             Vector3 smoothDir = Vector3.Slerp(transform.forward, lookDir, turnSpeed * Time.deltaTime);
 
             transform.rotation = Quaternion.LookRotation(smoothDir);
 
-            // store the current smooth direction to use when the player is not providing input, providing consistency
             oldLookDir = smoothDir;
         }
         else
