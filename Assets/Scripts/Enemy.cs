@@ -29,12 +29,12 @@ public class Enemy : MonoBehaviour, IEnemy
         NavAgent = GetComponent<NavMeshAgent>();
         HealthCtrl = FindObjectOfType<HealthController>();
        // NavAgent.stoppingDistance = Data.StoppingDistance;
-        NavAgent.speed = Data.Speed;
+        NavAgent.speed = Data.speed;
     }
  
     public void Attack(GameObject _target)
     {
-        HealthCtrl.Life -= Data.Damage;
+        HealthCtrl.Life -= Data.damage;
         Debug.Log("EnemyAttack");
         //attack method
     }

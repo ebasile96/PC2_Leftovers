@@ -32,6 +32,11 @@ public class EnemyController : MonoBehaviour
         targetObjectCharacter = FindObjectOfType<PlayerController>();
         targetObjectCompanion = FindObjectOfType<PetController>();
         vfx = FindObjectOfType<VFXManager>();
+
+        //settaggi valori per movimento enemy
+        NavAgent.speed = Data.speed;
+        NavAgent.acceleration = Data.acceleration;
+        NavAgent.angularSpeed = Data.angularSpeed;
     }
 
     public void Update()
@@ -48,15 +53,19 @@ public class EnemyController : MonoBehaviour
         float targetCharacter = Vector3.Distance(transform.position, targetObjectCharacter.transform.position);
         float targetCompanion = Vector3.Distance(transform.position, targetObjectCompanion.transform.position);
 
-        if(targetCharacter > targetCompanion) 
+        if (targetCharacter > targetCompanion) 
         {
             NavAgent.destination = targetObjectCharacter.transform.position;
-            NavAgent.speed = Data.Speed;
+            //NavAgent.speed = Data.speed;
+            //NavAgent.acceleration = Data.acceleration;
+            //NavAgent.angularSpeed = Data.angularSpeed;
         }
         else if (targetCharacter < targetCompanion)
         {
             NavAgent.destination = targetObjectCompanion.transform.position;
-            NavAgent.speed = Data.Speed;
+            //NavAgent.speed = Data.speed;
+            //NavAgent.acceleration = Data.acceleration;
+            //NavAgent.angularSpeed = Data.angularSpeed;
         }
     }
 
@@ -68,7 +77,7 @@ public class EnemyController : MonoBehaviour
 
         if (hit.gameObject.tag == "Player" && canTakeDamage == true)
         {
-            pHealth.TakeDamage(Data.Damage);
+            pHealth.TakeDamage(Data.damage);
             Instantiate(vfx.vfxHitTest, hit.transform);
             SoundManager.PlaySound(SoundManager.Sound.femaleTakeDamage);
 

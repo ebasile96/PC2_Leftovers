@@ -8,10 +8,14 @@ public class EnemyData : ScriptableObject
     [SerializeField]
     public int Life;
     [SerializeField]
-    public int Damage;
+    public int damage;
     [SerializeField]
     public int rateoDamage;
     [SerializeField]
-    public int Speed;
+    public int speed;
+    [SerializeField]
+    public int angularSpeed;
+    [SerializeField]
+    public int acceleration;
 
 }
