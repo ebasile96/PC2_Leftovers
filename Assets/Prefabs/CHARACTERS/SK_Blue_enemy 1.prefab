@@ -666,7 +666,7 @@ GameObject:
   - component: {fileID: 4667853571521158384}
   - component: {fileID: 1519251925837318619}
   - component: {fileID: 6076168474709653021}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Sphere
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -758,6 +758,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da42d9d37730114448d0093130f57ea9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collidereEnemy: {fileID: 0}
 --- !u!114 &6076168474709653021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1291,11 +1292,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4901804185781641166}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 3e1c0bfc8d541c74bb206e1c573c9a33,
-        type: 3}
-      propertyPath: m_Name
-      value: Spada_enemy
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 3e1c0bfc8d541c74bb206e1c573c9a33,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1350,6 +1346,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 3e1c0bfc8d541c74bb206e1c573c9a33,
+        type: 3}
+      propertyPath: m_Name
+      value: Spada_enemy
       objectReference: {fileID: 0}
     - target: {fileID: -1504981713932161579, guid: 3e1c0bfc8d541c74bb206e1c573c9a33,
         type: 3}

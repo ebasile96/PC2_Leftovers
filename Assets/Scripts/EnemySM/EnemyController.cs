@@ -48,19 +48,23 @@ public class EnemyController : MonoBehaviour
         FollowPlayer();
     }
 
+    public float targetCharacter;
+    public float targetCompanion;
     public void FollowPlayer()
     {
-        float targetCharacter = Vector3.Distance(transform.position, targetObjectCharacter.transform.position);
-        float targetCompanion = Vector3.Distance(transform.position, targetObjectCompanion.transform.position);
+         targetCharacter = Vector3.Distance(transform.position, targetObjectCharacter.transform.position);
+         targetCompanion = Vector3.Distance(transform.position, targetObjectCompanion.transform.position);
 
-        if (targetCharacter > targetCompanion) 
+
+
+        if (targetCharacter < targetCompanion) 
         {
             NavAgent.destination = targetObjectCharacter.transform.position;
             //NavAgent.speed = Data.speed;
             //NavAgent.acceleration = Data.acceleration;
             //NavAgent.angularSpeed = Data.angularSpeed;
         }
-        else if (targetCharacter < targetCompanion)
+        else if (targetCompanion < targetCharacter)
         {
             NavAgent.destination = targetObjectCompanion.transform.position;
             //NavAgent.speed = Data.speed;
