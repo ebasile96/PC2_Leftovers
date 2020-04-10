@@ -16,12 +16,12 @@ public class GameplayState : StateBehaviourBase
 
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-            FlowStateMachine.GoToMainMenu();
+        //if (Input.GetKeyDown(KeyCode.Escape))
+            //FlowStateMachine.GoToPause();
     }
 
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-       
+
     }
 }

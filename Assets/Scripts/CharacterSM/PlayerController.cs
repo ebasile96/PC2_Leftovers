@@ -58,7 +58,6 @@ public class PlayerController : MonoBehaviour
             transform.rotation = Quaternion.LookRotation(oldLookDir);
         }
 
-        // move the player using its CharacterController.Move method
         characterController.Move(movement);
 
         //per gravità

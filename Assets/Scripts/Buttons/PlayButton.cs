@@ -32,4 +32,19 @@ public class PlayButton : MonoBehaviour
     {
         FlowStateMachine.GotoTestRed();
     }
+
+    public void MainMenu()
+    {
+        FlowStateMachine.GoToMainMenu();
+    }
+
+    public void MenuPause()
+    {
+        //MEGA PROVVISORIO
+
+        PauseMenuController pause = FindObjectOfType<PauseMenuController>();
+        pause.pauseMenu.SetActive(false);
+        Time.timeScale = 1;
+        pause.isActive = false;
+    }
 }
