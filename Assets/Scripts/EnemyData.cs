@@ -17,5 +17,9 @@ public class EnemyData : ScriptableObject
     public int angularSpeed;
     [SerializeField]
     public int acceleration;
+    [SerializeField]
+    public int damageShield;
+    [SerializeField]
+    public float TimerBubble;
 
 }
