@@ -387,7 +387,7 @@ Animator:
   m_GameObject: {fileID: 4235695233260938444}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ee06d361833ac3a429582293cd0ef48c, type: 2}
+  m_Controller: {fileID: 9100000, guid: a76ae7147ea5b7147b06020220772be8, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -761,6 +761,19 @@ Transform:
   m_Father: {fileID: 6865749924718554279}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &4621324657845631217
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5787506203229877728}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 28.603262, y: 28.603268, z: 7.1844172}
+  m_Center: {x: -0.00000039831266, y: 14.301633, z: 0.81908655}
 --- !u!1 &6087229850377075759
 GameObject:
   m_ObjectHideFlags: 0
@@ -1177,6 +1190,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Shield
       objectReference: {fileID: 0}
+    - target: {fileID: 8507607203872940883, guid: bc37edb0d44bed343be6fa661852a7f4,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 4632601434694635840, guid: bc37edb0d44bed343be6fa661852a7f4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1249,6 +1267,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc37edb0d44bed343be6fa661852a7f4, type: 3}
+--- !u!1 &5787506203229877728 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8507607203872940883, guid: bc37edb0d44bed343be6fa661852a7f4,
+    type: 3}
+  m_PrefabInstance: {fileID: 2756288284119553715}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7352693613474875379 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4632601434694635840, guid: bc37edb0d44bed343be6fa661852a7f4,
@@ -1262,11 +1286,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1920498478201262524}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 3e1c0bfc8d541c74bb206e1c573c9a33,
-        type: 3}
-      propertyPath: m_Name
-      value: Spada_enemy
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 3e1c0bfc8d541c74bb206e1c573c9a33,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1321,6 +1340,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 3e1c0bfc8d541c74bb206e1c573c9a33,
+        type: 3}
+      propertyPath: m_Name
+      value: Spada_enemy
       objectReference: {fileID: 0}
     - target: {fileID: -1504981713932161579, guid: 3e1c0bfc8d541c74bb206e1c573c9a33,
         type: 3}

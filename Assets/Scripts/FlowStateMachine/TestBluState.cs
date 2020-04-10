@@ -7,7 +7,7 @@ public class TestBluState : StateBehaviourBase
 {
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        SceneManager.LoadScene("TestSceneBlu");
+        SceneManager.LoadScene("TestSceneAIEnemy");
     }
 
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
