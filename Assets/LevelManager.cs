@@ -10,11 +10,15 @@ public class LevelManager : MonoBehaviour
     private WaveManager Wavemgr;
     public Text EnemyAlive;
     public Text WaveNumber;
+    [Range(0,100)]
+    public int HealthBonus = 20;
     int wavecount = 1;
+    PlayerLifeController playerLifeCtrl;
     // Start is called before the first frame update
     void Awake()
     {
         Wavemgr = FindObjectOfType<WaveManager>();
+        playerLifeCtrl = FindObjectOfType<PlayerLifeController>();
     }
 
     private void Start()
@@ -37,8 +41,9 @@ public class LevelManager : MonoBehaviour
         {
             wavecount++;
             Wavemgr.StartAllConfigWaves();
-
+            playerLifeCtrl.healthPlayer += HealthBonus;
         }
+
     }
 
     public void FindEnemies()
