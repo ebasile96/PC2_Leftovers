@@ -29,12 +29,7 @@ public class PlayerLifeController : MonoBehaviour
 
     public  void Update()
     {
-       // hpBarPlayer.value = healthPlayer;
-
-       /* if (healthPlayer <= 0)
-        {
-            SceneManager.LoadScene("GameOver");
-            Debug.Log("caricoScene");
-        }*/
+        if (healthPlayer > 100)
+            healthPlayer = 100;
     }
 }
