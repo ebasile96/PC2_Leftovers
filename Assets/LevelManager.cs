@@ -33,15 +33,16 @@ public class LevelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("Life: " + playerLifeCtrl.healthPlayer);
         EnemyAlive.text = "Enemies Left: " + EnemiesAlive.Count;
         WaveNumber.text = "Wave " + wavecount;
         //Debug.Log("enemiesAlive: " + EnemiesAlive.Count);
         FindEnemies();
         if(Wavemgr.SpawnersFinished && EnemiesAlive.Count == 0)
         {
+            CheckLifeBonus();
             wavecount++;
             Wavemgr.StartAllConfigWaves();
-            playerLifeCtrl.healthPlayer += HealthBonus;
         }
 
     }
@@ -54,5 +55,14 @@ public class LevelManager : MonoBehaviour
                 EnemiesAlive.Add(_enemy);
 
         }
+    }
+
+    public void CheckLifeBonus()
+    {
+        if(playerLifeCtrl.healthPlayer < 100)
+        {
+            playerLifeCtrl.healthPlayer += HealthBonus;
+        }
+
     }
 }
