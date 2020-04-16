@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6965909454006106335}
   - component: {fileID: 3692311324339713783}
   - component: {fileID: 127791892191386575}
+  - component: {fileID: 4269871673369368811}
   m_Layer: 0
   m_Name: SM_group_Barrel
   m_TagString: Untagged
@@ -57,7 +58,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 354e912221dc7f943ada4c1d4aa435e8, type: 2}
+  - {fileID: 2100000, guid: 4743376edeab4cc4e856c5c0af9f9a87, type: 2}
   - {fileID: 2100000, guid: e6740963624d1bb4b8eca743430d1336, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -79,6 +80,27 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &4269871673369368811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1628967163898944484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 831cca400e6f12f4fbb6e89e54a9258d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: 4743376edeab4cc4e856c5c0af9f9a87, type: 2}
+  instanceMaterial: 0
+  meshCenter: {x: 0, y: 0, z: 0}
+  maxLights: 6
+  raycast: 1
+  raycastMask:
+    serializedVersion: 2
+    m_Bits: 0
+  raycastFadeSpeed: 10
 --- !u!1 &2225545572404445717
 GameObject:
   m_ObjectHideFlags: 0
@@ -90,6 +112,7 @@ GameObject:
   - component: {fileID: 8022875517811802291}
   - component: {fileID: 5498190846672197686}
   - component: {fileID: 5191726635937233158}
+  - component: {fileID: 4944924663314946794}
   m_Layer: 0
   m_Name: SM_Rialzo
   m_TagString: Untagged
@@ -136,7 +159,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 354e912221dc7f943ada4c1d4aa435e8, type: 2}
+  - {fileID: 2100000, guid: 4743376edeab4cc4e856c5c0af9f9a87, type: 2}
   - {fileID: 2100000, guid: e6740963624d1bb4b8eca743430d1336, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -158,6 +181,27 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &4944924663314946794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2225545572404445717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 831cca400e6f12f4fbb6e89e54a9258d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: 4743376edeab4cc4e856c5c0af9f9a87, type: 2}
+  instanceMaterial: 0
+  meshCenter: {x: 0, y: 0, z: 0}
+  maxLights: 6
+  raycast: 1
+  raycastMask:
+    serializedVersion: 2
+    m_Bits: 0
+  raycastFadeSpeed: 10
 --- !u!1 &4090497795615840514
 GameObject:
   m_ObjectHideFlags: 0
@@ -169,6 +213,7 @@ GameObject:
   - component: {fileID: 3783946586082911673}
   - component: {fileID: 7165340482459058207}
   - component: {fileID: 8523429295944139846}
+  - component: {fileID: 4158986871376951661}
   m_Layer: 0
   m_Name: SM_cheese_plat
   m_TagString: Untagged
@@ -215,7 +260,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 354e912221dc7f943ada4c1d4aa435e8, type: 2}
+  - {fileID: 2100000, guid: 4743376edeab4cc4e856c5c0af9f9a87, type: 2}
   - {fileID: 2100000, guid: e6740963624d1bb4b8eca743430d1336, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -237,6 +282,27 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &4158986871376951661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4090497795615840514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 831cca400e6f12f4fbb6e89e54a9258d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: 4743376edeab4cc4e856c5c0af9f9a87, type: 2}
+  instanceMaterial: 0
+  meshCenter: {x: 0, y: 0, z: 0}
+  maxLights: 6
+  raycast: 1
+  raycastMask:
+    serializedVersion: 2
+    m_Bits: 0
+  raycastFadeSpeed: 10
 --- !u!1 &4710537278734613964
 GameObject:
   m_ObjectHideFlags: 0
@@ -248,6 +314,7 @@ GameObject:
   - component: {fileID: 1247567544528940944}
   - component: {fileID: 6029673905874116901}
   - component: {fileID: 1753699104055351993}
+  - component: {fileID: 9047427026580524520}
   m_Layer: 0
   m_Name: SM_Props_stand
   m_TagString: Untagged
@@ -294,7 +361,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 354e912221dc7f943ada4c1d4aa435e8, type: 2}
+  - {fileID: 2100000, guid: 4743376edeab4cc4e856c5c0af9f9a87, type: 2}
   - {fileID: 2100000, guid: e6740963624d1bb4b8eca743430d1336, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -316,6 +383,27 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &9047427026580524520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4710537278734613964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 831cca400e6f12f4fbb6e89e54a9258d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: 4743376edeab4cc4e856c5c0af9f9a87, type: 2}
+  instanceMaterial: 0
+  meshCenter: {x: 0, y: 0, z: 0}
+  maxLights: 6
+  raycast: 1
+  raycastMask:
+    serializedVersion: 2
+    m_Bits: 0
+  raycastFadeSpeed: 10
 --- !u!1 &4797067645762732340
 GameObject:
   m_ObjectHideFlags: 0
@@ -327,6 +415,7 @@ GameObject:
   - component: {fileID: 9190402459041094219}
   - component: {fileID: 1878499026560368128}
   - component: {fileID: 4483251049644867993}
+  - component: {fileID: 223116304535801543}
   m_Layer: 0
   m_Name: SM_Piatti_group
   m_TagString: Untagged
@@ -373,7 +462,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 354e912221dc7f943ada4c1d4aa435e8, type: 2}
+  - {fileID: 2100000, guid: 4743376edeab4cc4e856c5c0af9f9a87, type: 2}
   - {fileID: 2100000, guid: e6740963624d1bb4b8eca743430d1336, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -395,6 +484,27 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &223116304535801543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4797067645762732340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 831cca400e6f12f4fbb6e89e54a9258d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: 4743376edeab4cc4e856c5c0af9f9a87, type: 2}
+  instanceMaterial: 0
+  meshCenter: {x: 0, y: 0, z: 0}
+  maxLights: 6
+  raycast: 1
+  raycastMask:
+    serializedVersion: 2
+    m_Bits: 0
+  raycastFadeSpeed: 10
 --- !u!1 &6656036595982133662
 GameObject:
   m_ObjectHideFlags: 0
@@ -406,6 +516,7 @@ GameObject:
   - component: {fileID: 3816543480966766065}
   - component: {fileID: 8357463330118150824}
   - component: {fileID: 144070285274005579}
+  - component: {fileID: 5150627335627341916}
   m_Layer: 0
   m_Name: SM_Wooden_box
   m_TagString: Untagged
@@ -452,7 +563,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 354e912221dc7f943ada4c1d4aa435e8, type: 2}
+  - {fileID: 2100000, guid: 4743376edeab4cc4e856c5c0af9f9a87, type: 2}
   - {fileID: 2100000, guid: e6740963624d1bb4b8eca743430d1336, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -474,6 +585,27 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &5150627335627341916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6656036595982133662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 831cca400e6f12f4fbb6e89e54a9258d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: 4743376edeab4cc4e856c5c0af9f9a87, type: 2}
+  instanceMaterial: 0
+  meshCenter: {x: 0, y: 0, z: 0}
+  maxLights: 6
+  raycast: 1
+  raycastMask:
+    serializedVersion: 2
+    m_Bits: 0
+  raycastFadeSpeed: 10
 --- !u!1 &8525380697326191891
 GameObject:
   m_ObjectHideFlags: 0
@@ -523,6 +655,7 @@ GameObject:
   - component: {fileID: 8451819324716604800}
   - component: {fileID: 4367875100730035000}
   - component: {fileID: 1052019201895627493}
+  - component: {fileID: 2821290611105940317}
   m_Layer: 0
   m_Name: SM_stand
   m_TagString: Untagged
@@ -569,7 +702,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 354e912221dc7f943ada4c1d4aa435e8, type: 2}
+  - {fileID: 2100000, guid: 4743376edeab4cc4e856c5c0af9f9a87, type: 2}
   - {fileID: 2100000, guid: e6740963624d1bb4b8eca743430d1336, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -591,6 +724,27 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &2821290611105940317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8539560082701508961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 831cca400e6f12f4fbb6e89e54a9258d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: 4743376edeab4cc4e856c5c0af9f9a87, type: 2}
+  instanceMaterial: 0
+  meshCenter: {x: 0, y: 0, z: 0}
+  maxLights: 6
+  raycast: 1
+  raycastMask:
+    serializedVersion: 2
+    m_Bits: 0
+  raycastFadeSpeed: 10
 --- !u!1 &9168979994271535446
 GameObject:
   m_ObjectHideFlags: 0
@@ -602,6 +756,7 @@ GameObject:
   - component: {fileID: 4780076182839381566}
   - component: {fileID: 2403177462640606242}
   - component: {fileID: 8505407524729710063}
+  - component: {fileID: 5768919055375643249}
   m_Layer: 0
   m_Name: SM_Table_bottle
   m_TagString: Untagged
@@ -648,7 +803,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 354e912221dc7f943ada4c1d4aa435e8, type: 2}
+  - {fileID: 2100000, guid: 4743376edeab4cc4e856c5c0af9f9a87, type: 2}
   - {fileID: 2100000, guid: e6740963624d1bb4b8eca743430d1336, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -670,3 +825,24 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &5768919055375643249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9168979994271535446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 831cca400e6f12f4fbb6e89e54a9258d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: 4743376edeab4cc4e856c5c0af9f9a87, type: 2}
+  instanceMaterial: 0
+  meshCenter: {x: 0, y: 0, z: 0}
+  maxLights: 6
+  raycast: 1
+  raycastMask:
+    serializedVersion: 2
+    m_Bits: 0
+  raycastFadeSpeed: 10
