@@ -25,6 +25,7 @@ public class ChainController : MonoBehaviour
     public int enemyCounter;
     public float enemyStressValue;
     public float comboStressMultiplier;
+    public VFXManager vfx;
 
     public void ChangeState(ChainBaseState newState)
     {
@@ -37,6 +38,7 @@ public class ChainController : MonoBehaviour
     void Start()
     {
         lvlmgr = FindObjectOfType<LevelManager>();
+        vfx = FindObjectOfType<VFXManager>();
     }
 
     // Update is called once per frame

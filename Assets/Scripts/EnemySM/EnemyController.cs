@@ -76,7 +76,7 @@ public class EnemyController : MonoBehaviour
 
     private bool canTakeDamage = true;
 
-    public void OnCollisionEnter(Collision hit)
+    public void OnCollisionStay(Collision hit)
     {
 
         if (hit.gameObject.tag == "Player" && canTakeDamage == true)

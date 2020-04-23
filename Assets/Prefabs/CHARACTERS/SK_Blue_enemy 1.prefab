@@ -1124,7 +1124,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 2
+  m_StoppingDistance: 0.5
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -1146,6 +1146,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: {fileID: 1678035709423802130}
   Data: {fileID: 11400000, guid: b6504f6fab9a5134d9b90bf976a8ea6f, type: 2}
+  targetCharacter: 0
+  targetCompanion: 0
 --- !u!54 &-6416331029858799920
 Rigidbody:
   m_ObjectHideFlags: 0
