@@ -19,11 +19,19 @@ public class ChainHeavyState : ChainBaseState
     public override void Tick()
     {
         chainGr.lineR.material = chainGr.heavyMaterial;
-        if(chainController.currentStressValue < 90)
+
+        //controllo lunghezza catena
+        if(chainGr.dstToTarget <= (chainGr.maxLenghtChain * 75) / 100)
         {
             chainController.ChangeState(mediumState);
         }
-        else if (chainController.currentStressValue >= 100)
+        else if (chainGr.dstToTarget >= chainGr.maxLenghtChain)
+        {
+            chainController.ChangeState(brokenState);
+        }
+        
+        //controllo stress
+        if (chainController.currentStressValue >= 100)
         {
             chainController.ChangeState(brokenState);
         }

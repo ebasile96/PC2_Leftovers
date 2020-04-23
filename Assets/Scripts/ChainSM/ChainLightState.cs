@@ -21,7 +21,7 @@ public class ChainLightState : ChainBaseState
 
         chainGr.lineR.material = chainGr.lightMaterial;
 
-        if (chainController.currentStressValue >= 75 && chainController.currentStressValue < 100)
+        /*if (chainController.currentStressValue >= 75 && chainController.currentStressValue < 100)
         {
             chainController.ChangeState(mediumState);
         }
@@ -32,6 +32,22 @@ public class ChainLightState : ChainBaseState
         else if (chainController.currentStressValue < 50)
         {
             chainController.ChangeState(neutralState);
+        }*/
+
+        //controllo lunghezza catena
+        if (chainGr.dstToTarget >= (chainGr.maxLenghtChain * 75) / 100)
+        {
+            chainController.ChangeState(mediumState);
+        }
+        else if (chainGr.dstToTarget < (chainGr.maxLenghtChain * 50) / 100)
+        {
+            chainController.ChangeState(neutralState);
+        }
+
+        //controllo stress
+        else if (chainController.currentStressValue >= 100)
+        {
+            chainController.ChangeState(brokenState);
         }
     }
 }
