@@ -4,6 +4,7 @@ using SemihOrhan.WaveOne.EndPoints;
 using SemihOrhan.WaveOne.Events;
 using SemihOrhan.WaveOne.Spawners.SpawnerPickers;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace SemihOrhan.WaveOne.Spawners
 {
@@ -91,6 +92,7 @@ namespace SemihOrhan.WaveOne.Spawners
         {
             if (currentWave >= enemyWaves.Count)
             {
+                SceneManager.LoadScene("WinScreen");
                 Debug.Log("Final wave already reached. No more waves left!");
                 return;
             }

@@ -5,10 +5,16 @@ using UnityEngine;
 public class InputFeedbackComp : MonoBehaviour
 {
     public GameObject _graphic;
+    PetController petc;
+
+    private void Start()
+    {
+        petc = FindObjectOfType<PetController>();
+    }
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
+        if (petc.movement * petc.moveSpeed != Vector3.zero)
             _graphic.SetActive(true);
         else
             _graphic.SetActive(false);

@@ -5,10 +5,24 @@ using UnityEngine;
 public class InputFeedback : MonoBehaviour
 {
     public GameObject _graphic;
+    PlayerController pc;
 
+
+    private void Start()
+    {
+        pc = FindObjectOfType<PlayerController>();
+    }
     private void Update()
     {
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.W))
+
+        //if (Input.GetAxis("Horizontal") < -0.19 || Input.GetAxis("Horizontal") > 0.19 
+        //    || Input.GetAxis("Vertical") < -0.19 || Input.GetAxis("Vertical") > 0.19 
+        //    || Input.GetAxis("HorizontalPet") < -0.19 || Input.GetAxis("HorizontalPet") > 0.19 
+        //    || Input.GetAxis("VerticalPet") < -0.19 || Input.GetAxis("VerticalPet") > 0.19)
+        //    _graphic.SetActive(true);
+        //else
+        //    _graphic.SetActive(false);
+        if (pc.movement * pc.moveSpeed != Vector3.zero)
             _graphic.SetActive(true);
         else
             _graphic.SetActive(false);

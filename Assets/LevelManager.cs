@@ -33,7 +33,6 @@ public class LevelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Life: " + playerLifeCtrl.healthPlayer);
         EnemyAlive.text = "Enemies Left: " + EnemiesAlive.Count;
         WaveNumber.text = "Wave " + wavecount;
         //Debug.Log("enemiesAlive: " + EnemiesAlive.Count);
