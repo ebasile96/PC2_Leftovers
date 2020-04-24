@@ -1001,7 +1001,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 2
+  m_StoppingDistance: 0.5
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -1171,11 +1171,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4901804185781641166}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 3e1c0bfc8d541c74bb206e1c573c9a33,
-        type: 3}
-      propertyPath: m_Name
-      value: Spada_enemy
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 3e1c0bfc8d541c74bb206e1c573c9a33,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1230,6 +1225,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 3e1c0bfc8d541c74bb206e1c573c9a33,
+        type: 3}
+      propertyPath: m_Name
+      value: Spada_enemy
       objectReference: {fileID: 0}
     - target: {fileID: -1504981713932161579, guid: 3e1c0bfc8d541c74bb206e1c573c9a33,
         type: 3}

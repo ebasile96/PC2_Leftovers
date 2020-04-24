@@ -9,13 +9,13 @@ public class PlayButton : MonoBehaviour
 {
    public void PressPlay()
     {
-        FlowStateMachine.GoToTutorial();
+        FlowStateMachine.GoToGameplay();
     }
 
     //momentaneo solo per far testare designer
     public void PressGDTest()
     {
-        SceneManager.LoadScene("BuildScene(TestChainGabri)");
+       
     }
 
     public void PressBlu()
