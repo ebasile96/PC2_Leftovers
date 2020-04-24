@@ -36,13 +36,12 @@ public class LevelManager : MonoBehaviour
     {
         EnemyAlive.text = "Enemies Left: " + _EnemyCounterAlive;
         WaveNumber.text = "Wave " + wavecount;
-        if(Wavemgr.SpawnersFinished && EnemiesAlive.Count == 0)
+        if(Wavemgr.SpawnersFinished && _EnemyCounterAlive == 0)
         {
             CheckLifeBonus();
             wavecount++;
             Wavemgr.StartAllConfigWaves();
         }
-
     }
 
     //public void FindEnemies()
