@@ -14,6 +14,7 @@ public class LevelManager : MonoBehaviour
     public int HealthBonus = 20;
     int wavecount = 1;
     PlayerLifeController playerLifeCtrl;
+    public int _EnemyCounterAlive = 0;
     // Start is called before the first frame update
     void Awake()
     {
@@ -33,10 +34,8 @@ public class LevelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        EnemyAlive.text = "Enemies Left: " + EnemiesAlive.Count;
+        EnemyAlive.text = "Enemies Left: " + _EnemyCounterAlive;
         WaveNumber.text = "Wave " + wavecount;
-        //Debug.Log("enemiesAlive: " + EnemiesAlive.Count);
-        FindEnemies();
         if(Wavemgr.SpawnersFinished && EnemiesAlive.Count == 0)
         {
             CheckLifeBonus();
@@ -46,15 +45,15 @@ public class LevelManager : MonoBehaviour
 
     }
 
-    public void FindEnemies()
-    {
-        foreach (GameObject _enemy in GameObject.FindGameObjectsWithTag("Enemy"))
-        {
-            if(!EnemiesAlive.Contains(_enemy))
-                EnemiesAlive.Add(_enemy);
+    //public void FindEnemies()
+    //{
+    //    foreach (GameObject _enemy in GameObject.FindGameObjectsWithTag("Enemy"))
+    //    {
+    //        if(!EnemiesAlive.Contains(_enemy))
+    //            EnemiesAlive.Add(_enemy);
 
-        }
-    }
+    //    }
+    //}
 
     public void CheckLifeBonus()
     {

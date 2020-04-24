@@ -6,7 +6,7 @@ public class BubbleController : MonoBehaviour
 {
     private EnemyController enemy;
     private MeshRenderer mesh;
-    private SphereCollider collider;
+    private SphereCollider _collider;
     public CapsuleCollider collidereEnemy;
     private bool isActive;
 
@@ -16,7 +16,7 @@ public class BubbleController : MonoBehaviour
         enemy = gameObject.GetComponentInParent<EnemyController>();
         collidereEnemy = gameObject.GetComponentInParent<CapsuleCollider>();
         mesh = GetComponent<MeshRenderer>();
-        collider = GetComponent<SphereCollider>();
+        _collider = GetComponent<SphereCollider>();
     }
 
     // Update is called once per frame
@@ -30,7 +30,7 @@ public class BubbleController : MonoBehaviour
         if (isActive == true)
         {
             mesh.enabled = false;
-            collider.enabled = false;
+            _collider.enabled = false;
             collidereEnemy.enabled = true;
             yield return new WaitForSeconds(enemy.Data.TimerBubble);
             isActive = false;
@@ -38,7 +38,7 @@ public class BubbleController : MonoBehaviour
         else if (isActive == false)
         {
             mesh.enabled = true;
-            collider.enabled = true;
+            _collider.enabled = true;
             collidereEnemy.enabled = false;
             yield return new WaitForSeconds(enemy.Data.TimerBubble);
             isActive = true;

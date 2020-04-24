@@ -53,6 +53,12 @@ namespace SemihOrhan.WaveOne.Spawners
         public Transform Parent { get; set; }
         public bool SetEndPoints { get; set; }
 
+        LevelManager lvlmgr;
+
+        private void Awake()
+        {
+            lvlmgr = FindObjectOfType<LevelManager>();
+        }
         private void Start()
         {
             // Cache the parent GameObject.
@@ -192,14 +198,24 @@ namespace SemihOrhan.WaveOne.Spawners
                     for (int i = 0; i < spawnAmount; i++)
                     {
                         if (Parent)
+                        {
                             instance = Instantiate(enemyWaves[currentWave].enemies[currentEnemy].gameObject,
                                                    spawnPointPos,
                                                    Quaternion.identity,
                                                    Parent);
+                            
+                            lvlmgr._EnemyCounterAlive++;
+                        }
+
                         else
+                        {
                             instance = Instantiate(enemyWaves[currentWave].enemies[currentEnemy].gameObject,
                                                    spawnPointPos,
                                                    Quaternion.identity);
+                           
+                            lvlmgr._EnemyCounterAlive++;
+                        }
+                            
 
                         // We can only get the bounds of the collider of an active object.
                         // This means that we can't use the Prefab to get the info we need.

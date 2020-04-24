@@ -102,7 +102,8 @@ public class ChainController : MonoBehaviour
             if (timerCombo == 0 && currentStressValue != 100)
             {
                 Destroy(hit.collider.gameObject);
-                lvlmgr.EnemiesAlive.Remove(hit.collider.gameObject);
+                //lvlmgr.EnemiesAlive.Remove(hit.collider.gameObject);
+                lvlmgr._EnemyCounterAlive--;
                 currentStressValue += enemyStressValue;
                 enemyCounter = 1;
                 timerCombo = maxTimerCombo;
@@ -111,7 +112,8 @@ public class ChainController : MonoBehaviour
             else if (timerCombo != 0 && currentStressValue != 100)
             {
                 Destroy(hit.collider.gameObject);
-                lvlmgr.EnemiesAlive.Remove(hit.collider.gameObject);
+                //lvlmgr.EnemiesAlive.Remove(hit.collider.gameObject);
+                lvlmgr._EnemyCounterAlive--;
                 enemyCounter += 1;
                 if (timerCombo < maxTimerCombo)
                 {
