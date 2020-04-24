@@ -17,14 +17,14 @@ namespace SemihOrhan.WaveOne.Demo
 
         private void Update()
         {
-            if (button.interactable == false && waveManager.SpawnersFinished && transform.childCount == 0)
-                button.interactable = true;
+           // if (button.interactable == false && waveManager.SpawnersFinished && transform.childCount == 0)
+             //   button.interactable = true;
         }
 
-        public void SetButtonInteractable(bool val)
-        {
-            if (!val && !waveManager.SpawnersFinished && waveManager.SpawnersStarted)
-                button.interactable = false;
-        }
+        //public void SetButtonInteractable(bool val)
+        //{
+            //if (!val && !waveManager.SpawnersFinished && waveManager.SpawnersStarted)
+             //   button.interactable = false;
+        //}
     }
 }
