@@ -5,14 +5,18 @@ using UnityEngine;
 public class MovementState : RangedStateBehaviour
 {
     public RangedStateBehaviour attackState;
+    private bool start = false;
 
     public override void Enter()
     {
-
+        Debug.Log("entra nell enter diobestia");
+        if(start == false)
+        ranged.actualDestPoint += 1;
     }
 
     public override void Tick()
     {
+        ranged.anim.SetTrigger("GoToRunning");
         ranged.agent.isStopped = false;
         ranged.GotoNextPoint();
 
@@ -24,6 +28,6 @@ public class MovementState : RangedStateBehaviour
 
     public override void Exit()
     {
-
+        start = true;
     }
 }

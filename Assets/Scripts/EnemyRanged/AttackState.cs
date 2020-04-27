@@ -14,10 +14,10 @@ public class AttackState : RangedStateBehaviour
 
     public override void Tick()
     {
-
+        ranged.anim.SetTrigger("GoToIdle");
         ranged.ActiveLineRender();
         ranged.attackTimer += 1;
-        ranged.agent.transform.LookAt(ranged.target);
+        ranged.LookTarget();
         ranged.agent.isStopped = true;
         ranged.SetDirectionOfAttack();
         if (ranged.isAttack == false)
