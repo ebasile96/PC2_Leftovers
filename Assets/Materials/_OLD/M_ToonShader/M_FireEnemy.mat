@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: M_FireEnemy
+  m_Shader: {fileID: -6465566751694194690, guid: 7791395a0fa061c44bdcb1557faff844,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_52433602:
+        m_Texture: {fileID: 2800000, guid: e6dba5f2bcac96246a878db7e2616c68, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_560B9D71:
+        m_Texture: {fileID: 2800000, guid: 0e12a53e7d856004794703a0e5e90dc6, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_C22697C7:
+        m_Texture: {fileID: 2800000, guid: 8a9e1fabed629e04f8fea491115c348e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_1ED7DF70: 0.4
+    - Vector1_66296328: 3.7
+    - Vector1_78A5C6C8: 0.2
+    m_Colors:
+    - Color_70042895: {r: 1, g: 0, b: 0.08541489, a: 0}
+    - Color_96308F0D: {r: 1, g: 1, b: 1, a: 0}
+    - _ToonLightDirection: {r: 0.5, g: 0.5, b: 0, a: 0}
