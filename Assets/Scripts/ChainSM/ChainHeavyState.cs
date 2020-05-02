@@ -18,7 +18,7 @@ public class ChainHeavyState : ChainBaseState
 
     public override void Tick()
     {
-        chainGr.lineR.material = chainGr.heavyMaterial;
+        //chainGr.lineR.material = chainGr.heavyMaterial;
 
         //controllo lunghezza catena
         if(chainGr.dstToTarget <= (chainGr.maxLenghtChain * 75) / 100)

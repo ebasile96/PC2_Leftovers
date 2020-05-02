@@ -19,7 +19,7 @@ public class ChainLightState : ChainBaseState
     public override void Tick()
     {
 
-        chainGr.lineR.material = chainGr.lightMaterial;
+        //chainGr.lineR.material = chainGr.lightMaterial;
 
         /*if (chainController.currentStressValue >= 75 && chainController.currentStressValue < 100)
         {

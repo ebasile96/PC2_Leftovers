@@ -17,6 +17,7 @@ public class ChainGraphic : MonoBehaviour
     public Material heavyMaterial;
     public Material neutralMaterial;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +28,7 @@ public class ChainGraphic : MonoBehaviour
     void Update()
     {
         SetLineRender();
+        SetGraphicValue(dstToTarget);
     }
 
     private void SetLineRender()
@@ -55,5 +57,14 @@ public class ChainGraphic : MonoBehaviour
     public void ChainGraphicReforme()
     {
         lineR.enabled = true;
+    }
+
+    public void SetGraphicValue(float value)
+    {
+        Material mat = lineR.material;
+        float totValue = value / maxLenghtChain;
+        mat.SetFloat("Vector1_57A4081A", Mathf.Clamp(totValue, 0, 1));
+        if (value > 1)
+            value = 1;
     }
 }
