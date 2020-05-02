@@ -40,7 +40,6 @@ public class ChainController : MonoBehaviour
     void Start()
     {
         lvlmgr = FindObjectOfType<LevelManager>();
-        vfx = FindObjectOfType<VFXManager>();
     }
 
     // Update is called once per frame

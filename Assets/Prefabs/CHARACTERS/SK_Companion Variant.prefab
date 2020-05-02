@@ -539,6 +539,7 @@ MonoBehaviour:
   reforgeStressValue: 1
   reforgeTimer: 180
   maxReforgeTimer: 180
+  isCollisionReforme: 0
   timerCombo: 0
   maxTimerCombo: 300
   comboExtender: 30
@@ -546,6 +547,8 @@ MonoBehaviour:
   enemyStressValue: 5
   comboStressMultiplier: 0.025
   vfx: {fileID: 0}
+  pLife: {fileID: 0}
+  bonusStressLife: 0
 --- !u!1 &682465514339281955
 GameObject:
   m_ObjectHideFlags: 0
