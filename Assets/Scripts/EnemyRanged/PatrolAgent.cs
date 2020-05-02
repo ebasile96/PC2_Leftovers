@@ -11,7 +11,6 @@ public class PatrolAgent : MonoBehaviour
     public int actualDestPoint;
     public NavMeshAgent agent;
     public bool isAttack;
-    public Transform target;
     public float attackTimer;
     public float maxTimerAttack;
     public GameObject projectile;
@@ -20,6 +19,8 @@ public class PatrolAgent : MonoBehaviour
     public Animator anim;
     private VFXManager vfx;
     private PlayerLifeController pHealth;
+    private PlayerController targetObjectCharacter;
+    private PetController targetObjectCompanion;
 
     void Start()
     {
@@ -28,6 +29,8 @@ public class PatrolAgent : MonoBehaviour
         agent.autoBraking = false;
         pHealth = FindObjectOfType<PlayerLifeController>();
         vfx = FindObjectOfType<VFXManager>();
+        targetObjectCharacter = FindObjectOfType<PlayerController>();
+        targetObjectCompanion = FindObjectOfType<PetController>();
     }
 
 
@@ -59,28 +62,26 @@ public class PatrolAgent : MonoBehaviour
     public Rigidbody rb;
     public void Attack()
     {
-        agent.transform.LookAt(target);
-
         GameObject bullet = Instantiate(projectile, originShoot.position, Quaternion.identity) as GameObject;
         bullet.GetComponent<Rigidbody>().AddForce(transform.forward * speedProjectile);
         isAttack = true;
     }
 
 
-    public Transform targetObjectCharacter;
-    public Transform targetObjectCompanion;
+    public float targetCharacter;
+    public float targetCompanion;
     public void LookTarget()
     {
-        float targetCharacter = Vector3.Distance(transform.position, targetObjectCharacter.transform.position);
-        float targetCompanion = Vector3.Distance(transform.position, targetObjectCompanion.transform.position);
+         targetCharacter = Vector3.Distance(transform.position, targetObjectCharacter.transform.position);
+         targetCompanion = Vector3.Distance(transform.position, targetObjectCompanion.transform.position);
 
         if (targetCharacter < targetCompanion)
         {
-            agent.transform.LookAt(targetObjectCharacter);
+            agent.transform.LookAt(targetObjectCharacter.transform);
         }
         else if (targetCompanion < targetCharacter)
         {
-            agent.transform.LookAt(targetObjectCompanion);
+            agent.transform.LookAt(targetObjectCompanion.transform);
         }
     }
 

@@ -45,9 +45,11 @@ public class ChainLightState : ChainBaseState
         }
 
         //controllo stress
-        else if (chainController.currentStressValue >= 100)
-        {
-            chainController.ChangeState(brokenState);
-        }
+        //else if (chainController.currentStressValue >= 100)
+        //{
+        // chainController.ChangeState(brokenState);
+        //}
+
+        chainController.ChainObstacle(brokenState);
     }
 }

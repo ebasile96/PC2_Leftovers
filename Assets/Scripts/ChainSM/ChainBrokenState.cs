@@ -14,13 +14,22 @@ public class ChainBrokenState : ChainBaseState
     public override void Enter()
     {
         chainGr.ChainGraphicBreaker();
+        chainController.currentStressValue = chainController.reforgeStressValue;
     }
 
     public override void Tick()
     {
-        if (chainController.currentStressValue != 100)
+        chainController.ChainReformer();
+
+        if (chainController.reforgeTimer <= 0 || chainController.isCollisionReforme == true)
         {
             chainController.ChangeState(neutralState);
         }
+    }
+
+    public override void Exit()
+    {
+        chainController.reforgeTimer = chainController.maxReforgeTimer;
+        chainController.isCollisionReforme = false;
     }
 }

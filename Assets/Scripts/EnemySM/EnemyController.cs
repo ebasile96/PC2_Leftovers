@@ -94,18 +94,5 @@ public class EnemyController : MonoBehaviour
         yield return new WaitForSeconds(Data.rateoDamage);
         canTakeDamage = true;
     }
-    /*public void Attack(GameObject _target)
-    {
-        HealthCtrl.Life -= Data.Damage;
-        Debug.Log("EnemyAttack");
-        //attack method
-    }
 
-   
-
-    public void TakeDamagePlayer()
-    {
-        PlayerLifeController pHealth = hit.collider.GetComponent<PlayerLifeController>();
-        pHealth.TakeDamage(1);
-    }*/
 }

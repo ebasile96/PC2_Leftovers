@@ -29,11 +29,13 @@ public class ChainHeavyState : ChainBaseState
         {
             chainController.ChangeState(brokenState);
         }
-        
+
         //controllo stress
-        if (chainController.currentStressValue >= 100)
-        {
-            chainController.ChangeState(brokenState);
-        }
+        //if (chainController.currentStressValue >= 100)
+        // {
+        //chainController.ChangeState(brokenState);
+        //}
+
+        chainController.ChainObstacle(brokenState);
     }
 }

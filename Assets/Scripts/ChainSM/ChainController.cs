@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 
 public class ChainController : MonoBehaviour
 {
@@ -13,7 +10,8 @@ public class ChainController : MonoBehaviour
     public float reforgeStressValue;
     public float reforgeTimer;
     public float maxReforgeTimer;
-    [SerializeField]
+    [HideInInspector]
+    public bool isCollisionReforme;
     public Ray rayChain;
     [SerializeField]
     RaycastHit hit;
@@ -26,6 +24,10 @@ public class ChainController : MonoBehaviour
     public float enemyStressValue;
     public float comboStressMultiplier;
     public VFXManager vfx;
+
+    //variabili bonus Stress
+    public PlayerLifeController pLife;
+    public float bonusStressLife;
 
     public void ChangeState(ChainBaseState newState)
     {
@@ -47,13 +49,13 @@ public class ChainController : MonoBehaviour
         currentState.Tick();
         LenghtStressChain();
         //ChainBreaker();
-        ChainReformer();
+        //ChainReformer();
         //CheckChain();
         DrawRaycastChain();
         attackChain();
         DecreaseComboTimer();
         NormalizedStressValue();
-        ChainObstacle();
+        //ChainObstacle();
     }
 
     public void LenghtStressChain()
@@ -71,25 +73,27 @@ public class ChainController : MonoBehaviour
 
     }*/
 
+   // public bool isActiveChain;
     public void ChainReformer()
     {
-        if(currentStressValue >= 100 && graphic.dstToTarget <= 7)
+        if(graphic.dstToTarget <= 7)
         {
             reforgeTimer -= 1;
+
             //Debug.Log("timer funziona " + reforgeTimer);
         }
-        else if(currentStressValue >= 100 && graphic.dstToTarget > 7)
+        else if (graphic.dstToTarget > 7)
         {
             reforgeTimer = maxReforgeTimer;
              //Debug.Log("timer reset funziona ");
         }
 
-        if(reforgeTimer <= 0)
-        {
-            //graphic.lineR.enabled = true;
-            reforgeTimer = maxReforgeTimer;
-            currentStressValue = reforgeStressValue;
-        }
+        //if(reforgeTimer <= 0)
+        //{
+        //graphic.lineR.enabled = true;
+        //reforgeTimer = maxReforgeTimer;
+        //currentStressValue = reforgeStressValue;
+        //}
     }
 
     private void DrawRaycastChain()
@@ -101,20 +105,18 @@ public class ChainController : MonoBehaviour
     {
         if (Physics.Raycast(rayChain, out hit, graphic.dstToTarget) && hit.collider.tag == "Enemy")
         {
-            if (timerCombo == 0 && currentStressValue != 100)
+            if (timerCombo == 0 && graphic.lineR.enabled == true)
             {
                 Destroy(hit.collider.gameObject);
-                //lvlmgr.EnemiesAlive.Remove(hit.collider.gameObject);
                 lvlmgr._EnemyCounterAlive--;
                 currentStressValue += enemyStressValue;
                 enemyCounter = 1;
                 timerCombo = maxTimerCombo;
                 SoundManager.PlaySound(SoundManager.Sound.enemyTakeDamage);
             }
-            else if (timerCombo != 0 && currentStressValue != 100)
+            else if (timerCombo != 0 && graphic.lineR.enabled == true)
             {
                 Destroy(hit.collider.gameObject);
-                //lvlmgr.EnemiesAlive.Remove(hit.collider.gameObject);
                 lvlmgr._EnemyCounterAlive--;
                 enemyCounter += 1;
                 if (timerCombo < maxTimerCombo)
@@ -127,12 +129,14 @@ public class ChainController : MonoBehaviour
         }
     }
 
-    private void ChainObstacle()
+    public void ChainObstacle(ChainBaseState newState)
     {
         if (Physics.Raycast(rayChain, out hit, graphic.dstToTarget) && hit.collider.tag == "Obstacle")
         {
-            currentStressValue = 100;
-            //graphic.lineR.enabled = false;
+            currentStressValue = 0;
+            graphic.lineR.enabled = false;
+            newState.Enter();
+            currentState = newState;
         }
     }
 
@@ -146,18 +150,26 @@ public class ChainController : MonoBehaviour
 
     private void NormalizedStressValue()
     {
-        if (currentStressValue > 100)
+        if (currentStressValue >= 100)
         {
-            currentStressValue = 100;
+            currentStressValue = reforgeStressValue;
+            BonusStress();
         }
     }
 
     public void ReformeChainCollision()
     {
-        if (currentStressValue >= 100)
+        if (graphic.lineR.enabled == false)
         {
             currentStressValue = reforgeStressValue;
             reforgeTimer = maxReforgeTimer;
+            isCollisionReforme = true;
         }
+    }
+
+    public void BonusStress()
+    {
+        pLife.healthPlayer += bonusStressLife;
+        Debug.Log("cura");
     }
 }
