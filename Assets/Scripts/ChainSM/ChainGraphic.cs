@@ -64,7 +64,5 @@ public class ChainGraphic : MonoBehaviour
         Material mat = lineR.material;
         float totValue = value / maxLenghtChain;
         mat.SetFloat("Vector1_57A4081A", Mathf.Clamp(totValue, 0, 1));
-        if (value > 1)
-            value = 1;
     }
 }
