@@ -62,7 +62,7 @@ public class ChainGraphic : MonoBehaviour
     public void SetGraphicValue(float value)
     {
         Material mat = lineR.material;
-        float totValue = value / maxLenghtChain;
+        float totValue = ((1/value) / maxLenghtChain)* 10;
         mat.SetFloat("Vector1_57A4081A", Mathf.Clamp(totValue, 0, 1));
     }
 }
