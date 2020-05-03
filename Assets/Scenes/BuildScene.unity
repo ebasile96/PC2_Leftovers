@@ -1205,7 +1205,7 @@ PrefabInstance:
     - target: {fileID: 3730994932709717322, guid: f890b62fe04da01448cc86c348750111,
         type: 3}
       propertyPath: HealthBonus
-      value: 15
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f890b62fe04da01448cc86c348750111, type: 3}
@@ -1937,7 +1937,7 @@ PrefabInstance:
     - target: {fileID: 322326698890451144, guid: cf20dcbc9e1041c46bc4638bed4d50d5,
         type: 3}
       propertyPath: enemyWaves.Array.data[6].enemies.Array.data[0].amount
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 322326698890451144, guid: cf20dcbc9e1041c46bc4638bed4d50d5,
         type: 3}
@@ -1968,7 +1968,7 @@ PrefabInstance:
     - target: {fileID: 322326698890451144, guid: cf20dcbc9e1041c46bc4638bed4d50d5,
         type: 3}
       propertyPath: enemyWaves.Array.data[6].deployments
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 322326698890451144, guid: cf20dcbc9e1041c46bc4638bed4d50d5,
         type: 3}
@@ -2354,7 +2354,7 @@ PrefabInstance:
     - target: {fileID: 322326698890451144, guid: cf20dcbc9e1041c46bc4638bed4d50d5,
         type: 3}
       propertyPath: enemyWaves.Array.data[10].deployments
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 322326698890451144, guid: cf20dcbc9e1041c46bc4638bed4d50d5,
         type: 3}
@@ -2448,7 +2448,7 @@ PrefabInstance:
     - target: {fileID: 322326698890451144, guid: cf20dcbc9e1041c46bc4638bed4d50d5,
         type: 3}
       propertyPath: enemyWaves.Array.data[11].deployments
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 322326698890451144, guid: cf20dcbc9e1041c46bc4638bed4d50d5,
         type: 3}
@@ -3947,6 +3947,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2794363552907387336, guid: 2241ef947233ab742b2a63dd28775876,
+        type: 3}
+      propertyPath: m_Name
+      value: Punto 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2794363552907387335, guid: 2241ef947233ab742b2a63dd28775876,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4001,11 +4006,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2794363552907387336, guid: 2241ef947233ab742b2a63dd28775876,
-        type: 3}
-      propertyPath: m_Name
-      value: Punto 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2241ef947233ab742b2a63dd28775876, type: 3}
@@ -4335,6 +4335,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6425160278070099313, guid: 98223614aee46eb4fa7f4e74cb6ec56a,
+        type: 3}
+      propertyPath: m_Name
+      value: Punto 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6425160278070099312, guid: 98223614aee46eb4fa7f4e74cb6ec56a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4389,11 +4394,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6425160278070099313, guid: 98223614aee46eb4fa7f4e74cb6ec56a,
-        type: 3}
-      propertyPath: m_Name
-      value: Punto 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98223614aee46eb4fa7f4e74cb6ec56a, type: 3}

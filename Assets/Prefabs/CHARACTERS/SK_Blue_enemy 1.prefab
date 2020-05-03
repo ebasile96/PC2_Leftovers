@@ -1156,7 +1156,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7235166392293632702}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 500
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
@@ -1294,6 +1294,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4901804185781641166}
     m_Modifications:
+    - target: {fileID: -927199367670048503, guid: 3e1c0bfc8d541c74bb206e1c573c9a33,
+        type: 3}
+      propertyPath: m_Name
+      value: Spada_enemy
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 3e1c0bfc8d541c74bb206e1c573c9a33,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1348,11 +1353,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 3e1c0bfc8d541c74bb206e1c573c9a33,
-        type: 3}
-      propertyPath: m_Name
-      value: Spada_enemy
       objectReference: {fileID: 0}
     - target: {fileID: -1504981713932161579, guid: 3e1c0bfc8d541c74bb206e1c573c9a33,
         type: 3}
