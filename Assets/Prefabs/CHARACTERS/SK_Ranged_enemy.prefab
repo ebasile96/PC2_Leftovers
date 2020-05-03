@@ -347,7 +347,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1307283017811907814}
   serializedVersion: 2
-  m_Mass: 500
+  m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
@@ -369,12 +369,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: {fileID: 292031319}
   points:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 6425160278070099312, guid: 98223614aee46eb4fa7f4e74cb6ec56a, type: 3}
+  - {fileID: 224622326303655033, guid: 8048d61eb8a321048981cfcf61bfaa85, type: 3}
+  - {fileID: 2985631603765809191, guid: cf1aa61158672db41b2ad186b415db67, type: 3}
+  - {fileID: 3380141510671733613, guid: 8e601527456d3314db2bf8c32e4539dd, type: 3}
+  - {fileID: 2794363552907387335, guid: 2241ef947233ab742b2a63dd28775876, type: 3}
+  - {fileID: 5388961365334124133, guid: 0a3803c9d2d3fe94aae595ddd7ec6e29, type: 3}
   destPoint: 0
   actualDestPoint: 0
   agent: {fileID: 0}
@@ -387,7 +387,7 @@ MonoBehaviour:
   targetLine: {fileID: 0}
   anim: {fileID: 0}
   originShoot: {fileID: 1431990221}
-  speedProjectile: 700
+  speedProjectile: 1000
   rb: {fileID: -36108224896660070}
   targetCharacter: 0
   targetCompanion: 0
