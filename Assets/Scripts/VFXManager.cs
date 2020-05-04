@@ -6,4 +6,5 @@ using UnityEngine;
 public class VFXManager : MonoBehaviour
 {
     public GameObject vfxHitTest;
+    public GameObject vfxEnemyDeath;
 }

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.AI;
 
 public class ChainController : MonoBehaviour
 {
@@ -106,6 +107,8 @@ public class ChainController : MonoBehaviour
         {
             if (timerCombo == 0 && graphic.lineR.enabled == true)
             {
+                GameObject gameObject = Instantiate(vfx.vfxEnemyDeath);
+                gameObject.transform.position = hit.point;
                 Destroy(hit.collider.gameObject);
                 lvlmgr._EnemyCounterAlive--;
                 currentStressValue += enemyStressValue;
@@ -115,6 +118,8 @@ public class ChainController : MonoBehaviour
             }
             else if (timerCombo != 0 && graphic.lineR.enabled == true)
             {
+                GameObject gameObject = Instantiate(vfx.vfxEnemyDeath);
+                gameObject.transform.position = hit.point;
                 Destroy(hit.collider.gameObject);
                 lvlmgr._EnemyCounterAlive--;
                 enemyCounter += 1;

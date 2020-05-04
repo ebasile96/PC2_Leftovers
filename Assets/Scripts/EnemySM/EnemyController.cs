@@ -44,7 +44,10 @@ public class EnemyController : MonoBehaviour
         anim = GetComponent<Animator>();
         currentState.Tick();
         // provvisorio
-        anim.SetTrigger("GoToRunning");
+        if (canTakeDamage == true)
+        {
+            anim.SetTrigger("GoToRunning");
+        }
         FollowPlayer();
     }
 
@@ -54,7 +57,6 @@ public class EnemyController : MonoBehaviour
     {
          targetCharacter = Vector3.Distance(transform.position, targetObjectCharacter.transform.position);
          targetCompanion = Vector3.Distance(transform.position, targetObjectCompanion.transform.position);
-
 
 
         if (targetCharacter < targetCompanion) 
@@ -81,6 +83,7 @@ public class EnemyController : MonoBehaviour
 
         if (hit.gameObject.tag == "Player" && canTakeDamage == true)
         {
+            anim.SetTrigger("GoToAttackCross");
             pHealth.TakeDamage(Data.damage);
             Instantiate(vfx.vfxHitTest, hit.transform);
             SoundManager.PlaySound(SoundManager.Sound.femaleTakeDamage);
