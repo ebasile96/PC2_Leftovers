@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3692311324339713783}
   - component: {fileID: 127791892191386575}
   - component: {fileID: 4269871673369368811}
+  - component: {fileID: 4732228617090332529}
   m_Layer: 0
   m_Name: SM_group_Barrel
   m_TagString: Untagged
@@ -101,6 +102,19 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   raycastFadeSpeed: 10
+--- !u!65 &4732228617090332529
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1628967163898944484}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.203681, y: 2.8654895, z: 1.6717248}
+  m_Center: {x: 0.57342064, y: 1.4327447, z: -0.58219266}
 --- !u!1 &2225545572404445717
 GameObject:
   m_ObjectHideFlags: 0
@@ -416,6 +430,7 @@ GameObject:
   - component: {fileID: 1878499026560368128}
   - component: {fileID: 4483251049644867993}
   - component: {fileID: 223116304535801543}
+  - component: {fileID: 1765741044518966638}
   m_Layer: 0
   m_Name: SM_Piatti_group
   m_TagString: Untagged
@@ -505,6 +520,19 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   raycastFadeSpeed: 10
+--- !u!65 &1765741044518966638
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4797067645762732340}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.7074268, y: 2.8487234, z: 2.6201947}
+  m_Center: {x: -0.63532174, y: 1.3671348, z: 0.11198211}
 --- !u!1 &6656036595982133662
 GameObject:
   m_ObjectHideFlags: 0
@@ -656,6 +684,7 @@ GameObject:
   - component: {fileID: 4367875100730035000}
   - component: {fileID: 1052019201895627493}
   - component: {fileID: 2821290611105940317}
+  - component: {fileID: 5217545893917930715}
   m_Layer: 0
   m_Name: SM_stand
   m_TagString: Untagged
@@ -745,6 +774,19 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   raycastFadeSpeed: 10
+--- !u!65 &5217545893917930715
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8539560082701508961}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.333723, y: 3.0589688, z: 3.443354}
+  m_Center: {x: 0, y: 1.6883768, z: 0.23568153}
 --- !u!1 &9168979994271535446
 GameObject:
   m_ObjectHideFlags: 0

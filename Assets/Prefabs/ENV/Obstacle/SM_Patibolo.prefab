@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!65 &2035430806265411362
+--- !u!65 &9159273001544626289
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -11,8 +11,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 180.46898, y: 194.58208, z: 352.44724}
-  m_Center: {x: 90.23443, y: 97.29104, z: -176.22362}
+  m_Size: {x: 1.8046901, y: 1.9458209, z: 3.524472}
+  m_Center: {x: 0.9023454, y: 0.97291046, z: -1.762236}
 --- !u!114 &8886414751278562506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47,12 +47,14 @@ GameObject:
   - component: {fileID: 9162230180507913913}
   - component: {fileID: 7436674823669564702}
   - component: {fileID: 9113489341424091644}
-  m_Layer: 0
+  - component: {fileID: 3033187568900581633}
+  - component: {fileID: 6676800554497936254}
+  m_Layer: 9
   m_Name: SM_Patibolo
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &5855040268701354102
 Transform:
@@ -63,7 +65,7 @@ Transform:
   m_GameObject: {fileID: 7429270062606563941}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 7893511470576319904}
   m_Father: {fileID: 0}
@@ -150,6 +152,35 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   raycastFadeSpeed: 10
+--- !u!65 &3033187568900581633
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7429270062606563941}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.8753479, y: 3.1449158, z: 2.1677063}
+  m_Center: {x: -0.720016, y: 1.5724579, z: -1.0176281}
+--- !u!208 &6676800554497936254
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7429270062606563941}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.938, y: 1.572, z: 1.0840001}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.72, y: 1.572, z: -1.018}
+  m_TimeToStationary: 0.5
 --- !u!1001 &2950374607522469562
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -161,6 +192,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SM Scaletta
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 32cae8f415e7a8c4c8f4b48fffd36df3,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 32cae8f415e7a8c4c8f4b48fffd36df3,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 32cae8f415e7a8c4c8f4b48fffd36df3,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 32cae8f415e7a8c4c8f4b48fffd36df3,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 32cae8f415e7a8c4c8f4b48fffd36df3,
         type: 3}
@@ -220,17 +271,17 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 32cae8f415e7a8c4c8f4b48fffd36df3,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.0051807812
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 32cae8f415e7a8c4c8f4b48fffd36df3,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.0051807812
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 32cae8f415e7a8c4c8f4b48fffd36df3,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.0051807812
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: -1504981713932161579, guid: 32cae8f415e7a8c4c8f4b48fffd36df3,
         type: 3}
