@@ -41,7 +41,7 @@ ParticleSystem:
   m_GameObject: {fileID: 4046056675467870207}
   serializedVersion: 6
   lengthInSec: 1
-  simulationSpeed: 1
+  simulationSpeed: 3
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
@@ -4855,7 +4855,7 @@ ParticleSystem:
   m_GameObject: {fileID: 6334433791481009282}
   serializedVersion: 6
   lengthInSec: 1
-  simulationSpeed: 1
+  simulationSpeed: 3
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
@@ -9983,6 +9983,11 @@ PrefabInstance:
         type: 3}
       propertyPath: SizeBySpeedModule.curve.maxCurve.m_Curve.Array.data[1].outSlope
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2714226456650632821, guid: 232978cc6d543c14f9c881aa6344d1bc,
+        type: 3}
+      propertyPath: simulationSpeed
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 901664328114681403, guid: 232978cc6d543c14f9c881aa6344d1bc,
         type: 3}

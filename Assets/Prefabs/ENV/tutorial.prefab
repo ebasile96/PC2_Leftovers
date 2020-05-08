@@ -17320,7 +17320,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8209089850065674403}
   m_Layer: 0
-  m_Name: Tutorial
+  m_Name: tutorial
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17722,6 +17722,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8209089850065674403}
     m_Modifications:
+    - target: {fileID: 5975356228920072320, guid: 0de23fde14361a5469558c9f6d82f2f5,
+        type: 3}
+      propertyPath: m_Name
+      value: SM_Tree
+      objectReference: {fileID: 0}
+    - target: {fileID: 5975356228920072320, guid: 0de23fde14361a5469558c9f6d82f2f5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5975356228920072320, guid: 0de23fde14361a5469558c9f6d82f2f5,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 7257518966160239251, guid: 0de23fde14361a5469558c9f6d82f2f5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -17776,21 +17791,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5975356228920072320, guid: 0de23fde14361a5469558c9f6d82f2f5,
-        type: 3}
-      propertyPath: m_Name
-      value: SM_Tree
-      objectReference: {fileID: 0}
-    - target: {fileID: 5975356228920072320, guid: 0de23fde14361a5469558c9f6d82f2f5,
-        type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 5975356228920072320, guid: 0de23fde14361a5469558c9f6d82f2f5,
-        type: 3}
-      propertyPath: m_TagString
-      value: Obstacle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0de23fde14361a5469558c9f6d82f2f5, type: 3}
