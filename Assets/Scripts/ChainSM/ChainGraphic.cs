@@ -28,7 +28,7 @@ public class ChainGraphic : MonoBehaviour
     void Update()
     {
         SetLineRender();
-        SetGraphicValue(dstToTarget);
+        SetGraphicValue();
     }
 
     private void SetLineRender()
@@ -59,10 +59,12 @@ public class ChainGraphic : MonoBehaviour
         lineR.enabled = true;
     }
 
-    public void SetGraphicValue(float value)
+    public void SetGraphicValue()
     {
+        float value;
         Material mat = lineR.material;
-        float totValue = ((1/value) / maxLenghtChain)* 10;
+        value = maxLenghtChain - dstToTarget;
+        float totValue = value / maxLenghtChain;
         mat.SetFloat("Vector1_57A4081A", Mathf.Clamp(totValue, 0, 1));
     }
 }
