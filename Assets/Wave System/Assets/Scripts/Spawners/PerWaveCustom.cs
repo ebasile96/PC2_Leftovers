@@ -54,10 +54,12 @@ namespace SemihOrhan.WaveOne.Spawners
         public bool SetEndPoints { get; set; }
 
         LevelManager lvlmgr;
+        VFXManager vfx;
 
         private void Awake()
         {
             lvlmgr = FindObjectOfType<LevelManager>();
+            vfx = FindObjectOfType<VFXManager>();
         }
         private void Start()
         {
@@ -203,6 +205,8 @@ namespace SemihOrhan.WaveOne.Spawners
                                                    spawnPointPos,
                                                    Quaternion.identity,
                                                    Parent);
+
+                            Instantiate(vfx.vfxEnemySpawn, spawnPointPos, Quaternion.identity); 
                             
                             lvlmgr._EnemyCounterAlive++;
                         }
@@ -212,7 +216,7 @@ namespace SemihOrhan.WaveOne.Spawners
                             instance = Instantiate(enemyWaves[currentWave].enemies[currentEnemy].gameObject,
                                                    spawnPointPos,
                                                    Quaternion.identity);
-                           
+                            Instantiate(vfx.vfxEnemySpawn, spawnPointPos, Quaternion.identity);
                             lvlmgr._EnemyCounterAlive++;
                         }
                             

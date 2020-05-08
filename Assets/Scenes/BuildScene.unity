@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -2769,7 +2769,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 755907086}
-  m_LocalRotation: {x: 0.5058405, y: 0.018387802, z: -0.008625345, w: 0.86238796}
+  m_LocalRotation: {x: 0.5058405, y: 0.018387835, z: -0.008625364, w: 0.86238796}
   m_LocalPosition: {x: -1.5550001, y: 21.24, z: -14.79}
   m_LocalScale: {x: 1, y: 1, z: 1.2193}
   m_Children:
@@ -5964,12 +5964,12 @@ PrefabInstance:
     - target: {fileID: 4792709009875095648, guid: f838afab358d88b47bffa582ffd236a4,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.018387802
+      value: 0.018387835
       objectReference: {fileID: 0}
     - target: {fileID: 4792709009875095648, guid: f838afab358d88b47bffa582ffd236a4,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.008625345
+      value: -0.008625364
       objectReference: {fileID: 0}
     - target: {fileID: 4792709009875095648, guid: f838afab358d88b47bffa582ffd236a4,
         type: 3}
@@ -6056,6 +6056,12 @@ PrefabInstance:
       propertyPath: vfxEnemyDeath
       value: 
       objectReference: {fileID: 100004, guid: ef0a105a72c08e34ebfe13ffda0e49b0, type: 3}
+    - target: {fileID: 6606621600538343047, guid: b7a9474282d1c4444a60e8ae46fbc2f5,
+        type: 3}
+      propertyPath: vfxEnemySpawn
+      value: 
+      objectReference: {fileID: 6334433791481009282, guid: 48bccc4adc2d0894d90fd5cd79d18794,
+        type: 3}
     - target: {fileID: 6606621600538343044, guid: b7a9474282d1c4444a60e8ae46fbc2f5,
         type: 3}
       propertyPath: m_LocalPosition.x
