@@ -5,7 +5,9 @@ using UnityEngine;
 public class InputManager : MonoBehaviour
 {
     [HideInInspector]
-    public bool dash;
+    public float runPlayer;
+    [HideInInspector]
+    public float runPet;
     [HideInInspector]
     public float horizontal;
     [HideInInspector]
@@ -21,7 +23,8 @@ public class InputManager : MonoBehaviour
         horizontal = Input.GetAxisRaw("Horizontal");
         verticalPet = Input.GetAxisRaw("VerticalPet");
         horizontalPet = Input.GetAxisRaw("HorizontalPet");
-        dash = Input.GetKeyDown(KeyCode.Space);
+        runPlayer = Input.GetAxisRaw("runPlayer");
+        runPet = Input.GetAxisRaw("runPet");
     }
 
     private void Update()

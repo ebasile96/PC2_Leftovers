@@ -5,10 +5,12 @@ using UnityEngine;
 public class PlayerNormalState : PlayerBaseState
 {
     public PlayerBaseState idleState;
+    public PlayerBaseState runState;
 
     public override void Enter()
     {
-        //player.animator.SetTrigger("GoToRunning");
+        player.NormalRunPlayer();
+        player.SetColorNormalAura();
     }
 
     public override void Tick()
@@ -20,6 +22,11 @@ public class PlayerNormalState : PlayerBaseState
         if (player.movement * player.moveSpeed == new Vector3(0, 0, 0))
         {
             player.ChangeState(idleState);
+        }
+
+        if (GameManager.instance.Inputmgr.runPlayer == 1)
+        {
+            player.ChangeState(runState);
         }
     }
 

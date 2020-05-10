@@ -36,9 +36,9 @@ public class LogicProjectile : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-        /*else if(collision.gameObject.tag == "Bullet")
+        else if(collision.gameObject.tag == "Enemy")
         {
             Destroy(this.gameObject);
-        }*/
+        }
     }
 }

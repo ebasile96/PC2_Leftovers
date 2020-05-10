@@ -8,6 +8,11 @@ public class PetController : MonoBehaviour
     public PetStateBase currentState;
     public Animator animator;
     public float moveSpeed;
+    public float runSpeed;
+    public float normalMoveSpeed;
+    public Color runAura;
+    public Color normalAura;
+    public ParticleSystem.MainModule aura;
     CharacterController characterControllerPet;
     private Vector3 lookDir;
     private Vector3 oldLookDir;
@@ -69,5 +74,27 @@ public class PetController : MonoBehaviour
         {
             chainController.ReformeChainCollision();
         }
+    }
+
+    public void SuperRunPet()
+    {
+        moveSpeed = runSpeed;
+    }
+
+    public void NormalRunPet()
+    {
+        moveSpeed = normalMoveSpeed;
+    }
+
+    public void SetColorRunAura()
+    {
+        aura = GetComponentInChildren<ParticleSystem>().main;
+        aura.startColor = runAura;
+    }
+
+    public void SetColorNormalAura()
+    {
+        aura = GetComponentInChildren<ParticleSystem>().main;
+        aura.startColor = normalAura;
     }
 }

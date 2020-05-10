@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   normalState: {fileID: 1065108432}
+  runState: {fileID: 0}
 --- !u!1 &1065108431
 GameObject:
   m_ObjectHideFlags: 0
@@ -88,6 +89,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   idleState: {fileID: 551301712}
+  runState: {fileID: 0}
 --- !u!1 &1293648576
 GameObject:
   m_ObjectHideFlags: 0
@@ -9722,6 +9724,10 @@ MonoBehaviour:
   currentState: {fileID: 551301712}
   pet: {fileID: 0}
   moveSpeed: 7
+  runSpeed: 0
+  normalMoveSpeed: 0
+  runAura: {r: 0, g: 0, b: 0, a: 0}
+  normalAura: {r: 0, g: 0, b: 0, a: 0}
   animator: {fileID: 0}
   turnSpeed: 20
   movement: {x: 0, y: 0, z: 0}

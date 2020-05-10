@@ -9,7 +9,12 @@ public class PlayerController : MonoBehaviour
     public PlayerBaseState currentState;
     public PetController pet;
     public float moveSpeed;
+    public float runSpeed;
+    public float normalMoveSpeed;
+    public Color runAura;
+    public Color normalAura;
     public Animator animator;
+    public ParticleSystem.MainModule aura;
     CharacterController characterController;
     private Vector3 lookDir;
     private Vector3 oldLookDir;
@@ -29,6 +34,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         currentState.Tick();
+        SuperRunPlayer();
     }
   
 
@@ -67,4 +73,25 @@ public class PlayerController : MonoBehaviour
             _velocity.y = 0;
     }
 
+    public void SuperRunPlayer()
+    {
+        moveSpeed = runSpeed;
+    }
+
+    public void NormalRunPlayer()
+    {
+        moveSpeed = normalMoveSpeed;
+    }
+
+    public void SetColorRunAura()
+    {
+        aura = GetComponentInChildren<ParticleSystem>().main;
+        aura.startColor = runAura;
+    }
+
+    public void SetColorNormalAura()
+    {
+        aura = GetComponentInChildren<ParticleSystem>().main;
+        aura.startColor = normalAura;
+    }
 }
