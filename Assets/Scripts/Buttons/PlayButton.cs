@@ -20,17 +20,17 @@ public class PlayButton : MonoBehaviour
 
     public void PressBlu()
     {
-        FlowStateMachine.GoToTestBlu();
+        SceneManager.LoadScene("TestSceneRanged");
     }
 
     public void PressGreen()
     {
-        FlowStateMachine.GoToTestGreen();
+        SceneManager.LoadScene("TestSceneShield");
     }
 
     public void PressRed()
     {
-        FlowStateMachine.GotoTestRed();
+        SceneManager.LoadScene("TestSceneBubble");
     }
 
     public void MainMenu()
