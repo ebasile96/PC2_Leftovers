@@ -62,7 +62,7 @@ public class PatrolAgent : MonoBehaviour
     public Rigidbody rb;
     public void Attack()
     {
-        GameObject bullet = Instantiate(projectile, originShoot.position, Quaternion.LookRotation(Vector3.forward)) as GameObject;
+        GameObject bullet = Instantiate(projectile, originShoot.position, Quaternion.LookRotation(originShoot.forward)) as GameObject;
         bullet.GetComponent<Rigidbody>().AddForce(transform.forward * speedProjectile);
         isAttack = true;
     }

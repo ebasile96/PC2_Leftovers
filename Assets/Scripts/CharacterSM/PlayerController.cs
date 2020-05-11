@@ -29,12 +29,14 @@ public class PlayerController : MonoBehaviour
         characterController = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
         pet = FindObjectOfType<PetController>();
+        invMat.SetActive(false);
     }
 
     void Update()
     {
         currentState.Tick();
-        SuperRunPlayer();
+        InvulnerabilityTimer();
+        fixInvTimer();
     }
   
 
@@ -71,6 +73,34 @@ public class PlayerController : MonoBehaviour
         characterController.Move(_velocity * Time.deltaTime);
         if (_velocity.y != 0f)
             _velocity.y = 0;
+    }
+
+    public bool isInvulnerability;
+    public float invulnerabilityTimer;
+    public float invulnerabilityCounter;
+    public GameObject invMat;
+
+    public void InvulnerabilityTimer()
+    {
+        if(invulnerabilityCounter > 0)
+        {
+            invulnerabilityCounter -= Time.deltaTime;
+            invMat.SetActive(true);
+            pet.invMatPet.SetActive(true);
+        }
+        else if(invulnerabilityCounter <= 0)
+        {
+            invMat.SetActive(false);
+            pet.invMatPet.SetActive(false);
+        }
+    }
+
+    private void fixInvTimer()
+    {
+        if (invulnerabilityCounter < 0)
+        {
+            invulnerabilityCounter = 0;
+        }
     }
 
     public void SuperRunPlayer()

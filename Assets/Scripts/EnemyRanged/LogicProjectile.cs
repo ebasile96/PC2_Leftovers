@@ -30,7 +30,11 @@ public class LogicProjectile : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             Destroy(this.gameObject);
-            pLife.TakeDamage(damage);
+            if (player.invulnerabilityCounter <= 0)
+            {
+                pLife.TakeDamage(damage);
+                player.invulnerabilityCounter = player.invulnerabilityTimer;
+            }
         }
         else if(collision.gameObject.tag == "Obstacle")
         {

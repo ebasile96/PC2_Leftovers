@@ -21,6 +21,7 @@ public class PetController : MonoBehaviour
     [HideInInspector]
     public Vector3 movement;
     public ChainController chainController;
+    public PlayerController player;
 
     public void ChangeState(PetStateBase newState)
     {
@@ -33,6 +34,8 @@ public class PetController : MonoBehaviour
     {
         characterControllerPet = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
+        invMatPet.SetActive(false);
+        player = FindObjectOfType<PlayerController>();
     }
 
     public void Update()
@@ -68,6 +71,7 @@ public class PetController : MonoBehaviour
             _velocity.y = 0;
     }
 
+    public GameObject invMatPet;
     public void OnControllerColliderHit(ControllerColliderHit hit)
     {
         if (hit.gameObject.tag == "Player")

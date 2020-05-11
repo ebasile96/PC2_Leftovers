@@ -84,7 +84,11 @@ public class EnemyController : MonoBehaviour
         if (hit.gameObject.tag == "Player" && canTakeDamage == true)
         {
             anim.SetTrigger("GoToAttackCross");
-            pHealth.TakeDamage(Data.damage);
+            if (targetObjectCharacter.invulnerabilityCounter <= 0)
+            {
+                pHealth.TakeDamage(Data.damage);
+                targetObjectCharacter.invulnerabilityCounter = targetObjectCharacter.invulnerabilityTimer;
+            }
             Instantiate(vfx.vfxHitTest, hit.transform);
             SoundManager.PlaySound(SoundManager.Sound.femaleTakeDamage);
 
