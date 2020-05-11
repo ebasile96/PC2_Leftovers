@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7084769877005391205}
   m_Layer: 9
   m_Name: SM_group_Barrel20
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -115,7 +115,7 @@ GameObject:
   - component: {fileID: 7933363261045517879}
   m_Layer: 9
   m_Name: SM_props_table_chair
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -216,10 +216,10 @@ GameObject:
   - component: {fileID: 251774780030752997}
   m_Layer: 9
   m_Name: SM_Rialzo
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &4939999639150179675
 Transform:
@@ -317,7 +317,7 @@ GameObject:
   - component: {fileID: 6761891419017659922}
   m_Layer: 9
   m_Name: SM_props_floor
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -418,7 +418,7 @@ GameObject:
   - component: {fileID: 1993727707284482724}
   m_Layer: 9
   m_Name: SM_props_hanged
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -519,7 +519,7 @@ GameObject:
   - component: {fileID: 4480267977005050648}
   m_Layer: 9
   m_Name: SM_Stands
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -620,7 +620,7 @@ GameObject:
   - component: {fileID: 4484105246151738357}
   m_Layer: 9
   m_Name: SM_props_stand
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -717,6 +717,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7769827503342617320}
   - component: {fileID: 178379081}
+  - component: {fileID: 6676800555077352450}
   m_Layer: 9
   m_Name: SM_O_Bancarelle_legno
   m_TagString: Obstacle
@@ -758,3 +759,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 7.4546533, y: 3, z: 3.3139324}
   m_Center: {x: -2.6335957, y: 1.48, z: -0.6913581}
+--- !u!208 &6676800555077352450
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6739814045217124603}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5

@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 5315965914698379205}
   - component: {fileID: 2204108404391573000}
   - component: {fileID: 7546966127499015926}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SM_Table_bottle
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -115,9 +115,9 @@ GameObject:
   - component: {fileID: 8828877041936674465}
   - component: {fileID: 7095629563223613991}
   - component: {fileID: 3273085946789983016}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SM_stand
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -247,9 +247,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2924158549465228519}
-  m_Layer: 0
+  - component: {fileID: 6676800554891225770}
+  m_Layer: 9
   m_Name: SM_O_Bancarella_singola_tenda
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -261,7 +262,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2220251998330885876}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.3345644, y: 0.00000011920929, z: -4.1482806}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -276,6 +277,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &6676800554891225770
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2220251998330885876}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &3008658866556808747
 GameObject:
   m_ObjectHideFlags: 0
@@ -288,9 +305,9 @@ GameObject:
   - component: {fileID: 4265581226268897986}
   - component: {fileID: 8127224870961891678}
   - component: {fileID: 2000187937642813566}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SM_Props_stand
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -389,9 +406,9 @@ GameObject:
   - component: {fileID: 8254556158841892327}
   - component: {fileID: 6244349655337816702}
   - component: {fileID: 9131004066697748048}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SM_Piatti_group
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -490,9 +507,9 @@ GameObject:
   - component: {fileID: 1973838191229090127}
   - component: {fileID: 7593069898372666284}
   - component: {fileID: 4489855638777529118}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SM_Wooden_box
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -591,9 +608,9 @@ GameObject:
   - component: {fileID: 860100437510345720}
   - component: {fileID: 2222133030987503521}
   - component: {fileID: 3146650945026413567}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SM_cheese_plat
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -692,12 +709,12 @@ GameObject:
   - component: {fileID: 2653368463622917073}
   - component: {fileID: 2347325524276964065}
   - component: {fileID: 3742993270711716028}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SM_Rialzo
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &561029348117533524
 Transform:
@@ -793,9 +810,10 @@ GameObject:
   - component: {fileID: 6602961399992755472}
   - component: {fileID: 7591333884356888616}
   - component: {fileID: 5830088641881082307}
-  m_Layer: 0
+  - component: {fileID: 6676800555306595486}
+  m_Layer: 9
   m_Name: SM_group_Barrel
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -882,3 +900,16 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   raycastFadeSpeed: 10
+--- !u!65 &6676800555306595486
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9080548773829822467}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.7779424, y: 1.1181102, z: 1.6717248}
+  m_Center: {x: 0.36055133, y: 0.5590551, z: -0.58219457}
