@@ -5,11 +5,11 @@ using UnityEngine;
 public class MovementState : RangedStateBehaviour
 {
     public RangedStateBehaviour attackState;
+    public RangedStateBehaviour preFireState;
     private bool start = false;
 
     public override void Enter()
     {
-        Debug.Log("entra nell enter diobestia");
         if(start == false)
         ranged.actualDestPoint += 1;
     }
@@ -22,7 +22,7 @@ public class MovementState : RangedStateBehaviour
 
         if(ranged.destPoint == ranged.actualDestPoint)
         {
-            ranged.ChangeState(attackState);
+            ranged.ChangeState(preFireState);
         }
     }
 

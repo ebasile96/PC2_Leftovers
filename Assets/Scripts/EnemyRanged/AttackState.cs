@@ -15,11 +15,9 @@ public class AttackState : RangedStateBehaviour
     public override void Tick()
     {
         ranged.anim.SetTrigger("GoToIdle");
-        ranged.ActiveLineRender();
         ranged.attackTimer += 1;
-        ranged.LookTarget();
-        ranged.agent.isStopped = true;
-        ranged.SetDirectionOfAttack();
+        //ranged.agent.isStopped = true;
+        //ranged.SetDirectionOfAttack();
         if (ranged.isAttack == false)
         {
             ranged.Attack();
@@ -35,6 +33,5 @@ public class AttackState : RangedStateBehaviour
     {
         ranged.isAttack = false;
         ranged.actualDestPoint += 1;
-        ranged.DisactiveLineRender();
     }
 }
