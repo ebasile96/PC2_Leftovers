@@ -21,5 +21,17 @@ public class EnemyData : ScriptableObject
     public int damageShield;
     [SerializeField]
     public float TimerBubble;
+    [SerializeField]
+    public EnemyType Type;
 
+}
+
+public enum EnemyType
+{
+    green,
+    blue,
+    shield,
+    damage,
+    bubble,
+    ranged
 }

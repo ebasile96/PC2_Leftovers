@@ -1,11 +1,14 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class ChainController : MonoBehaviour
 {
     public ChainGraphic graphic;
     public ChainBaseState currentState;
     LevelManager lvlmgr;
+    ScoreManager scoreMgr;
     public float currentStressValue;
     public float maxStressValue;
     public float reforgeStressValue;
@@ -41,6 +44,7 @@ public class ChainController : MonoBehaviour
     void Start()
     {
         lvlmgr = FindObjectOfType<LevelManager>();
+        scoreMgr = FindObjectOfType<ScoreManager>();
     }
 
     // Update is called once per frame
@@ -107,6 +111,7 @@ public class ChainController : MonoBehaviour
         {
             if (timerCombo == 0 && graphic.lineR.enabled == true)
             {
+                scoreMgr.PointAssignation(hit.transform.GetComponent<EnemyController>().Data.Type);
                 GameObject gameObject = Instantiate(vfx.vfxEnemyDeath);
                 gameObject.transform.position = hit.point;
                 Destroy(hit.collider.gameObject);
@@ -118,6 +123,7 @@ public class ChainController : MonoBehaviour
             }
             else if (timerCombo != 0 && graphic.lineR.enabled == true)
             {
+                scoreMgr.PointAssignation(hit.transform.GetComponent<EnemyController>().Data.Type);
                 GameObject gameObject = Instantiate(vfx.vfxEnemyDeath);
                 gameObject.transform.position = hit.point;
                 Destroy(hit.collider.gameObject);
@@ -176,4 +182,5 @@ public class ChainController : MonoBehaviour
         pLife.healthPlayer += bonusStressLife;
         Debug.Log("cura");
     }
+
 }
