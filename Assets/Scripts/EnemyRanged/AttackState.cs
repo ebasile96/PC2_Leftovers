@@ -22,7 +22,7 @@ public class AttackState : RangedStateBehaviour
         {
             ranged.Attack();
         }
-        else if (ranged.isAttack == true && ranged.attackTimer >= ranged.maxTimerAttack)
+        else if (ranged.isAttack == true && ranged.attackTimer >= ranged.data.maxTimerAttack)
         {
             ranged.attackTimer = 0;
             ranged.ChangeState(movementState);

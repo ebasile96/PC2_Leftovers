@@ -6,14 +6,12 @@ using DG.Tweening;
 public class PatrolAgent : MonoBehaviour
 {
     public RangedStateBehaviour currentState;
-    public Transform[] points;
-    public int destPoint = 0;
+    public int destPoint;
     public int actualDestPoint;
-    public NavMeshAgent agent;
-    public bool isAttack;
     public float attackTimer;
-    public float maxTimerAttack;
-    public GameObject projectile;
+    public bool isAttack;
+    public EnemyRangedData data;
+    public NavMeshAgent agent;
     public LineRenderer lineR;
     public Transform targetLine;
     public Animator anim;
@@ -31,18 +29,23 @@ public class PatrolAgent : MonoBehaviour
         vfx = FindObjectOfType<VFXManager>();
         targetObjectCharacter = FindObjectOfType<PlayerController>();
         targetObjectCompanion = FindObjectOfType<PetController>();
+
+        //settaggi valori per movimento enemy
+        agent.speed = data.speed;
+        agent.acceleration = data.acceleration;
+        agent.angularSpeed = data.angularSpeed;
     }
 
 
     public void GotoNextPoint()
     {
-        if (points.Length == 0)
+        if (data.points.Length == 0)
             return;
 
         if (!agent.pathPending && agent.remainingDistance < 0.5f)
         {
-            agent.destination = points[destPoint].position;
-            destPoint = (destPoint + 1) % points.Length;
+            agent.destination = data.points[destPoint].position;
+            destPoint = (destPoint + 1) % data.points.Length;
         }
     }
 
@@ -58,12 +61,11 @@ public class PatrolAgent : MonoBehaviour
     }
 
     public Transform originShoot;
-    public float speedProjectile;
     public Rigidbody rb;
     public void Attack()
     {
-        GameObject bullet = Instantiate(projectile, originShoot.position, Quaternion.LookRotation(originShoot.forward)) as GameObject;
-        bullet.GetComponent<Rigidbody>().AddForce(transform.forward * speedProjectile);
+        GameObject bullet = Instantiate(data.projectile, originShoot.position, Quaternion.LookRotation(originShoot.forward)) as GameObject;
+        bullet.GetComponent<Rigidbody>().AddForce(transform.forward * data.speedProjectile);
         isAttack = true;
     }
 
@@ -109,14 +111,12 @@ public class PatrolAgent : MonoBehaviour
     }
 
     private bool canTakeDamage = true;
-    public float damage;
-    public float rateoDamage;
     public void OnCollisionStay(Collision hit)
     {
 
         if (hit.gameObject.tag == "Player" && canTakeDamage == true)
         {
-            pHealth.TakeDamage(damage);
+            pHealth.TakeDamage(data.damagePhysic);
             Instantiate(vfx.vfxHitTest, hit.transform);
             SoundManager.PlaySound(SoundManager.Sound.femaleTakeDamage);
 
@@ -126,7 +126,7 @@ public class PatrolAgent : MonoBehaviour
     private IEnumerator damageTimer()
     {
         canTakeDamage = false;
-        yield return new WaitForSeconds(rateoDamage);
+        yield return new WaitForSeconds(data.rateoDamagePhysic);
         canTakeDamage = true;
     }
 
