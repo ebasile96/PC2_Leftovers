@@ -10,7 +10,13 @@ public class PatrolAgent : MonoBehaviour
     public int actualDestPoint;
     public float attackTimer;
     public bool isAttack;
-    public EnemyRangedData data;
+    public Transform[] points;
+    public float maxTimerAttack;
+    public GameObject projectile;
+    public float speedProjectile;
+    public float damagePhysic;
+    public float rateoDamagePhysic;
+    public EnemyData data;
     public NavMeshAgent agent;
     public LineRenderer lineR;
     public Transform targetLine;
@@ -39,13 +45,13 @@ public class PatrolAgent : MonoBehaviour
 
     public void GotoNextPoint()
     {
-        if (data.points.Length == 0)
+        if (points.Length == 0)
             return;
 
         if (!agent.pathPending && agent.remainingDistance < 0.5f)
         {
-            agent.destination = data.points[destPoint].position;
-            destPoint = (destPoint + 1) % data.points.Length;
+            agent.destination = points[destPoint].position;
+            destPoint = (destPoint + 1) % points.Length;
         }
     }
 
@@ -64,8 +70,8 @@ public class PatrolAgent : MonoBehaviour
     public Rigidbody rb;
     public void Attack()
     {
-        GameObject bullet = Instantiate(data.projectile, originShoot.position, Quaternion.LookRotation(originShoot.forward)) as GameObject;
-        bullet.GetComponent<Rigidbody>().AddForce(transform.forward * data.speedProjectile);
+        GameObject bullet = Instantiate(projectile, originShoot.position, Quaternion.LookRotation(originShoot.forward)) as GameObject;
+        bullet.GetComponent<Rigidbody>().AddForce(transform.forward * speedProjectile);
         isAttack = true;
     }
 
@@ -116,7 +122,7 @@ public class PatrolAgent : MonoBehaviour
 
         if (hit.gameObject.tag == "Player" && canTakeDamage == true)
         {
-            pHealth.TakeDamage(data.damagePhysic);
+            pHealth.TakeDamage(data.damage);
             Instantiate(vfx.vfxHitTest, hit.transform);
             SoundManager.PlaySound(SoundManager.Sound.femaleTakeDamage);
 
@@ -126,7 +132,7 @@ public class PatrolAgent : MonoBehaviour
     private IEnumerator damageTimer()
     {
         canTakeDamage = false;
-        yield return new WaitForSeconds(data.rateoDamagePhysic);
+        yield return new WaitForSeconds(data.rateoDamage);
         canTakeDamage = true;
     }
 

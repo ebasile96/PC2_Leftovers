@@ -9,7 +9,7 @@ public class LogicProjectile : MonoBehaviour
     public PlayerController player;
     public PatrolAgent agent;
     public Vector3 target;
-    public EnemyRangedData data;
+    public int damageArrow;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +32,7 @@ public class LogicProjectile : MonoBehaviour
             Destroy(this.gameObject);
             if (player.invulnerabilityCounter <= 0)
             {
-                pLife.TakeDamage(data.damageArrow);
+                pLife.TakeDamage(damageArrow);
                 player.invulnerabilityCounter = player.invulnerabilityTimer;
             }
         }

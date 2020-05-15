@@ -374,7 +374,20 @@ MonoBehaviour:
   actualDestPoint: 0
   attackTimer: 0
   isAttack: 0
-  data: {fileID: 0}
+  points:
+  - {fileID: 224622326303655033, guid: 424b9d98e91689d42a432c0980185c8e, type: 3}
+  - {fileID: 224622326303655033, guid: 8048d61eb8a321048981cfcf61bfaa85, type: 3}
+  - {fileID: 2985631603765809191, guid: cf1aa61158672db41b2ad186b415db67, type: 3}
+  - {fileID: 3380141510671733613, guid: 8e601527456d3314db2bf8c32e4539dd, type: 3}
+  - {fileID: 2794363552907387335, guid: 2241ef947233ab742b2a63dd28775876, type: 3}
+  - {fileID: 5388961365334124133, guid: 0a3803c9d2d3fe94aae595ddd7ec6e29, type: 3}
+  maxTimerAttack: 2
+  projectile: {fileID: 2870875391277828242, guid: 0e47013564679d74f9e744495bfd4b32,
+    type: 3}
+  speedProjectile: 700
+  damagePhysic: 0
+  rateoDamagePhysic: 0
+  data: {fileID: 11400000, guid: 85caa86ecff93b14098c02b7b7f46a84, type: 2}
   agent: {fileID: 0}
   lineR: {fileID: -3200037788448057347}
   targetLine: {fileID: 0}
@@ -6214,11 +6227,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3623897510136537494}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: e9337a4b6784b164b9363658d3e9f9a1,
-        type: 3}
-      propertyPath: m_Name
-      value: CrossBow_enemy
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: e9337a4b6784b164b9363658d3e9f9a1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6288,6 +6296,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.8352063
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: e9337a4b6784b164b9363658d3e9f9a1,
+        type: 3}
+      propertyPath: m_Name
+      value: CrossBow_enemy
       objectReference: {fileID: 0}
     - target: {fileID: -8738795866036441368, guid: e9337a4b6784b164b9363658d3e9f9a1,
         type: 3}

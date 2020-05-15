@@ -111,7 +111,14 @@ public class ChainController : MonoBehaviour
         {
             if (timerCombo == 0 && graphic.lineR.enabled == true)
             {
-                scoreMgr.PointAssignation(hit.transform.GetComponent<EnemyController>().Data.Type);
+                if (hit.transform.GetComponent<EnemyController>() != null) 
+                {
+                    scoreMgr.PointAssignation(hit.transform.GetComponent<EnemyController>().Data.Type);
+                }
+                else
+                {
+                    scoreMgr.PointAssignation(hit.transform.GetComponent<PatrolAgent>().data.Type);
+                }
                 GameObject gameObject = Instantiate(vfx.vfxEnemyDeath);
                 gameObject.transform.position = hit.point;
                 Destroy(hit.collider.gameObject);
@@ -123,7 +130,14 @@ public class ChainController : MonoBehaviour
             }
             else if (timerCombo != 0 && graphic.lineR.enabled == true)
             {
-                scoreMgr.PointAssignation(hit.transform.GetComponent<EnemyController>().Data.Type);
+                if (hit.transform.GetComponent<EnemyController>() != null)
+                {
+                    scoreMgr.PointAssignation(hit.transform.GetComponent<EnemyController>().Data.Type);
+                }
+                else
+                {
+                    scoreMgr.PointAssignation(hit.transform.GetComponent<PatrolAgent>().data.Type);
+                }
                 GameObject gameObject = Instantiate(vfx.vfxEnemyDeath);
                 gameObject.transform.position = hit.point;
                 Destroy(hit.collider.gameObject);

@@ -11,18 +11,6 @@ public class EnemyRangedData : ScriptableObject
     public int angularSpeed;
     [SerializeField]
     public int acceleration;
-    [SerializeField]
-    public Transform[] points;
-    [SerializeField]
-    public float maxTimerAttack;
-    [SerializeField]
-    public int damageArrow;
-    [SerializeField]
-    public GameObject projectile;
-    [SerializeField]
-    public float speedProjectile;
-    [SerializeField]
-    public float damagePhysic;
-    [SerializeField]
-    public float rateoDamagePhysic;
+
 }
+
