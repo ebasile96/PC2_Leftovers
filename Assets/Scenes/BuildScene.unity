@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1892,26 +1892,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d5ba278073d3264092426e168c2b353, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &2043562743 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6494820693997321868, guid: f6ef9272cba8164448ca12834c3315c7,
-    type: 3}
-  m_PrefabInstance: {fileID: 4816206681921688514}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2043562744
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2043562743}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e20cd87dd1bbe16408d8f7433893e804, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Score: 0
-  ScoreBoard: {fileID: 1012886163}
 --- !u!1 &2055803459 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4792709009875095651, guid: f838afab358d88b47bffa582ffd236a4,
@@ -2788,6 +2768,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2043562744, guid: f6ef9272cba8164448ca12834c3315c7, type: 3}
+      propertyPath: ScoreBoard
+      value: 
+      objectReference: {fileID: 1012886163}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6ef9272cba8164448ca12834c3315c7, type: 3}
 --- !u!1001 &6606621601211492078
