@@ -12,7 +12,7 @@ public class StessBarController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        chainController = FindObjectOfType<ChainController>();
     }
 
     // Update is called once per frame

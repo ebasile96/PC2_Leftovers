@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 35268542}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 16.3, y: 1.5, z: 15.7}
+  m_LocalPosition: {x: 10, y: 1.5, z: 15.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 322326697863641742}
@@ -84,7 +84,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 897123751}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.7, y: 1.5, z: 18.9}
+  m_LocalPosition: {x: -3.9, y: 1.5, z: 16.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 322326697863641742}
@@ -114,7 +114,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1234368366}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 13.1, y: 1.5, z: -22.62}
+  m_LocalPosition: {x: 6.15, y: 1.5, z: -22.62}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 322326697863641742}
@@ -216,7 +216,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 322326698046941920}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -23.6, y: 1.5, z: 5.7}
+  m_LocalPosition: {x: -19.8, y: 1.5, z: 7.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 322326697863641742}
@@ -276,7 +276,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 322326698374891291}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -13.1, y: 1.5, z: -21.8}
+  m_LocalPosition: {x: -15.92, y: 1.5, z: -16.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 322326697863641742}
@@ -336,7 +336,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 322326698746432559}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 25.1, y: 1.5, z: -2.8}
+  m_LocalPosition: {x: 23.6, y: 1.5, z: 0.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 322326697863641742}
@@ -462,41 +462,214 @@ MonoBehaviour:
   - name: Wave 1
     enemies:
     - name: Enemy 1
-      gameObject: {fileID: 7235166392293632702, guid: 0c2e9274d0bf80e40a55eac822bdd4dc,
+      gameObject: {fileID: 7235166392293632702, guid: a66e5be7f18432b46b7166d47f347a2d,
         type: 3}
-      amount: 3
-      groupSize: 1
-    - name: Enemy 2
-      gameObject: {fileID: 4235695233260938444, guid: 578f320f819359143937de9ce3913847,
-        type: 3}
-      amount: 2
-      groupSize: 1
-    - name: Enemy 3
-      gameObject: {fileID: 1307283017811907814, guid: 1310440b6b8c3444aa3a50866c9dbebf,
-        type: 3}
-      amount: 2
+      amount: 6
       groupSize: 1
     deployments: 2
   - name: Wave 2
     enemies:
     - name: Enemy 1
+      gameObject: {fileID: 7235166392293632702, guid: a66e5be7f18432b46b7166d47f347a2d,
+        type: 3}
+      amount: 10
+      groupSize: 1
+    deployments: 2
+  - name: Wave 3
+    enemies:
+    - name: Enemy 1
+      gameObject: {fileID: 7235166392293632702, guid: a66e5be7f18432b46b7166d47f347a2d,
+        type: 3}
+      amount: 3
+      groupSize: 1
+    - name: Enemy 2
       gameObject: {fileID: 7235166392293632702, guid: 0c2e9274d0bf80e40a55eac822bdd4dc,
         type: 3}
-      amount: 4
+      amount: 3
+      groupSize: 1
+    deployments: 2
+  - name: Wave 4
+    enemies:
+    - name: Enemy 1
+      gameObject: {fileID: 7235166392293632702, guid: a66e5be7f18432b46b7166d47f347a2d,
+        type: 3}
+      amount: 3
+      groupSize: 1
+    - name: Enemy 2
+      gameObject: {fileID: 1307283017811907814, guid: 1310440b6b8c3444aa3a50866c9dbebf,
+        type: 3}
+      amount: 3
+      groupSize: 1
+    deployments: 2
+  - name: Wave 5
+    enemies:
+    - name: Enemy 1
+      gameObject: {fileID: 7235166392293632702, guid: a66e5be7f18432b46b7166d47f347a2d,
+        type: 3}
+      amount: 3
+      groupSize: 1
+    - name: Enemy 2
+      gameObject: {fileID: 1307283017811907814, guid: 1310440b6b8c3444aa3a50866c9dbebf,
+        type: 3}
+      amount: 3
+      groupSize: 1
+    - name: Enemy 3
+      gameObject: {fileID: 7235166392293632702, guid: 0c2e9274d0bf80e40a55eac822bdd4dc,
+        type: 3}
+      amount: 3
+      groupSize: 1
+    deployments: 2
+  - name: Wave 6
+    enemies:
+    - name: Enemy 1
+      gameObject: {fileID: 7235166392293632702, guid: a66e5be7f18432b46b7166d47f347a2d,
+        type: 3}
+      amount: 3
+      groupSize: 1
+    - name: Enemy 2
+      gameObject: {fileID: 1307283017811907814, guid: 1310440b6b8c3444aa3a50866c9dbebf,
+        type: 3}
+      amount: 3
+      groupSize: 1
+    - name: Enemy 3
+      gameObject: {fileID: 7235166392293632702, guid: 0c2e9274d0bf80e40a55eac822bdd4dc,
+        type: 3}
+      amount: 3
+      groupSize: 1
+    deployments: 2
+  - name: Wave 7
+    enemies:
+    - name: Enemy 1
+      gameObject: {fileID: 1307283017811907814, guid: e2500107366dc0841b4f1951aebe7082,
+        type: 3}
+      amount: 1
+      groupSize: 1
+    - name: Enemy 2
+      gameObject: {fileID: 7235166392293632702, guid: a66e5be7f18432b46b7166d47f347a2d,
+        type: 3}
+      amount: 2
+      groupSize: 1
+    deployments: 1
+  - name: Wave 8
+    enemies:
+    - name: Enemy 1
+      gameObject: {fileID: 1307283017811907814, guid: e2500107366dc0841b4f1951aebe7082,
+        type: 3}
+      amount: 2
+      groupSize: 1
+    - name: Enemy 2
+      gameObject: {fileID: 7235166392293632702, guid: a66e5be7f18432b46b7166d47f347a2d,
+        type: 3}
+      amount: 2
+      groupSize: 1
+    - name: Enemy 3
+      gameObject: {fileID: 7235166392293632702, guid: 0c2e9274d0bf80e40a55eac822bdd4dc,
+        type: 3}
+      amount: 2
+      groupSize: 1
+    deployments: 2
+  - name: Wave 9
+    enemies:
+    - name: Enemy 1
+      gameObject: {fileID: 7235166392293632702, guid: a66e5be7f18432b46b7166d47f347a2d,
+        type: 3}
+      amount: 3
       groupSize: 1
     - name: Enemy 2
       gameObject: {fileID: 4235695233260938444, guid: 578f320f819359143937de9ce3913847,
         type: 3}
       amount: 3
       groupSize: 1
-    - name: Enemy 3
+    deployments: 2
+  - name: Wave 10
+    enemies:
+    - name: Enemy 1
       gameObject: {fileID: 1307283017811907814, guid: 1310440b6b8c3444aa3a50866c9dbebf,
         type: 3}
-      amount: 3
+      amount: 2
+      groupSize: 1
+    - name: Enemy 2
+      gameObject: {fileID: 7235166392293632702, guid: 0c2e9274d0bf80e40a55eac822bdd4dc,
+        type: 3}
+      amount: 2
+      groupSize: 1
+    - name: Enemy 3
+      gameObject: {fileID: 4235695233260938444, guid: 578f320f819359143937de9ce3913847,
+        type: 3}
+      amount: 2
       groupSize: 1
     deployments: 2
-  minTimeForNextDeployment: 3
-  maxTimeForNextDeployment: 3
+  - name: Wave 11
+    enemies:
+    - name: Enemy 1
+      gameObject: {fileID: 1307283017811907814, guid: 1310440b6b8c3444aa3a50866c9dbebf,
+        type: 3}
+      amount: 4
+      groupSize: 1
+    - name: Enemy 2
+      gameObject: {fileID: 7235166392293632702, guid: 0c2e9274d0bf80e40a55eac822bdd4dc,
+        type: 3}
+      amount: 4
+      groupSize: 1
+    - name: Enemy 3
+      gameObject: {fileID: 4235695233260938444, guid: 578f320f819359143937de9ce3913847,
+        type: 3}
+      amount: 2
+      groupSize: 1
+    - name: Enemy 4
+      gameObject: {fileID: 1307283017811907814, guid: e2500107366dc0841b4f1951aebe7082,
+        type: 3}
+      amount: 2
+      groupSize: 1
+    deployments: 2
+  - name: Wave 12
+    enemies:
+    - name: Enemy 1
+      gameObject: {fileID: 1307283017811907814, guid: 1310440b6b8c3444aa3a50866c9dbebf,
+        type: 3}
+      amount: 2
+      groupSize: 1
+    - name: Enemy 2
+      gameObject: {fileID: 7235166392293632702, guid: 0c2e9274d0bf80e40a55eac822bdd4dc,
+        type: 3}
+      amount: 2
+      groupSize: 1
+    - name: Enemy 3
+      gameObject: {fileID: 4235695233260938444, guid: 578f320f819359143937de9ce3913847,
+        type: 3}
+      amount: 2
+      groupSize: 1
+    - name: Enemy 4
+      gameObject: {fileID: 7235166392293632702, guid: 3b163b254954c9a45a56cba4210b8a52,
+        type: 3}
+      amount: 2
+      groupSize: 1
+    deployments: 2
+  - name: Wave 13
+    enemies:
+    - name: Enemy 1
+      gameObject: {fileID: 1307283017811907814, guid: 1310440b6b8c3444aa3a50866c9dbebf,
+        type: 3}
+      amount: 2
+      groupSize: 1
+    - name: Enemy 2
+      gameObject: {fileID: 1307283017811907814, guid: e2500107366dc0841b4f1951aebe7082,
+        type: 3}
+      amount: 2
+      groupSize: 1
+    - name: Enemy 3
+      gameObject: {fileID: 4235695233260938444, guid: 578f320f819359143937de9ce3913847,
+        type: 3}
+      amount: 2
+      groupSize: 1
+    - name: Enemy 4
+      gameObject: {fileID: 7235166392293632702, guid: 3b163b254954c9a45a56cba4210b8a52,
+        type: 3}
+      amount: 2
+      groupSize: 1
+    deployments: 1
+  minTimeForNextDeployment: 6
+  maxTimeForNextDeployment: 6
   spawnRate: 3
   autoDeploy: 1
   enemyParentObject: 
@@ -540,12 +713,21 @@ MonoBehaviour:
     - {fileID: 1307283017811907814, guid: 1310440b6b8c3444aa3a50866c9dbebf, type: 3}
     - {fileID: 4235695233260938444, guid: 578f320f819359143937de9ce3913847, type: 3}
     - {fileID: 7235166392293632702, guid: 0c2e9274d0bf80e40a55eac822bdd4dc, type: 3}
+    - {fileID: 7235166392293632702, guid: a66e5be7f18432b46b7166d47f347a2d, type: 3}
+    - {fileID: 7235166392293632702, guid: 3b163b254954c9a45a56cba4210b8a52, type: 3}
   - name: End point 2
     endPoint: {fileID: 0}
     enemies:
     - {fileID: 1307283017811907814, guid: 1310440b6b8c3444aa3a50866c9dbebf, type: 3}
     - {fileID: 4235695233260938444, guid: 578f320f819359143937de9ce3913847, type: 3}
     - {fileID: 7235166392293632702, guid: 0c2e9274d0bf80e40a55eac822bdd4dc, type: 3}
+    - {fileID: 7235166392293632702, guid: a66e5be7f18432b46b7166d47f347a2d, type: 3}
+    - {fileID: 7235166392293632702, guid: 3b163b254954c9a45a56cba4210b8a52, type: 3}
+  - name: End point 3
+    endPoint: {fileID: 6425160278070099312, guid: 98223614aee46eb4fa7f4e74cb6ec56a,
+      type: 3}
+    enemies:
+    - {fileID: 1307283017811907814, guid: e2500107366dc0841b4f1951aebe7082, type: 3}
   addColliders: 1
   triggerColliders: 1
   colliderSize: {x: 1, y: 0.5, z: 1}

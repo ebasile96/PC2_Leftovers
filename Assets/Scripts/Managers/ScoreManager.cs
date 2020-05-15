@@ -9,14 +9,12 @@ public class ScoreManager : MonoBehaviour
 {
     public int Score;
     public Text ScoreBoard;
-    [SerializeField]private PlayerLifeController playerCtrl;
-    [SerializeField]private PerWaveCustom waveConfig;
+
 
     private void Start()
     {
-        PlayerPrefs.SetInt("CurrentScore", 0);
-        playerCtrl.DeathCall(() => { PlayerPrefs.SetInt("CurrentScore", Score); if (Score > PlayerPrefs.GetInt("Highscore", 0)) { PlayerPrefs.SetInt("Highscore", Score); } });
-        waveConfig.WinCall(() => { PlayerPrefs.SetInt("CurrentScore", Score); if (Score > PlayerPrefs.GetInt("Highscore", 0)) { PlayerPrefs.SetInt("Highscore", Score); } });
+       
+       
     }
 
     private void Update()

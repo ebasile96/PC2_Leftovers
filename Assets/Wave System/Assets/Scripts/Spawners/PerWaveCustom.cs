@@ -5,7 +5,6 @@ using SemihOrhan.WaveOne.Events;
 using SemihOrhan.WaveOne.Spawners.SpawnerPickers;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System;
 
 namespace SemihOrhan.WaveOne.Spawners
 {
@@ -56,7 +55,7 @@ namespace SemihOrhan.WaveOne.Spawners
 
         LevelManager lvlmgr;
         VFXManager vfx;
-        private Action WinCallback;
+        
 
         private void Awake()
         {
@@ -102,7 +101,7 @@ namespace SemihOrhan.WaveOne.Spawners
         {
             if (currentWave >= enemyWaves.Count)
             {
-                WinCallback();
+                
                 SceneManager.LoadScene("WinScreen");
                 Debug.Log("Final wave already reached. No more waves left!");
                 return;
@@ -194,7 +193,7 @@ namespace SemihOrhan.WaveOne.Spawners
                     bool gotRelativeGroupPositions = false;
                     List<Vector3> relativeGroupPositions = new List<Vector3>();
                     Vector3 spawnPointPos = waveConfig.StartPointScript.GetPoint();
-                    presetIndexEndPoint = UnityEngine.Random.Range(0, endPoints.GetEndPoints(enemyWaves[currentWave].enemies[currentEnemy].gameObject).Count);
+                    presetIndexEndPoint = Random.Range(0, endPoints.GetEndPoints(enemyWaves[currentWave].enemies[currentEnemy].gameObject).Count);
                     int spawnAmount = enemyWaves[currentWave].enemies[currentEnemy].groupSize;
 
                     if (currentGroup == amountFullGroups)
@@ -285,7 +284,7 @@ namespace SemihOrhan.WaveOne.Spawners
 
                 if (autoDeploy)
                 {
-                    float randomTime = UnityEngine.Random.Range(minTimeForNextDeployment, maxTimeForNextDeployment);
+                    float randomTime = Random.Range(minTimeForNextDeployment, maxTimeForNextDeployment);
                     Invoke("StartWave", randomTime);
                 }
             }
@@ -314,10 +313,7 @@ namespace SemihOrhan.WaveOne.Spawners
             return waveCompletion[wave];
         }
 
-        public void WinCall(Action _win)
-        {
-            WinCallback = _win;
-        }
+        
 
         #region Custom object structs
         [System.Serializable]
