@@ -33,6 +33,8 @@ public class ChainController : MonoBehaviour
     public PlayerLifeController pLife;
     public float bonusStressLife;
 
+    //events
+    private Action KillCallback;
     public void ChangeState(ChainBaseState newState)
     {
         if (currentState != null) currentState.Exit();
@@ -114,10 +116,12 @@ public class ChainController : MonoBehaviour
                 if (hit.transform.GetComponent<EnemyController>() != null) 
                 {
                     scoreMgr.PointAssignation(hit.transform.GetComponent<EnemyController>().Data.Type);
+                    KillCallback();
                 }
                 else
                 {
                     scoreMgr.PointAssignation(hit.transform.GetComponent<PatrolAgent>().data.Type);
+                    KillCallback();
                 }
                 GameObject gameObject = Instantiate(vfx.vfxEnemyDeath);
                 gameObject.transform.position = hit.point;
@@ -133,10 +137,12 @@ public class ChainController : MonoBehaviour
                 if (hit.transform.GetComponent<EnemyController>() != null)
                 {
                     scoreMgr.PointAssignation(hit.transform.GetComponent<EnemyController>().Data.Type);
+                    KillCallback();
                 }
                 else
                 {
                     scoreMgr.PointAssignation(hit.transform.GetComponent<PatrolAgent>().data.Type);
+                    KillCallback();
                 }
                 GameObject gameObject = Instantiate(vfx.vfxEnemyDeath);
                 gameObject.transform.position = hit.point;
@@ -194,7 +200,12 @@ public class ChainController : MonoBehaviour
     public void BonusStress()
     {
         pLife.healthPlayer += bonusStressLife;
-        Debug.Log("cura");
+
+    }
+
+    public void KillCall(Action _kill)
+    {
+        KillCallback = _kill;
     }
 
 }
