@@ -4,22 +4,25 @@ using UnityEngine;
 using System;
 using SemihOrhan.WaveOne.Spawners;
 using UnityEngine.UI;
+using TMPro;
 
 public class ScoreManager : MonoBehaviour
 {
     public int Score;
-    public Text ScoreBoard;
+    public TextMeshProUGUI ScoreBoard;
+    public TextMeshProUGUI HighscoreBoard;
 
 
     private void Start()
     {
-       
-       
+        PlayerPrefs.SetInt("PersonalScore", 0);
+        HighscoreBoard.text = PlayerPrefs.GetInt("Highscore", 0).ToString();
+        
     }
 
     private void Update()
     {
-        ScoreBoard.text = Score.ToString();
+        ScoreBoard.text = PlayerPrefs.GetInt("PersonalScore", 0).ToString();
     }
     public void PointAssignation(EnemyType _type)
     {
@@ -43,6 +46,14 @@ public class ScoreManager : MonoBehaviour
             case EnemyType.ranged:
                 Score += 250;
                 break;
+        }
+
+        PlayerPrefs.SetInt("PersonalScore", Score);
+
+        if(Score > PlayerPrefs.GetInt("Highscore", 0))
+        {
+            PlayerPrefs.SetInt("Highscore", Score);
+            HighscoreBoard.text = Score.ToString();
         }
     }
 }
