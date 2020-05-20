@@ -52,15 +52,18 @@ public class ChainController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currentState.Tick();
-        LenghtStressChain();
-        //ChainBreaker();
-        //ChainReformer();
-        //CheckChain();
-        DrawRaycastChain();
-        attackChain();
-        DecreaseComboTimer();
-        NormalizedStressValue();
+        if (Time.timeScale == 1) //provvisorio
+        {
+            currentState.Tick();
+            LenghtStressChain();
+            //ChainBreaker();
+            //ChainReformer();
+            //CheckChain();
+            DrawRaycastChain();
+            attackChain();
+            DecreaseComboTimer();
+            NormalizedStressValue();
+        }
         //ChainObstacle();
     }
 
