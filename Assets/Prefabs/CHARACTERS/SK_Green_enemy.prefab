@@ -632,6 +632,7 @@ GameObject:
   - component: {fileID: 4616856165530493836}
   - component: {fileID: 4644674086629370598}
   - component: {fileID: 2756095705575019052}
+  - component: {fileID: 3627590599938198559}
   m_Layer: 0
   m_Name: SK_Enemy
   m_TagString: Untagged
@@ -670,7 +671,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: aa92174ae341f57499bc0e3ed2ccb589, type: 2}
+  - {fileID: 2100000, guid: 6505a26bbd63d1c4ea5aecd57532adcc, type: 2}
   - {fileID: 2100000, guid: e6740963624d1bb4b8eca743430d1336, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -745,6 +746,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: aa92174ae341f57499bc0e3ed2ccb589, type: 2}
+  instanceMaterial: 0
+  meshCenter: {x: 0, y: 0, z: 0}
+  maxLights: 6
+  raycast: 1
+  raycastMask:
+    serializedVersion: 2
+    m_Bits: 0
+  raycastFadeSpeed: 10
+--- !u!114 &3627590599938198559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5410506264735779252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 831cca400e6f12f4fbb6e89e54a9258d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: 6505a26bbd63d1c4ea5aecd57532adcc, type: 2}
   instanceMaterial: 0
   meshCenter: {x: 0, y: 0, z: 0}
   maxLights: 6
