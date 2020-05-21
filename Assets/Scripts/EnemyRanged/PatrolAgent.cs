@@ -55,7 +55,7 @@ public class PatrolAgent : MonoBehaviour
         }
     }
 
-
+   
     void Update()
     {
         currentState.Tick();
@@ -95,8 +95,13 @@ public class PatrolAgent : MonoBehaviour
 
     public void SetDirectionOfAttack()
     {
-        lineR.SetPosition(0, transform.position);
-        lineR.SetPosition(1, this.transform.position + this.transform.forward * 1000000);
+        RaycastHit hit;
+        Ray rayLine = new Ray(transform.position, transform.forward);
+        if (Physics.Raycast(rayLine, out hit, 1000))
+        {
+            lineR.SetPosition(0, transform.position);
+            lineR.SetPosition(1, hit.point);
+        }
     }
 
     public void ActiveLineRender()
