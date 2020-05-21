@@ -22,13 +22,13 @@ public class PauseMenuController : MonoBehaviour
 
     private void ActiveDisactivePauseMenu()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && isActive == false)
+        if (Input.GetButtonDown("Pause") && isActive == false)
         {
             pauseMenu.SetActive(true);
             Time.timeScale = 0;
             isActive = true;
         }
-        else if(Input.GetKeyDown(KeyCode.Escape) && isActive == true)
+        else if(Input.GetButtonDown("Pause") && isActive == true)
         {
             pauseMenu.SetActive(false);
             Time.timeScale = 1;
