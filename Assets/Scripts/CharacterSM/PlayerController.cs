@@ -47,12 +47,12 @@ public class PlayerController : MonoBehaviour
         currentState = newState;
     }
    
-    public void Move()
+    public void Move(float _horizontal, float _vertical)
     {
-        movement = new Vector3(GameManager.instance.Inputmgr.horizontal, 0, GameManager.instance.Inputmgr.vertical) * moveSpeed * Time.deltaTime;
+        movement = new Vector3(_horizontal, 0, _vertical) * moveSpeed * Time.deltaTime;
         lookDir = new Vector3(movement.x, 0f, movement.z);
 
-        if (GameManager.instance.Inputmgr.horizontal != 0 || GameManager.instance.Inputmgr.vertical != 0)
+        if (_horizontal != 0 || _vertical != 0)
         {
 
             Vector3 smoothDir = Vector3.Slerp(transform.forward, lookDir, turnSpeed * Time.deltaTime);
@@ -123,5 +123,19 @@ public class PlayerController : MonoBehaviour
     {
         aura = GetComponentInChildren<ParticleSystem>().main;
         aura.startColor = normalAura;
+    }
+
+    [HideInInspector]
+    public bool isSwapPlayer;
+    public void SwapInput()
+    {
+        if(GameManager.instance.Inputmgr.swap && isSwapPlayer == false)
+        {
+            isSwapPlayer = true;
+        }
+        else if (GameManager.instance.Inputmgr.swap && isSwapPlayer == true)
+        {
+            isSwapPlayer = false;
+        }
     }
 }

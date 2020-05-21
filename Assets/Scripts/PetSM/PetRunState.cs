@@ -17,7 +17,14 @@ public class PetRunState : PetStateBase
     public override void Tick()
     {
         //player.animator.SetTrigger("GoToRunning");
-        pet.MovePet();
+        if (pet.player.isSwapPlayer == false)
+        {
+            pet.MovePet(GameManager.instance.Inputmgr.horizontalPet, GameManager.instance.Inputmgr.verticalPet);
+        }
+        else if (pet.player.isSwapPlayer == true)
+        {
+            pet.MovePet(GameManager.instance.Inputmgr.horizontal, GameManager.instance.Inputmgr.vertical);
+        }
         if (pet.movement * pet.moveSpeed != new Vector3(0, 0, 0))
         {
             pet.animator.SetTrigger("GoToRunning");

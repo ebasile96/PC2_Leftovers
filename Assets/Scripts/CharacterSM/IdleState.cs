@@ -16,7 +16,15 @@ public class IdleState : PlayerBaseState
     public override void Tick()
     {
         player.animator.SetTrigger("GoToIdle");
-        player.Move();
+        if (player.isSwapPlayer == false) 
+        {
+            player.Move(GameManager.instance.Inputmgr.horizontal, GameManager.instance.Inputmgr.vertical);
+        }
+        else if (player.isSwapPlayer == true)
+        {
+            player.Move(GameManager.instance.Inputmgr.horizontalPet, GameManager.instance.Inputmgr.verticalPet);
+        }
+
         if (player.movement * player.moveSpeed != new Vector3(0,0,0))
         {
             player.ChangeState(normalState);
@@ -26,5 +34,7 @@ public class IdleState : PlayerBaseState
         {
             player.ChangeState(runState);
         }
+
+        player.SwapInput();
     }
 }

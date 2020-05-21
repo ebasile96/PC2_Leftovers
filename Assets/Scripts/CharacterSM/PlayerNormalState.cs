@@ -16,7 +16,14 @@ public class PlayerNormalState : PlayerBaseState
     public override void Tick()
     {
         player.animator.SetTrigger("GoToRunning");
-        player.Move();
+        if (player.isSwapPlayer == false)
+        {
+            player.Move(GameManager.instance.Inputmgr.horizontal, GameManager.instance.Inputmgr.vertical);
+        }
+        else if (player.isSwapPlayer == true)
+        {
+            player.Move(GameManager.instance.Inputmgr.horizontalPet, GameManager.instance.Inputmgr.verticalPet);
+        }
         player.isMoving = true;
         //player.RotationPlayer();
         if (player.movement * player.moveSpeed == new Vector3(0, 0, 0))
@@ -28,6 +35,8 @@ public class PlayerNormalState : PlayerBaseState
         {
             player.ChangeState(runState);
         }
+
+        player.SwapInput();
     }
 
     public override void Exit()

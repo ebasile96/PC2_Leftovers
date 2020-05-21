@@ -22,6 +22,8 @@ public class PetController : MonoBehaviour
     public Vector3 movement;
     public ChainController chainController;
     public PlayerController player;
+    [HideInInspector]
+    public bool isSwapPet;
 
     public void ChangeState(PetStateBase newState)
     {
@@ -43,12 +45,12 @@ public class PetController : MonoBehaviour
         currentState.Tick();
     }
 
-    public void MovePet()
+    public void MovePet(float _horizontalPet, float _verticalPet)
     {
-        movement = new Vector3(GameManager.instance.Inputmgr.horizontalPet, 0, GameManager.instance.Inputmgr.verticalPet) * moveSpeed * Time.deltaTime;
+        movement = new Vector3(_horizontalPet, 0, _verticalPet) * moveSpeed * Time.deltaTime;
         lookDir = new Vector3(movement.x, 0f, movement.z);
 
-        if (GameManager.instance.Inputmgr.horizontalPet != 0 || GameManager.instance.Inputmgr.verticalPet != 0)
+        if (_horizontalPet != 0 || _verticalPet != 0)
         {
 
             Vector3 smoothDir = Vector3.Slerp(transform.forward, lookDir, turnSpeed * Time.deltaTime);
