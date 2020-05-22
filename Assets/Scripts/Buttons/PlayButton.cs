@@ -7,16 +7,12 @@ using UnityEngine.SceneManagement;
 
 public class PlayButton : MonoBehaviour
 {
+    public GameObject OptionsMenu;
    public void PressPlay()
     {
         FlowStateMachine.GoToTutorial();
     }
 
-    //momentaneo solo per far testare designer
-    public void PressGDTest()
-    {
-       
-    }
 
     public void PressBlu()
     {
@@ -46,5 +42,10 @@ public class PlayButton : MonoBehaviour
         pause.pauseMenu.SetActive(false);
         Time.timeScale = 1;
         pause.isActive = false;
+    }
+
+    public void openOptions()
+    {
+        OptionsMenu.SetActive(true);
     }
 }
