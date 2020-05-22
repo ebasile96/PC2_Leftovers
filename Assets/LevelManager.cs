@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using SemihOrhan.WaveOne;
+using TMPro;
 
 public class LevelManager : MonoBehaviour
 {
     public List<GameObject> EnemiesAlive = new List<GameObject>();
     private WaveManager Wavemgr;
-    public Text EnemyAlive;
-    public Text WaveNumber;
+    public TextMeshProUGUI EnemyAlive;
+    public TextMeshProUGUI WaveNumber;
     [Range(0,100)]
     public int HealthBonus = 20;
     int wavecount = 1;
