@@ -2533,6 +2533,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SK_Companion
       objectReference: {fileID: 0}
+    - target: {fileID: 1992815347, guid: 91ef5e518a417a94fb000ba252557297, type: 3}
+      propertyPath: vfx
+      value: 
+      objectReference: {fileID: 728233079}
+    - target: {fileID: 1992815347, guid: 91ef5e518a417a94fb000ba252557297, type: 3}
+      propertyPath: pLife
+      value: 
+      objectReference: {fileID: 1160059689}
     - target: {fileID: 5127093191868014436, guid: 91ef5e518a417a94fb000ba252557297,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2588,14 +2596,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1992815347, guid: 91ef5e518a417a94fb000ba252557297, type: 3}
-      propertyPath: vfx
-      value: 
-      objectReference: {fileID: 728233079}
-    - target: {fileID: 1992815347, guid: 91ef5e518a417a94fb000ba252557297, type: 3}
-      propertyPath: pLife
-      value: 
-      objectReference: {fileID: 1160059689}
     - target: {fileID: 80263794, guid: 91ef5e518a417a94fb000ba252557297, type: 3}
       propertyPath: targetLine
       value: 
@@ -2933,16 +2933,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: InGameUI
       objectReference: {fileID: 0}
-    - target: {fileID: 1713333298134298654, guid: 6dcf2080bb82113459a3d4646e084752,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 767612839}
     - target: {fileID: 4356299779525776925, guid: 6dcf2080bb82113459a3d4646e084752,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1713333298134298654, guid: 6dcf2080bb82113459a3d4646e084752,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 767612839}
     - target: {fileID: 4356299779549056880, guid: 6dcf2080bb82113459a3d4646e084752,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3046,7 +3046,7 @@ PrefabInstance:
     - target: {fileID: 4356299780075623108, guid: 6dcf2080bb82113459a3d4646e084752,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4356299780130902951, guid: 6dcf2080bb82113459a3d4646e084752,
         type: 3}
@@ -3064,24 +3064,24 @@ PrefabInstance:
       value: 'WASD to Move the left character, IJKL to move the right one.
 
         Hold Left shift/LT to speed up the left characther,Right Shift/RT to speed
-        up the right one.
+        up the right one. Press X or Space to swap controls
 
         Use the energy link to kill the enemies'
       objectReference: {fileID: 0}
     - target: {fileID: 4356299780075623162, guid: 6dcf2080bb82113459a3d4646e084752,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 193
+      value: 227
       objectReference: {fileID: 0}
     - target: {fileID: 4356299780075623162, guid: 6dcf2080bb82113459a3d4646e084752,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 35
+      value: 42
       objectReference: {fileID: 0}
     - target: {fileID: 4356299780075623162, guid: 6dcf2080bb82113459a3d4646e084752,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 39
+      value: 46
       objectReference: {fileID: 0}
     - target: {fileID: 4356299780075623162, guid: 6dcf2080bb82113459a3d4646e084752,
         type: 3}
@@ -3096,7 +3096,7 @@ PrefabInstance:
     - target: {fileID: 4356299780075623162, guid: 6dcf2080bb82113459a3d4646e084752,
         type: 3}
       propertyPath: m_firstOverflowCharacterIndex
-      value: 154
+      value: 188
       objectReference: {fileID: 0}
     - target: {fileID: 6685776215649387259, guid: 6dcf2080bb82113459a3d4646e084752,
         type: 3}
@@ -3122,6 +3122,46 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ForceModuleActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4356299780075623109, guid: 6dcf2080bb82113459a3d4646e084752,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 661
+      objectReference: {fileID: 0}
+    - target: {fileID: 4356299780075623109, guid: 6dcf2080bb82113459a3d4646e084752,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4356299780075623109, guid: 6dcf2080bb82113459a3d4646e084752,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4356299780075623109, guid: 6dcf2080bb82113459a3d4646e084752,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.72227
+      objectReference: {fileID: 0}
+    - target: {fileID: 4356299780075623109, guid: 6dcf2080bb82113459a3d4646e084752,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.72227
+      objectReference: {fileID: 0}
+    - target: {fileID: 4356299780075623109, guid: 6dcf2080bb82113459a3d4646e084752,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.72227
+      objectReference: {fileID: 0}
+    - target: {fileID: 4356299780075623109, guid: 6dcf2080bb82113459a3d4646e084752,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4356299780075623109, guid: 6dcf2080bb82113459a3d4646e084752,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2386721581402111465, guid: 6dcf2080bb82113459a3d4646e084752, type: 3}
