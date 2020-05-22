@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: -373298965339702885}
   - component: {fileID: -5461245540642088100}
   - component: {fileID: -8628936898837595721}
+  - component: {fileID: -4847411949010799641}
   m_Layer: 0
   m_Name: Punto 1
   m_TagString: Untagged
@@ -480,6 +481,19 @@ BoxCollider:
   m_Size: {x: 1, y: 0.5, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &-8628936898837595721
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 224622326303655032}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.5, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &-4847411949010799641
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

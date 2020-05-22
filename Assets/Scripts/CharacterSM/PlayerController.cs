@@ -134,17 +134,20 @@ public class PlayerController : MonoBehaviour
             isSwapPlayer = true;
             //vfx character
             Instantiate(GameManager.instance.Vfxmgr.vfxSwapPet, transform);
+            Instantiate(GameManager.instance.Vfxmgr.vfxOrbCharacter, transform);
             //vfx pet
             Instantiate(GameManager.instance.Vfxmgr.vfxSwapCharacter, pet.transform);
+            Instantiate(GameManager.instance.Vfxmgr.vfxOrbPet, pet.transform);
         }
         else if (GameManager.instance.Inputmgr.swap && isSwapPlayer == true)
         {
             isSwapPlayer = false;
             //vfx character
             Instantiate(GameManager.instance.Vfxmgr.vfxSwapCharacter, transform);
+            Instantiate(GameManager.instance.Vfxmgr.vfxOrbPet, transform);
             //vfx pet
             Instantiate(GameManager.instance.Vfxmgr.vfxSwapPet, pet.transform);
-
+            Instantiate(GameManager.instance.Vfxmgr.vfxOrbCharacter, pet.transform);
         }
     }
 }
