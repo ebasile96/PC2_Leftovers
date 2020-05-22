@@ -31,9 +31,18 @@ public class PlayerNormalState : PlayerBaseState
             player.ChangeState(idleState);
         }
 
-        if (GameManager.instance.Inputmgr.runPlayer == 1)
+        //if (GameManager.instance.Inputmgr.runPlayer == 1)
+        //{
+        //  player.ChangeState(runState);
+        //}
+
+        if (player.isSwapPlayer == false)
         {
-            player.ChangeState(runState);
+            player.RunControll(GameManager.instance.Inputmgr.runPlayer, runState);
+        }
+        else if (player.isSwapPlayer == true)
+        {
+            player.RunControll(GameManager.instance.Inputmgr.runPet, runState);
         }
 
         player.SwapInput();

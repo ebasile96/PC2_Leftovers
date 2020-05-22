@@ -42,15 +42,32 @@ public class RunState : PlayerBaseState
             player.ChangeState(idleState);
         }*/
 
-        if (GameManager.instance.Inputmgr.runPlayer != 1)
+        if (player.isSwapPlayer == false)
         {
-            if (player.movement * player.moveSpeed == new Vector3(0, 0, 0))
+            if (GameManager.instance.Inputmgr.runPlayer != 1)
             {
-                player.ChangeState(idleState);
+                if (player.movement * player.moveSpeed == new Vector3(0, 0, 0))
+                {
+                    player.ChangeState(idleState);
+                }
+                else
+                {
+                    player.ChangeState(normalState);
+                }
             }
-            else
+        }
+        else if(player.isSwapPlayer == true)
+        {
+            if (GameManager.instance.Inputmgr.runPet != 1)
             {
-                player.ChangeState(normalState);
+                if (player.movement * player.moveSpeed == new Vector3(0, 0, 0))
+                {
+                    player.ChangeState(idleState);
+                }
+                else
+                {
+                    player.ChangeState(normalState);
+                }
             }
         }
 

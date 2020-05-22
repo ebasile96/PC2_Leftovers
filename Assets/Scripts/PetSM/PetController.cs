@@ -92,6 +92,15 @@ public class PetController : MonoBehaviour
         moveSpeed = normalMoveSpeed;
     }
 
+    public void RunControllPet(float _runPet, PetStateBase newState)
+    {
+        if(_runPet == 1)
+        {
+            newState.Enter();
+            currentState = newState;
+        }
+    }
+
     public void SetColorRunAura()
     {
         aura = GetComponentInChildren<ParticleSystem>().main;

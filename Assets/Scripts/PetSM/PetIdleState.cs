@@ -31,9 +31,18 @@ public class PetIdleState : PetStateBase
             pet.ChangeState(normalState);
         }
 
-        if (GameManager.instance.Inputmgr.runPet == 1)
+        //if (GameManager.instance.Inputmgr.runPet == 1)
+        //{
+        //  pet.ChangeState(runState);
+        //}
+
+        if (pet.player.isSwapPlayer == false)
         {
-            pet.ChangeState(runState);
+            pet.RunControllPet(GameManager.instance.Inputmgr.runPet, runState);
+        }
+        else if (pet.player.isSwapPlayer == true)
+        {
+            pet.RunControllPet(GameManager.instance.Inputmgr.runPlayer, runState);
         }
     }
 }

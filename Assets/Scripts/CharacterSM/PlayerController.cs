@@ -108,6 +108,15 @@ public class PlayerController : MonoBehaviour
         moveSpeed = runSpeed;
     }
 
+    public void RunControll(float _runPlayer, PlayerBaseState newState)
+    {
+        if(_runPlayer == 1)
+        {
+            newState.Enter();
+            currentState = newState;
+        }
+    }
+
     public void NormalRunPlayer()
     {
         moveSpeed = normalMoveSpeed;
