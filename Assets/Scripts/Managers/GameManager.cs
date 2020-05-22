@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public UIManager UImgr;
     public WaveManager Wavemgr;
     public LevelManager Levelmgr;
+    public VFXManager Vfxmgr;
     void Awake()
     {
         Singleton();
@@ -25,6 +26,7 @@ public class GameManager : MonoBehaviour
         GetUImgr();
         GetWavemgr();
         GetLevelMgr();
+        GetVfxMgr();
     }
 
 
@@ -77,5 +79,12 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
-
+    public VFXManager GetVfxMgr()
+    {
+        if (!Vfxmgr)
+        {
+            Vfxmgr = FindObjectOfType<VFXManager>();
+        }
+        return Vfxmgr;
+    }
 }

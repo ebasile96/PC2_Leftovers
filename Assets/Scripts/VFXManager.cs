@@ -8,4 +8,6 @@ public class VFXManager : MonoBehaviour
     public GameObject vfxHitTest;
     public GameObject vfxEnemyDeath;
     public GameObject vfxEnemySpawn;
+    public GameObject vfxSwapCharacter;
+    public GameObject vfxSwapPet;
 }

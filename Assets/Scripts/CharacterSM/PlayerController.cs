@@ -132,10 +132,19 @@ public class PlayerController : MonoBehaviour
         if(GameManager.instance.Inputmgr.swap && isSwapPlayer == false)
         {
             isSwapPlayer = true;
+            //vfx character
+            Instantiate(GameManager.instance.Vfxmgr.vfxSwapPet, transform);
+            //vfx pet
+            Instantiate(GameManager.instance.Vfxmgr.vfxSwapCharacter, pet.transform);
         }
         else if (GameManager.instance.Inputmgr.swap && isSwapPlayer == true)
         {
             isSwapPlayer = false;
+            //vfx character
+            Instantiate(GameManager.instance.Vfxmgr.vfxSwapCharacter, transform);
+            //vfx pet
+            Instantiate(GameManager.instance.Vfxmgr.vfxSwapPet, pet.transform);
+
         }
     }
 }
