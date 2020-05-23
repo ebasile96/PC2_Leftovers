@@ -130,6 +130,7 @@ GameObject:
   m_Component:
   - component: {fileID: 40411921}
   - component: {fileID: 40411920}
+  - component: {fileID: 40411922}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -157,9 +158,9 @@ Light:
     m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 0.35
-    m_Bias: 0.05
-    m_NormalBias: 0.4
+    m_Strength: 0.45
+    m_Bias: 1
+    m_NormalBias: 0.1
     m_NearPlane: 0.2
     m_CullingMatrixOverride:
       e00: 1
@@ -211,6 +212,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 48.135002, y: 418.069, z: -38.191}
+--- !u!114 &40411922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 40411919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UsePipelineSettings: 0
 --- !u!1 &112578673
 GameObject:
   m_ObjectHideFlags: 0
@@ -604,6 +618,8 @@ MonoBehaviour:
     m_OnCameraLive:
       m_PersistentCalls:
         m_Calls: []
+      m_TypeName: Cinemachine.CinemachineBrain+VcamActivatedEvent, Cinemachine, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 1582844753}
 --- !u!4 &755907088
@@ -1478,6 +1494,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Obstacle
       objectReference: {fileID: 0}
+    - target: {fileID: 7947726486390738933, guid: 65b0a32f763811a47bdbaa118386c7c0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65b0a32f763811a47bdbaa118386c7c0, type: 3}
 --- !u!114 &1762666313 stripped
@@ -2121,9 +2142,13 @@ MonoBehaviour:
   m_CameraCutEvent:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: Cinemachine.CinemachineBrain+BrainEvent, Cinemachine, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: Cinemachine.CinemachineBrain+VcamActivatedEvent, Cinemachine, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &2055803464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2633,16 +2658,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: InGameUI
       objectReference: {fileID: 0}
-    - target: {fileID: 4356299779525776925, guid: 6dcf2080bb82113459a3d4646e084752,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1713333298134298654, guid: 6dcf2080bb82113459a3d4646e084752,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 767612839}
+    - target: {fileID: 4356299779525776925, guid: 6dcf2080bb82113459a3d4646e084752,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4356299779549056880, guid: 6dcf2080bb82113459a3d4646e084752,
         type: 3}
       propertyPath: m_LocalPosition.x
