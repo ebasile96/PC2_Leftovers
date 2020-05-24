@@ -101,8 +101,7 @@ namespace SemihOrhan.WaveOne.Spawners
         {
             if (currentWave >= enemyWaves.Count)
             {
-                
-                SceneManager.LoadScene("WinScreen");
+                SceneManager.LoadScene("Win");
                 Debug.Log("Final wave already reached. No more waves left!");
                 return;
             }

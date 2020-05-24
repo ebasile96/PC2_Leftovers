@@ -10,7 +10,20 @@ public class PlayButton : MonoBehaviour
     public GameObject OptionsMenu;
    public void PressPlay()
     {
-        FlowStateMachine.GoToTutorial();
+        if(PlayerPrefs.GetInt("Highscore") == 0)
+        {
+            FlowStateMachine.GoToTutorial();
+        }
+        else if(PlayerPrefs.GetInt("Highscore") > 0)
+        {
+            FlowStateMachine.GoToGameplay();
+        }
+        
+    }
+
+    public void Gameplay()
+    {
+        SceneManager.LoadScene("Buildscene");
     }
 
 

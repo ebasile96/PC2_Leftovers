@@ -23,7 +23,7 @@ public class LifeBarController : MonoBehaviour
         healthbar.GetComponent<RectTransform>().sizeDelta = new Vector2(healthLenght, 100);
         if(healthLenght <= 0)
         {
-            SceneManager.LoadScene("GameOver");
+            SceneManager.LoadScene("Lose");
         }
     }
 }

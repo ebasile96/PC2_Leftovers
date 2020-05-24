@@ -28,6 +28,8 @@ public class FlowStateMachine : MonoBehaviour
         GoToTestGreen += HandleOnTestGreen;
         GotoTestRed += HandleOnTestRed;
         GoToTutorial += HandleOnTutorial;
+        GoToWin += HandleOnWin;
+        GoToLose += HandleOnLose;
     }
     #region Setup
 
@@ -58,6 +60,8 @@ public class FlowStateMachine : MonoBehaviour
     public static Action GotoTestRed;
     public static Action GoToTestGreen;
     public static Action GoToTutorial;
+    public static Action GoToWin;
+    public static Action GoToLose;
 
     #endregion
 
@@ -96,6 +100,16 @@ public class FlowStateMachine : MonoBehaviour
     {
         animController.SetTrigger("GoToTutorial");
     }
+
+    private void HandleOnWin()
+    {
+        animController.SetTrigger("GoToWin");
+    }
+
+    private void HandleOnLose()
+    {
+        animController.SetTrigger("GoToLose");
+    }
     #endregion
     private void OnDisable()
     {
@@ -106,5 +120,7 @@ public class FlowStateMachine : MonoBehaviour
         GoToTestGreen -= HandleOnTestGreen;
         GotoTestRed -= HandleOnTestRed;
         GoToTutorial -= HandleOnTutorial;
+        GoToWin -= HandleOnWin;
+        GoToLose -= HandleOnLose;
     }
 }
