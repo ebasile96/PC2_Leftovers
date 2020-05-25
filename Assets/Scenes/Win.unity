@@ -2575,7 +2575,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 40
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -2600,13 +2600,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 781975810}
-  m_LocalRotation: {x: -0.016610187, y: -0.014644663, z: -0.0005879103, w: 0.9997546}
-  m_LocalPosition: {x: 3.488, y: 2, z: -9.635}
+  m_LocalRotation: {x: -0.016549759, y: -0.07155426, z: -0.0015328624, w: 0.99729824}
+  m_LocalPosition: {x: 4.19, y: 2, z: -11.74}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 18
-  m_LocalEulerAnglesHint: {x: -1.904, y: -1.6780001, z: -0.040000003}
+  m_LocalEulerAnglesHint: {x: -1.904, y: -8.207001, z: -0.040000003}
 --- !u!4 &789388109 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8626559830012287253, guid: ddc13cd38a6642347bdf028e200fdac2,
@@ -39156,11 +39156,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7593927240493878603}
     m_Modifications:
-    - target: {fileID: 5713908789513689999, guid: 0fcac328aacd767459a42e3b6a08dc19,
-        type: 3}
-      propertyPath: m_Name
-      value: SM_Pollaio
-      objectReference: {fileID: 0}
     - target: {fileID: 8723674916440041884, guid: 0fcac328aacd767459a42e3b6a08dc19,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -39231,6 +39226,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.3900033
       objectReference: {fileID: 0}
+    - target: {fileID: 5713908789513689999, guid: 0fcac328aacd767459a42e3b6a08dc19,
+        type: 3}
+      propertyPath: m_Name
+      value: SM_Pollaio
+      objectReference: {fileID: 0}
     - target: {fileID: 5818249151642283053, guid: 0fcac328aacd767459a42e3b6a08dc19,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -39260,11 +39260,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7593927240493878603}
     m_Modifications:
-    - target: {fileID: 2515876141315607011, guid: 0671fcbee00a4dd4295f0aa29d64be72,
-        type: 3}
-      propertyPath: m_Name
-      value: Prova_Fire
-      objectReference: {fileID: 0}
     - target: {fileID: 8449466828722491173, guid: 0671fcbee00a4dd4295f0aa29d64be72,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -39334,6 +39329,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2515876141315607011, guid: 0671fcbee00a4dd4295f0aa29d64be72,
+        type: 3}
+      propertyPath: m_Name
+      value: Prova_Fire
       objectReference: {fileID: 0}
     - target: {fileID: 3665975006264170296, guid: 0671fcbee00a4dd4295f0aa29d64be72,
         type: 3}
