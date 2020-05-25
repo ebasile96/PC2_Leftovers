@@ -13,7 +13,7 @@ public class PetController : MonoBehaviour
     public Color runAura;
     public Color normalAura;
     public ParticleSystem.MainModule aura;
-    CharacterController characterControllerPet;
+    public CharacterController characterControllerPet;
     private Vector3 lookDir;
     private Vector3 oldLookDir;
     public float turnSpeed;

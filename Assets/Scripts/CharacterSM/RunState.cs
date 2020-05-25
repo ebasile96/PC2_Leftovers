@@ -17,15 +17,8 @@ public class RunState : PlayerBaseState
     public override void Tick()
     {
         //player.animator.SetTrigger("GoToRunning");
-        if (player.isSwapPlayer == false)
-        {
-            player.Move(GameManager.instance.Inputmgr.horizontal, GameManager.instance.Inputmgr.vertical);
-        }
-        else if (player.isSwapPlayer == true)
-        {
-            player.Move(GameManager.instance.Inputmgr.horizontalPet, GameManager.instance.Inputmgr.verticalPet);
-        }
 
+        player.Move(GameManager.instance.Inputmgr.horizontal, GameManager.instance.Inputmgr.vertical);
 
         if (player.movement * player.moveSpeed != new Vector3(0, 0, 0))
         {
@@ -42,8 +35,6 @@ public class RunState : PlayerBaseState
             player.ChangeState(idleState);
         }*/
 
-        if (player.isSwapPlayer == false)
-        {
             if (GameManager.instance.Inputmgr.runPlayer != 1)
             {
                 if (player.movement * player.moveSpeed == new Vector3(0, 0, 0))
@@ -55,23 +46,8 @@ public class RunState : PlayerBaseState
                     player.ChangeState(normalState);
                 }
             }
-        }
-        else if(player.isSwapPlayer == true)
-        {
-            if (GameManager.instance.Inputmgr.runPet != 1)
-            {
-                if (player.movement * player.moveSpeed == new Vector3(0, 0, 0))
-                {
-                    player.ChangeState(idleState);
-                }
-                else
-                {
-                    player.ChangeState(normalState);
-                }
-            }
-        }
 
-        player.SwapInput();
+        player.SwapPG();
     }
 
     public override void Exit()

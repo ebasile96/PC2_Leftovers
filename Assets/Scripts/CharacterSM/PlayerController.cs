@@ -134,29 +134,24 @@ public class PlayerController : MonoBehaviour
         aura.startColor = normalAura;
     }
 
-    [HideInInspector]
-    public bool isSwapPlayer;
-    public void SwapInput()
+    public GameObject targetSwapCharacter;
+    public GameObject targetSwapPet;
+
+    public void SwapPG()
     {
-        if(GameManager.instance.Inputmgr.swap && isSwapPlayer == false)
+        if (GameManager.instance.Inputmgr.swap)
         {
-            isSwapPlayer = true;
-            //vfx character
-            Instantiate(GameManager.instance.Vfxmgr.vfxSwapPet, transform);
-            Instantiate(GameManager.instance.Vfxmgr.vfxOrbCharacter, transform);
-            //vfx pet
-            Instantiate(GameManager.instance.Vfxmgr.vfxSwapCharacter, pet.transform);
-            Instantiate(GameManager.instance.Vfxmgr.vfxOrbPet, pet.transform);
-        }
-        else if (GameManager.instance.Inputmgr.swap && isSwapPlayer == true)
-        {
-            isSwapPlayer = false;
-            //vfx character
+            //swap player
+            Vector3 temp = targetSwapCharacter.transform.position;
+            characterController.enabled = false;
+            transform.position = targetSwapPet.transform.position;
             Instantiate(GameManager.instance.Vfxmgr.vfxSwapCharacter, transform);
-            Instantiate(GameManager.instance.Vfxmgr.vfxOrbPet, transform);
-            //vfx pet
+            characterController.enabled = true;
+            //swap pet
+            pet.characterControllerPet.enabled = false;
+            pet.transform.position = temp;
             Instantiate(GameManager.instance.Vfxmgr.vfxSwapPet, pet.transform);
-            Instantiate(GameManager.instance.Vfxmgr.vfxOrbCharacter, pet.transform);
+            pet.characterControllerPet.enabled = true;
         }
     }
 }

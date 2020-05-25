@@ -15,14 +15,10 @@ public class PetNormalState : PetStateBase
 
     public override void Tick()
     {
-        if (pet.player.isSwapPlayer == false)
-        {
-            pet.MovePet(GameManager.instance.Inputmgr.horizontalPet, GameManager.instance.Inputmgr.verticalPet);
-        }
-        else if (pet.player.isSwapPlayer == true)
-        {
-            pet.MovePet(GameManager.instance.Inputmgr.horizontal, GameManager.instance.Inputmgr.vertical);
-        }
+      
+        
+        pet.MovePet(GameManager.instance.Inputmgr.horizontalPet, GameManager.instance.Inputmgr.verticalPet);
+        
         pet.animator.SetTrigger("GoToRunning");
         if (pet.movement * pet.moveSpeed == new Vector3(0, 0, 0))
         {
@@ -34,13 +30,9 @@ public class PetNormalState : PetStateBase
         //  pet.ChangeState(runState);
         //}
 
-        if (pet.player.isSwapPlayer == false)
-        {
+
             pet.RunControllPet(GameManager.instance.Inputmgr.runPet, runState);
-        }
-        else if (pet.player.isSwapPlayer == true)
-        {
-            pet.RunControllPet(GameManager.instance.Inputmgr.runPlayer, runState);
-        }
+        
+
     }
 }
