@@ -134,22 +134,21 @@ public class PlayerController : MonoBehaviour
         aura.startColor = normalAura;
     }
 
-    public GameObject targetSwapCharacter;
-    public GameObject targetSwapPet;
 
     public void SwapPG()
     {
         if (GameManager.instance.Inputmgr.swap)
         {
             //swap player
-            Vector3 temp = targetSwapCharacter.transform.position;
+            Vector3 temp = transform.position;
+            //Vector3 fixHigh = transform.position - new Vector3(0,0.5,0);
             characterController.enabled = false;
-            transform.position = targetSwapPet.transform.position;
+            transform.position = pet.transform.position - new Vector3(0, 1f, 0);
             Instantiate(GameManager.instance.Vfxmgr.vfxSwapCharacter, transform);
             characterController.enabled = true;
             //swap pet
             pet.characterControllerPet.enabled = false;
-            pet.transform.position = temp;
+            pet.transform.position = temp - new Vector3(0, 2f, 0);
             Instantiate(GameManager.instance.Vfxmgr.vfxSwapPet, pet.transform);
             pet.characterControllerPet.enabled = true;
         }
