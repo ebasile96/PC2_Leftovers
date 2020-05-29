@@ -35,8 +35,8 @@ public class LevelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        EnemyAlive.text = "Enemies Left: " + _EnemyCounterAlive;
-        WaveNumber.text = "Wave " + wavecount;
+        EnemyAlive.text = "" + _EnemyCounterAlive;
+        WaveNumber.text = "" + wavecount;
         if(Wavemgr.SpawnersFinished && _EnemyCounterAlive == 0)
         {
             CheckLifeBonus();
