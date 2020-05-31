@@ -47,6 +47,11 @@ public class PlayButton : MonoBehaviour
         FlowStateMachine.GoToMainMenu();
     }
 
+    public void Tutorial()
+    {
+        FlowStateMachine.GoToTutorial();
+    }
+
     public void MenuPause()
     {
         //MEGA PROVVISORIO
