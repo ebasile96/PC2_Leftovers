@@ -1230,6 +1230,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1920498478201262524}
     m_Modifications:
+    - target: {fileID: 4094358636811620757, guid: d7cc44f4119d5684a8392178c3b08c80,
+        type: 3}
+      propertyPath: m_Name
+      value: Spada_enemy (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 1047452656364381062, guid: d7cc44f4119d5684a8392178c3b08c80,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1284,11 +1289,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4094358636811620757, guid: d7cc44f4119d5684a8392178c3b08c80,
-        type: 3}
-      propertyPath: m_Name
-      value: Spada_enemy (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7cc44f4119d5684a8392178c3b08c80, type: 3}
@@ -1406,21 +1406,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 906190578138715871}
     m_Modifications:
-    - target: {fileID: 1901844598583350308, guid: 1287797ae89644743ae0d7f00f7dcfe1,
-        type: 3}
-      propertyPath: ShapeModule.radius.value
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1901844598583350308, guid: 1287797ae89644743ae0d7f00f7dcfe1,
-        type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 0.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 1901844598583350308, guid: 1287797ae89644743ae0d7f00f7dcfe1,
-        type: 3}
-      propertyPath: ShapeModule.m_Scale.x
-      value: 0.6
-      objectReference: {fileID: 0}
     - target: {fileID: 407277956000859768, guid: 1287797ae89644743ae0d7f00f7dcfe1,
         type: 3}
       propertyPath: m_Name
@@ -1480,6 +1465,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1901844598583350308, guid: 1287797ae89644743ae0d7f00f7dcfe1,
+        type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1901844598583350308, guid: 1287797ae89644743ae0d7f00f7dcfe1,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1901844598583350308, guid: 1287797ae89644743ae0d7f00f7dcfe1,
+        type: 3}
+      propertyPath: ShapeModule.m_Scale.x
+      value: 0.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1287797ae89644743ae0d7f00f7dcfe1, type: 3}
