@@ -10,9 +10,6 @@ public class PetController : MonoBehaviour
     public float moveSpeed;
     public float runSpeed;
     public float normalMoveSpeed;
-    public Color runAura;
-    public Color normalAura;
-    public ParticleSystem.MainModule aura;
     public CharacterController characterControllerPet;
     private Vector3 lookDir;
     private Vector3 oldLookDir;
@@ -99,17 +96,5 @@ public class PetController : MonoBehaviour
             newState.Enter();
             currentState = newState;
         }
-    }
-
-    public void SetColorRunAura()
-    {
-        aura = GetComponentInChildren<ParticleSystem>().main;
-        aura.startColor = runAura;
-    }
-
-    public void SetColorNormalAura()
-    {
-        aura = GetComponentInChildren<ParticleSystem>().main;
-        aura.startColor = normalAura;
     }
 }

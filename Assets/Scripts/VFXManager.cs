@@ -10,4 +10,7 @@ public class VFXManager : MonoBehaviour
     public GameObject vfxEnemySpawn;
     public GameObject vfxSwapCharacter;
     public GameObject vfxSwapPet;
+    public GameObject vfxHealPlayer;
+    public GameObject vfxRunCharacter;
+    public GameObject vfxRunPet;
 }

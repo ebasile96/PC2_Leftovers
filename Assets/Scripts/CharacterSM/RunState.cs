@@ -11,7 +11,7 @@ public class RunState : PlayerBaseState
     {
         //player.animator.SetTrigger("GoToRunning");
         player.SuperRunPlayer();
-        player.SetColorRunAura();
+        player.CreateVfxRun(player.transform, GameManager.instance.Vfxmgr.vfxRunCharacter);
     }
 
     public override void Tick()
@@ -53,6 +53,7 @@ public class RunState : PlayerBaseState
     public override void Exit()
     {
         player.isMoving = false;
+        player.DestroyVfxRun();
     }
 
 }

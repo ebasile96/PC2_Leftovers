@@ -10,7 +10,6 @@ public class IdleState : PlayerBaseState
     public override void Enter()
     {
         player.NormalRunPlayer();
-        player.SetColorNormalAura();
     }
 
     public override void Tick()

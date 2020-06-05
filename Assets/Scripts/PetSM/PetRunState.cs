@@ -11,7 +11,7 @@ public class PetRunState : PetStateBase
     {
         //player.animator.SetTrigger("GoToRunning");
         pet.SuperRunPet();
-        pet.SetColorRunAura();
+        pet.player.CreateVfxRun(pet.transform, GameManager.instance.Vfxmgr.vfxRunPet);
     }
 
     public override void Tick()
@@ -51,7 +51,7 @@ public class PetRunState : PetStateBase
 
     public override void Exit()
     {
-
+        pet.player.DestroyVfxRun();
     }
 
 }

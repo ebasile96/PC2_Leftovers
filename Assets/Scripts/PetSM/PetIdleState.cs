@@ -10,7 +10,6 @@ public class PetIdleState : PetStateBase
     public override void Enter()
     {
         pet.NormalRunPet();
-        pet.SetColorNormalAura();
     }
 
     public override void Tick()

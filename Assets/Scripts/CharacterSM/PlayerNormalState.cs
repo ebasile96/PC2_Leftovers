@@ -9,8 +9,7 @@ public class PlayerNormalState : PlayerBaseState
 
     public override void Enter()
     {
-        player.NormalRunPlayer();
-        player.SetColorNormalAura();
+        player.NormalRunPlayer();    
     }
 
     public override void Tick()

@@ -14,7 +14,6 @@ public class PlayerController : MonoBehaviour
     public Color runAura;
     public Color normalAura;
     public Animator animator;
-    public ParticleSystem.MainModule aura;
     CharacterController characterController;
     private Vector3 lookDir;
     private Vector3 oldLookDir;
@@ -122,18 +121,16 @@ public class PlayerController : MonoBehaviour
         moveSpeed = normalMoveSpeed;
     }
 
-    public void SetColorRunAura()
+    private GameObject gameObjectVfx;
+    public void CreateVfxRun(Transform _transform, GameObject _object)
     {
-        aura = GetComponentInChildren<ParticleSystem>().main;
-        aura.startColor = runAura;
+       gameObjectVfx = Instantiate(_object, _transform);
     }
 
-    public void SetColorNormalAura()
+    public void DestroyVfxRun()
     {
-        aura = GetComponentInChildren<ParticleSystem>().main;
-        aura.startColor = normalAura;
+        Destroy(gameObjectVfx);
     }
-
 
     public void SwapPG()
     {

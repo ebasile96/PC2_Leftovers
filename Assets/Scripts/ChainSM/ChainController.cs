@@ -63,6 +63,11 @@ public class ChainController : MonoBehaviour
             attackChain();
             DecreaseComboTimer();
             NormalizedStressValue();
+            if (Input.GetKeyDown(KeyCode.G))
+            {
+                Instantiate(GameManager.instance.Vfxmgr.vfxHealPlayer, graphic.targetLine.transform);
+                Instantiate(GameManager.instance.Vfxmgr.vfxHealPlayer, graphic.transform.transform);
+            }
         }
         //ChainObstacle();
     }
@@ -203,7 +208,8 @@ public class ChainController : MonoBehaviour
     public void BonusStress()
     {
         pLife.healthPlayer += bonusStressLife;
-
+        Instantiate(GameManager.instance.Vfxmgr.vfxHealPlayer, graphic.targetLine.transform);
+        Instantiate(GameManager.instance.Vfxmgr.vfxHealPlayer, graphic.transform.transform);
     }
 
     public void KillCall(Action _kill)
