@@ -81,20 +81,31 @@ public class EnemyController : MonoBehaviour
     public void OnCollisionStay(Collision hit)
     {
 
-        if (hit.gameObject.tag == "Player" && canTakeDamage == true)
+        if (hit.gameObject.tag == "Player")
         {
-            anim.SetTrigger("GoToAttackCross");
-            if (targetObjectCharacter.invulnerabilityCounter <= 0)
-            {
-                pHealth.TakeDamage(Data.damage);
-                targetObjectCharacter.invulnerabilityCounter = targetObjectCharacter.invulnerabilityTimer;
-            }
-            Instantiate(vfx.vfxHitTest, hit.transform);
-            SoundManager.PlaySound(SoundManager.Sound.femaleTakeDamage);
+            NavAgent.speed = 0;
 
-            StartCoroutine(damageTimer());
+            if (canTakeDamage == true) {
+                anim.SetTrigger("GoToAttackCross");
+                if (targetObjectCharacter.invulnerabilityCounter <= 0)
+                {
+                    pHealth.TakeDamage(Data.damage);
+                    targetObjectCharacter.invulnerabilityCounter = targetObjectCharacter.invulnerabilityTimer;
+                }
+                Instantiate(vfx.vfxHitTest, hit.transform);
+                SoundManager.PlaySound(SoundManager.Sound.femaleTakeDamage);
+
+                StartCoroutine(damageTimer());
+            }
         }
     }
+
+    public void OnCollisionExit(Collision hit)
+    {
+        NavAgent.speed = Data.speed;
+    }
+
+
     private IEnumerator damageTimer()
     {
         canTakeDamage = false;

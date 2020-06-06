@@ -2286,6 +2286,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1201742076029420385}
+    - target: {fileID: 972869706, guid: 91ef5e518a417a94fb000ba252557297, type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91ef5e518a417a94fb000ba252557297, type: 3}
 --- !u!4 &170482410393740349 stripped
@@ -2371,6 +2375,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 170482410393740349}
+    - target: {fileID: 956408354, guid: 0657c20d55da9de4183a4311267dcd4d, type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0657c20d55da9de4183a4311267dcd4d, type: 3}
 --- !u!4 &1201742076029420385 stripped
@@ -2604,6 +2612,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: InGameUI
       objectReference: {fileID: 0}
+    - target: {fileID: 1713333298134298654, guid: 6dcf2080bb82113459a3d4646e084752,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 767612839}
     - target: {fileID: 4356299779525776925, guid: 6dcf2080bb82113459a3d4646e084752,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -2683,11 +2696,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1713333298134298654, guid: 6dcf2080bb82113459a3d4646e084752,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 767612839}
     - target: {fileID: 4356299781069418609, guid: 6dcf2080bb82113459a3d4646e084752,
         type: 3}
       propertyPath: playerLife
