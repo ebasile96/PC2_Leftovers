@@ -93,7 +93,7 @@ public class EnemyController : MonoBehaviour
                     targetObjectCharacter.invulnerabilityCounter = targetObjectCharacter.invulnerabilityTimer;
                 }
                 Instantiate(vfx.vfxHitTest, hit.transform);
-                SoundManager.PlaySound(SoundManager.Sound.femaleTakeDamage);
+                //SoundManager.PlaySound(SoundManager.Sound.femaleTakeDamage);
 
                 StartCoroutine(damageTimer());
             }

@@ -33,12 +33,13 @@ public class SettingsMenu : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Joystick1Button1))
+        if (Input.GetKeyDown(KeyCode.Joystick1Button1) || Input.GetKeyDown(KeyCode.Escape))
             ExitMenu();
     }
     public void SetVolume(float volume)
     {
         mixer.SetFloat("volume", volume);
+        FlowStateMachine.VolumeMaster = volume;
     }
 
     public void SetFullScreen(bool isFullScreen)

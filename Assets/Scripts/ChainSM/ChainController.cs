@@ -33,8 +33,10 @@ public class ChainController : MonoBehaviour
     public PlayerLifeController pLife;
     public float bonusStressLife;
 
+
     //events
     private Action KillCallback;
+    private Action AudioCallback;
     public void ChangeState(ChainBaseState newState)
     {
         if (currentState != null) currentState.Exit();
@@ -138,7 +140,8 @@ public class ChainController : MonoBehaviour
                 currentStressValue += enemyStressValue;
                 enemyCounter = 1;
                 timerCombo = maxTimerCombo;
-                SoundManager.PlaySound(SoundManager.Sound.enemyTakeDamage);
+                AudioCallback();
+                //SoundManager.PlaySound(SoundManager.Sound.enemyTakeDamage);
             }
             else if (timerCombo != 0 && graphic.lineR.enabled == true)
             {
@@ -162,7 +165,8 @@ public class ChainController : MonoBehaviour
                     timerCombo += comboExtender;
                 }
                 currentStressValue += (enemyStressValue * (1 - (comboStressMultiplier * enemyCounter)));
-                SoundManager.PlaySound(SoundManager.Sound.enemyTakeDamage);
+                AudioCallback();
+                //SoundManager.PlaySound(SoundManager.Sound.enemyTakeDamage);
             }
         }
     }
@@ -217,4 +221,8 @@ public class ChainController : MonoBehaviour
         KillCallback = _kill;
     }
 
+    public void AudioCall(Action _audio)
+    {
+        AudioCallback = _audio;
+    }
 }

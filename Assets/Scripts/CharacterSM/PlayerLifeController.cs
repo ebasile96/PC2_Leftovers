@@ -12,12 +12,16 @@ public class PlayerLifeController : MonoBehaviour
     public float healthPet;
     public float damage;
     public Slider hpBarPlayer;
+
+    //event 
+    private Action DamageTakenCallBack;
     
     
 
     public void TakeDamage(float _damage)
     {
         healthPlayer -= _damage;
+        DamageTakenCallBack();
     }
 
     public  void Update()
@@ -27,6 +31,9 @@ public class PlayerLifeController : MonoBehaviour
     
     }
 
-    
+    public void DamageTakenCall(Action _damage)
+    {
+        DamageTakenCallBack = _damage;
+    }
 
 }

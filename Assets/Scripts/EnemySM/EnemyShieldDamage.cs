@@ -31,7 +31,7 @@ public class EnemyShieldDamage : MonoBehaviour
         {
             pHealth.TakeDamage(enemy.Data.damageShield);
             Instantiate(vfx.vfxHitTest, hit.transform);
-            SoundManager.PlaySound(SoundManager.Sound.femaleTakeDamage);
+            //SoundManager.PlaySound(SoundManager.Sound.femaleTakeDamage);
 
             StartCoroutine(damageTimer());
         }

@@ -8,6 +8,7 @@ public class FlowStateMachine : MonoBehaviour
 {
     public Context newContext;
     public Animator animController;
+    public static float VolumeMaster;
     void Awake()
     {
         GameObject[] objs = GameObject.FindGameObjectsWithTag("StateMachine");
@@ -42,7 +43,7 @@ public class FlowStateMachine : MonoBehaviour
 
         Context context = new Context()
         {
-
+            
         };
         foreach (StateBehaviourBase state in animController.GetBehaviours<StateBehaviourBase>())
         {
