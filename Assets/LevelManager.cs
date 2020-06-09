@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using SemihOrhan.WaveOne;
 using TMPro;
+using System;
 
 public class LevelManager : MonoBehaviour
 {
@@ -17,6 +18,9 @@ public class LevelManager : MonoBehaviour
     PlayerLifeController playerLifeCtrl;
     public int _EnemyCounterAlive = 0;
     // Start is called before the first frame update
+
+    //event
+    private Action StartWaveCallback;
     void Awake()
     {
         Wavemgr = FindObjectOfType<WaveManager>();
@@ -28,6 +32,7 @@ public class LevelManager : MonoBehaviour
         if (!Wavemgr.SpawnersFinished)
         {
             Wavemgr.StartAllConfigWaves();
+            StartWaveCallback();
         }
             
     }
@@ -42,6 +47,7 @@ public class LevelManager : MonoBehaviour
             CheckLifeBonus();
             wavecount++;
             Wavemgr.StartAllConfigWaves();
+            StartWaveCallback();
         }
     }
 
@@ -62,5 +68,10 @@ public class LevelManager : MonoBehaviour
             playerLifeCtrl.healthPlayer += HealthBonus;
         }
 
+    }
+
+    public void StartWaveCall(Action _start)
+    {
+        StartWaveCallback = _start;
     }
 }

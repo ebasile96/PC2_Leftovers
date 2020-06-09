@@ -6,9 +6,9 @@ public class EnemyDeathAudio : MonoBehaviour
 {
     ChainController chainCtrl;
     PlayerLifeController playerCtrl;
+    LevelManager levelMgr;
     AudioSource source;
-    public AudioClip enemy;
-    public AudioClip FemaleDmg;
+    public AudioClip enemy, FemaleDmg, Horn;
 
     [Header("Settings")]
     [Range(0,1)]
@@ -17,7 +17,9 @@ public class EnemyDeathAudio : MonoBehaviour
     {
         chainCtrl = FindObjectOfType<ChainController>();
         playerCtrl = FindObjectOfType<PlayerLifeController>();
+        levelMgr = FindObjectOfType<LevelManager>();
         source = GetComponent<AudioSource>();
+
         chainCtrl.AudioCall(() => 
         {
             source.PlayOneShot(enemy, volume);
@@ -26,6 +28,12 @@ public class EnemyDeathAudio : MonoBehaviour
         playerCtrl.DamageTakenCall(() => 
         {
             source.PlayOneShot(FemaleDmg, volume);
+        
+        });
+
+        levelMgr.StartWaveCall(() => 
+        {
+            source.PlayOneShot(Horn, 0.2f);
         
         });
     }
