@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 112000000, guid: 2658f933f7198944abd7ed3e2a13a3b2,
     type: 2}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -631,7 +631,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 755907086}
-  m_LocalRotation: {x: 0.50583583, y: 0.01840798, z: -0.008637072, w: 0.86239016}
+  m_LocalRotation: {x: 0.50583583, y: 0.01840795, z: -0.008637054, w: 0.86239016}
   m_LocalPosition: {x: -1.5550001, y: 21.235, z: -14.79}
   m_LocalScale: {x: 1, y: 1, z: 1.2193}
   m_Children:
@@ -1764,7 +1764,7 @@ PrefabInstance:
     - target: {fileID: 322326698890451149, guid: cf20dcbc9e1041c46bc4638bed4d50d5,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 322326698890451156, guid: cf20dcbc9e1041c46bc4638bed4d50d5,
         type: 3}
@@ -2507,10 +2507,6 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 170482410393740349}
-    - target: {fileID: 956408354, guid: 0657c20d55da9de4183a4311267dcd4d, type: 3}
-      propertyPath: m_Mass
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0657c20d55da9de4183a4311267dcd4d, type: 3}
 --- !u!4 &1201742076029420385 stripped
@@ -2744,6 +2740,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: InGameUI
       objectReference: {fileID: 0}
+    - target: {fileID: 1713333298134298654, guid: 6dcf2080bb82113459a3d4646e084752,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 767612839}
     - target: {fileID: 4356299779525776925, guid: 6dcf2080bb82113459a3d4646e084752,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -2804,11 +2805,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1713333298134298654, guid: 6dcf2080bb82113459a3d4646e084752,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 767612839}
     - target: {fileID: 4356299781069418609, guid: 6dcf2080bb82113459a3d4646e084752,
         type: 3}
       propertyPath: playerLife
@@ -2861,12 +2857,12 @@ PrefabInstance:
     - target: {fileID: 4792709009875095648, guid: f838afab358d88b47bffa582ffd236a4,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.01840798
+      value: 0.01840795
       objectReference: {fileID: 0}
     - target: {fileID: 4792709009875095648, guid: f838afab358d88b47bffa582ffd236a4,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.008637072
+      value: -0.008637054
       objectReference: {fileID: 0}
     - target: {fileID: 4792709009875095648, guid: f838afab358d88b47bffa582ffd236a4,
         type: 3}

@@ -33,7 +33,7 @@ public class PlayerNormalState : PlayerBaseState
         
         player.RunControll(GameManager.instance.Inputmgr.runPlayer, runState);
 
-        player.SwapPG();
+        StartCoroutine(player.SwapPG());
     }
 
     public override void Exit()

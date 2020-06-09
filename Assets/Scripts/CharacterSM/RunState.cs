@@ -47,7 +47,7 @@ public class RunState : PlayerBaseState
                 }
             }
 
-        player.SwapPG();
+        StartCoroutine(player.SwapPG());
     }
 
     public override void Exit()

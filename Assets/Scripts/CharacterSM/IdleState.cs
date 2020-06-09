@@ -30,6 +30,6 @@ public class IdleState : PlayerBaseState
 
             player.RunControll(GameManager.instance.Inputmgr.runPlayer, runState);
 
-        player.SwapPG();
+        StartCoroutine(player.SwapPG());
     }
 }

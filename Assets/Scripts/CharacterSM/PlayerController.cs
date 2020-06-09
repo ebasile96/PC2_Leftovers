@@ -132,13 +132,15 @@ public class PlayerController : MonoBehaviour
         Destroy(gameObjectVfx);
     }
 
-    public void SwapPG()
+    public float delaySwap;
+    bool isSwap;
+    public IEnumerator SwapPG()
     {
-        if (GameManager.instance.Inputmgr.swap)
+        if (GameManager.instance.Inputmgr.swap && isSwap == false)
         {
+            isSwap = true;
             //swap player
             Vector3 temp = transform.position;
-            //Vector3 fixHigh = transform.position - new Vector3(0,0.5,0);
             characterController.enabled = false;
             transform.position = pet.transform.position - new Vector3(0, 1f, 0);
             Instantiate(GameManager.instance.Vfxmgr.vfxSwapCharacter, transform);
@@ -148,6 +150,9 @@ public class PlayerController : MonoBehaviour
             pet.transform.position = temp - new Vector3(0, 2f, 0);
             Instantiate(GameManager.instance.Vfxmgr.vfxSwapPet, pet.transform);
             pet.characterControllerPet.enabled = true;
+            // timer si azzera per poter rifare lo swap
+            yield return new WaitForSeconds(delaySwap);
+            isSwap = false;
         }
     }
 }
