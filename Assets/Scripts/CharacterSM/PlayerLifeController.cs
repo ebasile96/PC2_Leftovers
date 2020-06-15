@@ -12,6 +12,7 @@ public class PlayerLifeController : MonoBehaviour
     public float healthPet;
     public float damage;
     public Slider hpBarPlayer;
+    public GameObject hitPanel;
 
     //event 
     private Action DamageTakenCallBack;
@@ -29,6 +30,14 @@ public class PlayerLifeController : MonoBehaviour
         if (healthPlayer > 100)
             healthPlayer = 100;
     
+        if(healthPlayer <= 25)
+        {
+            hitPanel.SetActive(true);
+        }
+        else if(healthPlayer > 25)
+        {
+            hitPanel.SetActive(false);
+        }
     }
 
     public void DamageTakenCall(Action _damage)

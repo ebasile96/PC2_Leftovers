@@ -15,6 +15,10 @@ public class ScoreManager : MonoBehaviour
     public TextMeshProUGUI HighscoreBoard;
     private IEnumerator _combo;
     public ChainController chainCtrl;
+    public GameObject backgroundImageCombo;
+    public GameObject comboText;
+    public TextMeshProUGUI moltiplicatoreCombo;
+
     private void Start()
     {
         PlayerPrefs.SetInt("PersonalScore", 0);
@@ -67,10 +71,16 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
+    //private int compoMulti = 0;
     IEnumerator Combo(float _time)
     {
-        Bonus = 100; 
+        Bonus = 100;
+        backgroundImageCombo.SetActive(true);
+        comboText.SetActive(true);
+        //moltiplicatoreCombo.text = "X" + compoMulti + 1;
         yield return new WaitForSeconds(_time);
+        backgroundImageCombo.SetActive(false);
+        comboText.SetActive(false);
         Bonus = 0;
     }
 }
