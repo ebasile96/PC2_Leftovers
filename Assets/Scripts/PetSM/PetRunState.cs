@@ -11,7 +11,7 @@ public class PetRunState : PetStateBase
     {
         //player.animator.SetTrigger("GoToRunning");
         pet.SuperRunPet();
-        pet.player.CreateVfxRun(pet.transform, GameManager.instance.Vfxmgr.vfxRunPet);
+        pet.player.CreateVfxRun(pet.transform, GameManager.instance.Vfxmgr.vfxRunPet, true);
     }
 
     public override void Tick()

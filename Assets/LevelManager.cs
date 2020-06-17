@@ -17,6 +17,8 @@ public class LevelManager : MonoBehaviour
     int wavecount = 1;
     PlayerLifeController playerLifeCtrl;
     public int _EnemyCounterAlive = 0;
+    public PlayerController player;
+    public PetController pet;
     // Start is called before the first frame update
 
     //event
@@ -66,6 +68,8 @@ public class LevelManager : MonoBehaviour
         if(playerLifeCtrl.healthPlayer < 100)
         {
             playerLifeCtrl.healthPlayer += HealthBonus;
+            Instantiate(GameManager.instance.Vfxmgr.vfxHealPlayer, player.transform);
+            Instantiate(GameManager.instance.Vfxmgr.vfxHealPlayer, pet.transform);
         }
 
     }

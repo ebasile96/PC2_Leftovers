@@ -43,5 +43,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6abf8077a3b0da246af3c38f960ff84a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Timertext: {fileID: 0}
-  Timer: 3
+  EnemiesAlive: []
+  EnemyAlive: {fileID: 0}
+  WaveNumber: {fileID: 0}
+  HealthBonus: 20
+  _EnemyCounterAlive: 0
+  player: {fileID: 0}
+  pet: {fileID: 0}

@@ -121,15 +121,24 @@ public class PlayerController : MonoBehaviour
         moveSpeed = normalMoveSpeed;
     }
 
-    private GameObject gameObjectVfx;
-    public void CreateVfxRun(Transform _transform, GameObject _object)
+    private GameObject gameObjectVfxPlayer;
+    private GameObject gameObjectVfxPet;
+    public void CreateVfxRun(Transform _transform, GameObject _object, bool _isPlayer)
     {
-       gameObjectVfx = Instantiate(_object, _transform);
+        if (_isPlayer == false)
+        {
+            gameObjectVfxPlayer = Instantiate(_object, _transform);
+        }
+        else if(_isPlayer == true)
+        {
+            gameObjectVfxPet = Instantiate(_object, _transform);
+        }
     }
 
     public void DestroyVfxRun()
     {
-        Destroy(gameObjectVfx);
+        Destroy(gameObjectVfxPlayer);
+        Destroy(gameObjectVfxPet);
     }
 
     public float delaySwap;

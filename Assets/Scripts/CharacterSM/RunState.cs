@@ -11,7 +11,7 @@ public class RunState : PlayerBaseState
     {
         //player.animator.SetTrigger("GoToRunning");
         player.SuperRunPlayer();
-        player.CreateVfxRun(player.transform, GameManager.instance.Vfxmgr.vfxRunCharacter);
+        player.CreateVfxRun(player.transform, GameManager.instance.Vfxmgr.vfxRunCharacter, false);
     }
 
     public override void Tick()
