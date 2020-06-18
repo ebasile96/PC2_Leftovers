@@ -17,7 +17,7 @@ public class ScoreManager : MonoBehaviour
     public ChainController chainCtrl;
     public GameObject backgroundImageCombo;
     public GameObject comboText;
-    public TextMeshProUGUI moltiplicatoreCombo;
+    public PlayerController player;
 
     private void Start()
     {
@@ -77,10 +77,14 @@ public class ScoreManager : MonoBehaviour
         Bonus = 100;
         backgroundImageCombo.SetActive(true);
         comboText.SetActive(true);
+        GameObject vfxComboPlayer = Instantiate(GameManager.instance.Vfxmgr.vfxComboMode, player.transform);
+        GameObject vfxComboPet = Instantiate(GameManager.instance.Vfxmgr.vfxComboMode, player.pet.transform);
         //moltiplicatoreCombo.text = "X" + compoMulti + 1;
         yield return new WaitForSeconds(_time);
         backgroundImageCombo.SetActive(false);
         comboText.SetActive(false);
         Bonus = 0;
+        Destroy(vfxComboPlayer);
+        Destroy(vfxComboPet);
     }
 }

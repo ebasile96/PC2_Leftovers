@@ -13,4 +13,5 @@ public class VFXManager : MonoBehaviour
     public GameObject vfxHealPlayer;
     public GameObject vfxRunCharacter;
     public GameObject vfxRunPet;
+    public GameObject vfxComboMode;
 }
