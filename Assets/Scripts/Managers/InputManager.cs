@@ -17,7 +17,9 @@ public class InputManager : MonoBehaviour
     [HideInInspector]
     public float verticalPet;
     [HideInInspector]
-    public bool swap;
+    public bool swapB1;
+    [HideInInspector]
+    public bool swapB2;
 
     public void CheckInput()
     {
@@ -27,7 +29,8 @@ public class InputManager : MonoBehaviour
         horizontalPet = Input.GetAxisRaw("HorizontalPet");
         runPlayer = Input.GetAxisRaw("runPlayer");
         runPet = Input.GetAxisRaw("runPet");
-        swap = Input.GetButtonDown("Swap");
+        swapB1 = Input.GetButtonDown("SwapB1");
+        swapB2 = Input.GetButtonDown("SwapB2");
     }
 
     private void Update()

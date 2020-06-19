@@ -145,7 +145,7 @@ public class PlayerController : MonoBehaviour
     bool isSwap;
     public IEnumerator SwapPG()
     {
-        if (GameManager.instance.Inputmgr.swap && isSwap == false)
+        if ((GameManager.instance.Inputmgr.swapB1 && GameManager.instance.Inputmgr.swapB2) && isSwap == false)
         {
             isSwap = true;
             //swap player

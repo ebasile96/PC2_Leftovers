@@ -7,10 +7,16 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuState : StateBehaviourBase
 {
+    private bool isCutscene;
 
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {   
+    {
         SceneManager.LoadScene("MM");
+
+        if (isCutscene == false)
+        {
+            //intro pre menu
+        }
         Time.timeScale = 1;
     }
 
@@ -21,6 +27,6 @@ public class MainMenuState : StateBehaviourBase
 
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-       
+        isCutscene = false;
     }
 }
