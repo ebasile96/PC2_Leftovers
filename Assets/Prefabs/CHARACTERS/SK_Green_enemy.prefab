@@ -1230,11 +1230,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1920498478201262524}
     m_Modifications:
-    - target: {fileID: 4094358636811620757, guid: d7cc44f4119d5684a8392178c3b08c80,
-        type: 3}
-      propertyPath: m_Name
-      value: Spada_enemy (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 1047452656364381062, guid: d7cc44f4119d5684a8392178c3b08c80,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1290,6 +1285,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4094358636811620757, guid: d7cc44f4119d5684a8392178c3b08c80,
+        type: 3}
+      propertyPath: m_Name
+      value: Spada_enemy (1)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7cc44f4119d5684a8392178c3b08c80, type: 3}
 --- !u!4 &1607059838527479166 stripped
@@ -1305,6 +1305,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9016655069886513767}
     m_Modifications:
+    - target: {fileID: 8507607203872940883, guid: bc37edb0d44bed343be6fa661852a7f4,
+        type: 3}
+      propertyPath: m_Name
+      value: Shield
+      objectReference: {fileID: 0}
+    - target: {fileID: 8507607203872940883, guid: bc37edb0d44bed343be6fa661852a7f4,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 4632601434694635840, guid: bc37edb0d44bed343be6fa661852a7f4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1374,16 +1384,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8507607203872940883, guid: bc37edb0d44bed343be6fa661852a7f4,
-        type: 3}
-      propertyPath: m_Name
-      value: Shield
-      objectReference: {fileID: 0}
-    - target: {fileID: 8507607203872940883, guid: bc37edb0d44bed343be6fa661852a7f4,
-        type: 3}
-      propertyPath: m_TagString
-      value: Obstacle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc37edb0d44bed343be6fa661852a7f4, type: 3}
