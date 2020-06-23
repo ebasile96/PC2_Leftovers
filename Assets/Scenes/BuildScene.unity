@@ -197,6 +197,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
@@ -733,6 +735,8 @@ MonoBehaviour:
     m_OnCameraLive:
       m_PersistentCalls:
         m_Calls: []
+      m_TypeName: Cinemachine.CinemachineBrain+VcamActivatedEvent, Cinemachine, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 1582844753}
 --- !u!4 &755907088
@@ -1084,12 +1088,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf5f4910d01272d41adea3cd7a51c7b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!82 &1351731207 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 302267396368018396, guid: fa0f376fc487d7c4ebd31c824f504090,
-    type: 3}
-  m_PrefabInstance: {fileID: 302267395016451035}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1385582108 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1385582108, guid: 6dcf2080bb82113459a3d4646e084752,
@@ -2381,9 +2379,13 @@ MonoBehaviour:
   m_CameraCutEvent:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: Cinemachine.CinemachineBrain+BrainEvent, Cinemachine, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: Cinemachine.CinemachineBrain+VcamActivatedEvent, Cinemachine, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &2055803464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2493,14 +2495,6 @@ PrefabInstance:
       propertyPath: pLife
       value: 
       objectReference: {fileID: 1160059689}
-    - target: {fileID: 1992815347, guid: 91ef5e518a417a94fb000ba252557297, type: 3}
-      propertyPath: source
-      value: 
-      objectReference: {fileID: 1351731207}
-    - target: {fileID: 1992815347, guid: 91ef5e518a417a94fb000ba252557297, type: 3}
-      propertyPath: clip
-      value: 
-      objectReference: {fileID: 8300000, guid: ccca41fc990921b49a86bafa61d9e1d3, type: 3}
     - target: {fileID: 5127093191868014436, guid: 91ef5e518a417a94fb000ba252557297,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2560,15 +2554,6 @@ PrefabInstance:
       propertyPath: targetLine
       value: 
       objectReference: {fileID: 1293648577}
-    - target: {fileID: 6418250534455080766, guid: 91ef5e518a417a94fb000ba252557297,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 972869706, guid: 91ef5e518a417a94fb000ba252557297, type: 3}
-      propertyPath: m_Mass
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8508314570652791378, guid: 91ef5e518a417a94fb000ba252557297,
         type: 3}
       propertyPath: player
@@ -2584,9 +2569,19 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1201742076029420385}
-    - target: {fileID: 972869704, guid: 91ef5e518a417a94fb000ba252557297, type: 3}
-      propertyPath: m_SlopeLimit
-      value: 45
+    - target: {fileID: 7454732084145233819, guid: 91ef5e518a417a94fb000ba252557297,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7454732084145233819, guid: 91ef5e518a417a94fb000ba252557297,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1d72afd6f061c384b84c9c1621001a8d, type: 2}
+    - target: {fileID: 845932690, guid: 91ef5e518a417a94fb000ba252557297, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91ef5e518a417a94fb000ba252557297, type: 3}
@@ -2682,18 +2677,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SK_Character
       objectReference: {fileID: 0}
-    - target: {fileID: 956408350, guid: 0657c20d55da9de4183a4311267dcd4d, type: 3}
-      propertyPath: dissolveShader
-      value: 
-      objectReference: {fileID: 2100000, guid: 5e7902cce37225b41b76cd7258fa6bb9, type: 2}
-    - target: {fileID: 956408350, guid: 0657c20d55da9de4183a4311267dcd4d, type: 3}
-      propertyPath: dissolvePet
-      value: 
-      objectReference: {fileID: 2100000, guid: 58b7fd0e2ff4fe842953ca076ac2a776, type: 2}
-    - target: {fileID: 956408350, guid: 0657c20d55da9de4183a4311267dcd4d, type: 3}
-      propertyPath: SwapDuration
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6185631156886030950, guid: 0657c20d55da9de4183a4311267dcd4d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2759,28 +2742,16 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 170482410393740349}
-    - target: {fileID: 956408351, guid: 0657c20d55da9de4183a4311267dcd4d, type: 3}
-      propertyPath: m_SlopeLimit
-      value: 45
-      objectReference: {fileID: 0}
-    - target: {fileID: 956408351, guid: 0657c20d55da9de4183a4311267dcd4d, type: 3}
-      propertyPath: m_MinMoveDistance
-      value: 0.001
-      objectReference: {fileID: 0}
-    - target: {fileID: 525015737981758237, guid: 0657c20d55da9de4183a4311267dcd4d,
+    - target: {fileID: 6708486398996798286, guid: 0657c20d55da9de4183a4311267dcd4d,
         type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.83
-      objectReference: {fileID: 0}
-    - target: {fileID: 1786526120, guid: 0657c20d55da9de4183a4311267dcd4d, type: 3}
-      propertyPath: m_IsActive
-      value: 1
+      propertyPath: m_Materials.Array.size
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6708486398996798286, guid: 0657c20d55da9de4183a4311267dcd4d,
         type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1d72afd6f061c384b84c9c1621001a8d, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0657c20d55da9de4183a4311267dcd4d, type: 3}
 --- !u!4 &1201742076029420385 stripped

@@ -355,7 +355,7 @@ CharacterController:
   serializedVersion: 2
   m_Height: 2.13
   m_Radius: 0.46
-  m_SlopeLimit: 180
+  m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
@@ -416,9 +416,9 @@ MonoBehaviour:
   turnSpeed: 20
   movement: {x: 0, y: 0, z: 0}
   isMoving: 0
-  dissolveShader: {fileID: 0}
-  dissolvePet: {fileID: 0}
-  SwapDuration: 0
+  dissolveShader: {fileID: 2100000, guid: 5e7902cce37225b41b76cd7258fa6bb9, type: 2}
+  dissolvePet: {fileID: 2100000, guid: 58b7fd0e2ff4fe842953ca076ac2a776, type: 2}
+  SwapDuration: 1
   isInvulnerability: 0
   invulnerabilityTimer: 2
   invulnerabilityCounter: 0
@@ -531,7 +531,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: 1d72afd6f061c384b84c9c1621001a8d, type: 2}
+      objectReference: {fileID: 2100000, guid: e6740963624d1bb4b8eca743430d1336, type: 2}
     - target: {fileID: -4431429744085825124, guid: d20c0d9ce7f4f05419a2ce1a70eaddd6,
         type: 3}
       propertyPath: m_LocalPosition.z
