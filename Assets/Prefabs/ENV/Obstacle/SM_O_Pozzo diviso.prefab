@@ -121,6 +121,8 @@ GameObject:
   - component: {fileID: 3467621817037968779}
   - component: {fileID: 1256625220960243830}
   - component: {fileID: 9128829749280245760}
+  - component: {fileID: 5782411220944436390}
+  - component: {fileID: 6175599294263081440}
   m_Layer: 0
   m_Name: pozzo_e_secchio
   m_TagString: Untagged
@@ -189,3 +191,31 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!136 &5782411220944436390
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6374373044617783941}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.2533165
+  m_Height: 8.22278
+  m_Direction: 1
+  m_Center: {x: 0.31706116, y: 1.6825609, z: -0.000000464096}
+--- !u!136 &6175599294263081440
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6374373044617783941}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5538162
+  m_Height: 5.5401406
+  m_Direction: 1
+  m_Center: {x: -1.1588165, y: 1.9250419, z: -0.000000270817}
