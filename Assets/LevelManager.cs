@@ -12,6 +12,7 @@ public class LevelManager : MonoBehaviour
     private WaveManager Wavemgr;
     public TextMeshProUGUI EnemyAlive;
     public TextMeshProUGUI WaveNumber;
+    public GameObject totalWaveNumberUI;
     [Range(0,100)]
     public int HealthBonus = 20;
     int wavecount = 1;
@@ -50,6 +51,10 @@ public class LevelManager : MonoBehaviour
             wavecount++;
             Wavemgr.StartAllConfigWaves();
             StartWaveCallback();
+            WaveNumber.GetComponent<Animator>().SetTrigger("active");
+            totalWaveNumberUI.GetComponent<Animator>().SetTrigger("active");
+            WaveNumber.GetComponent<Animator>().SetTrigger("idle");
+            totalWaveNumberUI.GetComponent<Animator>().SetTrigger("idle");
         }
     }
 
