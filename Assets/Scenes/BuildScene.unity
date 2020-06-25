@@ -192,7 +192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.8862745}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.007843138}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -340,6 +340,31 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4356299779779247834}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &104198020 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1385582105, guid: 6dcf2080bb82113459a3d4646e084752,
+    type: 3}
+  m_PrefabInstance: {fileID: 4356299779779247834}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &104198023
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 104198020}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cb1a49eed70897b4aa52eab7770915a2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &112578673
 GameObject:
   m_ObjectHideFlags: 0
@@ -1076,6 +1101,25 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4356299779779247834}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1297520385
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1297520383}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7df051c85afa027419ee9a88818788dd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &1344145528 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5623515162962085825, guid: de7c674954977da4093cb24318c30938,
@@ -1094,7 +1138,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 4356299779779247834}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 104198020}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
@@ -3005,6 +3049,22 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1385582108, guid: 6dcf2080bb82113459a3d4646e084752, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1385582108, guid: 6dcf2080bb82113459a3d4646e084752, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1385582108, guid: 6dcf2080bb82113459a3d4646e084752, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1385582108, guid: 6dcf2080bb82113459a3d4646e084752, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 1713333298134298654, guid: 6dcf2080bb82113459a3d4646e084752,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -3130,6 +3190,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 7.26
       objectReference: {fileID: 0}
+    - target: {fileID: 2509647165875146858, guid: 6dcf2080bb82113459a3d4646e084752,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2509647165875146858, guid: 6dcf2080bb82113459a3d4646e084752,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2509647165875146858, guid: 6dcf2080bb82113459a3d4646e084752,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6180682531616667651, guid: 6dcf2080bb82113459a3d4646e084752,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -3164,27 +3239,43 @@ PrefabInstance:
     - target: {fileID: 5847693636497488559, guid: 6dcf2080bb82113459a3d4646e084752,
         type: 3}
       propertyPath: m_fontColor.r
-      value: 0.6409752
+      value: 0.5794873
       objectReference: {fileID: 0}
     - target: {fileID: 5847693636497488559, guid: 6dcf2080bb82113459a3d4646e084752,
         type: 3}
       propertyPath: m_fontColor.g
-      value: 0.19607839
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5847693636497488559, guid: 6dcf2080bb82113459a3d4646e084752,
         type: 3}
       propertyPath: m_fontColor.b
-      value: 0.9607843
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5847693636497488559, guid: 6dcf2080bb82113459a3d4646e084752,
         type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 4294259107
+      value: 4294901907
       objectReference: {fileID: 0}
     - target: {fileID: 5847693636497488559, guid: 6dcf2080bb82113459a3d4646e084752,
         type: 3}
       propertyPath: m_margin.z
       value: 24.20944
+      objectReference: {fileID: 0}
+    - target: {fileID: 1385582106, guid: 6dcf2080bb82113459a3d4646e084752, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1385582106, guid: 6dcf2080bb82113459a3d4646e084752, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1385582106, guid: 6dcf2080bb82113459a3d4646e084752, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1385582106, guid: 6dcf2080bb82113459a3d4646e084752, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6dcf2080bb82113459a3d4646e084752, type: 3}

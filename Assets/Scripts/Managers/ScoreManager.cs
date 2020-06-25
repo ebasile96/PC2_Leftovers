@@ -47,18 +47,28 @@ public class ScoreManager : MonoBehaviour
                 break;
             case EnemyType.blue:
                 Score += 150 + Bonus;
+                //animazione combo text
+                //animazione score
                 break;
             case EnemyType.shield:
                 Score += 200 + Bonus;
+                //animazione combo text
+                //animazione score
                 break;
             case EnemyType.damage:
                 Score += 150 + Bonus;
+                //animazione combo text
+                //animazione score
                 break;
             case EnemyType.bubble:
                 Score += 200 + Bonus;
+                //animazione combo text
+                //animazione score
                 break;
             case EnemyType.ranged:
                 Score += 250 + Bonus;
+                //animazione combo text
+                //animazione score
                 break;
         }
 

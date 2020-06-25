@@ -127,11 +127,15 @@ public class ChainController : MonoBehaviour
                 {
                     scoreMgr.PointAssignation(hit.transform.GetComponent<EnemyController>().Data.Type);
                     KillCallback();
+                    scoreMgr.comboText.GetComponent<Animator>().SetTrigger("active");
+                    scoreMgr.ScoreBoard.GetComponent<Animator>().SetTrigger("active");
                 }
                 else
                 {
                     scoreMgr.PointAssignation(hit.transform.GetComponent<PatrolAgent>().data.Type);
                     KillCallback();
+                    scoreMgr.comboText.GetComponent<Animator>().SetTrigger("active");
+                    scoreMgr.ScoreBoard.GetComponent<Animator>().SetTrigger("active");
                 }
                 GameObject gameObject = Instantiate(vfx.vfxEnemyDeath);
                 gameObject.transform.position = hit.point;
@@ -141,7 +145,7 @@ public class ChainController : MonoBehaviour
                 enemyCounter = 1;
                 timerCombo = maxTimerCombo;
                 AudioCallback();
-                //SoundManager.PlaySound(SoundManager.Sound.enemyTakeDamage);
+                scoreMgr.ScoreBoard.GetComponent<Animator>().SetTrigger("idle");
             }
             else if (timerCombo != 0 && graphic.lineR.enabled == true)
             {
@@ -149,11 +153,15 @@ public class ChainController : MonoBehaviour
                 {
                     scoreMgr.PointAssignation(hit.transform.GetComponent<EnemyController>().Data.Type);
                     KillCallback();
+                    scoreMgr.comboText.GetComponent<Animator>().SetTrigger("active");
+                    scoreMgr.ScoreBoard.GetComponent<Animator>().SetTrigger("active");
                 }
                 else
                 {
                     scoreMgr.PointAssignation(hit.transform.GetComponent<PatrolAgent>().data.Type);
                     KillCallback();
+                    scoreMgr.comboText.GetComponent<Animator>().SetTrigger("active");
+                    scoreMgr.ScoreBoard.GetComponent<Animator>().SetTrigger("active");
                 }
                 GameObject gameObject = Instantiate(vfx.vfxEnemyDeath);
                 gameObject.transform.position = hit.point;
@@ -166,7 +174,7 @@ public class ChainController : MonoBehaviour
                 }
                 currentStressValue += (enemyStressValue * (1 - (comboStressMultiplier * enemyCounter)));
                 AudioCallback();
-                //SoundManager.PlaySound(SoundManager.Sound.enemyTakeDamage);
+                scoreMgr.ScoreBoard.GetComponent<Animator>().SetTrigger("idle");
             }
         }
     }
