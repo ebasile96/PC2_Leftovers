@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.SocialPlatforms.Impl;
+using UnityEngine.SceneManagement;
 
 public class ChainController : MonoBehaviour
 {
@@ -33,10 +34,11 @@ public class ChainController : MonoBehaviour
     public PlayerLifeController pLife;
     public float bonusStressLife;
 
-
     //events
     private Action KillCallback;
     private Action AudioCallback;
+
+    Scene scene;
     public void ChangeState(ChainBaseState newState)
     {
         if (currentState != null) currentState.Exit();
@@ -49,6 +51,7 @@ public class ChainController : MonoBehaviour
     {
         lvlmgr = FindObjectOfType<LevelManager>();
         scoreMgr = FindObjectOfType<ScoreManager>();
+        scene = SceneManager.GetActiveScene();
     }
 
     // Update is called once per frame
@@ -127,15 +130,21 @@ public class ChainController : MonoBehaviour
                 {
                     scoreMgr.PointAssignation(hit.transform.GetComponent<EnemyController>().Data.Type);
                     KillCallback();
-                    scoreMgr.comboText.GetComponent<Animator>().SetTrigger("active");
-                    scoreMgr.ScoreBoard.GetComponent<Animator>().SetTrigger("active");
+                    if (scene.name == "BuildScene")
+                    {
+                        scoreMgr.comboText.GetComponent<Animator>().SetTrigger("active");
+                        scoreMgr.ScoreBoard.GetComponent<Animator>().SetTrigger("active");
+                    }
                 }
                 else
                 {
                     scoreMgr.PointAssignation(hit.transform.GetComponent<PatrolAgent>().data.Type);
                     KillCallback();
-                    scoreMgr.comboText.GetComponent<Animator>().SetTrigger("active");
-                    scoreMgr.ScoreBoard.GetComponent<Animator>().SetTrigger("active");
+                    if (scene.name == "BuildScene")
+                    {
+                        scoreMgr.comboText.GetComponent<Animator>().SetTrigger("active");
+                        scoreMgr.ScoreBoard.GetComponent<Animator>().SetTrigger("active");
+                    }
                 }
                 GameObject gameObject = Instantiate(vfx.vfxEnemyDeath);
                 gameObject.transform.position = hit.point;
@@ -153,15 +162,21 @@ public class ChainController : MonoBehaviour
                 {
                     scoreMgr.PointAssignation(hit.transform.GetComponent<EnemyController>().Data.Type);
                     KillCallback();
-                    scoreMgr.comboText.GetComponent<Animator>().SetTrigger("active");
-                    scoreMgr.ScoreBoard.GetComponent<Animator>().SetTrigger("active");
+                    if (scene.name == "BuildScene")
+                    {
+                        scoreMgr.comboText.GetComponent<Animator>().SetTrigger("active");
+                        scoreMgr.ScoreBoard.GetComponent<Animator>().SetTrigger("active");
+                    }
                 }
                 else
                 {
                     scoreMgr.PointAssignation(hit.transform.GetComponent<PatrolAgent>().data.Type);
                     KillCallback();
-                    scoreMgr.comboText.GetComponent<Animator>().SetTrigger("active");
-                    scoreMgr.ScoreBoard.GetComponent<Animator>().SetTrigger("active");
+                        if (scene.name == "BuildScene")
+                        {
+                            scoreMgr.comboText.GetComponent<Animator>().SetTrigger("active");
+                            scoreMgr.ScoreBoard.GetComponent<Animator>().SetTrigger("active");
+                        }
                 }
                 GameObject gameObject = Instantiate(vfx.vfxEnemyDeath);
                 gameObject.transform.position = hit.point;
