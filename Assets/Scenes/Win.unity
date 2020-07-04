@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 112000000, guid: 7ae72d3866c79744fb7a98fe5a0dbb5e,
     type: 2}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -27464,22 +27464,6 @@ Transform:
   m_Father: {fileID: 8518451765000227410}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!208 &6107919168787847697
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6898183847258364478}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 0
-  m_Extents: {x: 2.4770002, y: 3.77, z: 2.4770002}
-  m_MoveThreshold: 0.1
-  m_Carve: 0
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0.040000003, y: 0.178, z: 0.33400002}
-  m_TimeToStationary: 0.5
 --- !u!23 &6166863764631425694
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -27690,26 +27674,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hero asset test 02
       objectReference: {fileID: 0}
-    - target: {fileID: 3693806887855818416, guid: 001da454d19ecab4b833a4dfbda7f807,
-        type: 3}
-      propertyPath: m_TagString
-      value: Obstacle
-      objectReference: {fileID: 0}
-    - target: {fileID: 3463103674548907609, guid: 001da454d19ecab4b833a4dfbda7f807,
-        type: 3}
-      propertyPath: m_TagString
-      value: Obstacle
-      objectReference: {fileID: 0}
-    - target: {fileID: 3463103674548907609, guid: 001da454d19ecab4b833a4dfbda7f807,
-        type: 3}
-      propertyPath: m_NavMeshLayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3463103674548907609, guid: 001da454d19ecab4b833a4dfbda7f807,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 40
-      objectReference: {fileID: 0}
     - target: {fileID: 367131415724127395, guid: 001da454d19ecab4b833a4dfbda7f807,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -27765,52 +27729,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 367131415724127395, guid: 001da454d19ecab4b833a4dfbda7f807,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.6743221
-      objectReference: {fileID: 0}
-    - target: {fileID: 367131415724127395, guid: 001da454d19ecab4b833a4dfbda7f807,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.6743195
-      objectReference: {fileID: 0}
-    - target: {fileID: 367131415724127395, guid: 001da454d19ecab4b833a4dfbda7f807,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.6743221
-      objectReference: {fileID: 0}
-    - target: {fileID: 8274459288082493871, guid: 001da454d19ecab4b833a4dfbda7f807,
-        type: 3}
-      propertyPath: m_TagString
-      value: Obstacle
-      objectReference: {fileID: 0}
-    - target: {fileID: 8917002218540082077, guid: 001da454d19ecab4b833a4dfbda7f807,
-        type: 3}
-      propertyPath: m_TagString
-      value: Obstacle
-      objectReference: {fileID: 0}
-    - target: {fileID: 4292768430401499625, guid: 001da454d19ecab4b833a4dfbda7f807,
-        type: 3}
-      propertyPath: m_TagString
-      value: Obstacle
-      objectReference: {fileID: 0}
-    - target: {fileID: 253597058845491608, guid: 001da454d19ecab4b833a4dfbda7f807,
-        type: 3}
-      propertyPath: m_TagString
-      value: Obstacle
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 001da454d19ecab4b833a4dfbda7f807, type: 3}
 --- !u!4 &6898183847258364477 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 367131415724127395, guid: 001da454d19ecab4b833a4dfbda7f807,
-    type: 3}
-  m_PrefabInstance: {fileID: 6898183847258364476}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &6898183847258364478 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3463103674548907609, guid: 001da454d19ecab4b833a4dfbda7f807,
     type: 3}
   m_PrefabInstance: {fileID: 6898183847258364476}
   m_PrefabAsset: {fileID: 0}
