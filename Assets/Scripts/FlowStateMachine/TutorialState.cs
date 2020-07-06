@@ -15,11 +15,11 @@ public class TutorialState : StateBehaviourBase
 
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetKeyDown(KeyCode.Joystick1Button0))
-        {
+        //if (Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetKeyDown(KeyCode.Joystick1Button0))
+        //{
            
-            FlowStateMachine.GoToGameplay();
-        }
+        //    FlowStateMachine.GoToGameplay();
+        //}
             
     }
 

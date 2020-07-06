@@ -11,8 +11,8 @@ public class PlayButton : MonoBehaviour
     public GameObject OptionsMenu;
     public GameObject Pausemenu;
     public GameObject credits;
-    //public GameObject newFirstSelected;
-    //public EventSystem eventSys;
+    public GameObject newFirstSelected;
+    public EventSystem eventSys;
    public void PressPlay()
     {
         if(PlayerPrefs.GetInt("Highscore") == 0)
@@ -69,8 +69,10 @@ public class PlayButton : MonoBehaviour
 
     public void openOptions()
     {
-        //eventSys.firstSelectedGameObject = newFirstSelected;
         OptionsMenu.SetActive(true);
+        eventSys.firstSelectedGameObject = newFirstSelected;
+        eventSys.SetSelectedGameObject(newFirstSelected);
+        Pausemenu.SetActive(false);
         
     }
 

@@ -14,6 +14,7 @@ public class SettingsMenu : MonoBehaviour
     Resolution[] resolutions;
     public EventSystem eventSystem;
     public GameObject newFirstSelected;
+    public GameObject pauseMenu;
 
     private void Start()
     {
@@ -58,8 +59,11 @@ public class SettingsMenu : MonoBehaviour
 
     public void ExitMenu()
     {
-        //eventSystem.firstSelectedGameObject = newFirstSelected;
+        pauseMenu.SetActive(true);
+        eventSystem.firstSelectedGameObject = newFirstSelected;
+        eventSystem.SetSelectedGameObject(newFirstSelected);
         this.gameObject.SetActive(false);
+        
     }
 
 }
