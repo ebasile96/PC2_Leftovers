@@ -209,6 +209,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
@@ -812,6 +814,8 @@ MonoBehaviour:
     m_OnCameraLive:
       m_PersistentCalls:
         m_Calls: []
+      m_TypeName: Cinemachine.CinemachineBrain+VcamActivatedEvent, Cinemachine, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 1582844753}
 --- !u!4 &755907088
@@ -844,7 +848,7 @@ PrefabInstance:
     - target: {fileID: 5456194905389253912, guid: caab6a6bdd0d3204a8d438f9fd55af26,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8278618805015057283, guid: caab6a6bdd0d3204a8d438f9fd55af26,
         type: 3}
@@ -3027,9 +3031,13 @@ MonoBehaviour:
   m_CameraCutEvent:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: Cinemachine.CinemachineBrain+BrainEvent, Cinemachine, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: Cinemachine.CinemachineBrain+VcamActivatedEvent, Cinemachine, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &2055803464
 MonoBehaviour:
   m_ObjectHideFlags: 0
