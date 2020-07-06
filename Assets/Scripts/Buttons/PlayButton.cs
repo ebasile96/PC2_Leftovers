@@ -10,6 +10,7 @@ public class PlayButton : MonoBehaviour
 {
     public GameObject OptionsMenu;
     public GameObject Pausemenu;
+    public GameObject credits;
     //public GameObject newFirstSelected;
     //public EventSystem eventSys;
    public void PressPlay()
@@ -71,5 +72,15 @@ public class PlayButton : MonoBehaviour
         //eventSys.firstSelectedGameObject = newFirstSelected;
         OptionsMenu.SetActive(true);
         
+    }
+
+    public void OpenCredits()
+    {
+            credits.SetActive(true);
+    }
+
+    public void CloseCredits()
+    {
+        credits.SetActive(false);
     }
 }
