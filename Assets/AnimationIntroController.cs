@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AnimationIntroController : MonoBehaviour
 {
@@ -26,10 +27,11 @@ public class AnimationIntroController : MonoBehaviour
         animPanel02.SetActive(true);
         yield return new WaitForSeconds(3.3f);
         animPanel02.SetActive(false);
+        Destroy(animPanel02);
         animPanel03.SetActive(true);
         yield return new WaitForSeconds(3.3f);
         animPanel03.SetActive(false);
-        animPanel01.SetActive(false);
-        this.gameObject.SetActive(false);
+        animPanel01.SetActive(true);
+        SceneManager.LoadScene("MM");
     }
 }
