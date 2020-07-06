@@ -30,5 +30,6 @@ public class AnimationIntroController : MonoBehaviour
         yield return new WaitForSeconds(3.3f);
         animPanel03.SetActive(false);
         animPanel01.SetActive(false);
+        this.gameObject.SetActive(false);
     }
 }

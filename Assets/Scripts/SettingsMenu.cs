@@ -58,7 +58,7 @@ public class SettingsMenu : MonoBehaviour
 
     public void ExitMenu()
     {
-        eventSystem.firstSelectedGameObject = newFirstSelected;
+        //eventSystem.firstSelectedGameObject = newFirstSelected;
         this.gameObject.SetActive(false);
     }
 

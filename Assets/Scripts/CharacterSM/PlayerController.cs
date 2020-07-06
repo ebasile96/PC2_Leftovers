@@ -22,11 +22,11 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]
     public Vector3 movement;
     public bool isMoving;
-    public Material dissolveShader;
-    public Material dissolvePet;
+    //public Material dissolveShader;
+    //public Material dissolvePet;
 
-    [Header("Timer Swap")]
-    public float SwapDuration;
+    //[Header("Timer Swap")]
+   // public float SwapDuration;
 
 
     private void Awake()
@@ -147,7 +147,7 @@ public class PlayerController : MonoBehaviour
         Destroy(gameObjectVfxPet);
     }
 
-    public IEnumerator Dissolve(Material _shaderCharacter, Material _shaderPet, float _startValue, float _delta)
+    /*public IEnumerator Dissolve(Material _shaderCharacter, Material _shaderPet, float _startValue, float _delta)
     {
         float pointInTime = 0f;
         float dissolveTime = SwapDuration;
@@ -159,7 +159,7 @@ public class PlayerController : MonoBehaviour
             yield return 0;
         }
 
-    }
+    }*/
 
     public float delaySwap;
     bool isSwap;
@@ -170,15 +170,12 @@ public class PlayerController : MonoBehaviour
             isSwap = true;
             //swap player
             Vector3 temp = transform.position;
-            StartCoroutine(Dissolve(dissolveShader, dissolvePet, 0, 1));
-            yield return new WaitForSeconds(SwapDuration);
             characterController.enabled = false;
             transform.position = pet.transform.position - new Vector3(0, 1f, 0);
             Instantiate(GameManager.instance.Vfxmgr.vfxSwapCharacter, transform);
             characterController.enabled = true;
             //swap pet
             pet.characterControllerPet.enabled = false;
-            StartCoroutine(Dissolve(dissolveShader, dissolvePet, 1, 0));
             pet.transform.position = temp - new Vector3(0, 2f, 0);
             Instantiate(GameManager.instance.Vfxmgr.vfxSwapPet, pet.transform);
             pet.characterControllerPet.enabled = true;

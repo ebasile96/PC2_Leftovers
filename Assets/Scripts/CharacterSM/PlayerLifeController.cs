@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
 using System;
+using UnityEngine.SceneManagement;
 
 public class PlayerLifeController : MonoBehaviour
 {
@@ -13,11 +14,15 @@ public class PlayerLifeController : MonoBehaviour
     public float damage;
     public Slider hpBarPlayer;
     public GameObject hitPanel;
+    Scene scene;
 
     //event 
     private Action DamageTakenCallBack;
-    
-    
+
+    public void Start()
+    {
+        scene = SceneManager.GetActiveScene();
+    }
 
     public void TakeDamage(float _damage)
     {
@@ -29,14 +34,17 @@ public class PlayerLifeController : MonoBehaviour
     {
         if (healthPlayer > 100)
             healthPlayer = 100;
-    
-        if(healthPlayer <= 25)
+
+        if (scene.name == "BuildScene")
         {
-            hitPanel.SetActive(true);
-        }
-        else if(healthPlayer > 25)
-        {
-            hitPanel.SetActive(false);
+            if (healthPlayer <= 25)
+            {
+                hitPanel.SetActive(true);
+            }
+            else if (healthPlayer > 25)
+            {
+                hitPanel.SetActive(false);
+            }
         }
     }
 

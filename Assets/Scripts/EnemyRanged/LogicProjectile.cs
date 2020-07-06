@@ -36,7 +36,7 @@ public class LogicProjectile : MonoBehaviour
                 player.invulnerabilityCounter = player.invulnerabilityTimer;
             }
         }
-        else if(collision.gameObject.tag == "Obstacle")
+        else if(collision.gameObject.tag == "Obstacle" || collision.gameObject.tag == "Untagged")
         {
             Destroy(this.gameObject);
         }

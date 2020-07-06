@@ -5,6 +5,7 @@ using System;
 using SemihOrhan.WaveOne.Spawners;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -18,9 +19,11 @@ public class ScoreManager : MonoBehaviour
     public GameObject backgroundImageCombo;
     public GameObject comboText;
     public PlayerController player;
+    Scene scene;
 
     private void Start()
     {
+        scene = SceneManager.GetActiveScene();
         PlayerPrefs.SetInt("PersonalScore", 0);
         HighscoreBoard.text = PlayerPrefs.GetInt("Highscore", 0).ToString();
 
@@ -85,14 +88,20 @@ public class ScoreManager : MonoBehaviour
     IEnumerator Combo(float _time)
     {
         Bonus = 100;
-        backgroundImageCombo.SetActive(true);
-        comboText.SetActive(true);
+        if (scene.name == "BuildScene")
+        {
+            backgroundImageCombo.SetActive(true);
+            comboText.SetActive(true);
+        }
         GameObject vfxComboPlayer = Instantiate(GameManager.instance.Vfxmgr.vfxComboMode, player.transform);
         GameObject vfxComboPet = Instantiate(GameManager.instance.Vfxmgr.vfxComboMode, player.pet.transform);
         //moltiplicatoreCombo.text = "X" + compoMulti + 1;
         yield return new WaitForSeconds(_time);
-        backgroundImageCombo.SetActive(false);
-        comboText.SetActive(false);
+        if (scene.name == "BuildScene")
+        {
+            backgroundImageCombo.SetActive(false);
+            comboText.SetActive(false);
+        }
         Bonus = 0;
         Destroy(vfxComboPlayer);
         Destroy(vfxComboPet);

@@ -8,7 +8,6 @@ public class PauseMenuController : MonoBehaviour
 
     public bool isActive;
     public GameObject pauseMenu;
-    public GameObject OptionMenu;
     // Start is called before the first frame update
     void Start()
     {
