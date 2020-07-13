@@ -78,7 +78,8 @@ public class PlayButton : MonoBehaviour
 
     public void OpenCredits()
     {
-            credits.SetActive(true);
+        credits.SetActive(true);
+        Pausemenu.SetActive(false);
     }
 
     public void CloseCredits()
