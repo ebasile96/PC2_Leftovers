@@ -824,6 +824,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SK_Blue_enemy 1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7235166392293632702, guid: 3b163b254954c9a45a56cba4210b8a52,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5923113501011171501, guid: 3b163b254954c9a45a56cba4210b8a52,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -946,6 +951,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SK_Ranged_enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1307283017811907814, guid: e2500107366dc0841b4f1951aebe7082,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2629890125185853173, guid: e2500107366dc0841b4f1951aebe7082,
         type: 3}
@@ -1304,7 +1314,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 455767281}
-  m_LocalRotation: {x: 0.16486478, y: 0.06125657, z: -0.010259522, w: 0.98435867}
+  m_LocalRotation: {x: 0.059148915, y: 0.15461177, z: -0.009273469, w: 0.98615956}
   m_LocalPosition: {x: -3.2, y: 8.1, z: -23.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2138,6 +2148,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SK_Ranged_enemy (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1307283017811907814, guid: e2500107366dc0841b4f1951aebe7082,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2629890125185853173, guid: e2500107366dc0841b4f1951aebe7082,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2918,6 +2933,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SK_Blue_enemy 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7235166392293632702, guid: 3b163b254954c9a45a56cba4210b8a52,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5923113501011171501, guid: 3b163b254954c9a45a56cba4210b8a52,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2988,15 +3008,15 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2422848457953703594, guid: 3b163b254954c9a45a56cba4210b8a52,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.17
-      objectReference: {fileID: 0}
     - target: {fileID: 4824715693680948669, guid: 3b163b254954c9a45a56cba4210b8a52,
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2422848457953703594, guid: 3b163b254954c9a45a56cba4210b8a52,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.17
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b163b254954c9a45a56cba4210b8a52, type: 3}
@@ -5106,6 +5126,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SK_Blue_enemy (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7235166392293632702, guid: 0c2e9274d0bf80e40a55eac822bdd4dc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5923113501011171501, guid: 0c2e9274d0bf80e40a55eac822bdd4dc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5286,6 +5311,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SK_Green_enemy (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4235695233260938444, guid: 578f320f819359143937de9ce3913847,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 906190578138715871, guid: 578f320f819359143937de9ce3913847,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5360,7 +5390,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: aa92174ae341f57499bc0e3ed2ccb589, type: 2}
+      objectReference: {fileID: 2100000, guid: 6505a26bbd63d1c4ea5aecd57532adcc, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 578f320f819359143937de9ce3913847, type: 3}
 --- !u!4 &1770996886 stripped
@@ -5800,8 +5830,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1861523766}
-  m_LocalRotation: {x: 0.16486478, y: 0.06125657, z: -0.010259522, w: 0.98435867}
-  m_LocalPosition: {x: -8.950006, y: 2.6100025, z: -19.368938}
+  m_LocalRotation: {x: 0.05914891, y: 0.15461175, z: -0.009273468, w: 0.98615956}
+  m_LocalPosition: {x: -1.9500074, y: 8.70997, z: -22.3689}
   m_LocalScale: {x: 10, y: 13.024, z: 13.024}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5830,6 +5860,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SK_Red_enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1307283017811907814, guid: 1310440b6b8c3444aa3a50866c9dbebf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2629890125185853173, guid: 1310440b6b8c3444aa3a50866c9dbebf,
         type: 3}
@@ -5914,6 +5949,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SK_Blue_enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 7235166392293632702, guid: 0c2e9274d0bf80e40a55eac822bdd4dc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5923113501011171501, guid: 0c2e9274d0bf80e40a55eac822bdd4dc,
         type: 3}
@@ -6112,6 +6152,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SK_Green_enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4235695233260938444, guid: 578f320f819359143937de9ce3913847,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 906190578138715871, guid: 578f320f819359143937de9ce3913847,
         type: 3}
@@ -6696,6 +6741,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SK_Blue_enemy 1 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7235166392293632702, guid: 3b163b254954c9a45a56cba4210b8a52,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5923113501011171501, guid: 3b163b254954c9a45a56cba4210b8a52,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6766,15 +6816,15 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2422848457953703594, guid: 3b163b254954c9a45a56cba4210b8a52,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.17
-      objectReference: {fileID: 0}
     - target: {fileID: 4824715693680948669, guid: 3b163b254954c9a45a56cba4210b8a52,
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2422848457953703594, guid: 3b163b254954c9a45a56cba4210b8a52,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.17
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b163b254954c9a45a56cba4210b8a52, type: 3}
@@ -6916,7 +6966,7 @@ MonoBehaviour:
   m_Path: {fileID: 789888309}
   m_PathPosition: 0
   m_PositionUnits: 0
-  m_PathOffset: {x: 3.4696436, y: 29.24636, z: -74.7756}
+  m_PathOffset: {x: 10.469642, y: 35.34633, z: -77.77556}
   m_XDamping: 0
   m_YDamping: 0
   m_ZDamping: 1
@@ -6943,12 +6993,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TrackedObjectOffset: {x: 0, y: 0, z: 0}
   m_LookaheadTime: 0
-  m_LookaheadSmoothing: 10
+  m_LookaheadSmoothing: 10.5
   m_LookaheadIgnoreY: 0
   m_HorizontalDamping: 0.5
   m_VerticalDamping: 0.5
-  m_ScreenX: 0.5
-  m_ScreenY: 0.5
+  m_ScreenX: 0.55
+  m_ScreenY: 0.49498433
   m_DeadZoneWidth: 0
   m_DeadZoneHeight: 0
   m_SoftZoneWidth: 0.8
@@ -6983,7 +7033,7 @@ PrefabInstance:
     - target: {fileID: 8177483380712746359, guid: 91ef5e518a417a94fb000ba252557297,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 972869705, guid: 91ef5e518a417a94fb000ba252557297, type: 3}
       propertyPath: m_Enabled
@@ -7202,7 +7252,7 @@ PrefabInstance:
     - target: {fileID: 7173283245987018869, guid: 0657c20d55da9de4183a4311267dcd4d,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 956408350, guid: 0657c20d55da9de4183a4311267dcd4d, type: 3}
       propertyPath: m_Enabled
