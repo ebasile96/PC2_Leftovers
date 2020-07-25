@@ -7800,10 +7800,15 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 5743685398819412406, guid: c71b7a6eeb24b3c47bc8b5e70e7a35d2,
+    - target: {fileID: 2333380158353305952, guid: c71b7a6eeb24b3c47bc8b5e70e7a35d2,
         type: 3}
-      propertyPath: m_TagString
-      value: AudioSlider
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5743685397910913008, guid: c71b7a6eeb24b3c47bc8b5e70e7a35d2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5743685399279779330, guid: c71b7a6eeb24b3c47bc8b5e70e7a35d2,
         type: 3}
@@ -7820,6 +7825,11 @@ PrefabInstance:
       propertyPath: pauseMenu
       value: 
       objectReference: {fileID: 360107632}
+    - target: {fileID: 5743685398878586662, guid: c71b7a6eeb24b3c47bc8b5e70e7a35d2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1998070272, guid: c71b7a6eeb24b3c47bc8b5e70e7a35d2, type: 3}
       propertyPath: m_Colors.m_HighlightedColor.r
       value: 1
@@ -7855,6 +7865,36 @@ PrefabInstance:
     - target: {fileID: 1998070272, guid: c71b7a6eeb24b3c47bc8b5e70e7a35d2, type: 3}
       propertyPath: m_Colors.m_SelectedColor.b
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5743685398878586660, guid: c71b7a6eeb24b3c47bc8b5e70e7a35d2,
+        type: 3}
+      propertyPath: m_text
+      value: Options
+      objectReference: {fileID: 0}
+    - target: {fileID: 5743685398878586660, guid: c71b7a6eeb24b3c47bc8b5e70e7a35d2,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5743685398878586660, guid: c71b7a6eeb24b3c47bc8b5e70e7a35d2,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5743685398878586660, guid: c71b7a6eeb24b3c47bc8b5e70e7a35d2,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5743685398878586660, guid: c71b7a6eeb24b3c47bc8b5e70e7a35d2,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5743685398819412406, guid: c71b7a6eeb24b3c47bc8b5e70e7a35d2,
+        type: 3}
+      propertyPath: m_TagString
+      value: AudioSlider
       objectReference: {fileID: 0}
     - target: {fileID: 5743685398615250033, guid: c71b7a6eeb24b3c47bc8b5e70e7a35d2,
         type: 3}
